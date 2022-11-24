@@ -1,0 +1,34 @@
+// Komuso Man
+
+[IntroStrings]
+"I'll play... this melody..."
+"Didn't expect me here, huh?"
+
+[FragStrings]
+"That will surely teach you, to never provoke me again..."
+"Oso sugiru..."
+"Hmph... wealking..."
+
+[KilledStrings]
+"N-nani?!"
+"That power..."
+"Nice shot."
+
+[RoamingStrings]
+"Show me your skills! I'm curious to see your fighting stance."
+"He will surely show up soon... from the shadows."
+"Doppels, enough chit-chatting!"
+"\caIf your head and your heart are at peace, even a fire stays cool..."
+"/me plays an odd melody on his flute."
+
+[RareRoamingStrings]
+"I'm way more than you think!"
+"/me swings flute like a baseball bat."
+
+[WinStrings]
+"/me suddenly disappears, leaving a quiet gust of wind behind"
+"Mmmm... you still have a lot to learn, $player_random_notself..."
+
+[LoseStrings]
+"\cgB-BAKANAAA!"
+"Your potential is impressive, $player_inlead..."

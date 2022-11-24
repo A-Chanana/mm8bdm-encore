@@ -1,0 +1,36 @@
+// Shadow Mega Man
+
+[IntroStrings]
+"My name is Shadow Mega Man! I will not tolerate anyone who goes against me!"
+"The robots of the past, root, and branch.. they all must go."
+
+[FragStrings]
+"If you can't defeat me, who can?"
+"The shadows of the future, cannot be ignored."
+"Drown in my strength."
+"This was merely for the sake of the future."
+
+[KilledStrings]
+"I see.. the emptiness."
+"Defeat an enemy, only have another one appear, it seems."
+"/me's helmet cracks."
+"From the past? How..?!"
+
+[RoamingStrings]
+"Defy me, and see where that gets you."
+"Sakagedarne! Where have you gone?!"
+"That archaic duplicate of mine can't be too far ahead."
+"There will never be someone who can defeat me!"
+"The dimensions collide, this will be fate's choice."
+
+[RareRoamingStrings]
+"In order to grow, we must defeat the mistakes of our past; which, even when you shatter it or entomb it in stone... will crawl out like a worm."
+"This is, my destiny."
+
+[WinStrings]
+"I see. This universe isn't it, then."
+"The shadows have consumed, and you all are the sustenance."
+
+[LoseStrings]
+"Finally, the end I have sought."
+"Keep saving everyone's smiles... goodbye."

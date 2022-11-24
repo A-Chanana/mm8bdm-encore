@@ -16,10 +16,12 @@
 - Clock Man botchat by Fr3ak.
 - Stove Man botchat by Dedede Man.
 - Aircon Man botchat by Fr3ak.
+- Compass Man botchat by 02gn and A-Chan.
+- Komuso Man botchat by 02gn and A-Chan.
+- Shadow Mega Man botchat by MegaVile.
 - Bond Man botchat by Scott and MegaVile.
 
 == Weapons ==
-- General vanilla balance changes by A-Chan.
 - Deep Digger Saxton Hale rework by MegaVile.
 - Homing Sniper Hyperfighting rework by Messatsu.
 

@@ -1,0 +1,34 @@
+// Compass Man
+
+[IntroStrings]
+"My name is Compass Man. You'd better fight for your life if you expect to live!"
+"I knew you were there, $player_random_notself!"
+
+[FragStrings]
+"East-north presence down."
+"Tried to ambush me from my 6 o' clock?"
+"Divide and conquer!"
+
+[KilledStrings]
+"No way!"
+"Owtch! Where did that came from?!"
+"Now I've got my eye on you, $player_killedby!"
+
+[RoamingStrings]
+"Time to stretch my legs a lil bit..."
+"Something is moving on 10 o' clock."
+"Quit resisting! Our way is correct!"
+"North..."
+"After this all is done, I'd like to return to water my garden..."
+
+[RareRoamingStrings]
+"No, I can't fly without spinning! Your eyes must be tricking you!"
+"Top Man, Sword Man, Tornado Man... My successors might have failed, but I won't."
+
+[WinStrings]
+"Viva la victoire!"
+"Nothing shall stand on the way of the Dimensions!"
+
+[LoseStrings]
+"You haven't seen the last of me, $player_inlead!"
+"Very well... we shall part ways..."
