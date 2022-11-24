@@ -1,0 +1,47 @@
+//
+// Gameplay
+//
+
+//General
+server bool enc_forceloadouts = false;		// Forces LMS Loadouts
+server int enc_deathdrops = 0;		// Players drop pickups on death, 1 = random, 2 = 1-UPs
+server bool enc_specialbots = false;	// Causes bots to spawn with their respective weapons
+
+//Loadouts
+server int enc_customloadouts = 0;
+user int enc_weaponslot0 = 999;
+user int enc_weaponslot1 = 999;
+user int enc_weaponslot2 = 999;
+user int enc_weaponslot3 = 999;
+user int enc_weaponslot4 = 999;
+user int enc_weaponslot5 = 999;
+server int enc_sweaponslot0 = 0;
+server int enc_sweaponslot1 = 0;
+server int enc_sweaponslot2 = 0;
+server int enc_sweaponslot3 = 0;
+server int enc_sweaponslot4 = 0;
+server int enc_sweaponslot5 = 0;
+
+//
+// Singleplayer
+//
+server bool enc_campaignhandler = false;
+
+server int enc_campaignallies = 1;
+server int enc_campaignally1 = 113;
+server int enc_campaignally2 = 0;
+server int enc_campaignally3 = 0;
+
+// Training Room
+user int enc_trainingweaponno = 0;
+user int enc_trainingitemno = 0;
+user int enc_trainingbotweaponno = 0;
+
+user noarchive string enc_trainingweapon = "";
+
+//
+// Maps
+//
+user bool enc_ogtextures = false; // Replaces Encore textures with vanilla textures
+
+server noarchive bool enc_mapcard = false;

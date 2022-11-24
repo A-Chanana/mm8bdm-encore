@@ -1,0 +1,135 @@
+actor PowerStoneWep : BaseMM8BDMWep 10060
+{
+//$Category MM8BDM-Weapons
+//$Title Power Stone
+//$Sprite WEA2J0
+dropitem "PowerStoneWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_POWERSTONE"
+Obituary "$OB_POWERSTONE"
+Tag "$TAG_POWERSTONE"
+weapon.ammotype "PowerStoneAmmo"
+inventory.icon "POWSSI"
+States
+{
+SpawnLoop:
+WEA2 J -1
+loop
+Ready:
+POWS E 0 ACS_ExecuteAlways(998,0,29)
+POWS E 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+POWS E 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+POWS E 1 A_Raise
+Loop
+Fire:
+POWS E 0 A_JumpIfNoAmmo("NoAmmo")
+POWS E 0 A_PlaySoundEx("weapon/powerstone","Weapon")
+POWS FG 2
+POWS H 3 A_FireCustomMissile("PowerStoneSpawner",0,1,0,0)
+POWS HH 8
+POWS H 20
+POWS GF 4
+POWS E 0 A_Refire
+Goto Ready+1
+NoAmmo:
+POWS E 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor PowerStoneAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor PowerStoneSpawner
+{
+PROJECTILE
++NOINTERACTION
++NOCLIP
+Damage(0)
+Height 1
+Radius 1
+Speed 0
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("PowerStone", 46,0,-8,0,0,0,0)
+TNT1 A 0 A_SpawnItemEx("PowerStone", 46,0,-8,0,0,0,-120)
+TNT1 A 0 A_SpawnItemEx("PowerStone", 46,0,-8,0,0,0,120)
+stop
+}
+}
+
+actor PowerStone
+{
+PROJECTILE
++FORCEXYBILLBOARD
+Radius 38
+Height 10
+scale 2.5
+damage (49)
+damagetype "PowerStone"
+Obituary "$OB_POWERSTONE"
+speed 0
+var int user_speed;
+var int user_maxturn;
+var int user_turndivisor;
+var int user_turndivisor_add;
+States
+{
+Spawn:
+POWS A 0
+TNT1 A 0 A_SetUserVar("user_speed", 30)
+TNT1 A 0 A_SetUserVar("user_maxturn", 1500)
+TNT1 A 0 A_SetUserVar("user_turndivisor", 50)
+TNT1 A 0 A_SetUserVar("user_turndivisor_add", 12)
+Spawn2:
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS A 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS A 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS A 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS B 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS B 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS B 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS C 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS C 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS C 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+Spawn3:
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+POWS D 1 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+loop
+Death:
+POWS A 0
+stop
+}
+}

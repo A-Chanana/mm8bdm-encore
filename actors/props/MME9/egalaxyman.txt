@@ -1,0 +1,15 @@
+actor EBunbiCatcher : BunbiCatcher 21710
+{
+//$Category MM8BDME-Props
+Translation "217:217=106:106"
+}
+
+actor EU.F.O. : U.F.O.
+{
+States
+{
+Spawn:
+UFOE ABCDEFGH 4
+loop
+}
+}

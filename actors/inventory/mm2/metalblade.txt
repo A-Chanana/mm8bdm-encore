@@ -1,0 +1,163 @@
+actor MetalBladeWep : BaseMM8BDMWep 10048
+{
+//$Category MM8BDM-Weapons
+//$Title Metal Blade
+//$Sprite WEAPS0
+dropitem "MetalBladeWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 28
+Weapon.SlotNumber 3
+Inventory.Pickupmessage "$PU_METALBLADE"
+Obituary "$OB_METALBLADE"
+Tag "$TAG_METALBLADE"
+weapon.ammotype "MetalBladeAmmo"
+inventory.icon "METLSI"
+States
+{
+SpawnLoop:
+WEAP S -1
+loop
+Ready:
+BUSH J 0 ACS_ExecuteAlways(998,0,17)
+BUSH J 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+BUSH J 1 A_WeaponReady
+Goto Ready+2
+ReadyNoAmmo:
+BUS2 C 1 A_WeaponReady
+BUS2 C 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BUSH J 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BUSH J 1 A_Raise
+Loop
+Fire:
+BUSH J 0 A_JumpIfNoAmmo("NoAmmo")
+BUSH J 0 A_PlaySoundEx("weapon/metalblade","Weapon")
+BUSH J 0 A_FireCustomMissile("MetalBlade",0,1,8,0)
+BUSH KL 2
+BUSH MN 3 
+BUSH QQR 1 A_Refire
+Goto Ready+1
+NoAmmo:
+BUS2 C 1 ACS_Execute(979,0)
+Goto ReadyNoAmmo
+}
+}
+actor MetalBladeAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor MetalBlade
+{
+PROJECTILE
+scale 2.5
++RIPPER
+Speed 40
+Radius 3
+Height 4
+Damage (16)
+damagetype "MetalBlade"
+Obituary "$OB_METALBLADE"
+States
+{
+Spawn:
+METL AB 3
+loop
+}
+}
+
+actor IGMetalBladeWep : BaseMM8BDMWep
+{
+Weapon.AmmoUse 0
+Weapon.AmmoGive 28
+Weapon.SlotNumber 1
+Inventory.Pickupmessage "$PU_PROTOSTRIKE"
+Tag "$TAG_PROTOSTRIKE"
+weapon.ammotype "MetalBladeAmmo"
+inventory.pickupsound "weapon/weaponup"
+inventory.icon "NULLICON"
++WEAPON.AMMO_OPTIONAL
++WEAPON.CHEATNOTWEAPON
+Scale 2.5
+States
+{
+Spawn:
+WEAP S 1
+loop
+Ready:
+PROC D 0 ACS_ExecuteAlways(991,0,36)
+PROC DH 1 A_WeaponReady
+Goto Ready2
+Ready2:
+PROC D 0 ACS_ExecuteAlways(991,0,63)
+PROC DH 1 A_WeaponReady
+Goto Ready
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+PROC DH 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+PROC DH 1 A_Raise
+Loop
+Hold:
+Fire:
+PROC DH 0 A_FireCustomMissile("ProtoStrikeShot",0,1,8,0)
+PROC DH 0 A_PlayWeaponSound("weapon/cfire")
+PROC D 2 ACS_ExecuteAlways(991,0,36)
+PROC E 2 offset(20,50)
+PROC F 2 offset(20,50)
+PROC D 10 offset(20,50)
+PROC D 2 offset(20,50)
+PROC D 2 offset(7,35)
+BUSH H 0 A_Refire
+Goto Ready
+}
+}
+
+actor ProtoStrikeShot : FastProjectile
+{
+PROJECTILE
+scale 2.5
++RIPPER
++DONTBLAST
+damagetype "Instagib"
+Obituary "$OB_PROTOSTRIKE"
+Speed 100
+Radius 20
+Height 20
+Damage (255)
+States
+{
+Spawn:
+PRST BC 2  A_SpawnItemEx("ProtoStrikeFX",64,0,0,momx/7,momy/7,momz/7,0,SXF_ABSOLUTEMOMENTUM)
+PRST DE 2  A_SpawnItemEx("ProtoStrikeFX",64,0,0,momx/7,momy/7,momz/7,0,SXF_ABSOLUTEMOMENTUM)
+loop
+}
+}
+
+Actor ProtoStrikeFX 
+{
++NOINTERACTION
++CLIENTSIDEONLY
++BRIGHT
+Scale 2.5
+States
+{
+Spawn:
+TNT1 A 1
+PRST H 1
+PRST I 3
+Goto Death
+Death:
+PRST I 1 A_FadeOut(0.5)
+Loop
+}
+}

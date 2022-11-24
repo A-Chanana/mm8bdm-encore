@@ -1,0 +1,216 @@
+actor TimeSlowWep : BaseMM8BDMWep 11010
+{
+//$Category MM8BDM-Weapons
+//$Title Time Slow
+//$Sprite SLOTX0
+Weapon.AmmoUse 14
+Weapon.AmmoGive 28
+Weapon.SlotNumber 6
+Inventory.Pickupmessage "$PU_TIMESLOW"
+Obituary "$OB_TIMESLOW"
+Tag "$TAG_TIMESLOW"
+weapon.ammotype "TimeSlowAmmo"
+Inventory.Icon "TIMMI2"
+States
+{
+SpawnLoop:
+SLOT X -1
+loop
+Ready:
+TSLO A 0 ACS_ExecuteAlways (998,0,96)
+TSLO A 1 A_WeaponReady
+goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+TSLO A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+TSLO A 1 A_Raise
+Loop
+Fire:
+TSLO A 0 
+TSLO A 0 A_JumpIfInventory("PowerTime",1,"Ready")
+goto Fire1
+Fire1:
+TSLO A 0 A_JumpIfInventory("TimeSlowAmmo", 14, "Fire2")
+Goto NoAmmo
+Fire2:
+//With Hand
+TSLO A 0 A_JumpIfNoAmmo("NoAmmo")
+TSLO A 0 A_JumpIfInventory("TimeSlowCooldown", 1, "NoAmmo")
+TSLO A 0 A_ScaleVelocity(0.8)
+SLOT JKLMN 2
+TNT1 A 0 A_PlaySoundEx("weapon/slow","Weapon")
+TNT1 A 0 ACS_Execute(976,0)
+TNT1 A 0 A_FireCustomMissile("TimeSlow",0,1,8,0)
+//SLOT LMN 3
+TNT1 A 2
+TSLO BC 1
+TSLO A 1 A_GiveInventory("TimeSlowCooldown", 1)
+goto Ready+1
+NoAmmo: 
+TSLO A 1 ACS_Execute(979,0)
+goto Ready+1
+NotReady:
+TSLO A 1
+Goto Ready+1
+}
+}
+
+actor TimeSlowCooldown : Powerup
+{
+powerup.duration 30
+}
+
+actor TimeSlowAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor TimeSlow
+{
+-SOLID
++NOGRAVITY
++DONTBLAST
+PROJECTILE
++BRIGHT
+damage 0
+radius 1
+height 1
+damagetype "TimeSlow"
+Obituary "$OB_TIMESLOW"
+Scale 7.68
++FORCEXYBILLBOARD
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Explode(13, 768,0)
+SLOD EFGHIJKLMNEFGHIJKLMN 1
+stop
+}
+}
+
+actor TimeCoolDown : PowerupGiver
+{
+inventory.maxamount 0
+powerup.duration 245
+powerup.color "00 00 00", 0.0
+powerup.type "PowerTime"
++INVENTORY.AUTOACTIVATE
++INVENTORY.ALWAYSPICKUP
+states
+{
+Pickup:
+TNT1 A 175 
+stop
+}
+}
+
+
+actor PowerTime : PowerUp
+{
+Inventory.Icon "TIMICON"
+Speed 1.0
+}
+
+actor Slowed : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
+-INVBAR
+States
+{
+Use:
+TNT1 A 0 A_JumpIfInventory("PowerSlow", 1, 2)
+TNT1 A 0 A_SpawnItemEx("TimeSlowWatcher")
+TNT1 A 0 A_GiveInventory("SlowedPower", 1)
+TNT1 A 0 A_GiveInventory("PowerSlowFade", 1)
+stop
+}
+}
+
+actor SlowedPower : PowerupGiver
+{
+Speed 0.67
+powerup.duration 105
+powerup.type "PowerSlow"
++INVENTORY.AUTOACTIVATE
++INVENTORY.ALWAYSPICKUP
+states
+{
+Pickup:
+TNT1 A 0 
+
+TNT1 A 175
+stop
+}
+}
+
+actor PowerSlow : PowerSpeed
+{
+Speed 0.67
+//Powerup.Color "55 00 55", 0.4
+}
+
+actor PowerSlowFade : Powerup
+{
+powerup.duration 0x7FFFFFFD
+Powerup.Color "55 00 55", 0.4
+}
+
+actor TimeSlowWatcher
+{
+Height 0
+Radius 0
++NOINTERACTION
+-SOLID
++NOGRAVITY
++MISSILE
+States
+{
+Spawn:
+TNT1 A 0 
+TNT1 A 3 A_GiveToTarget("TimeSlowFX", 1)
+TNT1 A 0 A_JumpIfInTargetInventory("PowerSlow", 1, "Spawn")
+TNT1 A 0 A_TakeFromTarget("PowerSlowFade", 1)
+stop
+}
+}
+
+actor TimeSlowFX : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
+-INVBAR
+States
+{
+Use:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("TimeSlowGFX", random(16, 48), 0, Random(16,48), 0, 0, 0, random(0, 359))
+stop
+}
+}
+
+actor TimeSlowGFX
+{
++FLOATBOB
++NOGRAVITY
++THRUACTORS
++CLIENTSIDEONLY
++FORCEXYBILLBOARD
++MISSILE
++DONTBLAST
++BRIGHT
+Damage(0)
+Scale 2.5
+Height 0
+Radius 0
+States
+{
+Spawn:
+SLOD DCBA 4 A_Fadeout(0.2)
+loop
+}
+}

@@ -1,0 +1,34 @@
+// Bond Man
+
+[IntroStrings]
+"Let's try this bonding exercise!"
+"Make way for the legendary Bondman!"
+"Let's stick it to them!"
+
+[FragStrings]
+"I don't have a glue pun for that one, that was just sad!"
+"Let that stick in your mind, next time!"
+"These aren't normal glue sticks, $player_killed!"
+
+[KilledStrings]
+"Guh!? Did I make a misstep?!"
+"This isn't how it goes!"
+"Quit monkeying around!"
+
+[RoamingStrings]
+"I've lived a quiet tale, what do you have?"
+"All good procedures are slow and delicate!"
+"You won't forget me, $player_random_notself!"
+"I'm the glue to all of your rubbish rubber!"
+
+[RareRoamingStrings]
+"Mondbam is havig a stronk. Call an bondulance..."
+"The Phantom Robot Master will handle it all!"
+
+[WinStrings]
+"No longer forgotten, Bondman wins!"
+"Like a piece of sticky tack stuck to your shoe, I'm forgotten, but still here!"
+
+[LoseStrings]
+"Have I dried up? How..."
+"What a rip off! I had that!"

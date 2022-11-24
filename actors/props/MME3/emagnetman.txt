@@ -1,0 +1,91 @@
+actor EMagFly : Magfly 20821
+{
+//$Category MM8BDME-Interactive Props
+//$Arg0 Moving?
+//$Arg0Enum { 0 = "Yes"; 1 = "No"; }
+//$Arg0Type 11
+//$Arg1 Movement Speed
+Translation "41:41=117:117","216:216=72:72"
++SOLID
++NOGRAVITY
++CANPASS
++ACTIVATEPCROSS
++ACTIVATEMCROSS
+height 64
+radius 32
+scale 2.5
+States
+{
+Spawn:
+MAGF A 0
+MAGF A 0 ACS_NamedExecuteAlways("core_stickyLifts",0,STICKYMODE_MAGFLY)
+MAGF A 0 A_JumpIf(Args[0] > 0, "SpeedCheck")
+Goto Spawn2
+Spawn2:
+MAGF AB 3 A_SpawnItemEx("EMagParticleSpawner", 0, 0, -(z-floorz), momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+loop
+SpeedCheck:
+MAGF A 0 A_JumpIf(Args[1] <= 0, "Move1")
+Goto Move2
+Move1:
+MAGF AB 3 A_SpawnItemEx("EMagParticleSpawner", 0, 0, -(z-floorz), momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+MAGF A 0 A_Stop
+MAGF A 0 A_Recoil(-5)
+Loop
+Move2:
+MAGF AB 3 A_SpawnItemEx("EMagParticleSpawner", 0, 0, -(z-floorz), momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+MAGF A 0 A_Stop
+MAGF A 0 A_Recoil(-Args[1])
+Loop
+}
+}
+
+actor EMegaMagFly 21670
+{
+//$Category MM8BDME-Props
+Translation "41:41=117:117","216:216=72:72"
++CLIENTSIDEONLY
+scale 7.5
+-SOLID
+States
+{
+Spawn:
+SMGF AB 3
+loop
+}
+}
+
+actor EMagParticleSpawner : MagParticleSpawner
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 AA 0 A_SpawnItemEx("EMagParticle", random(-32, 32), random(-32, 32), Random(0, 8), momx, momy, random(4, 10), 0, SXF_ABSOLUTEMOMENTUM)
+TNT1 A 1
+TNT1 AA 0 A_SpawnItemEx("EMagParticle", random(-32, 32), random(-32, 32), Random(0, 8), momx, momy, random(4, 10), 0, SXF_ABSOLUTEMOMENTUM)
+TNT1 A 1
+TNT1 AA 0 A_SpawnItemEx("EMagParticle", random(-32, 32), random(-32, 32), Random(0, 8), momx, momy, random(4, 10), 0, SXF_ABSOLUTEMOMENTUM)
+TNT1 A 1
+stop
+}
+}
+
+actor EMagParticle : EMagParticleSpawner
+{
+-FLOORHUGGER
++BRIGHT
+States
+{
+Spawn:
+MGF9 A 0
+MGF9 A 0 A_Jump(128, "Spawn2")
+MGF9 A 5 
+MGF9 A 1 A_Fadeout(0.1)
+wait
+Spawn2:
+MGF9 C 5
+MGF9 C 1 A_Fadeout(0.1)
+wait
+}
+}

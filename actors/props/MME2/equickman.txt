@@ -1,0 +1,29 @@
+actor EQuickBeam : QuickBeam
+{
+Damage 0
+damagetype "Beam"
++BLOODLESSIMPACT
++CLIENTSIDEONLY
+Translation "41:41=207:207"
+}
+
+actor EQuickBeamShooter 20507
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+TNT1 A 1 
+loop
+Fire:
+TNT1 A 1
+TNT1 A 0 A_CustomMissile("EQuickBeam",0,0,0,2,0)
+Goto Fire+1
+}
+}
+
+actor EHotHead : HotHead 20532
+{
+//$Category MM8BDME-Props
+Translation "41:41=207:207"
+}

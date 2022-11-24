@@ -1,0 +1,159 @@
+actor MagmaBazookaWep : BaseMM8BDMWep 10028
+{
+//$Category MM8BDM-Weapons
+//$Title Magma Bazooka
+//$Sprite MGM1A0
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+weapon.ammotype "MagmaBazookaAmmo"
+Weapon.SlotNumber 4
+Obituary "$OB_MAGMABAZOOKA"
+Tag "$TAG_MAGMABAZOOKA"
+Inventory.Pickupmessage "$PU_MAGMABAZOOKA"
+inventory.icon "MAGMAI"
+States
+{
+SpawnLoop:
+MGM1 A -1
+loop
+Ready:
+MGHD A 0 ACS_ExecuteAlways(998,0,191,0)
+MGHD A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+MGHD A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+MGHD A 1 A_Raise
+Loop
+Altfire:
+MGHD A 0 A_JumpIfNoAmmo("NoAmmo")
+MGHD A 0 A_PlaySoundEx("weapon/magmabazooka","Weapon")
+MGHD A 0 A_FireCustomMissile("MagmaBazooka1",0,1,8,0)
+MGHD A 0 A_FireCustomMissile("MagmaBazooka1",-16,0,8,0)
+MGHD A 0 A_FireCustomMissile("MagmaBazooka1",16,0,8,0)
+MGHD DE 3
+MGHD A 7
+MGHD A 0 A_Refire("Altfire")
+Goto Ready+1
+Fire:
+TNT1 A 0 A_StopSoundEx("SoundSlot5")
+MGHD A 0 A_TakeInventory("WeaponCharge", 999)
+MGHD A 0 ACS_ExecuteAlways(991,0,191,0)
+MGHD A 0 A_JumpIfNoAmmo("NoAmmo")
+MGHD A 0 A_Refire
+MGHD A 0 A_PlaySoundEx("weapon/magmabazooka","Weapon")
+MGHD A 0 A_FireCustomMissile("MagmaBazooka1",0,1,8,0)
+MGHD A 0 A_FireCustomMissile("MagmaBazooka1",-16,0,8,0)
+MGHD A 0 A_FireCustomMissile("MagmaBazooka1",16,0,8,0)
+MGHD DE 3
+MGHD A 4
+MGHD A 0 A_Refire
+Goto Ready+1
+Fire2:
+TNT1 A 0 A_StopSoundEx("SoundSlot5")
+MGHD A 0 A_TakeInventory("WeaponCharge", 999)
+MGHD A 0 ACS_ExecuteAlways(991,0,191,0)
+MGHD A 0 A_PlaySoundEx("weapon/magmabazooka","Weapon")
+MGHD A 0 A_FireCustomMissile("MagmaBazooka2",0,0,8,0)
+MGHD A 0 A_FireCustomMissile("MagmaBazooka2",-16,0,8,0)
+MGHD A 0 A_FireCustomMissile("MagmaBazooka2",16,0,8,0)
+MGHD A 0 A_TakeInventory("MagmaBazookaAmmo", 6, TIF_NOTAKEINFINITE)
+MGHD DE 6
+MGHD A 5
+MGHD A 0 A_Refire
+Goto Ready+1
+Hold:
+MGHD A 0 A_JumpIfNoAmmo("NoAmmo")
+MGHD A 0 A_GunFlash("Sound.Magma", GFF_NOEXTCHANGE)
+Hold.b:
+MGHD A 0 A_JumpIfInventory("WeaponCharge", 19, "Charge2Start")// A_PlaySoundEx("weapon/magmacharge1", "Weapon")
+MGHD A 0 A_GiveInventory("WeaponCharge", 1)
+MGHD A 1
+MGHD A 0 A_Refire("Hold.a")
+goto fire
+Hold.a:
+MGHD F 1
+MGHD A 0 A_Refire("Hold.b")
+goto Fire
+BotFire:
+MGHD G 0 A_Jump(16, "Fire2")
+MGHD G 0 A_Refire("Charge2")
+Goto Fire
+Charge2Start:
+Charge2:
+MGHD B 1 ACS_ExecuteAlways(991,0,192,0,2)
+MGHD G 0 A_Refire("Charge2.a")
+MGHD A 0 A_JumpIfInventory("MagmaBazookaAmmo", 6, "Fire2")
+Goto Fire
+Charge2.a:
+MGHD A 1 ACS_ExecuteAlways(991,0,191,0)
+MGHD A 0 A_Refire("Charge2.b")
+MGHD A 0 A_JumpIfInventory("MagmaBazookaAmmo", 6, "Fire2")
+goto Fire
+Charge2.b:
+MGHD C 1 ACS_ExecuteAlways(991,0,193,0,3)
+MGHD A 0 A_JumpIfInventory("IsBot", 1, "BotFire")
+MGHD A 0 A_Refire("Charge2")
+MGHD A 0 A_JumpIfInventory("MagmaBazookaAmmo", 6, "Fire2")
+goto Fire
+NoAmmo:
+MGHD A 1 ACS_Execute(979,0)
+Goto Ready+1
+
+Sound.Magma:
+TNT1 A 0 A_JumpIfInventory("WeaponCharge",19,"Sound.Magma2")
+TNT1 A 5 A_PlaySoundEx("weapon/magmacharge1", "Weapon", 0)
+TNT1 A 1 A_JumpIfInventory("WeaponCharge",1,"Sound.Magma")
+stop
+Sound.Magma2:
+TNT1 A 11 A_PlaySoundEx("weapon/magmacharge2", "Weapon", 0)
+TNT1 A 1 A_JumpIfInventory("WeaponCharge",1,"Sound.Magma")
+stop
+}
+}
+
+actor MagmaBazookaAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor MagmaBazooka1
+{
+PROJECTILE
++BRIGHT
+Damage (15)
+Speed 26
+Obituary "$OB_MAGMABAZOOKA"
+damagetype "MagmaBazooka1"
+Radius 4
+Height 8
+scale 2.5
+States
+{
+Spawn:
+MGM1 BCDEFG 2
+loop
+Death:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor MagmaBazooka2 : MagmaBazooka1
+{
+Damage (33)
+damagetype "MagmaBazooka2"
+Radius 24
+Height 16
+States
+{
+Spawn:
+MGM2 ABCDEF 2
+loop
+}
+}

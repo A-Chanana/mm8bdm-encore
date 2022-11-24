@@ -1,0 +1,154 @@
+//Buster Upgrades
+
+graphic MAEBUP, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch MAEBA0, 0, 0
+}
+
+graphic FAKEUP, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch FAKEA0, 0, 0
+}
+
+graphic JOEBUP, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch JOEBI0, 0, 0
+}
+
+//Items
+
+graphic SAROICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch SAROA0, 0, 0
+}
+
+//MMB2 Weps
+
+graphic TBOMICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch TBOMH0, 0, 0
+}
+
+graphic TSWIICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch TSWIA0, 0, 0
+}
+
+graphic BVULICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch BVULH0, 0, 0
+}
+
+graphic BRBUICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch BRBUI0, 0, 0
+}
+
+graphic FSHWICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch FSHWE0, 0, 0
+}
+
+graphic FMIXICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch FMIXE0, 0, 0
+}
+
+graphic BWINICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch BWINA0, 0, 0
+}
+
+graphic CNEDICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch CNEDA0, 0, 0
+}
+
+graphic CRINICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch CRINA0, 0, 0
+}
+
+//Misc Weps
+
+graphic BPSTICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch BPSTZ0, 0, 0
+}
+
+graphic BZRRICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch BZRRZ0, 0, 0
+}
+
+graphic SSPIICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch SSPIZ0, 0, 0
+}
+
+graphic RRNGICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch RRNGZ0, 0, 0
+}
+
+graphic ONSGICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch ONSGZ0, 0, 0
+}
+
+graphic JMETICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch JMETA0, 0, 0
+}
+
+graphic RSPNICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch RSPNZ0, 0, 0
+}
+
+graphic NVBMICON, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch NVBMA0, 0, 0
+}

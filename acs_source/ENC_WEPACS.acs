@@ -1,0 +1,142 @@
+#library "encweps"
+#include "zcommon.acs"
+#include "8bdmlib.acs"
+
+#DEFINE HS_MISSILES 5
+int HomingSniperSlot[64][HS_MISSILES];
+
+//State change
+script "StateChange" (int state)
+{
+if(GetActorProperty(0,APROP_HEALTH)>0){
+switch(state)
+{
+case 1:
+SetActorState (0, "See");
+break;
+case 2:
+SetActorState (0, "Missile");
+break;
+}
+}
+}
+
+//Checks if the target is stunned/frozen
+script "StunCheck" (int type)
+{
+Switch(type)
+	{
+	Case 0:
+	if(CheckInventory("TrainingBotPermaStop") ||
+	CheckInventory("PowerShock") ||
+	CheckInventory("ChillFreezeTimer") ||
+	CheckInventory("TimeStoppedCounter"))
+	{
+	//printbold(s:"stunned");
+	SetResultValue(1);
+	}
+	else{SetResultValue(0);}
+	break;
+	Case 1:
+	if(CheckInventory("TrainingBotPermaStop") ||
+	CheckInventory("ChillFreezeTimer") ||
+	CheckInventory("TimeStoppedCounter"))
+	{
+	//printbold(s:"frozen");
+	SetResultValue(1);
+	}
+	else{SetResultValue(0);}
+	break;
+	}
+}
+
+//Hadouken health checker
+script "HadoukenHPCheck" (void)
+{
+SetActivatorToTarget(0);
+if(GetActorProperty(0,APROP_HEALTH)>0){
+	SetResultValue(GetActorProperty(0,APROP_HEALTH));
+}
+}
+
+//HyperFighting Homing Sniper scripts
+Script "HF_HomingSniperSet" (int slot, int ptr)
+{
+int pln;
+If(CheckActorInventory(pln+1000, "HomingFired")){terminate;}
+if(PlayerNumber() < 0)
+	{
+	pln = ACS_ExecuteWithResult(257, 1);
+	HomingSniperSlot[pln][slot] = ACS_NamedExecuteWithResult("core_getptrtid", AAPTR_TRACER);
+	GiveActorInventory(pln+1000, "HSFlagPickup", 1);
+	GiveActorInventory(pln+1000, "HomingNewTarget", 1);
+	}
+else
+	{
+	pln=PlayerNumber();
+	HomingSniperSlot[pln][slot] = ptr;
+	}
+}
+
+Script "HF_HomingSniperFire" (int slot)
+{
+int pln = ACS_ExecuteWithResult(257, 1);
+
+SetPointer(AAPTR_TRACER, HomingSniperSlot[pln][slot]);
+HomingSniperSlot[pln][slot] = 0;
+}
+
+Script "HF_HomingSniperGet" (int slot)
+{
+int pln = PlayerOrProjectile();
+SetResultValue(HomingSniperSlot[pln][slot]);
+}
+
+
+Script "HF_HomingSniperClear" (void)
+{
+int pln = PlayerOrProjectile();
+
+For(int i = 0; i < HS_MISSILES; i++)
+	{
+	HomingSniperSlot[pln][i] = 0;
+	}
+}
+
+Script "HF_HomingSniperVisibility" (void)
+{
+int pln = PlayerOrProjectile();
+int tid = pln+1000;
+int ttl = 0;
+int f = 0;
+if(CheckActorInventory(tid, "HomingNewTarget")){terminate;}
+For(int i = 0; i < HS_MISSILES; i++)
+	{
+	if(HomingSniperSlot[pln][i] > 0)
+		{
+		If (!CheckSight(ActivatorTID(), HomingSniperSlot[pln][i], 0))
+			{
+			GiveActorInventory(HomingSniperSlot[pln][i], "HomingLockBroken", 1);
+			HomingSniperSlot[pln][i] = 0;
+			}
+		}
+	if(HomingSniperSlot[pln][i] == 0){f++;}
+	}
+ttl = HS_MISSILES - f;
+if(CheckActorInventory(tid, "HomingSniperFlag") != ttl)
+	{
+	TakeActorInventory(tid, "HomingSniperFlag", HS_MISSILES);
+	if(ttl>0){GiveActorInventory(tid, "HomingSniperFlag", ttl);}
+	}
+
+}
+
+function int PlayerOrProjectile (void)
+{
+if(PlayerNumber() < 0)
+	{
+	return(ACS_ExecuteWithResult(257, 1));
+	}
+
+Return(PlayerNumber());
+}

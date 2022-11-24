@@ -1,0 +1,2 @@
+startuptitle = "Mega Man 8-Bit Deathmatch - Encore!"
+startupcolors = "f878f8","1f0052"

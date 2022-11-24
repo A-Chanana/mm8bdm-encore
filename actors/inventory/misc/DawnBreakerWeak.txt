@@ -1,0 +1,151 @@
+actor DawnBreakerWeakWep: BaseMM8BDMWep
+{
+	dropitem "DawnBreakerWeakWep"
+    Weapon.AmmoUse 4
+    Weapon.AmmoGive 28
+    Weapon.SlotNumber 2
+    Inventory.Pickupmessage "$PU_DAWNBREAKER"
+    Obituary "$OB_DAWNBREAKER"
+    Tag "$TAG_DAWNBREAKER"
+    weapon.ammotype "DawnBreakerWeakAmmo"
+    inventory.icon "ALPHWI"
+    States
+    {
+    SpawnLoop:
+        DBR1 A -1
+        loop 
+    Ready:
+        DBRH A 0 ACS_ExecuteAlways(998,0,236)
+        DBRH A 1 A_WeaponReady
+        Goto Ready+1
+    Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        DBRH A 1 A_Lower
+        Loop
+    Select:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+        DBRH A 1 A_Raise
+        Loop
+    Fire:
+        DBRH A 0 A_JumpIfNoAmmo("NoAmmo")
+        DBRH A 1
+        goto Fire1
+    AltFire:
+        DBRH A 0 A_JumpIfNoAmmo("NoAmmo")
+        DBRH A 3
+        goto Fire1
+    BotFire:
+        DBRH A 0 A_Jump(16, "Fire2")
+        DBRH A 0 A_Refire("Hold3")
+        Goto Fire2
+    Fire1:
+        DBRH A 0 ACS_ExecuteAlways(991,0,236)
+        DBRH A 0 A_StopSoundEx ("SoundSlot5") 
+        DBRH A 0 A_TakeInventory("WeaponCharge",500)
+        DBRH A 0 A_ClearRefire
+        DBRH GH 1
+        DBRH A 0 A_PlaySoundEx("weapon/commandoshot","Weapon")
+        DBRH A 0 A_FireCustomMissile("BlastRuneWave2",0,1,8,0)
+        DBRH IJKL 1
+        TNT1 A 30
+        DBRH BC 2
+        Goto Ready+1
+    Fire2:
+        DBRH A 0 ACS_ExecuteAlways(991,0,236)
+        DBRH D 0 A_TakeInventory("WeaponCharge",500)
+        DBRH D 0 A_ClearRefire
+        DBRH D 0 A_JumpIfInventory("DawnBreakerWeakAmmo", 4, "Fire2")
+        TNT1 A 1
+        DBRH GH 1
+        DBRH A 0 A_PlaySoundEx("weapon/commandoshot","Weapon")
+        DBRH A 0 A_FireCustomMissile("BlastRuneWave2",0,1,8,0)
+        DBRH IJKL 1
+        TNT1 A 30
+        DBRH BC 2
+        Goto Ready+1
+    NoAmmo:
+        DBRH A 1 ACS_Execute(979,0)
+        Goto Ready+1
+    }
+}
+
+actor DawnBreakerWeakAmmo : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 28
+    +INVENTORY.IGNORESKILL
+}
+
+actor BlastRuneWave2
+{
+    PROJECTILE
+    +FLOORHUGGER
+    +THRUACTORS
+    +SEEKERMISSILE
+    height 8
+    radius 8
+    speed 30
+    mass 1
+    reactiontime 28
+	translation "192:192=196:196", "198:198=70:70"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SetAngle(angle+(mass-1)*10)
+        TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneA", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_JumpIfTargetInLOS("SpawnChase", 0, JLOSF_PROJECTILE)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+		TNT1 A 0 A_SetAngle(angle+(mass-1)*10)
+        TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneB", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_JumpIfTargetInLOS("SpawnChase", 0, JLOSF_PROJECTILE)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+		TNT1 A 0 A_SetAngle(angle+(mass-1)*10)
+        TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneD", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_JumpIfTargetInLOS("SpawnChase", 0, JLOSF_PROJECTILE)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+		TNT1 A 0 A_SetAngle(angle+(mass-1)*10)
+        TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneM", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_JumpIfTargetInLOS("SpawnChase", 0, JLOSF_PROJECTILE)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+        loop
+    SpawnChase:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneA", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+		TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneB", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+		TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneD", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+		TNT1 A 0 A_ChangeVelocity(30, 0, 0, CVF_RELATIVE|CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlastRuneM", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
+        TNT1 A 0 A_SeekerMissile(2, 10, SMF_LOOK, 50, 10)
+        TNT1 A 0 A_CountDown
+        TNT1 A 3
+        loop
+    Death:
+        TNT1 A 0
+        stop
+    }
+}

@@ -1,0 +1,226 @@
+actor EncoreGockRoach 20626
+{
+//$Category EncoreProps
+//$Arg0 Activity
+//$Arg0Enum { 0 = "Moves randomly"; 1 = "Keeps still"; }
+//$Arg0Type 11
++CANPASS
+-ISMONSTER
+-COUNTKILL
+-SHOOTABLE
+-SOLID
+//+CLIENTSIDEONLY
+scale 2.5
+Height 8
+Radius 12
+Speed 8
+Translation "223:223=132:132", "89:89=230:230"
+States
+{
+Spawn:
+GOCK ABABAB 6
+GOCK A 0 A_JumpIf(args[0]==1,"DontMove")
+GOCK A 0 A_Jump(128,"Spawn")
+GOCK CCCDDDEEECCCDDDEEECCCDDDEEECCCDDDEEECCCDDDEEECCCDDDEEECCCDDDEEE 1 A_Wander
+loop
+DontMove:
+GOCK AB 6
+loop
+TimeStopped:
+GOCK A 0 Thing_SetTranslation (101, 701)
+GOCK ABA 9
+GOCK B 8
+GOCK A 0 Thing_SetTranslation (101, 702)
+GOCK AB 12
+GOCK A 11
+GOCK A 0 Thing_SetTranslation (101, 703)
+WaitingForTimeToResume:
+GOCK A 1
+loop
+Cooldown:
+GOCK A 0 Thing_SetTranslation (101, 702)
+GOCK AB 12
+GOCK A 11
+GOCK A 0 Thing_SetTranslation (101, 701)
+GOCK ABA 9
+GOCK B 8
+GOCK A 0 Thing_SetTranslation (101, 704)
+Goto Spawn
+}
+}
+
+actor EncoreLava : MMSplash
+{
++BRIGHT
+States
+{
+Spawn:
+ELVS B 0
+ELVS B 0 A_PlaySoundEx("misc/lava","Voice")
+ELVS ABCD 5
+stop
+}
+}
+actor EncoreTimePiece 2050
+{
+//$Category EncoreProps
++SOLID
++SHOOTABLE
++NOTAUTOAIMED
++NODAMAGETHRUST
++FORCEYBILLBOARD
++NOBLOOD
++DONTBLAST
++QUICKTORETALIATE
+-NOGRAVITY
+scale 2.5
+height 64
+Radius 32
+Health 9999999
+mass 99999
+painchance 256
+States
+{
+Spawn:
+	HRGL A 1
+	HRGL A 1 A_ChangeFlag (NOPAIN, 0)
+Loop
+Pain:
+	HRGL A 1
+	HRGL A 1 ACS_NamedExecuteWithResult ("GogogadgetTimeWillNowStop")
+Goto Spawn
+TimeStopped:
+	TNT1 A 0 A_ChangeFlag (NOPAIN, 1)
+	TNT1 A 0 A_PlaySound (HRGLFLIP, 7)
+	TNT1 A 1 A_SpawnItemEX ("EncoreTimePieceFlipVisual", 0, 0, 1, 0, 0, 15)
+	TNT1 A 33
+WaitingTime:
+	HRGL GHI 6
+	Loop
+}
+}
+actor EncoreTimePieceFlipVisual
+{
+-SOLID
+-SHOOTABLE
++NOTAUTOAIMED
++NODAMAGETHRUST
++FORCEYBILLBOARD
++NOBLOOD
++DONTBLAST
++QUICKTORETALIATE
+-NOGRAVITY
+scale 2.5
+height 64
+Radius 32
+States
+{
+Spawn:
+	HRGL A 1
+FlippingTime:
+	HRGL BCDEFA 2 A_CheckFloor("MyTimeHasCome")
+	Loop
+MyTimeHasCome:
+	HRGL GHI 1
+	TNT1 A -1
+	Stop
+}
+}
+actor "Lil' Gregor" 1915
+{
+//$Category EncoreProps
++CANPASS
++MISSILE
+-ISMONSTER
+-COUNTKILL
+-SHOOTABLE
+-SOLID
+-NOGRAVITY
++THRUACTORS
++BOUNCEONWALLS
+-BOUNCEONFLOORS
+Bouncetype Doom
+Bouncefactor 1
+Bouncesound "ROACHSQK"
+//+CLIENTSIDEONLY
+scale 2.5
+Height 8
+Radius 12
+Speed 30
+Translation "223:223=132:132", "89:89=230:230"
+States
+{
+Spawn:
+GRGR A 1
+Spinningtime:
+GRGR ABCDEFGHIJKLMNOP 3 A_ChangeVelocity(5, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+Loop
+Timestopped:
+GRGR A 0 Thing_SetTranslation(0, 701)
+GRGR ABCDEFG 5 A_ChangeVelocity(3, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+GRGR A 0 Thing_SetTranslation(0, 702)
+GRGR HIJKL 7 A_ChangeVelocity(1, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+GRGR M 0 Thing_SetTranslation(0, 703)
+GRGR M 1 A_ChangeVelocity(0, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+WaitingOnResumingTime:
+GRGR M 1
+Loop
+Cooldown:
+GRGR N 0 Thing_SetTranslation(0, 702)
+GRGR OPABC 7 A_ChangeVelocity(1, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+GRGR A 0 Thing_SetTranslation(0, 701)
+GRGR DEFGHIJ 5 A_ChangeVelocity(3, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+GRGR A 0 Thing_SetTranslation(0, 704)
+GRGR KLMNOP 3 A_ChangeVelocity(5, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+Goto SpinningTime
+}
+}
+actor "Randall" 1916
+{
+//$Category EncoreProps
++CANPASS
++MISSILE
+-ISMONSTER
+-COUNTKILL
+-SHOOTABLE
+-SOLID
+-NOGRAVITY
++THRUACTORS
++BOUNCEONWALLS
+-BOUNCEONFLOORS
+Bouncetype Doom
+Bouncefactor 1
+Bouncesound "ROCHBUMP"
+//+CLIENTSIDEONLY
+scale 2.5
+Height 8
+Radius 12
+Speed 30
+Translation "223:223=132:132", "89:89=230:230"
+States
+{
+Spawn:
+ROCH A 1
+Spinningtime:
+ROCH ABCDEFGHIJKLMNOP 3 A_ChangeVelocity(5, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+Loop
+Timestopped:
+ROCH A 0 Thing_SetTranslation(0, 701)
+ROCH ABCDEFG 5 A_ChangeVelocity(3, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+ROCH A 0 Thing_SetTranslation(0, 702)
+ROCH HIJKL 7 A_ChangeVelocity(1, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+ROCH M 0 Thing_SetTranslation(0, 703)
+ROCH M 1 A_ChangeVelocity(0, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+WaitingOnResumingTime:
+ROCH M 1
+Loop
+Cooldown:
+ROCH N 0 Thing_SetTranslation(0, 702)
+ROCH OPABC 7 A_ChangeVelocity(1, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+ROCH A 0 Thing_SetTranslation(0, 701)
+ROCH DEFGHIJ 5 A_ChangeVelocity(3, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+ROCH A 0 Thing_SetTranslation(0, 704)
+ROCH KLMNOP 3 A_ChangeVelocity(5, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+Goto SpinningTime
+}
+}

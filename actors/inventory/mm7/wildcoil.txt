@@ -1,0 +1,215 @@
+actor WildCoilWep : BaseMM8BDMWep 10084
+{
+//$Category MM8BDM-Weapons
+//$Title Wild Coil
+//$Sprite WEA3K0
+dropitem "WildCoilWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_WILDCOIL"
+Obituary "$OB_WILDCOIL"
+Tag "$TAG_WILDCOIL"
+weapon.ammotype "WildCoilAmmo"
+inventory.icon "WCOISI"
+States
+{
+SpawnLoop:
+WEA3 K -1
+loop
+Ready:
+WCOI A 0 ACS_ExecuteAlways(998,0,58)
+WCOI A 1 //ACS_ExecuteAlways(991,0,58) 
+WCOI A 1 A_WeaponReady
+Goto Ready+2
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+WCOI A 1
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+WCOI A 1 
+Loop
+Fire:
+WCOI A 0 A_JumpIfNoAmmo("NoAmmo")
+WCOI A 1
+goto Hold
+AltFire:
+WCOI A 0 A_JumpIfNoAmmo("NoAmmo")
+WCOI A 3
+goto Fire1
+Hold:
+WCOI A 0 A_JumpIfNoAmmo("NoAmmo")
+WCOI A 0 A_JumpIfInventory("WeaponCharge",4,"Hold2")
+WCOI A 0 A_JumpIfInventory("WeaponCharge",3,"HoldStart")
+WCOI A 2 A_GiveInventory("WeaponCharge",1)
+WCOI A 0 A_Refire
+Goto Fire1
+HoldStart:
+WCOI A 0 A_PlaySoundEx("weapon/coilstart", "Weapon")
+Goto Hold2
+Hold2:
+WCOI A 0 A_JumpIfInventory("WeaponCharge",23,"Hold3")
+WCOI A 0 A_JumpIfInventory("WeaponCharge",22,"HoldStart2")
+WCOI G 1 ACS_ExecuteAlways(991,0,74,0,2)
+WCOI G 0 A_Refire("Hold2.a")
+Goto Fire1
+Hold2.a:
+WCOI A 1 ACS_ExecuteAlways(991,0,58)
+WCOI A 0 A_GiveInventory("WeaponCharge",1)
+WCOI G 0 A_Refire("Hold2")
+Goto Fire1
+HoldStart2:
+SAPT A 0 ACS_ExecuteAlways(974,0)
+NCRU L 0 A_GunFlash("Sound.BusterCharge", GFF_NOEXTCHANGE)
+WCOI A 0 A_GiveInventory("WeaponCharge",1)
+Goto Hold3
+Hold3:
+WCOI H 1 ACS_ExecuteAlways(991,0,75,0,4)
+WCOI H 0 A_Refire("Hold3.a")
+Goto Fire2
+Hold3.a:
+WCOI I 1 ACS_ExecuteAlways(991,0,76,0,5)
+WCOI H 0 A_Refire("Hold3.b")
+Goto Fire2
+Hold3.b:
+WCOI A 1 ACS_ExecuteAlways(991,0,58)
+WCOI A 0 A_JumpIfInventory("IsBot", 1, "BotFire")
+WCOI H 0 A_Refire("Hold3")
+Goto Fire2
+BotFire:
+WCOI A 0 A_Jump(16, "Fire2")
+WCOI H 0 A_Refire("Hold3")
+Goto Fire2
+Fire1:
+WCOI A 0 ACS_ExecuteAlways(991,0,58)
+WCOI A 0 A_StopSoundEx ("SoundSlot5") 
+WCOI A 0 A_TakeInventory("WeaponCharge",500)
+WCOI A 0 A_ClearRefire
+WCOI A 0 //A_PlaySoundEx("weapon/atomicfire","Weapon")
+WCOI A 0 A_TakeInventory("WildCoilAmmo",2,TIF_NOTAKEINFINITE)
+WCOI A 0 A_PlaySoundEx("weapon/coilfire1", "Weapon")
+WCOI A 0 A_FireCustomMissile("WildCoil",25,0,0,0)
+WCOI A 0 A_FireCustomMissile("WildCoil",-25,0,0,0)
+WCOI BCDEF 2
+WCOI RS 2
+Goto Ready+1
+Fire2:
+WCOI A 0 ACS_ExecuteAlways(991,0,58)
+HEAT G 0 A_TakeInventory("WeaponCharge",500)
+HEAT G 0 A_ClearRefire
+HEAT G 0 //A_PlaySoundEx("weapon/wild","Weapon")
+HEAT G 0 A_JumpIfInventory("WildCoilAmmo", 5, "Fire2r")
+HEAT G 0 A_TakeInventory("WildCoilAmmo",4,TIF_NOTAKEINFINITE)
+WCOI A 0 A_PlaySoundEx("weapon/coilfire1", "Weapon")
+WCOI A 0 A_FireCustomMissile("WildCoil",25,0,0,6)
+WCOI A 0 A_FireCustomMissile("WildCoil",-25,0,0,6)
+WCOI BCDEF 2
+TNT1 A 8
+WCOI RS 2
+Goto Ready+1
+Fire2r:
+WCOI A 0 A_TakeInventory("WildCoilAmmo",5,TIF_NOTAKEINFINITE)
+WCOI A 0 A_PlaySoundEx("weapon/coilfire2", "Weapon")
+WCOI A 0 A_FireCustomMissile("WildCoil2",25,0,0,6)
+WCOI A 0 A_FireCustomMissile("WildCoil2",-25,0,0,6)
+WCOI A 0 ACS_ExecuteAlways(991,0,58)
+WCOI BCDEF 2
+TNT1 A 8
+WCOI RS 2
+Goto Ready+1
+NoAmmo:
+WCOI A 1 ACS_Execute(979,0)
+WCOI A 0 A_Refire
+Goto Ready+1
+}
+}
+
+actor WildCoilAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor WildCoil
+{
+PROJECTILE
+Bouncetype Classic
++BOUNCEONWALLS
++CANBOUNCEWATER
++USEBOUNCESTATE 
+BounceSound "weapon/coilbounce1"
+Damage (25)
+height 16
+radius 12
+speed 20
+damagetype "WildCoil"
+Obituary "$OB_WILDCOIL"
+bouncefactor 1.0
+wallbouncefactor 1.0
+bouncecount 5
+scale 2.5
+-NOGRAVITY
+States
+{
+Spawn:
+WCOI J 0 
+WCOI J 0 ThrustThingZ(0,5,1,1)
+Goto Bouncing
+Bouncing:
+WCOI JKL 3
+WCOI M 3
+wait
+Bounce.Ceiling:
+Bounce.Floor:
+WCOI LKJ 1
+goto Bouncing
+Death:
+WCOI J 0 A_PlaySoundEx("weapon/coilexplode","Voice")
+TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}
+
+
+actor WildCoil2
+{
+PROJECTILE
+Bouncetype Classic
++BOUNCEONWALLS
++CANBOUNCEWATER
++USEBOUNCESTATE 
++BRIGHT
+BounceSound "weapon/coilbounce2"
+Damage (48)
+height 16
+radius 12
+speed 25
+bouncefactor 1.0
+damagetype "WildCoil2"
+Obituary "$OB_WILDCOIL"
+wallbouncefactor 1.0
+bouncecount 5
+scale 2.5
+-NOGRAVITY
+States
+{
+Spawn:
+WCOI J 0 
+WCOI J 0 ThrustThingZ(0,15,1,1)
+Goto Bouncing
+Bouncing:
+WCOI NOP 3
+WCOI Q 3
+wait
+Bounce.Ceiling:
+Bounce.Floor:
+WCOI PON 1
+goto Bouncing
+Death:
+WCOI J 0 A_PlaySoundEx("weapon/coilexplode","Voice")
+TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}

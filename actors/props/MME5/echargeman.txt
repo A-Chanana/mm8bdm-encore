@@ -1,0 +1,53 @@
+actor EChargemanSpike : ChargemanSpike 21656
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+EHZA E -1
+stop
+}
+}
+
+actor EChargemanSpikeSide : ChargemanSpike 23051
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+ECHS A -1
+stop
+}
+}
+
+actor EChargemanSpike2 : ChargemanSpike 23052
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+ECHS B -1
+stop
+}
+}
+
+actor ETruckJoe : ChargemanSpike 23053
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+ECHS C -1
+stop
+}
+}
+
+actor EMetallK1000 : MetallK1000
+{
+States
+{
+Spawn:
+EMTK ABCD 4 A_SpawnItemEx(MetallSmoke, 24, 0, 72, 0, 0, 4)
+loop
+}
+}

@@ -1,0 +1,74 @@
+#library "enccmpgn"
+#include "enc_bots.acs"
+
+//Campaign allies
+script "encore_addbotally" OPEN
+{
+	Delay(35*1);
+	if(GetCvar("enc_campaignallies")<1){terminate;}	
+	str eally1 = GetCvar("enc_campaignally1");
+	str eally2 = GetCvar("enc_campaignally2");
+	str eally3 = GetCvar("enc_campaignally3");
+	str command;
+	
+	command = StrParam(s:"addbot ", s:"\"", s:EnemyInfo[eally1][1], s:"\"", s:"\"", s:"dr. light team", s:"\"");
+	Delay(35*1);
+	ConsoleCommand(command);
+	
+	if(GetCvar("enc_campaignallies")<2){terminate;}	
+	
+	command = StrParam(s:"addbot ", s:"\"", s:EnemyInfo[eally2][1], s:"\"", s:"\"", s:"dr. light team", s:"\"");
+	Delay(35*1);
+	ConsoleCommand(command);
+	
+	if(GetCvar("enc_campaignallies")<3){terminate;}	
+	
+	command = StrParam(s:"addbot ", s:"\"", s:EnemyInfo[eally3][1], s:"\"", s:"\"", s:"dr. light team", s:"\"");
+	Delay(35*1);
+	ConsoleCommand(command);
+
+}
+
+script "encore_cmpgnallycount" OPEN
+{
+	if(GetCvar("enc_campaignhandler")==0){terminate;}
+	str levelname = StrParam(n:PRINTNAME_LEVEL);
+	
+	if(StrIcmp(levelname,"MAP01")==0 ||
+		StrIcmp(levelname,"MAP02")==0 ||
+		StrIcmp(levelname,"MAP03")==0 ||
+		StrIcmp(levelname,"TRAINING")==0 ||
+		StrIcmp(levelname,"BOTRUSH")==0 ||
+		StrIcmp(levelname,"MME1DW1")==0 ||
+		StrIcmp(levelname,"MME2DW3")==0)
+    {
+        SetCVar("enc_campaignallies",0);
+    }
+    else if(StrIcmp(levelname,"MME2AIR")==0 ||
+			StrIcmp(levelname,"MME2HEA")==0 ||
+			StrIcmp(levelname,"MME2QUI")==0 ||
+			StrIcmp(levelname,"MME2DW1")==0 ||
+			StrIcmp(levelname,"MME3TOP")==0 ||
+			StrIcmp(levelname,"MME5CHA")==0 ||
+			StrIcmp(levelname,"MME5GRA")==0 ||
+			StrIcmp(levelname,"MME6KNI")==0 ||
+			StrIcmp(levelname,"MME9SPL")==0 ||
+			StrIcmp(levelname,"MMB2KOM")==0 ||
+			StrIcmp(levelname,"MMB2CLO")==0 ||
+			StrIcmp(levelname,"MMEPRO")==0)
+    {
+        SetCVar("enc_campaignallies",2);
+    }
+    else
+    {
+        SetCVar("enc_campaignallies",1);
+    }
+}
+
+script "encore_cmpgnweaponset" OPEN
+{
+	if(GetCvar("enc_campaignhandler")==0){terminate;}
+	SetCVar("enc_customloadouts",7);
+	SetCVar("enc_sweaponslot0",6);
+	//print(s:"weapons set");
+}

@@ -1,0 +1,627 @@
+#library "encbots"
+#include "zcommon.acs"
+
+//Special Bots
+//Ported partially from Skirmish Bots
+
+#DEFINE SUPERADAPTOR 77
+#DEFINE TREBLEBOOST 178
+
+#DEFINE CUTMAN 720
+#DEFINE GUTSMAN 721
+#DEFINE ICEMAN 722
+#DEFINE BOMBMAN 723
+#DEFINE FIREMAN 724
+#DEFINE ELECMAN 725
+#DEFINE TIMEMAN 726
+#DEFINE OILMAN 727
+
+#DEFINE METALMAN 740
+#DEFINE AIRMAN 741
+#DEFINE BUBBLEMAN 742
+#DEFINE QUICKMAN 743
+#DEFINE CRASHMAN 744
+#DEFINE FLASHMAN 745
+#DEFINE HEATMAN 746
+#DEFINE WOODMAN 747
+#DEFINE DRWILYC 748
+#DEFINE DRWILYCSUIT 749
+#DEFINE DRWILYCAPSULEF 750
+#DEFINE DRWILYCAPSULEI 751
+#DEFINE ALIEN 755
+
+#DEFINE NEEDLEMAN 760
+#DEFINE MAGNETMAN 761
+#DEFINE GEMINIMAN 762
+#DEFINE HARDMAN 763
+#DEFINE TOPMAN 764
+#DEFINE SNAKEMAN 765
+#DEFINE SPARKMAN 766
+#DEFINE SHADOWMAN 767
+#DEFINE DOCROBOT 768
+
+#DEFINE BRIGHTMAN 780
+#DEFINE TOADMAN 781
+#DEFINE DRILLMAN 782
+#DEFINE PHARAOHMAN 783
+#DEFINE RINGMAN 784
+#DEFINE DUSTMAN 785
+#DEFINE DIVEMAN 786
+#DEFINE SKULLMAN 787
+
+#DEFINE GRAVITYMAN 800
+#DEFINE WAVEMAN 801
+#DEFINE STONEMAN 802
+#DEFINE GYROMAN 803
+#DEFINE STARMAN 804
+#DEFINE CHARGEMAN 805
+#DEFINE NAPALMMAN 806
+#DEFINE CRYSTALMAN 807
+#DEFINE DARKMAN1 808
+#DEFINE DARKMAN2 809
+#DEFINE DARKMAN3 810
+#DEFINE DARKMAN4 811
+#DEFINE GRAVITYMANFLIP 814
+#DEFINE CHARGEMANHOT 815
+
+#DEFINE BLIZZARDMAN 820
+#DEFINE CENTAURMAN 821
+#DEFINE FLAMEMAN 822
+#DEFINE KNIGHTMAN 823
+#DEFINE PLANTMAN 824
+#DEFINE TOMAHAWKMAN 825
+#DEFINE WINDMAN 826
+#DEFINE YAMATOMAN 827
+
+#DEFINE FREEZEMAN 840
+#DEFINE JUNKMAN 841
+#DEFINE BURSTMAN 842
+#DEFINE CLOUDMAN 843
+#DEFINE SPRINGMAN 844
+#DEFINE SLASHMAN 845
+#DEFINE SHADEMAN 846
+#DEFINE TURBOMAN 847
+#DEFINE SHADECHARGE1 850
+#DEFINE SHADECHARGE2 851
+
+#DEFINE TENGUMAN 860
+#DEFINE ASTROMAN 861
+#DEFINE SWORDMAN 862
+#DEFINE CLOWNMAN 863
+#DEFINE SEARCHMAN 864
+#DEFINE FROSTMAN 865
+#DEFINE GRENADEMAN 866
+#DEFINE AQUAMAN 867
+#DEFINE ORIGINDUO 868
+#DEFINE EVILROBOT 869
+
+#DEFINE CONCRETEMAN 880
+#DEFINE TORNADOMAN 881
+#DEFINE SPLASHWOMAN 882
+#DEFINE PLUGMAN 883
+#DEFINE JEWELMAN 884
+#DEFINE HORNETMAN 885
+#DEFINE MAGMAMAN 886
+#DEFINE GALAXYMAN 887
+
+#DEFINE BLADEMAN 900
+#DEFINE PUMPMAN 901
+#DEFINE COMMANDOMAN 902
+#DEFINE CHILLMAN 903
+#DEFINE SHEEPMAN 904
+#DEFINE STRIKEMAN 905
+#DEFINE NITROMAN 906
+#DEFINE SOLARMAN 907
+
+#DEFINE DYNAMOMAN 922
+#DEFINE COLDMAN 923
+#DEFINE GROUNDMAN 924
+#DEFINE PIRATEMAN 925
+#DEFINE BURNERMAN 926
+#DEFINE MAGICMAN 927
+#DEFINE KINGMAN 928
+
+#DEFINE BUSTERRODG 940
+#DEFINE MEGAWATERS 941
+#DEFINE HYPERSTORMH 942
+#DEFINE ENKER 943
+#DEFINE PUNK 944
+#DEFINE BALLADE 945
+#DEFINE QUINT 946
+#DEFINE BRGCOPY 950
+#DEFINE MWSCOPY 951
+#DEFINE HSHCOPY 952
+
+#DEFINE TERRA 960
+#DEFINE MERCURY 961
+#DEFINE VENUS 962
+#DEFINE MARS 963
+#DEFINE JUPITER 964
+#DEFINE SATURN 965
+#DEFINE URANUS 966
+#DEFINE PLUTO 967
+#DEFINE NEPTUNE 968
+#DEFINE SUNSTAR 969
+
+#DEFINE CPROTO 710
+#DEFINE CBASS 711
+#DEFINE CDUO 712
+#DEFINE CROLL 713
+#DEFINE DARKMANTWO 714
+#DEFINE DARKMANTHREE 715
+#DEFINE FAKEMAN 716
+#DEFINE RATHOR 717
+#DEFINE MAESTRO 718
+
+#DEFINE BULLETMAN 719
+#DEFINE STOVEMAN 728
+#DEFINE KOMUSOMAN 729
+#DEFINE CLOCKMANR 730
+#DEFINE CLOCKMANB 731
+#DEFINE AIRCONMAN 732
+#DEFINE COMPASSMAN 733
+
+
+#DEFINE MAXCHARACTERS 138
+
+str EnemyInfo[MAXCHARACTERS][3] = {
+{"RollingCutterWep", "cutman", CUTMAN},				//0
+{"SuperArmWep", "gutsman", GUTSMAN},				//1
+{"IceSlasherWep", "iceman", ICEMAN},				//2
+{"HyperBombWep", "bombman", BOMBMAN},				//3
+{"FireStormWep", "fireman", FIREMAN},				//4
+{"ThunderBeamWep", "elecman", ELECMAN},				//5
+{"TimeSlowWep", "timeman", TIMEMAN},				//6
+{"OilSliderWep", "oilman", OILMAN},					//7
+
+{"MetalBladeWep", "metalman", METALMAN},			//8
+{"AirShooterWep", "airman", AIRMAN},				//9
+{"BubbleLeadWep", "bubbleman", BUBBLEMAN},			//10
+{"QuickBoomerangWep", "quickman", QUICKMAN},		//11
+{"CrashBombWep", "crashman", CRASHMAN},				//12
+{"TimeStopperWep", "flashman", FLASHMAN},			//13
+{"AtomicFireWep", "heatman", HEATMAN},				//14
+{"LeafShieldWep", "woodman", WOODMAN},				//15
+
+{"NeedleCannonWep", "needleman", NEEDLEMAN},		//16
+{"MagnetMissileWep", "magnetman", MAGNETMAN},		//17
+{"GeminiLaserWep", "geminiman", GEMINIMAN},			//18
+{"HardKnuckleWep", "hardman", HARDMAN},				//19
+{"TopSpinWep", "topman", TOPMAN},					//20
+{"SearchSnakeWep", "snakeman", SNAKEMAN},			//21
+{"SparkShockWep", "sparkman", SPARKMAN},			//22
+{"ShadowBladeWep", "shadowman", SHADOWMAN},			//23
+
+{"FlashStopperWep", "brightman",  BRIGHTMAN},		//24
+{"RainFlushWep", "toadman",  TOADMAN},				//25
+{"DrillBombWep", "drillman",  DRILLMAN},			//26
+{"PharaohShotWep", "pharaohman",  PHARAOHMAN},		//27
+{"RingBoomerangWep", "Ringman",  RINGMAN},			//28
+{"DustCrusherWep", "dustman",  DUSTMAN},			//29
+{"DiveMissileWep", "diveman",  DIVEMAN},			//30
+{"SkullBarrierWep", "skullman",  SKULLMAN},			//31
+
+{"GravityHoldWep", "gravityman",  GRAVITYMAN},		//32
+{"WaterWaveWep", "waveman",  WAVEMAN},				//33
+{"PowerStoneWep", "stoneman",  STONEMAN},			//34
+{"GyroAttackWep", "gyroman",  GYROMAN},				//35
+{"StarCrashWep", "starman",  STARMAN},				//36
+{"ChargeKickWep", "chargeman",  CHARGEMAN},			//37
+{"NapalmBombWep", "napalmman",  NAPALMMAN},			//38
+{"CrystalEyeWep", "crystalman",  CRYSTALMAN},		//39
+
+{"BlizzardAttackWep", "blizzardman",  BLIZZARDMAN},	//40
+{"CentaurFlashWep", "centaurman",  CENTAURMAN},		//41
+{"FlameBlastWep", "flameman",  FLAMEMAN},			//42
+{"KnightCrushWep", "knightman",  KNIGHTMAN},		//43
+{"PlantBarrierWep", "plantman",  PLANTMAN},			//44
+{"SilverTomahawkWep", "tomahawkman",  TOMAHAWKMAN},	//45
+{"WindStormWep", "windman",  WINDMAN},				//46
+{"YamatoSpearWep", "yamatoman",  YAMATOMAN},		//47
+
+{"FreezeCrackerWep", "freezeman",  FREEZEMAN},		//48
+{"JunkShieldWep", "junkman",  JUNKMAN},				//49
+{"DangerWrapWep", "burstman",  BURSTMAN},			//50
+{"ThunderBoltWep", "cloudman",  CLOUDMAN},			//51
+{"WildCoilWep", "springman",  SPRINGMAN},			//52
+{"SlashClawWep", "slashman (rm7fc)",  SLASHMAN},	//53
+{"SlashClawWep", "slashman",  SLASHMAN},			//54
+{"NoiseCrushWep", "shademan",  SHADEMAN},			//55
+{"ScorchWheelWep", "turboman",  TURBOMAN},			//56
+
+{"TenguBladeWep", "tenguman",  TENGUMAN},			//57
+{"AstroCrushWep", "astroman",  ASTROMAN},			//58
+{"FlameSwordWep", "swordman",  SWORDMAN},			//59
+{"ThunderClawWep", "clownman",  CLOWNMAN},			//60
+{"HomingSniperWep", "searchman",  SEARCHMAN},		//61
+{"IceWaveWep", "frostman",  FROSTMAN},				//62
+{"FlashBombWep", "grenademan",  GRENADEMAN},		//63
+{"WaterBalloonWep", "aquaman",  AQUAMAN},			//64
+
+{"LightningBoltWep", "dynamoman",  DYNAMOMAN},		//65
+{"IceWallWep", "coldman",  COLDMAN},				//66
+{"SpreadDrillWep", "groundman",  GROUNDMAN},		//67
+{"RemoteMineWep", "pirateman",  PIRATEMAN},			//68
+{"WaveBurnerWep", "burnerman",  BURNERMAN},			//69
+{"MagicCardWep", "magicman",  MAGICMAN},			//70
+
+{"ConcreteShotWep", "concreteman",  CONCRETEMAN},	//71
+{"TornadoBlowWep", "tornadoman",  TORNADOMAN},		//72
+{"LaserTridentWep", "splashwoman",  SPLASHWOMAN},	//73
+{"PlugBallWep", "plugman",  PLUGMAN},				//74
+{"JewelSatelliteWep", "jewelman",  JEWELMAN},		//75
+{"HornetChaserWep", "hornetman",  HORNETMAN},		//76
+{"MagmaBazookaWep", "magmaman",  MAGMAMAN},			//77
+{"BlackHoleBombWep", "galaxyman",  GALAXYMAN},		//78
+
+{"TripleBladeWep", "blademan",  BLADEMAN},			//79
+{"WaterShieldWep", "pumpman",  PUMPMAN},			//80
+{"CommandoBombWep", "commandoman",  COMMANDOMAN},	//81
+{"ChillSpikeWep", "chillman",  CHILLMAN},			//82
+{"ThunderWoolWep", "sheepman",  SHEEPMAN},			//83
+{"ReboundStrikerWep", "strikeman",  STRIKEMAN},		//84
+{"WheelCutterWep", "nitroman",  NITROMAN},			//85
+{"SolarBlazeWep", "solarman",  SOLARMAN},			//86
+
+{"GrabBusterWep", "mercury",  MERCURY},				//87
+{"BubbleBombWep", "venus",  VENUS},					//88
+{"PhotonMissileWep", "mars",  MARS},				//89
+{"ElectricShockWep", "jupiter",  JUPITER},			//90
+{"BlackHoleWep", "saturn",  SATURN},				//91
+{"DeepDiggerWep", "uranus",  URANUS},				//92
+{"BreakDashWep", "pluto",  PLUTO},					//93
+{"SaltWaterWep", "neptune",  NEPTUNE},				//94
+
+{"SparkChaserWep", "terra", TERRA},					//95
+{"MirrorBusterWep", "enker", ENKER},				//96
+{"ScrewCrusherWep", "punk", PUNK},					//97
+{"BalladeCrackerWep", "ballade", BALLADE},			//98
+{"SakugarneWep", "quint", QUINT},					//99
+{"MaestroBuster", "maestro", MAESTRO},				//100
+{"ProtoBuster", "protoman", CPROTO},				//101
+{"ProtoBuster", "breakman", CPROTO},				//102
+{"BassBuster", "bass", CBASS},						//103
+{"DuoFist", "duo", CDUO},							//104
+{"JusticeMeteorWep", "originalduo", ORIGINDUO},		//105
+{"MM8Weapons", "evilrobot", EVILROBOT},				//106
+{"RandomWeapons", "dr. wily", DRWILYCSUIT},			//107
+{"LaserBuster", "megaman\ct?", 0},					//108
+
+{"MegaBuster", "alien", ALIEN},						//109
+{"JoeBuster", "sniper joe", BUBBLEMAN},				//110
+{"MegaBallWep", "roll", CROLL},						//111
+{"RandomWeapons", "auto", BUBBLEMAN},				//112
+{"RandomWeapons", "???", BUBBLEMAN},				//113
+{"MegaBuster", "helmetless megaman", 0},			//114
+{"MegaBuster", "megaman", 0},						//115
+{"MM2Weapons", "docrobot", DOCROBOT},				//116
+{"BerserkerRushWep", "darkman1", BUBBLEMAN},		//117
+{"ShieldSpiralWep", "darkman2", DARKMANTWO},		//118
+{"RestrictionRingWep", "darkman3", DARKMANTHREE},	//119
+{"OnslaughtGatlingWep", "darkman4", CPROTO},		//120
+{"RoyalSpinWep", "king", KINGMAN},					//121
+{"ThunderClawWep", "buster rod g", BUSTERRODG},		//122
+{"WaterWaveWep", "mega water s", MEGAWATERS},		//123
+{"BreakDashWep", "hyper storm h", HYPERSTORMH},		//124
+{"RevolverBuster", "fakeman", FAKEMAN},				//125
+{"SolarBlazeWep", "sunstar", SUNSTAR},				//126
+{"DawnBreakerWeakWep", "ra thor", RATHOR},			//127
+{"RandomWeapons", "bba megaman", 0},				//128
+
+{"BulletVulcanWep", "bulletman", BULLETMAN},		//129
+{"FlameShowerWep", "stoveman", STOVEMAN},			//130
+{"DoppelCrashWep", "komusoman", KOMUSOMAN},			//131
+{"TimeBombWep", "clockman", CLOCKMANR},				//132
+{"BarrierWindWep", "airconman", AIRCONMAN},			//133
+{"TrailsparkNeedleWep", "compassman", COMPASSMAN},	//134
+
+{"BondingPasteWep", "bondman", PHARAOHMAN}			//135
+};
+
+function int LookupBotId (void)
+{
+	int id = 0;
+	str botname = StrParam(n:0);
+	str name = StrRight(botname, StrLen(botname) - 2);
+	
+	for(int i = 1; i <MAXCHARACTERS; i++){
+	
+		//Log(s:"Checking ", s:name, s:" against ", s:EnemyInfo[i][1], s:" = ", i:StrIcmp(name, EnemyInfo[i][1], StrLen(EnemyInfo[i][1])));
+
+		if(StrIcmp(name, EnemyInfo[i][1], StrLen(EnemyInfo[i][1]))==0){
+		id = i;
+		break;
+		}
+	}
+	
+	return id;
+}
+
+script "Bots_createTranslations" OPEN CLIENTSIDE
+{
+	Delay(1);
+	
+	if(GetCvar("enc_specialbots")==0){terminate;}
+	
+	CreateTranslation (CPROTO, 192:192=87:87, 198:198=42:42);
+	CreateTranslation (CBASS, 192:192=217:217, 198:198=95:95);
+	CreateTranslation (CDUO, 192:192=220:220, 198:198=195:195);
+	CreateTranslation (CROLL, 198:198=176:176, 192:192=4:4);
+	CreateTranslation (DARKMANTWO, 192:192=4:4, 198:198=93:93, 202:202=216:216);
+	CreateTranslation (DARKMANTHREE, 192:192=65:65, 198:198=60:60, 202:202=216:216);
+	CreateTranslation (FAKEMAN, 192:192=71:71, 198:198=73:73);
+	CreateTranslation (RATHOR, 192:192=248:248, 198:198=3:3);
+	CreateTranslation (MAESTRO, 192:192=229:229, 198:198=128:128);
+	
+	CreateTranslation (BULLETMAN, 198:198=70:70, 192:192=227:227);
+	CreateTranslation (STOVEMAN, 198:198=43:43, 192:192=229:229);
+	CreateTranslation (CLOCKMANR, 198:198=227:227, 192:192=216:216);
+	CreateTranslation (CLOCKMANB, 198:198=241:241, 192:192=70:70);
+	CreateTranslation (AIRCONMAN, 198:198=205:205, 192:192=229:229);
+	
+}
+
+script "Bots_enter" ENTER
+{
+	Delay(2);
+	if(!PlayerIsBot(PlayerNumber()) || GetCvar("enc_specialbots")==0){terminate;}
+	
+	str botName = EnemyInfo[LookupBotId()][1];
+	
+	GiveInventory("IsSpecialBot", 1); // Some weps run this over IsBot for special quirks
+	GiveInventory("NoTeamTranslation", 1);
+	//GiveInventory("NoBotWeaponSwitch", 1);
+	
+	//Bots that change colors dynamically
+	if (!(botName == "maestro" ||
+		  botName == "megaman" ||
+		  botName == "bass" ||
+		  botName == "helmetless megaman" ||
+		  botName == "dr. wily" ||
+		  botName == "bba megaman" ||
+		  botName == "megaman\ct?" ||
+		  botName == "heatman" ||
+		  botName == "shademan" ||
+		  botName == "springman" ||
+		  botName == "searchman" ||
+		  botName == "magmaman" ||
+		  botName == "enker")) { GiveInventory("NoWeaponTranslation", 1); }
+	
+	//Bots that start up with misc weapons (So they don't mess their wep AI)
+	if (botName == "dr. wily" ||
+		  botName == "bba megaman" ||
+		  botName == "auto" ||
+		  botName == "???" ||
+		  botName == "docrobot" ||
+		  botName == "evilrobot" ||
+		  botName == "megaman\ct?") { TakeInventory("IsSpecialBot", 1); }
+	
+	GiveInventory("NoPickups", 1);
+	Thing_SetTranslation(0, EnemyInfo[LookupBotId()][2]);
+	if (botName == "galaxyman")	{ ACS_NamedExecuteAlways("Bots_galaxyManRainbow", 0); }
+	if (botName == "clockman")	{ ACS_NamedExecuteAlways("Bots_clockManDuo", 0); }
+	
+	//Returns a random weapon
+	if (botName == "dr. wily" ||
+		  botName == "bba megaman" ||
+		  botName == "auto" ||
+		  botName == "???" ||
+		  botName == "docrobot" ||
+		  botName == "evilrobot")	{ ACS_NamedExecuteAlways("Bots_randomFirstWeapon", 0); }
+	
+	if(GetCvar("instagib")==1 && !GetCVar("mm8bdm_sv_noigbehavior"))
+	{
+	GiveInventory("NoWeaponTranslation", 1);
+	terminate;
+	}
+	
+	//Bots with specific charge attack colors
+	if (botName == "heatman" ||
+		  botName == "shademan" ||
+		  botName == "springman" ||
+		  botName == "searchman" ||
+		  botName == "magmaman" ||
+		  botName == "pluto" ||
+		  botName == "enker" ||
+		  botName == "auto" ||
+		  botName == "???") { GiveInventory("SpecialBotCanCharge", 1); }
+	
+	TakeInventory("MegaBuster", 1);
+	GiveInventory(EnemyInfo[LookupBotId()][0], 1); 
+	
+	Delay(1);
+	
+	if (botName == "tenguman") { GiveInventory("TornadoHoldWep", 1); }
+	else if (botName == "evilrobot") { TakeInventory("MegaBallWep", 1); }
+	else if (botName == "king") 
+		{ 
+			GiveInventory("FlameSwordWep", 1);
+			GiveInventory("GeminiLaserWep", 1);
+		}
+	else if (botName == "megaman\ct?")
+		{
+			GiveInventory("PowerStoneWep", 1);
+			GiveInventory("BubbleLeadWep", 1);
+			GiveInventory("FlameSwordWep", 1);
+			GiveInventory("PharaohShotWep", 1);
+			GiveInventory("YamatoSpearWep", 1);
+			GiveInventory("CentaurFlashWep", 1);
+		}
+	else if (botName == "megaman" || botName == "helmetless megaman")
+		{
+			int chooseMega;
+			chooseMega = random(0,3);
+			switch(chooseMega){
+				Case 0: GiveInventory("ArrowBuster", 1); Break;
+				Case 1: GiveInventory("LaserBuster", 1); Break;
+				Case 2: GiveInventory("MegaArm", 1); Break;
+				Case 3: GiveInventory("SuperAdaptorWep", 1); Break;
+			}
+			TakeInventory("MegaBuster", 1);
+		}
+
+	else if (botName == "bass")
+		{
+			int chooseBass;
+			chooseBass = random(0,2);
+			
+			if (chooseBass > 1)
+			{
+				TakeInventory("BassBuster", 1);
+				Thing_SetTranslation(0, TREBLEBOOST);
+				GiveInventory("TrebleBoost", 1);
+			}
+		}
+}
+
+script "Bots_galaxyManRainbow" (void)
+{
+	if(!PlayerIsBot(PlayerNumber())) { terminate; }
+	
+	while(GetActorProperty(0, APROP_HEALTH) > 0){
+        Thing_SetTranslation(0, 890); Delay(8);
+        Thing_SetTranslation(0, 891); Delay(8);
+        Thing_SetTranslation(0, 892); Delay(8);
+        Thing_SetTranslation(0, 893); Delay(8);
+        Thing_SetTranslation(0, 894); Delay(8);
+        Thing_SetTranslation(0, 895); Delay(8);
+        Thing_SetTranslation(0, 896); Delay(8);
+    }
+}
+
+script "Bots_clockManDuo" (void)
+{
+	if(!PlayerIsBot(PlayerNumber())) { terminate; }
+	int id = PlayerNumber(); //Sets a color based on player id
+	if(id % 2 == 0){ Thing_SetTranslation(0, CLOCKMANR); }
+	else{ Thing_SetTranslation(0, CLOCKMANB); }
+}
+
+//Turns bots around when they don't have a target
+//So they can see you if they get stuck
+script "Bots_360noscope" ENTER
+{
+str levelname = StrParam(n:PRINTNAME_LEVEL);
+
+if(StrIcmp(levelname,"TRAINING")==0){terminate;}
+if(!PlayerIsBot(PlayerNumber())) {terminate;}
+    
+	int angle = GetActorAngle(0) + 0.3;
+	SetActorAngle(0,angle);
+	Delay(6);
+	angle = GetActorAngle(0) + 0.5;
+	SetActorAngle(0,angle);
+	Delay(6);
+	angle = GetActorAngle(0) + 0.7;
+	SetActorAngle(0,angle);
+	Delay(6);
+	restart;
+}
+
+//Compressed script for bots to try their best
+//to reach players.
+script "Bots_WalkToAttack" (int IsAggressive, int VerticalSetting)
+{
+if(GetActorProperty(0, APROP_Health) <= 0){terminate;}
+
+int angle, pitch, jumpnow;
+int userheight = GetActorZ(0) >> 16;
+int targetheight = ACS_NamedExecuteWithResult("TargetData",3);
+int velx = GetActorVelX(0);
+int vely = GetActorVelY(0);
+int velz = GetActorVelZ(0);
+int isstunned = ACS_NamedExecuteWithResult("StunCheck",0);
+int isfrozen = ACS_NamedExecuteWithResult("StunCheck",1);
+int velmodifier = ACS_NamedExecuteWithResult("BotSpeedStacker");
+int userx = GetActorX(0) >> 16;
+int usery = GetActorY(0) >> 16;
+int floorheight = GetSectorFloorZ(0, userx, usery) >> 16;
+
+if(isstunned){jumpnow = random(0,5);}
+
+//Vertical mobility
+if(isfrozen)
+		{velz = 0.0;}
+else if(VerticalSetting>1)
+		{velz = FixedMul(sin(pitch), FixedMul(velmodifier, 15.0));}
+else if((targetheight-userheight)>30 && 
+		userheight==floorheight ||
+		jumpnow>=4 && userheight==floorheight)
+		{velz = 11.0;}
+
+//Horizontal mobility
+if(IsAggressive && !isstunned)
+	{
+	angle = GetActorAngle(0);
+	pitch = GetActorPitch(0);
+	
+	velx = FixedMul(cos(angle), FixedMul(cos(pitch), FixedMul(velmodifier, random(13.0,16.0))));
+	vely = FixedMul(sin(angle), FixedMul(cos(pitch), FixedMul(velmodifier, random(13.0,16.0))));
+	}
+
+//Reduces speed a little bit if the user's in the air and can't fly
+If(VerticalSetting<=1 && userheight>floorheight)
+	{
+	velx = FixedMul(velx, 0.7);
+	vely = FixedMul(vely, 0.7);
+	}
+	
+SetActorVelocity(0, velx, vely, velz, 0, 0);
+//printbold(s:"velmodifier ", i:velmodifier >> 16);
+//printbold(s:"velx ", i:velx >> 16);
+//printbold(s:"vely ", i:vely >> 16);
+
+//Adds a delay to the walking state
+if(CheckInventory("MakeItWalk")==0 && !isstunned)
+	{
+	GiveInventory("MakeItWalk",1);
+	ACS_NamedExecuteAlways("StateChange",0,1);
+	}
+}
+
+#DEFINE MAXSPEEDPOWERUPS 6
+str speedmodifiers[MAXSPEEDPOWERUPS][2] = {
+{"BotEasySpeed", 0.65},
+{"PowerSlowFade", 0.67},
+{"ScorchWheelPowerup", 1.45},
+{"Bot_Roboenza_SpeedType", 2.2},
+{"BondingPasteFlag", 0.40},
+{"SpeedyFloorPowerup", 1.3}
+};
+
+script "BotSpeedStacker" (void)
+{
+int id;
+int resultspeed = 1.0; //random(13.0,16.0) << 16;
+
+for ( id = 0; id < MAXSPEEDPOWERUPS; id++ )
+    {
+        If(CheckInventory(speedmodifiers[id][0]))
+			{
+			resultspeed = FixedMul(resultspeed, (speedmodifiers[id][1]));
+			}
+    }
+SetResultValue(resultspeed);
+}
+
+script "TargetData" (int which)
+{
+SetActivatorToTarget(0);
+int data;
+Switch(which)
+	{
+	Case 0:
+	data = ActivatorTID();
+	break;
+	Case 1:
+	data = GetActorX(0) >> 16;
+	break;
+	Case 2:
+	data = GetActorY(0) >> 16;
+	break;
+	Case 3:
+	data = GetActorZ(0) >> 16;
+	break;
+	}
+SetResultValue(data);
+}

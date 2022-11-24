@@ -1,0 +1,11 @@
+actor SteamPoof : MMSplash
+{
+States
+{
+Spawn:
+DOLP B 0
+DOLP B 0 A_PlaySoundEx("misc/sheepblockreturn","Voice")
+DOLP BCDE 5
+stop
+}
+}

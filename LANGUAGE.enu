@@ -1,0 +1,98 @@
+[enu default]
+
+QUITMSG30 = "\cjDying a lot?\cg try dodging...";
+QUITMSG31 = "\cgNo, \cjyou can't just rush the enemy team alone...";
+
+OB_PROTOSTRIKE = "%o was utterly destroyed by %k's Proto Strike.";
+PU_PROTOSTRIKE =  "You feel powerful...";
+TAG_PROTOSTRIKE = "Proto Strike";
+
+//Busters
+OB_MAESTROBUSTER = "%o was decrypted by %k's Maestro Buster.";
+PU_MAESTROUPGRADE = "Support Item! Maestro Buster!";
+TAG_MAESTROUPGRADE = "Maestro Buster Upgrade";
+TAG_MAESTROBUSTER = "Maestro Buster";
+
+OB_REVOLVERBUSTER = "%o put %p hands up for %k's Revolver Buster."; 
+PU_REVOLVERUPGRADE = "Support Item! Revolver Buster!"; 
+TAG_REVOLVERUPGRADE = "Revolver Buster Upgrade";
+TAG_REVOLVERBUSTER = "Revolver Buster";
+
+OB_JOEBUSTER = "%o was shot down by %k's Joe Buster."; 
+PU_JOEUPGRADE = "Support Item! Joe Buster!";
+TAG_JOEUPGRADE = "Joe Buster Upgrade";
+TAG_JOEBUSTER = "Joe Buster";
+
+//MMB2
+OB_BULLETVULCAN = "%o was perforated by %k's Bullet Vulcan.";
+PU_BULLETVULCAN = "Power up! Bullet Vulcan!";
+TAG_BULLETVULCAN = "Bullet Vulcan";
+
+OB_BRASSBULLET = "%o was pumped full of lead by %k's Brass Bullet.";
+PU_BRASSBULLET = "Power up! Brass Bullet!";
+TAG_BRASSBULLET = "Brass Bullet";
+
+OB_FLAMESHOWER = "%o was grilled by %k's Flame Shower.";
+PU_FLAMESHOWER = "Power up! Flame Shower!";
+TAG_FLAMESHOWER = "Flame Shower";
+
+OB_FLAMEMIXER = "%o was done well by %k's Flame Mixer.";
+PU_FLAMEMIXER = "Power up! Flame Mixer!";
+TAG_FLAMEMIXER = "Flame Mixer";
+
+OB_DOPPELCRASH = "";
+PU_DOPPELCRASH = "Power up! Doppel Crash!";
+TAG_DOPPELCRASH = "Doppel Crash";
+
+OB_DOPPLERATTACK = "";
+PU_DOPPLERATTACK = "Power up! Doppler attack!";
+TAG_DOPPLERATTACK = "Doppler attack";
+
+OB_TIMESWITCH = "%o died infinite times to %k's Time Switch.";
+PU_TIMESWITCH = "Power up! Time Bomb!";
+TAG_TIMESWITCH = "Time Switch";
+
+OB_TIMEBOMB = "%o bit the dust of %k's Time Bomb.";
+PU_TIMEBOMB = "Power up! Time Bomb!";
+TAG_TIMEBOMB = "Time Bomb";
+
+OB_BARRIERWIND = "%o was repelled by %k's Barrier Wind.";
+PU_BARRIERWIND = "Power up! Barrier Wind!";
+TAG_BARRIERWIND = "Barrier Wind";
+
+OB_TRAILSPARKNEEDLE = "%o was revealed by %k's Trailspark Needle.";
+PU_TRAILSPARKNEEDLE = "Power up! Trailspark Needle!";
+TAG_TRAILSPARKNEEDLE = "Trailspark Needle";
+
+//Misc
+OB_BONDINGPASTE = "%o was plastered by %k's Bonding Paste.";
+PU_BONDINGPASTE = "Power up! Bonding Paste!";
+TAG_BONDINGPASTE = "Bonding Paste";
+
+OB_BERSERKERRUSH = "%o was rushed down by %k's Berserker Rush.";
+PU_BERSERKERRUSH = "Power up! Berserker Rush!";
+TAG_BERSERKERRUSH = "Berserker Rush";
+
+OB_SHIELDSPIRAL = "%o became static to %k's Shield Spiral.";
+TAG_SHIELDSPIRAL = "Shield Spiral";
+PU_SHIELDSPIRAL = "Power up! Shield Spiral!";
+
+OB_RESTRICTIONRING = "%o was petrified by %k's Restriction Ring.";
+PU_RESTRICTIONRING = "Power up! Restriction Ring!";
+TAG_RESTRICTIONRING = "Restriction Ring";
+
+OB_ONSLAUGHTGATLING = "%o was retaliated by %k's Onslaught Gatling.";
+PU_ONSLAUGHTGATLING = "Power up! Onslaught Gatling!";
+TAG_ONSLAUGHTGATLING = "Onslaught Gatling";
+
+OB_JUSTICEMETEOR = "%o was purified by %k's Justice Meteor.";
+PU_JUSTICEMETEOR = "Power up! Justice Meteor!";
+TAG_JUSTICEMETEOR = "Justice Meteor";
+
+OB_ROYALSPIN = "%o bent %p knee to %k's Royal Spin.";
+PU_ROYALSPIN = "Power up! Royal Spin!";
+TAG_ROYALSPIN = "Royal Spin";
+
+STARTUP1 = "\cdThis is an open community project!";
+STARTUP2 = "\cdFeel free to contribute at our discord server, \cvdiscord.gg/mBa5KECHTu\n";
+STARTUP3 = "\cd-\cgA-Chan\n";

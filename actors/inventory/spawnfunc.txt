@@ -1,0 +1,61 @@
+// Modders can replace these to allow these actors to execute scripts/functions without mass replicating inventory code
+
+actor MM8BDMWepSpawnFunc : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 ACS_NamedExecuteAlways("MME_WeaponReplace",0)
+stop
+}
+}
+
+actor ChangeFlagDropped1 : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 A_ChangeFlag("DROPPED",1)
+stop
+}
+}
+
+actor ChangeFlagDropped0 : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 A_ChangeFlag("DROPPED",0)
+stop
+}
+}
+
+actor MM8BDMItemSpawnFunc : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 ACS_NamedExecuteAlways("MME_WeaponReplace",0)
+stop
+}
+}
+
+actor PartyBallSpawnFunc : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 //A_SpawnItemEx("Cacodemon")
+stop
+}
+}
+
+actor MM8BDMFlagSpawnFunc : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0
+stop
+}
+}

@@ -1,0 +1,551 @@
+actor BarrierWindWep : BaseMM8BDMWep
+{
+dropitem "BarrierWindWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 28
+Weapon.SlotNumber 7
+Inventory.Pickupmessage "$PU_BARRIERWIND"
+Obituary "$OB_BARRIERWIND"
+Tag "$TAG_BARRIERWIND"
+weapon.ammotype "BarrierWindAmmo"
+inventory.icon "BWINICON"
+States
+{
+Spawn:
+BWIN A 1
+loop
+Ready:
+BWIN I 0 ACS_ExecuteAlways(998,0,253)
+BWIN I 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BWIN I 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BWIN I 1 A_Raise
+Loop
+Fire:
+Altfire:
+BWIN I 0 A_JumpIfNoAmmo("NoAmmo")
+BWIN I 0 A_PlaySoundEx("weapon/bwindjet", "weapon")
+BWIN J 4 A_FireCustomMissile("BarrierWindBlocker",0,1,0,-20)
+//MIRR H 4 A_SpawnItemEX("BarrierWindBlocker",momx,momy,15,8,0,sin(-pitch)*15,0,0,0)
+BWIN JJKK 4
+BWIN I 20
+Goto Ready+1
+NoAmmo:
+BWIN I 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor BarrierWindAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor BarrierWindBlocker
+{
++MISSILE
+RenderStyle "Translucent"
+Alpha 0.90
+scale 2.5
++THRUGHOST
++RIPPER
++DONTBLAST
++DONTRIP
++SHOOTABLE
++BOUNCEONFLOORS
+BounceFactor 0.8
++BOUNCEONWALLS
+WallBounceFactor 0.1
++DONTDRAIN
++NOGRAVITY
++THRUSPECIES
+Species "BWBlocker"
+health 9999
+painchance 999
+Height 48
+Radius 20
+Damage (0)
+Speed 20
+var int user_speed;
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 ACS_ExecuteAlways(259,0,0)
+BWIN B 0 A_SetUserVar("user_speed",22)
+BWIN B 4
+BWIN C 0 A_SetUserVar("user_speed",user_speed/2)
+BWIN C 4 A_ChangeVelocity(user_speed*cos(-pitch),0,user_speed*sin(-pitch),CVF_RELATIVE|CVF_REPLACE)
+BWIN D 0 A_SetUserVar("user_speed",user_speed/2)
+BWIN D 4 A_ChangeVelocity(user_speed*cos(-pitch),0,user_speed*sin(-pitch),CVF_RELATIVE|CVF_REPLACE)
+BWIN B 0 A_SetUserVar("user_speed",user_speed/2)
+BWIN B 4 A_ChangeVelocity(user_speed*cos(-pitch),0,user_speed*sin(-pitch),CVF_RELATIVE|CVF_REPLACE)
+stop
+
+//Adaptors
+Pain.Buster:
+BWIN C 0 A_SpawnItemEX("MegaShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ChargeBuster:
+BWIN C 0 A_SpawnItemEX("MidShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ArrowBuster2:
+BWIN C 0 A_SpawnItemEX("ArrowFrag2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.LaserBuster:
+BWIN C 0 A_SpawnItemEX("MegaLaser",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ProtoBuster2:
+BWIN C 0 A_SpawnItemEX("ProtoShot2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.TrebleBoost:
+BWIN C 0 A_SpawnItemEX("BoostShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DuoFist2:
+BWIN C 0 A_SpawnItemEX("MidFist",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DuoFist3:
+BWIN C 0 A_SpawnItemEX("GigaFist",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.BassBuster:
+BWIN C 0 A_SpawnItemEX("BassShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.MaestroBuster:
+BWIN C 0 A_SpawnItemEX("MaestroCShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.FakeRevolver:
+BWIN C 0 A_SpawnItemEX("RevolverBusterProjectile",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.JoeBuster:
+BWIN C 0 A_SpawnItemEX("JoeShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM1
+Pain.SuperArm:
+BWIN C 0 A_SpawnItemEX("Gutrock",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SuperArmDebris:
+BWIN C 0 A_SpawnItemEX("GutrockDebris",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.IceSlasher:
+BWIN C 0 A_SpawnItemEX("IceSlasher",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.FireStorm:
+BWIN C 0 A_SpawnItemEX("FireStorm",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ThunderBeam:
+BWIN C 0 A_SpawnItemEX("ThunderBeam",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.OilShot:
+BWIN C 0 A_SpawnItemEX("OilShot",70,0,35,cos(pitch)*20,0,-sin(pitch)*20)
+goto Repeat
+
+//MM2
+Pain.MetalBlade:
+BWIN C 0 A_SpawnItemEX("MetalBlade",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.AirShooter:
+BWIN C 0 A_SpawnItemEX("AirShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.BubbleLead:
+BWIN C 0 A_SpawnItemEX("BubbleLead",50,0,25,28)
+goto Repeat
+Pain.QuickBoomerang:
+BWIN C 0 A_SpawnItemEX("QuickBoomerang",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.CrashBomb:
+BWIN C 0 A_SpawnItemEX("CrashBomb",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.AtomicFire1:
+BWIN C 0 A_SpawnItemEX("AtomicFire1",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.AtomicFire2:
+BWIN C 0 A_SpawnItemEX("AtomicFire2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.AtomicFire3:
+BWIN C 0 A_SpawnItemEX("AtomicFire3",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.LeafShield:
+BWIN C 0 A_SpawnItemEX("LeafShield",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.LeafShieldShot:
+BWIN C 0 A_SpawnItemEX("LeafShieldCounterShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM3
+Pain.NeedleCannon:
+BWIN C 0 A_SpawnItemEX("Needle",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.GeminiLaser:
+BWIN C 0 A_SpawnItemEX("GeminiLaser",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.HardKnuckle:
+BWIN C 0 A_SpawnItemEX("HardKnuckle",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SearchSnake:
+BWIN C 0 A_SpawnItemEX("SearchSnakeStart",50,0,25,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SparkShock:
+BWIN C 0 A_SpawnItemEX("SparkShock",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ShadowBlade:
+BWIN C 0 A_SpawnItemEX("ShadowBlade",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM4
+Pain.DrillBomb:
+BWIN C 0 A_SpawnItemEX("DrillBomb",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.PharaohShot1:
+BWIN C 0 A_SpawnItemEX("PharaohShot1",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.PharaohShot2:
+BWIN C 0 A_SpawnItemEX("PharaohShot2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.PharaohShot3:
+BWIN C 0 A_SpawnItemEX("PharaohShot3",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DustCrusher:
+BWIN C 0 A_SpawnItemEX("DustCrusher",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DustCrusherBit:
+BWIN C 0 A_SpawnItemEX("DustBit1",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM5
+Pain.WaterWave:
+BWIN C 0 A_SpawnItemEX("WaterWave",50,0,25,23)
+goto Repeat
+Pain.PowerStone:
+BWIN C 0 A_SpawnItemEX("BlownPowerStone",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.GyroAttack:
+BWIN C 0 A_SpawnItemEX("GyroAttack",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.StarCrashLaunch:
+BWIN C 0 A_SpawnItemEX("StarCrash",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.NapalmBomb:
+BWIN C 0 A_SpawnItemEX("NapalmBomb",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.CrystalEye:
+BWIN C 0 A_SpawnItemEX("CrystalEye",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.CrystalEyeBit:
+BWIN C 0 A_SpawnItemEX("CrystalEyeBit",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM6
+Pain.BlizzardAttack:
+BWIN C 0 A_SpawnItemEX("BlizzardAttack",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.FlameBlast:
+BWIN C 0 A_SpawnItemEX("FlameBlast",50,0,25,23)
+goto Repeat
+Pain.PlantBarrier:
+BWIN C 0 A_SpawnItemEX("PlantBarrier",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SilverTomahawk:
+BWIN C 0 A_SpawnItemEX("SilverTomahawk",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WindStorm:
+BWIN C 0 A_SpawnItemEX("WindStormStart",70,0,25,20)
+goto Repeat
+Pain.YamatoSpear:
+BWIN C 0 A_SpawnItemEX("YamatoSpear",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM7
+Pain.FreezeCracker:
+BWIN C 0 A_SpawnItemEX("FreezeCracker",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.FreezeCrackerBit:
+BWIN C 0 A_SpawnItemEX("FreezeBit",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.JunkShield:
+BWIN C 0 A_SpawnItemEX("JunkProjectile",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.JunkShieldSmall:
+BWIN C 0 A_SpawnItemEX("JunkProjectile2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DangerWrap:
+BWIN C 0 A_SpawnItemEX("DangerWrap",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DangerWrapMine:
+BWIN C 0 A_SpawnItemEX("BlownDangerWrapMine",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ThunderBolt:
+BWIN C 0 A_SpawnItemEX("ThunderBoltSplit",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WildCoil:
+BWIN C 0 A_SpawnItemEX("WildCoil",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WildCoil2:
+BWIN C 0 A_SpawnItemEX("WildCoil2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.NoiseCrush1:
+BWIN C 0 A_SpawnItemEX("NoiseCrush",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.NoiseCrush2:
+BWIN C 0 A_SpawnItemEX("NoiseCrush2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ScorchWheel:
+BWIN C 0 A_SpawnItemEX("ScorchWheel",60,0,25,23)
+goto Repeat
+Pain.ScorchWheel2:
+BWIN C 0 A_SpawnItemEX("ScorchWheel2",60,0,25,23)
+goto Repeat
+
+//MM8
+Pain.IceWave:
+BWIN C 0 A_SpawnItemEX("IceWaveIcicle",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WaterBalloon:
+BWIN C 0 A_SpawnItemEX("WaterBalloon",40,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.FlashBomb:
+BWIN C 0 A_SpawnItemEX("FlashBomb",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MMB
+Pain.TenguBlade:
+BWIN C 0 A_SpawnItemEX("TenguBlade",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.CopyVision:
+BWIN C 0 A_SpawnItemEX("CopyShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SpreadDrill:
+BWIN C 0 A_SpawnItemEX("SpreadDrill",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SpreadDrill2:
+BWIN C 0 A_SpawnItemEX("MediumDrill1",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SpreadDrill3:
+BWIN C 0 A_SpawnItemEX("SmallDrill1",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WaveBurner:
+BWIN C 0 A_SpawnItemEX("WaveBurn",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WaveBurnerUW:
+BWIN C 0 A_SpawnItemEX("WaveBurnUW",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MM9
+Pain.ConcreteShot:
+BWIN C 0 A_SpawnItemEX("ConcreteShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.JewelSatellite:
+BWIN C 0 A_SpawnItemEX("JewelShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.LaserTrident:
+BWIN C 0 A_SpawnItemEX("LaserTrident",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.MagmaBazooka1:
+BWIN C 0 A_SpawnItemEX("MagmaBazooka1",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.MagmaBazooka2:
+BWIN C 0 A_SpawnItemEX("MagmaBazooka2",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.PlugBall:
+BWIN C 0 A_SpawnItemEX("PlugBallStart",70,0,25,23)
+goto Repeat
+
+//MM10
+Pain.ChillShot:
+BWIN C 0 A_SpawnItemEX("ChillShot",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ReboundStriker:
+BWIN C 0 A_SpawnItemEX("ReboundStriker",25,0,0,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SolarBlaze:
+BWIN C 0 A_SpawnItemEX("SolarBlaze",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SolarBlazeWave:
+BWIN C 0 A_SpawnItemEX("SolarWave",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ThunderWool:
+BWIN C 0 A_SpawnItemEX("ThunderWool",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.TripleBlade:
+BWIN C 0 A_SpawnItemEX("TripleBlade",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WaterShield:
+BWIN C 0 A_SpawnItemEX("BlownWaterShield",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.WheelCutter:
+BWIN C 0 A_SpawnItemEX("WheelCutter",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MMV
+Pain.BubbleBomb:
+BWIN C 0 A_SpawnItemEX("BubbleBomb",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.PhotonMissile:
+BWIN C 0 A_SpawnItemEX("PhotonMissile",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DeepDigger:
+BWIN C 0 A_SpawnItemEX("DeepDigger",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.DeepDiggerBit:
+BWIN C 0 A_SpawnItemEX("DeepDiggerBit",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.GrabBuster:
+BWIN C 0 A_SpawnItemEX("GrabBuster",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SaltWater:
+BWIN C 0 A_SpawnItemEX("SaltWater",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.SaltWaterBit:
+BWIN C 0 A_SpawnItemEX("SaltWaterBit",110,0,25,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MMK
+Pain.MirrorBuster1:
+BWIN C 0 A_SpawnItemEX("MirrorShotSmall",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.MirrorBuster2:
+BWIN C 0 A_SpawnItemEX("MirrorShotMedium",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.MirrorBuster3:
+BWIN C 0 A_SpawnItemEX("MirrorShotLarge",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.ScrewCrusher:
+BWIN C 0 A_SpawnItemEX("ScrewCrusher",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.BalladeCracker:
+BWIN C 0 A_SpawnItemEX("BalladeCracker",40,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//MMB2
+Pain.TimeBomb:
+BWIN C 0 A_SpawnItemEX("TimeBomb",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.BulletVulcan:
+BWIN C 0 A_SpawnItemEX("VulcanBullet",40,0,32,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.FlameShower:
+BWIN C 0 A_SpawnItemEX("FlameShower",50,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.TrailsparkNeedleShot:
+BWIN C 0 A_SpawnItemEX("TrailsparkNeedleB",50,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+//Misc
+Pain.BerserkerRush:
+BWIN C 0 A_SpawnItemEX("BerserkerRushShot",50,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.RestrictionRing:
+BWIN C 0 A_SpawnItemEX("RestrictionRing",50,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.OnslaughtGatling:
+BWIN C 0 A_SpawnItemEX("OnslaughtGatling",50,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+Pain.BondingPaste:
+BWIN C 0 A_SpawnItemEX("BondingPasteShot",50,0,35,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+goto Repeat
+
+Repeat:
+BWIN C 0 A_PlaySound("misc/rathorfire")
+BWIN C 0 A_SpawnItemEX("BarrierWindBlocker2",0,0,0,cos(pitch),0,-sin(pitch),0,SXF_MULTIPLYSPEED)
+stop
+}
+}
+
+actor BarrierWindBlocker2 : BarrierWindBlocker
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 ACS_ExecuteAlways(259,0,0)
+BWIN B 0 A_SetUserVar("user_speed",11)
+BWIN B 4
+BWIN C 0 A_SetUserVar("user_speed",user_speed/2)
+BWIN C 4 A_ChangeVelocity(user_speed*cos(-pitch),0,user_speed*sin(-pitch),CVF_RELATIVE|CVF_REPLACE)
+BWIN D 0 A_SetUserVar("user_speed",user_speed/2)
+BWIN D 4 A_ChangeVelocity(user_speed*cos(-pitch),0,user_speed*sin(-pitch),CVF_RELATIVE|CVF_REPLACE)
+BWIN B 0 A_SetUserVar("user_speed",user_speed/2)
+BWIN B 4 A_ChangeVelocity(user_speed*cos(-pitch),0,user_speed*sin(-pitch),CVF_RELATIVE|CVF_REPLACE)
+stop
+}
+}
+
+actor BlownPowerStone
+{
+PROJECTILE
+damagetype "PowerStone"
+Obituary "$OB_POWERSTONE"
+Speed 27
+damage (49)
+Radius 38
+Height 10
+scale 2.5
+States
+{
+Spawn:
+POWS D 1
+wait
+}
+}
+
+actor BlownWaterShield
+{
+PROJECTILE
+damagetype "WaterShield"
+Obituary "$OB_WATERSHIELD"
+Speed 30
+damage (20)
+Radius 20
+Height 40
+scale 4.0
+States
+{
+Spawn:
+WATS B 1
+wait
+}
+}
+
+actor BlownDangerWrapMine
+{
+PROJECTILE
+damagetype "DangerWrapMine"
+Obituary "$OB_DANGERWRAP"
+Radius 6
+Height 7
+scale 2.5
+-NOGRAVITY
++CANBOUNCEWATER
++HEXENBOUNCE
+-ALLOWBOUNCEONACTORS
+speed 15
+bouncefactor 0.6
+wallbouncefactor 0.0
+reactiontime 15
+bouncecount 1
+damage (1)
+States
+{
+Spawn:
+DWRA G 0
+DWRA G 0 ThrustThingZ(0, 25, 0, 1)
+DWRA G 0 A_CountDown
+DWRA GGGG 4
+Goto Spawn+2
+XDeath:
+DRIL A 0
+stop
+Crash:
+Death:
+DWRA G 0
+TNT1 A 0 A_SpawnItemEx("WrapExplosion")
+stop
+}
+}

@@ -1,0 +1,15 @@
+actor EPenguinBomber 20553
+{
+//$Category MM8BDM-Props
++CLIENTSIDEONLY
+scale 2.5
+-SOLID
+States
+{
+Spawn:
+EPEN C 35
+EPEN D 4
+EPEN E 21 ThrustThingZ(0,40,0,0)
+loop
+}
+}

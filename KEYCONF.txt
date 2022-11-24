@@ -1,0 +1,2 @@
+alias mapcard "pukename encore_mapcard; pukename core_mapcard"
+alias encquit "exit"

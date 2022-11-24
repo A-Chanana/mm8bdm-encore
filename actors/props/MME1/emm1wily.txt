@@ -1,0 +1,5 @@
+actor EBigEye : BigEye 20515
+{
+//$Category MM8BDME-Interactive Props
+Translation "41:41=198:198"
+}

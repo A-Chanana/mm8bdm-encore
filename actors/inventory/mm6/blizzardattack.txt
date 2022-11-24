@@ -1,0 +1,78 @@
+actor BlizzardAttackWep : BaseMM8BDMWep 10051
+{
+//$Category MM8BDM-Weapons
+//$Title Blizzard Attack
+//$Sprite WEAPW0
+dropitem "BlizzardAttackWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 2
+Inventory.Pickupmessage "$PU_BLIZZARDATTACK"
+Obituary "$OB_BLIZZARDATTACK"
+Tag "$TAG_BLIZZARDATTACK"
+weapon.ammotype "BlizzardAttackAmmo"
+inventory.icon "BLIZSI"
+States
+{
+SpawnLoop:
+WEAP W -1
+loop
+Ready:
+BLIZ D 0 ACS_ExecuteAlways(998,0,20)
+BLIZ D 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BLIZ D 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BLIZ D 1 A_Raise
+Loop
+Fire:
+BLIZ D 0 A_JumpIfNoAmmo("NoAmmo")
+BLIZ D 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+BLIZ D 0 A_FireCustomMissile("BlizzardAttack",12,1,52,0)
+BLIZ D 0 A_FireCustomMissile("BlizzardAttack",-12,0,-52,0)
+BLIZ EE 2
+BLIZ F 1
+BLIZ D 0 A_FireCustomMissile("BlizzardAttack",0,0,32,0)
+BLIZ D 0 A_FireCustomMissile("BlizzardAttack",0,0,-32,0)
+BLIZ FD 5
+BLIZ D 20
+BLIZ D 0 A_Refire
+Goto Ready+1
+NoAmmo:
+BLIZ D 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor BlizzardAttackAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor BlizzardAttack
+{
+PROJECTILE
++FORCEXYBILLBOARD
+Speed 0
+Damage (18)
+damagetype "BlizzardAttack"
+Obituary "$OB_BLIZZARDATTACK"
+Scale 2.5
+Height 12
+Radius 12
+Speed 40
+States
+{
+Spawn:
+BLIZ ABC 5
+BLIZ C 0 //A_Recoil(-36)
+BLIZ C 1 //A_Wander
+Goto Spawn+4 
+}
+}

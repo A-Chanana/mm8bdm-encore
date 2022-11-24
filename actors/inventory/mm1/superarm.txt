@@ -1,0 +1,204 @@
+// The actors here are tied to the MM2 story. Test that out after making changes!
+
+actor SuperArmWep : BaseMM8BDMWep 10044
+{
+//$Category MM8BDM-Weapons
+//$Title Super Arm
+//$Sprite WEAPO0
+dropitem "SuperArmWep"
+Weapon.AmmoUse 4
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_SUPERARM"
+Obituary "$OB_SUPERARM"
+Tag "$TAG_SUPERARM"
+weapon.ammotype "SuperArmAmmo"
+inventory.icon "SARMSI"
++WEAPON.NOAUTOAIM
+States
+{
+SpawnLoop:
+WEAP O -1
+loop
+Ready:
+GUTA A 0 ACS_ExecuteAlways(998,0,14)
+GUTA A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+GUTA A 0 A_JumpIfInventory("SuperArmTemp",1,24)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+GUTA A 1 A_Lower
+Goto Deselect+1
+GUTA A 0
+GUTA A 0 A_JumpIfHealthLower(0,9)
+GUTA A 0 A_FireCustomMissile("GutRock",0,1,0,56)
+GUTA FGHIJKLM 3
+GUTA A 0 A_TakeInventory("SuperArmTemp",1)
+Goto Deselect+1
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+GUTA A 1 A_Raise
+Loop
+Fire:
+TNT1 A 0 A_JumpIfInventory("SuperArmTemp",1,"Throw")
+TNT1 A 1 A_JumpIfNoAmmo("NoAmmo")
+GUTA A 0 A_PlaySoundEx("weapon/superarmuse","Weapon")
+GUTA A 0 A_Stop
+GUTA A 0 A_GiveInventory("SuperArmTemp",1)
+GUTA A 0 SetPlayerProperty(0,1,0)
+GUTA B 1 A_SpawnItemEx("GutrockPickingup",34 + 32,0,-28,-7,0,12,0,SXF_NOCHECKPOSITION)
+GUTA B 1
+GUTA CC 1 //A_SpawnItemEx("TempGutrock",34 + 32,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+GUTA DD 1 //A_SpawnItemEx("TempGutrock",34 + 32,0,28,0,0,0,0,SXF_NOCHECKPOSITION)
+GUTA EE 1 //A_SpawnItemEx("TempGutrock",34 + 32,0,56,0,0,0,0,SXF_NOCHECKPOSITION)
+GUTA D 0 SetPlayerProperty(0,0,0)
+TNT1 AAAAA 1 A_SpawnItemEx("TempGutrock", 0, 0, 56 + 20, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+//Goto Holding
+//Holding:
+TNT1 A 0 A_SpawnItemEx("TempGutrock", 0, 0, 56 + 20, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+TNT1 A 1 A_WeaponReady
+Goto Fire+20
+Throw:
+GUTA A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+GUTA A 0 A_FireCustomMissile("GutRock",0,1,0,56)//A_SpawnItemEx("GutRock",0,0,56,20,0,-4,0,0,0)
+GUTA A 0 A_TakeInventory("SuperArmTemp",1)
+GUTA FGHIJKLM 3
+Goto Ready+1
+Hold:
+GUTA A 1 ACS_Execute(979,0)
+Goto Ready+1
+NoAmmo:
+GUTA A 0 ACS_Execute(979,0)
+Goto Hold
+BotCheck:
+TOPH A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 300, 0)>0, 1)
+Goto Throw+1
+GUTA A 0 A_FireCustomMissile("GutRock",0,1,0,10)
+Goto Throw+2
+}
+}
+
+actor GutrockPickingup
+{
+PROJECTILE
++NOINTERACTION
+scale 2.5
+states
+{
+Spawn:
+SARM C 9 // Used for potential voxel usage
+stop
+}
+}
+
+actor SuperArmTemp : Once {}
+
+actor TempGutrock
+{
++NOINTERACTION
+-SOLID
++NOGRAVITY
++NOTIMEFREEZE
+radius 0
+height 0
+scale 2.5
+States
+{
+Spawn:
+SARM CC 1
+stop
+}
+}
+
+actor Gutrock
+{
+PROJECTILE
+Damage (75)
+damagetype "SuperArm"
+Obituary "$OB_SUPERARM"
+Height 30
+Radius 30
+-NOGRAVITY
+Speed 30
+scale 2.5
+States
+{
+Spawn:
+SARM A 0
+SARM A 0 ThrustThingZ(0,20,0,1)
+SARM A 1
+Goto Spawn+2
+XDeath:
+DRIL A 0
+stop
+Crash:
+SARM AAAA 0 A_SpawnItemEx("GutrockFX",0,0,0,random(-10,10),random(-10,10),random(5,10),random(0,360))
+TNT1 A 2 A_PlaySoundEx("weapon/superarmhit", "Voice")
+stop
+Death:
+SARM A 0 A_SpawnItemEx("GutrockDebris", -16, -16, 16, 20, 0, 0, 0, 0)
+SARM A 0 A_SpawnItemEx("GutrockDebris", -16, 16, 16, 30, 0, 0, 0, 0)
+SARM A 0 A_SpawnItemEx("GutrockDebris", 16, -16, 16, 30, 0, 6, 0, 0)
+SARM A 0 A_SpawnItemEx("GutrockDebris", 16, 16, 16, 20, 0, 3, 0, 0)
+TNT1 A 2 A_PlaySoundEx("weapon/superarmhit", "Voice")
+stop
+}
+}
+
+
+
+actor GutrockFX
+{
+damage 0
++RIPPER
+-NOGRAVITY
++CLIENTSIDEONLY
+-SOLID
+scale 2.5
++HEXENBOUNCE
+//+NOINTERACTION
+Height 2
+Radius 2
+States
+{
+Spawn:
+SARM B 2
+TNT1 A 2
+SARM B 2
+TNT1 A 2
+SARM B 2
+TNT1 A 2
+SARM B 2
+TNT1 A 2
+SARM B 2
+TNT1 A 2
+stop
+}
+}
+
+
+actor GutrockDebris
+{
+PROJECTILE
+Damage (18)
+damagetype "SuperArmDebris"
+Obituary "$OB_SUPERARM"
+Height 12
+Radius 12
+scale 2.5
+Speed 20
+States
+{
+Spawn:
+SARM B 1
+loop
+}
+}
+
+actor SuperArmAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+

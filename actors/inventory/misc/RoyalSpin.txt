@@ -1,0 +1,139 @@
+actor RoyalSpinWep : BaseMM8BDMWep
+{
+dropitem "RoyalSpinWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 84
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_ROYALSPIN"
+Obituary "$OB_ROYALSPIN"
+Tag "$TAG_ROYALSPIN"
+weapon.ammotype "RoyalSpinAmmo"
+inventory.icon "RSPNICON"
+States
+{
+Spawn:
+RSPN Z 1
+loop
+Ready:
+RYLS A 0 ACS_ExecuteAlways(998,0,928)
+RYLS A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+RYLS A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+RYLS A 1 A_Raise
+Loop
+Fire:
+RYLS A 0 A_JumpIfNoAmmo("NoAmmo")
+GUTA A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+RYLS B 0 A_Refire(1)
+RYLS B 1 offset(-4,34)
+RYLS B 1 offset(-8,34)
+goto SpinToWin
+SpinToWin:
+RYLS C 0 A_JumpIfInventory("RoyalSpinAmmo",1,"SpinToWin2")
+goto Ready+1
+SpinToWin2:
+RYLS C 0 A_SpawnItemEx("RoyalSpinFX1",23,0,8,momx,momy,momz,0,8|SXF_TRANSFERTRANSLATION,0)
+RYLS C 1 offset(-6,52)A_PlaySoundEx("misc/kingswing","Weapon")
+RYLS D 0 A_FireCustomMissile("RoyalSpinAttack",0,1,0,0)
+RYLS C 0 A_SpawnItemEx("RoyalSpinFX1",23,0,8,momx,momy,momz,0,8|SXF_TRANSFERTRANSLATION,0)
+RYLS D 1 offset(-6,52)A_GiveInventory("RoyalSpinBoost",1)
+RYLS D 0 A_Refire("SpinToWin3")
+goto Ready+1
+SpinToWin3:
+RYLS C 0 A_JumpIfInventory("RoyalSpinAmmo",1,"SpinToWin4")
+goto Ready+1
+SpinToWin4:
+RYLS C 0 A_SpawnItemEx("RoyalSpinFX2",23,0,8,momx,momy,momz,0,8|SXF_TRANSFERTRANSLATION,0)
+RYLS C 1 offset(-6,52)
+RYLS D 0 A_FireCustomMissile("RoyalSpinAttack",0,1,0,0)
+RYLS C 0 A_SpawnItemEx("RoyalSpinFX2",23,0,8,momx,momy,momz,0,8|SXF_TRANSFERTRANSLATION,0)
+RYLS D 1 offset(-6,52)A_GiveInventory("RoyalSpinBoost",1)
+RYLS D 0 A_Refire("SpinToWin")
+goto Ready+1
+NoAmmo:
+RYLS A 1 ACS_Execute(979,0)
+goto Ready+1
+Botcheck:
+SCLA A 0 A_ChangeVelocity(13,0,momz,CVF_RELATIVE|CVF_REPLACE)
+goto Fire+2
+}
+}
+
+actor RoyalSpinAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 84
++INVENTORY.IGNORESKILL
+}
+
+actor RoyalSpinAttack
+{
++MISSILE
+-SOLID
++DONTBLAST
++NOGRAVITY
++RIPPER
++SKYEXPLODE
++NOINTERACTION
++DONTSPLASH
++THRUGHOST
++THRUACTORS
++DONTREFLECT
+Damage 0
+radius 2
+height 2
+Damagetype "RoyalSpin"
+Obituary "$OB_ROYALSPIN"
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Explode(5,128,0,0,32)
+stop
+}
+}
+
+actor RoyalSpinFX1 : ProtoShieldFX
+{
+//Translation "200:202=210:210","203:205=196:196","206:207=118:118"
+scale 2.5
+States
+{
+Spawn:
+RYSP F 0
+RYSP F 1
+stop
+}
+}
+
+actor RoyalSpinFX2 : ProtoShieldFX
+{
+//Translation "200:202=210:210","203:205=196:196","206:207=118:118"
+scale 2.5
+States
+{
+Spawn:
+RYSP G 0
+RYSP G 1
+stop
+}
+}
+
+actor RoyalSpinBoost : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIf(z-floorz==0,"Ground")
+TNT1 A 0 A_Recoil(-1)
+stop
+Ground:
+TNT1 A 0 A_Recoil(-2.5)
+stop
+}
+}

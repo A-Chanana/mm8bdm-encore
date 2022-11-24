@@ -1,0 +1,32 @@
+// Bullet Man
+
+[IntroStrings]
+"I'll pump y'all full of lead!"
+"Call an ambulance... But not for me!"
+
+[FragStrings]
+"HEADSHOT!"
+"Brought a knife to a gunfight?! Ha!"
+"Keep the change, ya filthy animal."
+
+[KilledStrings]
+"Gah! Stand still, you lil cockroach!"
+"SON OF A GUN!"
+"Oh, what?! I'm firin' blanks?!"
+
+[RoamingStrings]
+"Wh- what's all this fancy junk here?! Where's all the guns?!"
+"Gh! Gotta reload... Wh- Where's all the ammunition."
+"Awww, y'all so scaaared? All it'll take is one bullet!"
+"Bah! All this running is just tiresome!"
+"Ha! You'll never get a dint in me! I'm a man of steel!"
+
+[WinStrings]
+"Look at that! Didn't have to reload once!"
+"BWAHAHAHA!! All this bloodshed around me! I LOVE IT!"
+"\cgI AM BULLET-PROOF!"
+
+[LoseStrings]
+"All my bullets... wasted... You cowardly cockroaches..."
+"No way I'm that rusty! It's the wind I tell ya, the wind!"
+"No! How are y'all still active from my hailstorm?!"

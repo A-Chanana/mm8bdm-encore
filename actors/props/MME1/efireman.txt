@@ -1,0 +1,115 @@
+actor EFireTrap 20503
+{
+//$Category MM8BDME-Interactive Props
+//$Arg0 Start delay (in ticks)
++NOGRAVITY
+-SOLID
+Radius 4
+Height 4
+Scale 2.5
+renderstyle none
+obituary "%o's timing was off and got burned by a fire trap."
+States
+{
+Spawn:
+FIRT AAAAAAAA 2 A_CustomMissile("EFireWave",0,0,0,2,0)
+FIRT A 40 A_CustomMissile("EFireWave",0,0,0,2,0)
+Loop
+}
+}
+
+actor EFireWave : FireWave
+{
+Damage (3)
+}
+
+actor EScrewBomber : ScrewBomber 20633
+{
+//$Category MM8BDME-Props
++CLIENTSIDEONLY
++FORCEYBILLBOARD
+height 16
+radius 16
+scale 2.5
+States
+{
+Spawn:
+SWBM A 35
+SWBM A 1 A_Jump(25,"PopUp")
+loop
+PopUp:
+SWBM BCDBCDBCD 5
+goto Spawn
+}
+}
+
+actor EFirePillarSpawner 20634
+{
+//$Category MM8BDME-Interactive Props
+Radius 16
+scale 2.5
+Height 100
++NOGRAVITY
++FORCEYBILLBOARD
+-SOLID
++DONTBLAST
+States
+{
+Spawn:
+TNT1 A 0 A_SpawnItemEx("EFirePillar",0,0,0,0)
+TNT1 A 32
+loop
+}
+}
+
+
+actor EFirePillar
+{
+-MISSILE
++FORCEYBILLBOARD
+-SHOOTABLE
++DONTRIP
++NOBLOOD
++DONTBLAST
++NORADIUSDMG
++NOTARGETSWITCH
++DONTREFLECT
++NOTAUTOAIMED
++BRIGHT
+scale 2.0
+height 96
+Radius 12
+mass 99999
+PainChance 256
+Damage (0)
+damagetype "EFirePillar"
+States
+{
+Spawn:
+EFIP A 0
+EFIP D 0 A_ChangeFlag("MISSILE", 1)
+EFIP D 0 A_ChangeFlag("SHOOTABLE", 1)
+TNT1 AAAAAAAA 4 A_SpawnItemEx("EFirePillarFX",0,0,0,0,0,7)
+Stop
+Death:
+EFIP C 0 A_ChangeFlag("SHOOTABLE", 0)
+stop
+}
+}
+
+Actor EFirePillarFX 
+{
++NOINTERACTION
++CLIENTSIDEONLY
++BRIGHT
+Scale 2.5
+States
+{
+Spawn:
+EFIP AABBC 3
+Goto Death
+Death:
+EFIP C 1 A_FadeOut(0.5)
+Loop
+}
+}

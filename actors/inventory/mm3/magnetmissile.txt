@@ -1,0 +1,106 @@
+actor MagnetMissileWep : BaseMM8BDMWep 10038
+{
+//$Category MM8BDM-Weapons
+//$Title Magnet Missile
+//$Sprite WEAPI0
+dropitem "MagnetMissileWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 28
+Weapon.SlotNumber 2
+Inventory.Pickupmessage "$PU_MAGNETMISSILE"
+Obituary "$OB_MAGNETMISSILE"
+Tag "$TAG_MAGNETMISSILE"
+weapon.ammotype "MagnetMissileAmmo"
+inventory.icon "MAGNETSI"
+States
+{
+SpawnLoop:
+WEAP I -1
+loop
+Ready:
+MAGG C 0 ACS_ExecuteAlways(998,0,8)
+MAGG C 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+MAGG C 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+MAGG C 1 A_Raise
+Loop
+Fire:
+MAGG C 0 A_JumpIfNoAmmo("NoAmmo")
+MAGG C 0 A_PlaySoundEx("weapon/magnetmissile","Weapon")
+MAGG C 0 A_FireCustomMissile("MagnetMissile",0,1,8,0)
+MAGG DEC 4
+MAGG C 25
+MAGG C 0 A_Refire
+Goto Ready+1
+NoAmmo:
+MAGG C 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor MagnetMissileAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor MagnetMissile
+{
+PROJECTILE
+Radius 8
+Height 5
+scale 2.5
+damagetype "MagnetMissile"
+Obituary "$OB_MAGNETMISSILE"
+damage (30)
+speed 47
++SEEKERMISSILE
+-EXTREMEDEATH
++SCREENSEEKER
+States
+{
+Spawn:
+MAGG A 1 A_SeekerMissile(4, 10, SMF_LOOK|SMF_PRECISE, 256, 3)
+MAGG A 0 A_JumpIfTargetInLOS("LockOn", 0, JLOSF_PROJECTILE)
+loop
+LockOn:
+MAGG A 1
+MAGG A 0 A_CustomMissile("MagnetMissileLocked",0,0,0,2,0)
+stop
+Death:
+TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}
+
+actor MagnetMissileLocked
+{
+PROJECTILE
+Radius 8
+Height 5
+scale 2.5
+damagetype "MagnetMissile"
+Obituary "$OB_MAGNETMISSILE"
+damage (24)
+speed 12
++SEEKERMISSILE
+-EXTREMEDEATH
++SCREENSEEKER
+reactiontime 80
+States
+{
+Spawn:
+MAGG A 1 A_SeekerMissile(4, 10, SMF_LOOK|SMF_PRECISE, 256, 3)
+MAGG A 0 A_CountDown
+loop
+Death:
+TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}

@@ -1,0 +1,107 @@
+actor BalladeCrackerWep : BaseMM8BDMWep 10076
+{
+//$Category MM8BDM-Weapons
+//$Title Ballade Cracker
+//$Sprite WEA3C0
+dropitem "BalladeCrackerWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_BALLADECRACKER"
+Obituary "$OB_BALLADECRACKER"
+Tag "$TAG_BALLADECRACKER"
+weapon.ammotype "BalladeCrackerAmmo"
+inventory.icon "BALLSI"
+States
+{
+SpawnLoop:
+WEA3 C -1
+loop
+Ready:
+BHND A 0 ACS_ExecuteAlways(998,0,47)
+BHND A 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+BHND A 1 A_WeaponReady
+Goto Ready+1
+ReadyNoAmmo:
+BHND J 1 A_WeaponReady
+BHND J 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BHND A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BHND A 1 A_Raise
+Loop
+Fire:
+BHND A 0 A_JumpIfNoAmmo("NoAmmo")
+BHND A 0 A_PlaySoundEx("weapon/crackerthrow","Weapon")
+BHND A 0 A_FireCustomMissile("BalladeCracker",0,1,8,0)
+BHND BCDEFG 2
+BHND HI 2
+BHND A 0 A_JumpIfNoAmmo("NoAmmoDelay")
+BHND A 13
+BHND A 0 A_Refire
+Goto Ready+1
+NoAmmoDelay:
+BHND J 13
+Goto ReadyNoAmmo
+NoAmmo:
+BHND J 1 ACS_Execute(979,0)
+Goto ReadyNoAmmo
+}
+}
+
+actor BalladeCrackerAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor BalladeCracker
+{
+PROJECTILE
+Radius 6
+Height 7
+scale 2.5
+damagetype "BalladeCracker"
+Obituary "$OB_BALLADECRACKER"
+damage (1)
+speed 50
++EXPLODEONWATER
+States
+{
+Spawn:
+BALA ABCD 3
+loop
+XDeath:
+BALA A 0
+stop
+Crash:
+Death:
+TNT1 A 0 A_SpawnItemEx("BalladeCrackerExplosion")
+stop
+}
+}
+
+actor BalladeCrackerExplosion : BalladeCracker
+{
+PROJECTILE
+damagetype "BalladeCrackerExplosion"
++NOCLIP
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+TNT1 E 0
+BALA A 0 A_PlaySoundEx("weapon/crackerexplode", "Weapon")
+BALA A 0 A_Explode(40, 96, 0) //This is really the only important part of this.
+TNT1 A 35 A_SpawnItemEx("ExplosionEffect2")
+stop
+}
+}

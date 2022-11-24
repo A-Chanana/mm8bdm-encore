@@ -1,0 +1,30 @@
+// Stove Man
+
+[IntroStrings]
+"Alright. Let's get cooking..."
+"Hey fellas! Barbecue's ready!"
+
+[FragStrings]
+"Now serving: Roasted $player_killed."
+"Hey! Didn't I tell you to keep your hands off the grill!"
+"Toasty!"
+
+[KilledStrings]
+"You... broke my grill?! You \cgBROKE MY GRILL?!"
+"Aw- stop dousing my flames!" 
+"Darn. I should better turn up my flames more..."
+
+[RoamingStrings]
+"Yes. I'm not deceiving you. Of course I can fly." 
+"Nobody out here? Seriously? I'm wasting all my propane here."
+"Hmm... What's on my menu for today..."
+"My grate's getting pretty rusty... I should season it after this."
+"Enjoying the barbecue, guys? I could pitch y'all up with a nice, lean $player_random_notself\c- soon."
+
+[WinStrings]
+"Nah, I'm kidding. \cgY'ALL WERE ON MY MENU!"
+"Ha! What a barbecue! I'll be sure to host another next week, how's that sound?"
+
+[LoseStrings]
+"All the media says is 'FIGHT, FIGHT, MEGAMAN, WILY.' I JUST WANNA GRILL FOR GOD'S SAKE, AND I CAN'T EVEN BE ALLOWED THAT?!"
+"Y'all ruined my barbecue! Broke my grill, shattered my grates, BLEW UP MY PROPANE! Now the boss's gonna end me if I don't square away with this scorched wreck..."

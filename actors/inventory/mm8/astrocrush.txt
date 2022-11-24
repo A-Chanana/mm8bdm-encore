@@ -1,0 +1,136 @@
+actor AstroCrushWep : BaseMM8BDMWep 11094
+{
+//$Category MM8BDM-Weapons
+//$Title Astro Crush
+//$Sprite WEA4E0
+dropitem "AstroCrushWep"
+Weapon.AmmoUse 10
+Weapon.AmmoGive 30
+Weapon.SlotNumber 6
+Inventory.Pickupmessage "$PU_ASTROCRUSH"
+Obituary "$OB_ASTROCRUSH"
+Tag "$TAG_ASTROCRUSH"
+weapon.ammotype "AstroCrushAmmo"
+inventory.icon "ASTROI"
+States
+{
+SpawnLoop:
+WEA4 E -1
+loop
+Ready:
+AHUD A 0 ACS_ExecuteAlways(998,0,87)
+AHUD A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+AHUD A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+AHUD A 1 A_Raise
+Loop
+Fire:
+AHUD A 0 A_JumpIfNoAmmo("NoAmmo")
+AHUD B 0
+AHUD G 0 A_JumpIfInventory("IsSpecialBot", 1 ,"AstroManCheck")
+AHUD A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+AHUD B 0 A_Stop
+AHUD B 0 ACS_NamedExecuteAlways("core_flyplayer",0,0,1)
+AHUD B 0 ACS_NamedExecuteAlways("core_freezeplayer",0,0,1)
+AHUD BCDEF 3
+TNT1 A 0 A_FireCustomMissile("AstroCrushSpawner",0,1,0,0)
+TNT1 A 30 
+AHUD B 0 ACS_NamedExecuteAlways("core_flyplayer",0,0,0)
+AHUD B 0 ACS_NamedExecuteAlways("core_freezeplayer",0,0,0)
+AHUD GH 3
+AHUD A 14
+AHUD A 0 A_Refire
+Goto Ready+1
+NoAmmo:
+AHUD A 1 ACS_Execute(979,0)
+Goto Ready+1
+AstroManCheck:
+AHUD A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 480, 0)>0, 2)
+AHUD A 1 A_GiveInventory("CopyVisionWep",1)
+AHUD A 1 A_SelectWeapon("CopyVisionWep")
+Goto Fire+4
+BotCheck:
+SCLA A 0 A_JumpIf(ACS_NamedExecuteWithResult("StunCheck",1)==1, "BotFire")
+LIBO E 3 ACS_NamedExecuteAlways("Bots_WalkToAttack",0,0,1)
+LIBO D 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 390, 0)>0, 2)
+LIBO B 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 800, 0)>0, "BotCheck")
+Goto Ready+1
+BotFire:
+LIBO B 0 ACS_NamedExecuteAlways("StateChange",0,2)
+Goto Fire+4
+}
+}
+
+actor AstroCrushAmmo : Ammo
+{
+inventory.amount 2
+inventory.maxamount 30
++INVENTORY.IGNORESKILL
+}
+
+actor AstroCrush
+{
+PROJECTILE
++RIPPER
++NOINTERACTION
++DONTBLAST
++BRIGHT
+Damagetype "AstroCrush"
+Obituary "$OB_ASTROCRUSH"
+damage (0)
+height 8
+radius 16
+Scale 2.5
+Reactiontime 10
+States
+{
+Spawn:
+ASTR B 0
+ASTR B 0 A_ChangeVelocity(11,0,momz,CVF_RELATIVE|CVF_REPLACE)
+ASTR BBBCCCDDD 1 A_JumpIf(ceilingz-z>8, "Spawn2")
+ASTR B 0 A_JumpIf(momz==0,"Death")
+ASTR B 0 A_CountDown
+Goto Spawn+2
+Spawn2:
+ASTR B 0 A_ChangeFlag("RIPPER", 0)
+ASTR B 0 A_ChangeFlag("NOINTERACTION",0)
+ASTR BCD 3 A_ChangeVelocity(11,0,momz,CVF_RELATIVE|CVF_REPLACE) 
+ASTR B 0 A_JumpIf(momz==0,"Death")
+ASTR B 0 A_CountDown
+Goto Spawn2+2
+Death:
+ASEX A 0 A_playSoundEx("weapon/astrocrush2","Weapon")
+ASEX A 0 A_ChangeFlag(NOGRAVITY,1)
+ASEX A 0 A_Explode(70,128,0)
+ASEX ABCDEF 2
+stop
+}
+}
+
+actor AstroCrushSpawner
+{
++NOGRAVITY
++MISSILE
++NOINTERACTION
++NOCLIP
++DONTBLAST
+ReactionTime 10
+//+CEILINGHUGGER
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_SpawnItemEx("AstroCrush",random(300,-300),random(256,-256),320,0,0,random(-20,-22))
+TNT1 A 1 A_SpawnItemEx("AstroCrush",random(300,-300),random(256,-256),320,0,0,random(-20,-22))
+TNT1 A 1 A_CountDown
+loop
+Death:
+TNT1 A 0
+stop
+}
+}

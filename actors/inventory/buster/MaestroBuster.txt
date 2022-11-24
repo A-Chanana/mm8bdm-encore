@@ -1,0 +1,175 @@
+actor MaestroBuster : LaserBuster
+{
+dropitem "MaestroUpgrade"
+Inventory.Pickupmessage "$PU_MAESTROUPGRADE"
+Obituary "$OB_MAESTROUPGRADE"
+Tag "$TAG_MAESTROBUSTER"
+States
+{
+SpawnLoop:
+WEA4 L 1
+stop
+Ready:
+MAEB B 0 A_JumpIfInventory("BusterGiven",1,"TakeBusters")
+Goto Ready2
+TakeBusters:
+TNT1 Q 0 A_GiveInventory("TakeBuster", 1)
+Goto Ready2
+Ready2:
+MAEB B 0 ACS_ExecuteAlways(998,0,240)
+MAEB B 0 ACS_ExecuteAlways(981,0,0)
+MAEB B 0 A_TakeInventory("WeaponCharge",999)
+MAEB B 2 A_WeaponReady
+Goto Ready2+2
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+MAEB B 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+MAEB B 1 A_Raise
+Loop
+Fire:
+Altfire:
+MAEB B 0 A_JumpIfNoAmmo("Hold")
+MAEB B 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+MAEB B 0 A_FireCustomMissile("MaestroShot",0,0,8,0)
+MAEB B 1 A_TakeInventory("WeaponCharge",999)
+MAEB EFFFEB 1
+MAEB B 1
+MAEB B 0 A_Refire
+goto Ready2+2
+Fire2:
+MAEB B 0 A_TakeInventory("WeaponCharge",999)
+MAEB B 0 ACS_ExecuteAlways(991,0,240)
+MAEB E 1 A_PlaySoundEx("weapon/mbuster","Weapon")
+MAEB B 1 A_FireCustomMissile("MaestroShot",0,0,8,0)
+MAEB E 1 A_PlaySoundEx("weapon/mbuster","Weapon")
+MAEB B 1 A_FireCustomMissile("MaestroShot",0,0,8,0)
+MAEB E 1 A_PlaySoundEx("weapon/mbuster","Weapon")
+MAEB B 1 A_FireCustomMissile("MaestroShot",0,0,8,0)
+MAEB B 1 A_PlaySoundEx("weapon/mbuster","Weapon")
+MAEB B 1 A_FireCustomMissile("MaestroShot",0,0,8,0)
+MAEB EFFFFFFEEB 1
+MAEB B 0 A_Refire
+goto Ready2+2
+Fire3:
+MAEB B 0 A_TakeInventory("WeaponCharge",999)
+TNT1 A 0 A_StopSoundEx("SoundSlot5")
+MAEB B 0 A_PlaySoundEx("weapon/cfire","Weapon")
+MAEB E 0 ACS_ExecuteAlways(991,0,240)
+MAEB E 0 A_FireCustomMissile("MaestroCShot",0,0,8,0)
+MAEB EFFFFFFEB 1
+MAEB B 0 A_Refire
+goto Ready2+2
+Hold:
+//BUST B 0 A_JumpIfInventory("WeaponCharge",34,"Charge2Start")
+MAEB B 0 A_JumpIfInventory("WeaponCharge",18,"Charge")
+MAEB B 1 A_GiveInventory("WeaponCharge",1)
+MAEB B 0 A_Refire
+Goto Ready2+2
+Charge:
+//BUST B 0 A_JumpIfInventory("WeaponCharge",34,"Charge2Start")
+MAEB B 0 A_JumpIfInventory("WeaponCharge",19,"Charge1")
+MAEB B 0 A_PlaySoundEx("weapon/coilstart","Weapon")
+Goto Charge1
+Charge1:
+MAEB B 0 A_JumpIfInventory("WeaponCharge",35,"Charge2Start")
+MAEB C 1 ACS_ExecuteAlways(991,0,241,0,1)
+MAEB D 0 A_Refire("Charge1.a")
+Goto Fire2
+Charge1.a:
+MAEB B 1 ACS_ExecuteAlways(991,0,240)
+MAEB B 0 A_GiveInventory("WeaponCharge",1)
+MAEB C 0 A_Refire("Charge")
+Goto Fire2
+BotFire:
+MAEB B 0 A_Jump(16, "Fire3")
+MAEB C 0 A_Refire
+Goto Fire3
+Charge2Start:
+MAEB B 0 A_GunFlash("Sound.BusterCharge", GFF_NOEXTCHANGE)
+Goto Charge2
+Charge2:
+MAEB D 1 ACS_ExecuteAlways(991,0,242,0,2)
+MAEB C 0 A_Refire("Charge2.a")
+Goto Fire3
+Charge2.a:
+MAEB B 1 ACS_ExecuteAlways(991,0,240,0,0)
+MAEB B 0 A_JumpIfInventory("IsBot", 1, "BotFire")
+MAEB C 0 A_Refire("Charge2")
+MAEB B 0 A_JumpIfInventory("WeaponCharge", 35, 2)
+MAEB B 0 A_GiveInventory("WeaponCharge",1)
+MAEB B 0 A_Refire
+Goto Fire3
+}
+}
+
+actor MaestroUpgrade : BaseMM8BDMUseItem 10162
+{
+//$Category MM8BDM-Weapons/Buster
+//$Title Maestro Upgrade
+//Inventory.RespawnTics 350
+//$Sprite MAEBA0
+inventory.amount 1
+inventory.maxamount 1
+Inventory.Pickupmessage "Support Item! Maestro Buster!"
+Tag "$TAG_MAESTROUPGRADE"
+inventory.icon "MAEBUP"
+Inventory.PickupSound "item/1up"
+Inventory.RespawnTics 350
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+MAEB A 1
+loop
+Use:
+WEA2 Q 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",9)
+MAEB A 0 A_GiveInventory("MaestroBuster",1)
+MAEB A 0 A_SelectWeapon("MaestroBuster")
+stop
+}
+}
+
+actor MaestroShot : MegaShot
+{
+Damage (13)
+Obituary "$OB_MAESTROBUSTER"
+}
+
+actor MaestroCShot
+{
+PROJECTILE
++LOOKALLAROUND
++SKYEXPLODE
++DONTBLAST
++THRUGHOST
++BRIGHT
+//seesound "weapon/mbuster"
+Speed 54
+Damage (45)
+radius 22
+height 22
+scale 2.5
+damagetype "MaestroBuster"
+Obituary "$OB_MAESTROBUSTER"
+States
+{
+Spawn:
+MAEB G 2
+MAEB H 2 A_ChangeFlag("THRUGHOST", 0)
+MAEB I 2
+MAEB GHI 2
+Goto Spawn+3
+}
+}
+
+actor MaestroBusterStart : MaestroBuster
+{
+dropitem ""
+}

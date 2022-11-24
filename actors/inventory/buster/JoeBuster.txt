@@ -1,0 +1,143 @@
+actor JoeBuster : BaseMM8BDMWep
+{
+dropitem "JoeUpgrade"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 3
+Weapon.SlotNumber 1
+Inventory.Pickupmessage "$PU_JOEUPGRADE"
+Obituary "$OB_JOEBUSTER"
+Tag "$TAG_JOEBUSTER"
+weapon.ammotype "BusterAmmo"
+inventory.icon "NULLICON"
+Dropitem ""
+States
+{
+SpawnLoop:
+WEA2 Q 1
+stop
+Ready:
+JOEB F 0 A_TakeInventory("StopShield",1)
+JOEB B 0 A_JumpIfInventory("BusterGiven",1,"TakeBusters")
+Goto Ready2
+TakeBusters:
+TNT1 Q 0 A_GiveInventory("TakeBuster", 1)
+Goto Ready2
+Ready2:
+JOEB F 0 ACS_ExecuteAlways(998,0,742)
+JOEB F 0
+JOEB F 0 A_TakeInventory("StopShield",1)
+JOEB F 0 A_GunFlash
+JOEB HGF 1 A_WeaponReady
+Goto Ready2+6
+Deselect:
+JOEB F 0 A_GiveInventory("StopShield",1)
+JOEB FFGH 1
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+JOEB F 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+JOEB F 1 A_Raise
+loop
+Fire:
+Altfire:
+JOEB C 0 A_GiveInventory("StopShield",1)
+JOEB FGC 1
+Altfire.a:
+JOEB C 0 A_PlaySoundEx("misc/devilfire","Weapon")
+JOEB C 0 A_FireCustomMissile("JoeShot",0,0,8,0)
+JOEB DEDC 3
+JOEB C 9
+JOEB CCCCC 1 A_Refire("Altfire.a")
+goto Ready2+2
+Flash:
+TNT1 A 0 A_SpawnItemEx("ProtoShieldHitbox1",28,-16,8,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("ProtoShieldHitbox2",28,-8,8,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("ProtoShieldHitbox3",28,0,8,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("ProtoShieldHitbox4",28,8,8,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("ProtoShieldHitbox5",28,16,8,0,0,0,0,1)
+FlashLoop:
+TNT1 A 0 A_SpawnItemEx("JoeShieldFX",23,-10,8,momx,momy,momz,0,9,0)
+TNT1 A 1 A_JumpIfInventory("StopShield",1,"NoFlash")
+TNT1 A 0 A_JumpIfInventory("IsDead",1,"NoFlash")
+loop
+NoFlash:
+TNT1 A 0 
+Stop
+}
+}
+
+actor JoeShot : MegaShot
+{
+Damage (30)
+damagetype "JoeBuster"
+Obituary "$OB_JOEBUSTER"
+States
+{
+Spawn:
+TNT1 A 2
+JOEB A 2 
+JOEB A 0 A_ChangeFlag("THRUGHOST", 0)
+JOEB A 1
+goto spawn+3
+Death:
+JOEB A 1
+stop
+}
+}
+
+actor JoeShieldFX
+{
+-SOLID
++NOGRAVITY
++NOBLOCKMAP
++FIXMAPTHINGPOS
++NOTIMEFREEZE
+Height 0
+Radius 0
+scale 2.5
++CLIENTSIDEONLY
++NOINTERACTION
+States
+{
+Spawn:
+TNT1 A 0
+JOEB B 2
+stop
+}
+}
+
+actor JoeUpgrade : BaseMM8BDMUseItem 18008
+{
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+Tag "$TAG_JOEUPGRADE"
+inventory.pickupmessage "$PU_JOEUPGRADE"
+inventory.icon "JOEBUP"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+Spawn:
+JOEB I 1
+LOOP
+Use:
+FAKE A 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",11)
+FAKE A 0 A_GiveInventory("JoeBuster",1)
+FAKE A 0 A_SelectWeapon("JoeBuster")
+stop
+Death:
+TNT1 A 0
+Stop
+}
+}
+
+actor JoeBusterStart : JoeBuster
+{
+dropitem ""
+}

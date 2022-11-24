@@ -1,0 +1,161 @@
+actor CopyVisionWep : BaseMM8BDMWep 10015
+{
+//$Category MM8BDM-Weapons
+//$Title Copy Vision
+//$Sprite COPYX0
+dropitem "CopyVisionWep"
+Weapon.AmmoUse 7
+Weapon.AmmoGive 28
+Weapon.SlotNumber 2
+Inventory.Pickupmessage "$PU_COPYVISION"
+Obituary "$OB_COPYVISION"
+Tag "$TAG_COPYVISION"
+weapon.ammotype "CopyVisionAmmo"
+inventory.icon "COPYVI"
++WEAPON.NOAUTOAIM
+States
+{
+SpawnLoop:
+COPY X -1
+loop
+Ready:
+COPB A 0 ACS_ExecuteAlways(998,0,175)
+COPB A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 A 0 A_TakeInventory("CopyVisionRedirect", 9)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+COPB A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+COPB A 1 A_Raise
+Loop
+Fire:
+BRBU E 0 A_JumpIfInventory("IsSpecialBot", 1 ,"AstroManCheck")
+COPB A 0 A_JumpIfInventory("CopyVisionFlag",1,"Buster")
+COPB A 0 A_JumpIfNoAmmo("Buster")
+COPB A 0 A_FireCustomMissile("CopyVisionSpawner",0,0,8,0,0,pitch)//A_SpawnItemEx("CopyVision",30,0,0,0,0,0,0,0,0)
+COPB A 0 A_TakeInventory("CopyVisionAmmo",7,TIF_NOTAKEINFINITE)
+COPB A 0 A_GiveInventory("CopyVisionFlag",1)
+COPB A 11
+COPB A 2 A_Refire
+Goto Ready+1
+Buster:
+COPB A 0 A_GiveInventory("CopyVisionRedirect", 1)
+Altfire:
+COPB A 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+COPB A 0 A_FireCustomMissile("MegaShot",0,0,8,0)
+COPB BC 3
+COPB A 2
+COPB A 0 A_Refire
+//Goto Ready+1
+NoAmmo:
+COPB A 1 ACS_Execute(979,0)
+goto Ready+1
+AstroManCheck:
+TOPH A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 480, 0)>0, 1)
+Goto Fire+1
+BUTS B 1 A_GiveInventory("AstroCrushWep",1)
+BUST B 1 A_SelectWeapon("AstroCrushWep")
+Goto Fire+1
+}
+}
+
+actor CopyVisionAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor CopyVisionFlag : Once {}
+
+actor CopyVisionRedirect : CopyVisionFlag {}
+
+actor CopyVisionSpawner
+{
+PROJECTILE
++DONTBLAST
++THRUACTORS
+Damage(0)
+Height 1
+Radius 16
+Speed 19
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+Death:
+TNT1 A 0 A_SpawnItemEx("CopyVision",0,0,-32,0,0,0,0,SXF_TRANSFERTRANSLATIOn,0)
+stop
+}
+}
+
+actor CopyVision
+{
+PROJECTILE
+RenderStyle "Translucent"
+Alpha 0.90
+scale 2.5
++THRUGHOST
++RIPPER
++NOCLIP
++DONTBLAST
++BRIGHT
+Radius 16
+Height 32
+Damage (0)
+reactiontime 40
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySoundEx("weapon/copyvision", "weapon")
+TNT1 A 0 ACS_ExecuteAlways(259, 0, 0)
+COPY FGHI 2
+Goto Shooting
+Shooting:
+COPY C 0 A_JumpIfInTargetInventory("CopyVisionRedirect", 1, "Redirect")
+COPY C 0 A_CustomMissile("CopyShot",32,0,0,2,-pitch)
+COPY CCCCCC 1 A_JumpIfInTargetInventory("CopyVisionRedirect", 1, "Redirect")
+COPY C 0 A_JumpIfInTargetInventory("IsDead", 1, "Death")
+COPY C 0 A_Countdown
+Loop
+Redirect:
+COPY CC 1 A_GiveToTarget("TargetMarker", 1)
+COPY C 0 ACS_ExecuteAlways(989, 0, ACS_ExecuteWithResult(257)+100, 32)
+COPY C 0 A_TakeFromTarget("CopyVisionRedirect", 9)
+goto Shooting
+Death:
+TNT1 A 0 A_TakeFromTarget("CopyVisionFlag", 1)
+COPY IJK 3
+Stop
+}
+}
+
+actor CopyShot 
+{
+PROJECTILE
++FORCEXYBILLBOARD
++BRIGHT
+Damage (13)
+Speed 30
+DamageType "CopyVision"
+Obituary "$OB_COPYVISION"
+radius 5
+height 5
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+COPY DE 2
+Goto Spawn+2
+Death:
+TNT1 A 0 
+stop
+}
+}

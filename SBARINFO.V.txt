@@ -1,0 +1,279 @@
+//VERTICAL BARS
+height 0;
+
+statusbar fullscreen, forcescaled
+{
+InInventory not NoHud, 1
+{
+InInventory not NoHealthBar, 1
+{
+DrawBar "BARHEALT", "BAREMPTY", Health, vertical, 24, 8;
+	InInventory LightTeamFlag, 1{DrawImage "LBAR", 24, 3;}
+	InInventory WilyTeamFlag, 1{DrawImage "WBAR", 24, 3;}
+	InInventory CossackTeamFlag, 1{DrawImage "CBAR", 24, 3;}
+	InInventory KingTeamFlag, 1{DrawImage "KBAR", 24, 3;}
+
+InInventory SkullShieldCheck, 1{DrawBar "BARFLS5", "NOBAR", SkullShieldCheck, vertical, 24, 8;}
+InInventory SkullBarrierProtection, 1{DrawBar "BARFLS5", "NOBAR", SkullShieldCheck, vertical, 24, 8;}
+InInventory BasicArmor, 1{DrawBar "BARAMT31", "NOBAR", Armor, vertical, 24, 8;}
+
+//IfCVarInt mm8bdm_ammonumber, 1
+//ha ha ha end me
+InInventory AmmoNumberFlag, 1
+{
+	WeaponAmmo not BusterAmmo
+	{
+		//DrawNumber 5,CMBHPFONT,Untranslated,Health,/*interpolate(10),*/alignment(left),31,30;
+		DrawNumber 3, "8BDMAFONT", Untranslated, Ammo1, alignment(right), 15, 31;
+	}
+}
+
+//IfCVarInt mm8bdm_healthnumber, 1
+//dont worry jax I'm in pain too
+InInventory HealthNumberFlag, 1
+{
+	//DrawNumber 5,CMBHPFONT,Untranslated,Health,/*interpolate(10),*/alignment(left),31,30;
+	DrawNumber 3, "8BDMAFONT", Untranslated, Health, alignment(left), 31, 31;
+}
+}
+
+DrawSelectedInventory INDEXFONT ,24, 64, 37, 64, white;
+DrawImage weaponicon, 16, 64;
+
+
+//MM1 Bars
+IsSelected RollingCutterWep{Drawbar"BARAMMO1", "BAREMPTY", RollingCutterAmmo, vertical, 16, 8;}
+IsSelected SuperArmWep{Drawbar"BARAMMO2", "BAREMPTY", SuperArmAmmo, vertical, 16, 8;}
+IsSelected IceSlasherWep{Drawbar"BARAMMO3", "BAREMPTY", IceSlasherAmmo, vertical, 16, 8;}
+IsSelected HyperBombWep{Drawbar"BARAMMO4", "BAREMPTY", HyperBombAmmo, vertical, 16, 8;}
+IsSelected FireStormWep{Drawbar"BARAMMO5", "BAREMPTY", FireStormAmmo, vertical, 16, 8;}	
+IsSelected ThunderBeamWep{Drawbar"BARAMMO6", "BAREMPTY", ThunderBeamAmmo, vertical, 16, 8;}
+IsSelected TimeSlowWep{DrawBar"BARAMMO7", "BAREMPTY", TimeSlowAmmo, vertical, 16, 8;}
+IsSelected OilSliderWep{DrawBar"BARAMMO8", "BAREMPTY", OilSliderAmmo, vertical, 16, 8;
+	InInventory OilSliderFlag, 1	{DrawBar"BARFLS1", "NOBAR", OilSliderFlag, vertical, 16, 8;}}
+	
+//MM2
+IsSelected MetalBladeWep{Drawbar"BARAMMO9", "BAREMPTY", MetalBladeAmmo, vertical, 16, 8;}
+IsSelected AirShooterWep{Drawbar"BARAMM10", "BAREMPTY", AirShooterAmmo, vertical, 16, 8;}
+IsSelected BubbleLeadWep{Drawbar"BARAMMO1", "BAREMPTY", BubbleLeadAmmo, vertical, 16, 8;}
+IsSelected QuickBoomerangWep{Drawbar"BARAMM11", "BAREMPTY", QuickBoomerangAmmo, vertical, 16, 8;}
+IsSelected CrashBombWep{Drawbar"BARAMM12", "BAREMPTY", CrashBombAmmo, vertical, 16, 8;}
+IsSelected TimeStopperWep{Drawbar"BARAMMO7", "BAREMPTY", TimeStopperAmmo, vertical, 16, 8;}
+IsSelected AtomicFireWep{Drawbar"BARAMM13", "BAREMPTY", AtomicFireAmmo, vertical, 16, 8;
+	InInventory WeaponCharge, 65{DrawBar "BARFLS2", "BAREMPTY", AtomicFireAmmo, vertical, 16, 8;}}
+IsSelected LeafShieldWep{Drawbar"BARAM201", "BAREMPTY", LeafShieldAmmo, vertical, 16, 8;	
+	InInventory ShieldCheck, 1{DrawBar "BARFLS1", "NOBAR", LeafShieldCharge, vertical, 16, 8;}}
+
+//MM3
+IsSelected NeedleCannonWep{Drawbar"BARAMMO2", "BAREMPTY", NeedleCannonAmmo, vertical, 16, 8;}
+IsSelected MagnetMissileWep{Drawbar"BARAMM14", "BAREMPTY", MagnetMissileAmmo, vertical, 16, 8;}
+IsSelected GeminiLaserWep{Drawbar"BARAMM15", "BAREMPTY", GeminiLaserAmmo, vertical, 16, 8;}
+IsSelected HardKnuckleWep{Drawbar"BARAMM16", "BAREMPTY", HardKnuckleAmmo, vertical, 16, 8;}
+IsSelected TopSpinWep{Drawbar"BARAMM17", "BAREMPTY", TopSpinAmmo, vertical, 16, 8;}
+IsSelected SearchSnakeWep{Drawbar"BARAMMO4", "BAREMPTY", SearchSnakeAmmo, vertical, 16, 8;}
+IsSelected SparkShockWep{Drawbar"BARAMM12", "BAREMPTY", SparkShockAmmo, vertical, 16, 8;}
+IsSelected ShadowBladeWep{Drawbar"BARAMMO7", "BAREMPTY", ShadowBladeAmmo, vertical, 16, 8;}
+	
+//MM4
+IsSelected FlashStopperWep{Drawbar"BARAMM18", "BAREMPTY", FlashStopperAmmo, vertical, 16, 8;}
+IsSelected RainFlushWep{Drawbar"BARAMM19", "BAREMPTY", RainFlushAmmo, vertical, 16, 8;}
+IsSelected DrillBombWep{Drawbar"BARAMM14", "BAREMPTY", DrillBombAmmo, vertical, 16, 8;}
+IsSelected PharaohShotWep{Drawbar"BARAMM20", "BAREMPTY", PharaohShotAmmo, vertical, 16, 8;
+	InInventory PharaohCharge, 78{DrawBar "BARFLS4", "BAREMPTY", PharaohShotAmmo, vertical, 16, 8;}
+	InInventory PharaohCharge, 1{DrawBar "BARFLS1", "NOBAR", PharaohCharge, vertical, 16, 8;}}	
+IsSelected RingBoomerangWep{Drawbar"BARAMMO9", "BAREMPTY", RingBoomerangAmmo, vertical, 16, 8;}
+IsSelected DustCrusherWep{Drawbar"BARAMMO1", "BAREMPTY", DustCrusherAmmo, vertical, 16, 8;}
+IsSelected DiveMissileWep{Drawbar"BARAMM10", "BAREMPTY", DiveMissileAmmo, vertical, 16, 8;}
+IsSelected SkullbarrierWep{Drawbar"BARAMM21", "BAREMPTY", SkullbarrierAmmo, vertical, 16, 8;	
+	InInventory SkullBarrierCooldown, 1{DrawBar "BARAMM65", "BAREMPTY", SkullbarrierAmmo, vertical, 16, 8;}}
+
+//MM5
+IsSelected GravityHoldWep{Drawbar"BARAMM18", "BAREMPTY", GravityHoldAmmo, vertical, 16, 8;}
+IsSelected WaterWaveWep{Drawbar"BARAMM10", "BAREMPTY", WaterWaveAmmo, vertical, 16, 8;}
+IsSelected PowerStoneWep{Drawbar"BARAMM22", "BAREMPTY", PowerStoneAmmo, vertical, 16, 8;}
+IsSelected GyroAttackWep{Drawbar"BARAMMO4", "BAREMPTY", GyroAttackAmmo, vertical, 16, 8;}
+IsSelected StarCrashWep{Drawbar"BARAMM23", "BAREMPTY", StarCrashAmmo, vertical, 16, 8;
+	InInventory ShieldCheck, 1{DrawBar "BARFLS6", "BAREMPTY", StarCrashAmmo, vertical, 16, 8;}}
+IsSelected ChargeKickWep{Drawbar"BARAMM12", "BAREMPTY", ChargeKickAmmo, vertical, 16, 8;}
+IsSelected NapalmBombWep{Drawbar"BARAMM24", "BAREMPTY", NapalmBombAmmo, vertical, 16, 8;}
+IsSelected CrystalEyeWep{Drawbar"BARAMM25", "BAREMPTY", CrystalEyeAmmo, vertical, 16, 8;}
+
+//MM6
+IsSelected BlizzardAttackWep{Drawbar"BARAMM15", "BAREMPTY", BlizzardAttackAmmo, vertical, 16, 8;}
+IsSelected CentaurFlashWep{Drawbar"BARAMM26", "BAREMPTY", CentaurFlashAmmo, vertical, 16, 8;}
+IsSelected FlameBlastWep{Drawbar"BARAMM20", "BAREMPTY", FlameBlastAmmo, vertical, 16, 8;}
+IsSelected KnightCrushWep{Drawbar"BARAMM27", "BAREMPTY", KnightCrushAmmo, vertical, 16, 8;}
+IsSelected PlantbarrierWep{Drawbar"BARAMM28", "BAREMPTY", PlantbarrierAmmo, vertical, 16, 8;	
+	InInventory ShieldCheck, 1{DrawBar "BARFLS7", "BAREMPTY", PlantbarrierAmmo, vertical, 16, 8;
+							   DrawBar "BARHEALP", "BAREMPTY", Health, vertical, 24, 8;}}
+IsSelected SilverTomahawkWep{Drawbar"BARAMM29", "BAREMPTY", SilverTomahawkAmmo, vertical, 16, 8;}	
+IsSelected WindStormWep{Drawbar"BARAMMO1", "BAREMPTY", WindStormAmmo, vertical, 16, 8;}
+IsSelected YamatoSpearWep{Drawbar"BARAMM30", "BAREMPTY", YamatoSpearAmmo, vertical, 16, 8;}
+
+//MM7
+IsSelected FreezeCrackerWep{Drawbar"BARAMM31", "BAREMPTY", FreezeCrackerAmmo, vertical, 16, 8;}
+IsSelected JunkShieldWep{Drawbar"BARAMM32", "BAREMPTY", JunkShieldAmmo, vertical, 16, 8;
+    InInventory JunkShieldCharge, 1{DrawBar"BARFLS1", "NOBAR", JunkShieldCharge, vertical, 16, 8;}}
+IsSelected DangerWrapWep{Drawbar"BARAMM33", "BAREMPTY", DangerWrapAmmo, vertical, 16, 8;}
+IsSelected ThunderBoltWep{Drawbar"BARAMM34", "BAREMPTY", ThunderBoltAmmo, vertical, 16, 8;}
+IsSelected WildCoilWep{Drawbar"BARAMM35", "BAREMPTY", WildCoilAmmo, vertical, 16, 8;		
+	InInventory WeaponCharge, 23{DrawBar "BARFLS9", "BAREMPTY", WildCoilAmmo, vertical, 16, 8;}}
+IsSelected SlashClawWep{Drawbar"BARAMM36", "BAREMPTY", SlashClawAmmo, vertical, 16, 8;}
+IsSelected NoiseCrushWep{Drawbar"BARAMM37", "BAREMPTY", NoiseCrushAmmo, vertical, 16, 8;	
+	InInventory WeaponCharge, 1{DrawBar "BARFLS10", "BAREMPTY", NoiseCrushAmmo, vertical, 16, 8;}}
+IsSelected ScorchWheelWep{Drawbar"BARAMM38", "BAREMPTY", ScorchWheelAmmo, vertical, 16, 8;
+	InInventory WheelCount, 1{DrawBar"BARFLS1", "NOBAR", WheelCount, vertical, 16, 8;}}	
+
+//MM8
+IsSelected MegaBallWep{Drawbar"BARAMM39", "BAREMPTY", MegaBallAmmo, vertical, 16, 8;}
+IsSelected TornadoHoldWep{Drawbar"BARAMM40", "BAREMPTY", TornadoHoldAmmo, vertical, 16, 8;}
+IsSelected AstroCrushWep{Drawbar"BARAMM41", "BAREMPTY", AstroCrushAmmo, vertical, 16, 8;}
+IsSelected FlameSwordWep{Drawbar"BARAMM42", "BAREMPTY", FlameSwordAmmo, vertical, 16, 8;}
+IsSelected ThunderClawWep{Drawbar"BARAMM43", "BAREMPTY", ThunderClawAmmo, vertical, 16, 8;}
+IsSelected HomingSniperWep{Drawbar"BARAMM44", "BAREMPTY", HomingSniperAmmo, vertical, 16, 8;
+	InInventory WeaponCharge, 35{DrawBar "BARFLS11", "BAREMPTY", HomingSniperAmmo, vertical, 16, 8;}}
+IsSelected IceWaveWep {DrawBar "BARAMM45", "BAREMPTY", IceWaveAmmo, vertical, 16, 8;}
+IsSelected FlashBombWep{Drawbar"BARAMM46", "BAREMPTY", FlashBombAmmo, vertical, 16, 8;}
+IsSelected WaterBalloonWep{Drawbar"BARAMM47", "BAREMPTY", WaterBalloonAmmo, vertical, 16, 8;}
+
+//MMB
+IsSelected TenguBladeWep{Drawbar"BARAMMO1", "BAREMPTY", TenguBladeAmmo, vertical, 16, 8;}
+IsSelected CopyVisionWep{Drawbar"BARAMM52", "BAREMPTY", CopyVisionAmmo, vertical, 16, 8;}
+IsSelected LightningBoltWep{Drawbar"BARAMM53", "BAREMPTY", LightningBoltAmmo, vertical, 16, 8;}
+IsSelected IceWallWep{Drawbar"BARAMM54", "BAREMPTY", IceWallAmmo, vertical, 16, 8;}
+IsSelected SpreadDrillWep{DrawBar"BARAMM55", "BAREMPTY", SpreadDrillAmmo, vertical, 16, 8;}
+IsSelected RemoteMineWep{Drawbar"BARAMM56", "BAREMPTY", RemoteMineAmmo, vertical, 16, 8;
+	InInventory WeaponCharge, 5{DrawBar "BARFLS14", "BAREMPTY", RemoteMineAmmo, vertical, 16, 8;}}
+IsSelected WaveBurnerWep{Drawbar"BARAMM57", "BAREMPTY", WaveBurnerAmmo, vertical, 16, 8;}
+IsSelected MagicCardWep{Drawbar"BARAMM58", "BAREMPTY", MagicCardAmmo, vertical, 16, 8;}
+
+//MM9
+IsSelected PlugBallWep {DrawBar "BARAMM60", "BAREMPTY", PlugBallAmmo, vertical, 16, 8;}
+IsSelected LaserTridentWep {DrawBar "BARAMM61", "BAREMPTY", LaserTridentAmmo, vertical, 16, 8;}
+IsSelected TornadoBlowWep {DrawBar "BARAMM68", "BAREMPTY", TornadoBlowAmmo, vertical, 16, 8;}
+IsSelected JewelSatelliteWep{DrawBar "BARAMM63", "BAREMPTY", JewelSatelliteAmmo, vertical, 16, 8;
+	InInventory JewelShieldCheck, 1 {DrawBar "BARFLS1", "NOBAR", JewelShieldCheck, vertical, 16, 8;}}
+IsSelected MagmaBazookaWep {DrawBar "BARAMM64", "BAREMPTY", MagmaBazookaAmmo, vertical, 16, 8;
+	InInventory WeaponCharge, 19 {DrawBar "BARFLS13", "BAREMPTY", MagmaBazookaAmmo, vertical, 16, 8;}}
+IsSelected ConcreteShotWep {DrawBar "BARAMM65", "BAREMPTY", ConcreteShotAmmo, vertical, 16, 8;}
+IsSelected BlackHoleBombWep {DrawBar "BARAMM66", "BAREMPTY", BlackHoleBombAmmo, vertical, 16, 8;
+	InInventory BlackHoleBombCooldown, 1 {DrawBar "BARFLS15", "BAREMPTY", BlackHoleBombAmmo, vertical, 16, 8;}}
+IsSelected HornetChaserWep {DrawBar "BARAMM67", "BAREMPTY", HornetChaserAmmo, vertical, 16, 8;}
+
+//MM10
+IsSelected TripleBladeWep {DrawBar "BARAMM6A", "BAREMPTY", TripleBladeAmmo, vertical, 16, 8;}
+IsSelected WaterShieldWep {DrawBar "BARAMM69", "BAREMPTY", WaterShieldAmmo, vertical, 16, 8;
+	InInventory WaterShieldCheck, 1 {DrawBar "BARFLS1", "NOBAR", WaterShieldCheck, vertical, 16, 8;}}
+IsSelected CommandoBombWep {DrawBar "BARAMM70", "BAREMPTY", CommandoBombAmmo, vertical, 16, 8;}
+	//InInventory CommandoCooldown {DrawBar "BARFLS1", "NOBAR", CommandoCooldown, vertical, 16, 8;}}
+IsSelected ChillSpikeWep {DrawBar "BARAMM71", "BAREMPTY", ChillSpikeAmmo, vertical, 16, 8;}
+IsSelected ThunderWoolWep {DrawBar "BARAMM72", "BAREMPTY", ThunderWoolAmmo, vertical, 16, 8;}
+IsSelected ReboundStrikerWep {DrawBar "BARAMM73", "BAREMPTY", ReboundStrikerAmmo, vertical, 16, 8;}
+IsSelected WheelCutterWep {DrawBar "BARAMM74", "BAREMPTY", WheelCutterAmmo, vertical, 16, 8;
+	InInventory WheelCutterCheck, 1 {DrawBar "BARFLS1", "NOBAR", WheelCutterCheck, vertical, 16, 8;}}
+IsSelected SolarBlazeWep {DrawBar "BARAMM75", "BAREMPTY", SolarBlazeAmmo, vertical, 16, 8;}
+
+//MMV
+IsSelected SparkChaserWep {DrawBar "BARAMM76", "BAREMPTY", SparkChaserAmmo, vertical, 16, 8;}
+IsSelected GrabBusterWep {DrawBar "BARAMM77", "BAREMPTY", GrabBusterAmmo, vertical, 16, 8;}
+IsSelected BubbleBombWep {DrawBar "BARAMM78", "BAREMPTY", BubbleBombAmmo, vertical, 16, 8;}
+IsSelected PhotonMissileWep {DrawBar "BARAMM79", "BAREMPTY", PhotonMissileAmmo, vertical, 16, 8;
+	InInventory PhotonMissileCharge, 1 {DrawBar "BARFLS1", "NOBAR", PhotonMissileCharge, vertical, 16, 8;}}
+IsSelected SaltWaterWep {DrawBar "BARAMM80", "BAREMPTY", SaltWaterAmmo, vertical, 16, 8;}
+IsSelected ElectricShockWep {DrawBar "BARAMM81", "BAREMPTY", ElectricShockAmmo, vertical, 16, 8;}
+IsSelected BlackHoleWep {DrawBar "BARAMM82", "BAREMPTY", BlackHoleAmmo, vertical, 16, 8;
+	InInventory ShieldCheck, 1	{DrawBar "BARFLS16", "BAREMPTY", BlackHoleAmmo, vertical, 16, 8;}}
+IsSelected DeepDiggerWep {DrawBar "BARAMM83", "BAREMPTY", DeepDiggerAmmo, vertical, 16, 8;
+	InInventory DeepDiggerFlagL, 1 {DrawBar "BARFLS1", "NOBAR", DeepDiggerFlagL, vertical, 16, 8;}
+	InInventory DeepDiggerFlagR, 1 {DrawBar "BARFLS1", "NOBAR", DeepDiggerFlagR, vertical, reverse, 16, 8;}}
+IsSelected BreakDashWep {DrawBar "BARAMM84", "BAREMPTY", BreakDashAmmo, vertical, 16, 8;
+	InInventory WeaponCharge, 23  {DrawBar "BARFLS17", "BAREMPTY", BreakDashAmmo, vertical, 16, 8;}}
+
+//MMK
+IsSelected SakugarneWep{Drawbar"BARAMM48", "BAREMPTY", SakugarneAmmo, vertical, 16, 8;}
+IsSelected MirrorBusterWep{Drawbar"BARAMM49", "BAREMPTY", MirrorBusterAmmo, vertical, 16, 8;
+	InInventory MirrorBusterFlag, 1{DrawBar"BARFLS1", "NOBAR", MirrorBusterFlag, vertical, 16, 8;}}
+IsSelected ScrewCrusherWep{Drawbar"BARAMM50", "BAREMPTY", ScrewCrusherAmmo, vertical, 16, 8;}
+IsSelected BalladeCrackerWep{Drawbar"BARAMM51", "BAREMPTY", BalladeCrackerAmmo, vertical, 16, 8;}
+IsSelected DawnBreakerWep{Drawbar"BARAM202", "BAREMPTY", DawnBreakerAmmo, vertical, 16, 8;
+	InInventory WeaponCharge, 23{DrawBar"BARFL202", "NOBAR", DawnBreakerAmmo, vertical, 16, 8;}}
+
+IsSelected DawnBreakerWeakWep{Drawbar"BARAM202", "BAREMPTY", DawnBreakerWeakAmmo, vertical, 16, 8;}
+
+//Misc
+IsSelected RevolverBuster{Drawbar"FAKEBAR", "VAREMPTY", RevolverBusterAmmo, vertical, 16, 8;}
+IsSelected BondingPasteWep{Drawbar"BPSTBAR", "VAREMPTY", BondingPasteAmmo, vertical, 16, 8;}
+IsSelected JusticeMeteorWep{DrawBar "JMETBAR", "BAREMPTY", JusticeMeteorAmmo, vertical, 16, 8;}
+IsSelected RoyalSpinWep{DrawBar "RSPNBAR", "BAREMPTY", RoyalSpinAmmo, vertical, 16, 8;}
+IsSelected BerserkerRushWep{DrawBar "BZRRBAR", "BAREMPTY", BerserkerRushAmmo, vertical, 16, 8;}
+IsSelected ShieldSpiralWep{DrawBar "SSPIBAR", "BAREMPTY", ShieldSpiralAmmo, vertical, 16, 8;}
+IsSelected RestrictionRingWep{DrawBar "RRNGBAR", "BAREMPTY", RestrictionRingAmmo, vertical, 16, 8;}
+IsSelected OnslaughtGatlingWep{DrawBar "ONSGBAR", "BAREMPTY", OnslaughtGatlingAmmo, vertical, 16, 8;
+	InInventory OnslaughtGatlingLoad, 1	{DrawBar"BARFLS1", "NOBAR", OnslaughtGatlingLoad, vertical, 16, 8;}}
+
+//MMB2
+IsSelected TimeBombWep{Drawbar"TBOMBAR", "BAREMPTY", TimeBombAmmo, vertical, 16, 8;}
+IsSelected TimeSwitchWep{Drawbar"TSWIBAR", "BAREMPTY", TimeSwitchAmmo, vertical, 16, 8;}
+IsSelected BulletVulcanWep{Drawbar"BVULBAR", "BAREMPTY", BulletVulcanAmmo, vertical, 16, 8;}
+IsSelected FlameShowerWep{Drawbar"FSHWBAR", "BAREMPTY", FlameShowerAmmo, vertical, 16, 8;}
+IsSelected BrassBulletWep{Drawbar"BRBUBAR", "BAREMPTY", BrassBulletAmmo, vertical, 16, 8;}
+IsSelected FlameMixerWep{Drawbar"FMIXBAR", "BAREMPTY", FlameMixerAmmo, vertical, 16, 8;}
+IsSelected BarrierWindWep{Drawbar"BWINBAR", "BAREMPTY", BarrierWindAmmo, vertical, 16, 8;}
+IsSelected TrailsparkNeedleWep{Drawbar"CNEDBAR", "BAREMPTY", TrailsparkNeedleAmmo, vertical, 16, 8;
+	InInventory TrailsparkNeedleCharge, 1{DrawBar"BARFLS1", "NOBAR", TrailsparkNeedleCharge, vertical, 16, 8;}}
+IsSelected CardinalRingWep{Drawbar"CRINBAR", "BAREMPTY", CardinalRingAmmo, vertical, 16, 8;}
+
+//Assists
+InInventory RushJetCounter, 3{DrawImage "RUSHH2H8", 290,16;}
+InInventory RushJetCounter, 1{DrawImage "RUSHOUT", 290,16;}
+InInventory RushMarineCounter, 1{InInventory IsUnderWater, 1{
+		InInventory RushMarineCounter, 4{DrawImage "RUSHO0", 290,8;}
+		InInventory RushMarineCounter, 1{DrawImage "RUSHMOUT", 290,8;}}
+	InInventory Not IsUnderWater, 1{DrawImage "RUSHP0", 290,8;}}
+
+InInventory BeatCallCheck, 1{DrawImage "BEATD0", 298,16;}
+InInventory BeatCounter, 5{DrawImage "BEATB8B2", 298,16;}
+InInventory BeatCounter, 1{DrawImage "BEATOUT",298,16;}
+InInventory BeatSupportActivated, 1{DrawImage "BSPTA0",314,16;}
+InInventory BeatSupportFired, 1 {DrawImage "BSPTB0",314,16;}
+InInventory Flashed, 1{DrawImage "FBLIND",  -30,-20;}
+InInventory EnergyBalancerActive, 1{DrawImage "NRGOUT", 267, 10;}	
+
+//Boss Health
+InInventory BossHealth1, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth1, vertical, 292, 8;}
+InInventory BossHealth2, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth2, vertical, 292, 8;}
+InInventory BossHealth3, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth3, vertical, 292, 8;}
+InInventory BossHealth4, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth4, vertical, 292, 8;}
+InInventory BossHealth5, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth5, vertical, 292, 8;}
+InInventory BossHealth6, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth6, vertical, 292, 8;}
+InInventory BossHealth7, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth7, vertical, 306, 8;}
+InInventory BossHealth8, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth8, vertical, 292, 8;}
+InInventory BossHealth9, 1{DrawBar "BARHEALT", "BAREMPTY", BossHealth9, vertical, 292, 8;}
+InInventory EvilRobotShield, 1{DrawBar "BARAMM32", "BAREMPTY", BossHealth1, vertical, 292, 8;}
+InInventory SunstarShield, 1{DrawBar "BARAMM32", "BAREMPTY", BossHealth8, vertical, 292, 8;}
+
+}
+InInventory GammaPlayerHealth, 1
+{
+    InInventory GammaPlayerPowerHP, 1 
+    {
+    DrawImage "GAMA2FHX", 18, -1;
+    DrawBar "GAMA2PH0", "NOBAR", GammaPlayerHealth, vertical, 24, 8;
+    }
+    else
+    {
+    DrawBar "BARHEALT", "GAMA2ECX", GammaPlayerHealth, vertical, 24, 8;
+    }
+}
+
+InInventory EclipseBossHealth, 1
+{
+DrawBar "BARECLIP", "BAREMPTY", BossHealth1, vertical, 292, 8;
+DrawBar "GAMA2ECT", "GAMA2ECX", EclipseBossHealth, vertical, 289, 8;
+}
+
+
+// Misc
+InInventory TimeStoppedCounter, 1{DrawImage "FLASHS", 36, 0;}
+}
+

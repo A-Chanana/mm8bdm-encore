@@ -1,0 +1,20 @@
+actor FakeBikeProp
+{
+PROJECTILE
+Damage 0
++FLOORHUGGER
++RIPPER
++DONTBLAST
++NOGRAVITY
+-SOLID
++BLOODLESSIMPACT
++CLIENTSIDEONLY
+scale 2.5
+speed 150
+States
+{
+Spawn:
+FAKP LM 4
+loop
+}
+}

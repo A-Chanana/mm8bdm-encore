@@ -1,0 +1,38 @@
+actor EFreezeTree1 : FreezeTree1 20606
+{
+//$Category MM8BDME-Props
+Translation "243:243=[148,29,85]:[148,29,85]","69:69=[244,149,159]:[244,149,159]"
+}
+
+actor EFreezeTree2 : FreezeTree2 20607
+{
+//$Category MM8BDME-Props
+Translation "243:243=[148,29,85]:[148,29,85]","69:69=[244,149,159]:[244,149,159]"
+}
+
+actor EPolarBear 20609
+{
+//$Category MM8BDME-Props
++SOLID
++CLIENTSIDEONLY
+height 32
+radius 16
+scale 2.5
++RANDOMIZE
+States
+{
+Spawn:
+EPBE A 5
+EPBE A 0 A_PlaySoundEx("misc/polarroar","Voice")
+EPBE BCCB 5
+EPBE A 50
+EPBE A 0 A_Jump(128,4)
+EPBE A 0 A_Jump(128,4)
+EPBE A 0 A_Jump(128,3)
+EPBE A 10
+EPBE A 10
+EPBE A 10
+EPBE A 10
+loop
+}
+}

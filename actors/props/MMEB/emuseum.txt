@@ -1,0 +1,16 @@
+actor ERobotCapsule 21733
+{
+//$Category MM8BDME-Props
+scale 2.5
+Radius 60
+Height 160
++NOCLIP
++NOINTERACTION
++FORCEYBILLBOARD
+States
+{
+Spawn:
+ERMC A -1
+stop
+}
+}

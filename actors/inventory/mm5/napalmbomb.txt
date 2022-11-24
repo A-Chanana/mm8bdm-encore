@@ -1,0 +1,109 @@
+actor NapalmBombWep : BaseMM8BDMWep 10035
+{
+//$Category MM8BDM-Weapons
+//$Title Napalm Bomb
+//$Sprite WEAPC0
+dropitem "NapalmBombWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_NAPALMBOMB"
+Obituary "$OB_NAPALMBOMB"
+Tag "$TAG_NAPALMBOMB"
+weapon.ammotype "NapalmBombAmmo"
+inventory.icon "NAPAI"
+States
+{
+SpawnLoop:
+WEAP C -1
+loop
+Ready:
+NAPA T 0 ACS_ExecuteAlways(998,0,5)
+NAPA T 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+NAPA T 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+NAPA T 1 A_Raise
+Loop
+Fire:
+NAPA T 0 A_JumpIfNoAmmo("NoAmmo")
+NAPA T 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+NAPA T 0 A_FireCustomMissile("NapalmBomb",0,1,8,0)
+NAPA UV 6
+NAPA T 13
+NAPA T 0 A_Refire
+Goto Ready+1
+NoAmmo:
+NAPA T 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor NapalmBombAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+
+actor NapalmBomb
+{
+PROJECTILE
+damagetype "NapalmBomb"
+Obituary "$OB_NAPALMBOMB"
+Radius 6
+Height 7
+scale 2.5
+-NOGRAVITY
++CANBOUNCEWATER
++HEXENBOUNCE
+-ALLOWBOUNCEONACTORS
+speed 15
+bouncefactor 0.6
+wallbouncefactor 0.0
+reactiontime 15
+bouncecount 5
+damage (1)
+States
+{
+Spawn:
+NAPA A 0
+NAPA A 0 ThrustThingZ(0, 25, 0, 1)
+NAPA A 0 A_CountDown
+NAPA ABCD 4
+Goto Spawn+2
+XDeath:
+NAPA A 0
+stop
+Crash:
+Death:
+NAPA A 0 A_SpawnItemEx("NapalmBombExplosion")
+stop
+}
+}
+
+actor NapalmBombExplosion : NapalmBomb
+{
+PROJECTILE
+damagetype "NapalmBombExplosion"
++NOCLIP
++NOGRAVITY
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+TNT1 E 0
+NAPA A 0 A_PlaySoundEx("weapon/napalm", "Weapon")
+NAPA D 0 A_Explode(80, 128, 0)
+TNT1 A 35 A_SpawnItemEx("ExplosionEffect2")
+stop
+}
+}

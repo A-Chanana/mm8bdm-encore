@@ -1,0 +1,70 @@
+actor RestrictionRingWep : BaseMM8BDMWep
+{
+dropitem "RestrictionRingWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 30
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_RESTRICTIONRING"
+Obituary "$OB_RESTRICTIONRING"
+Tag "$TAG_RESTRICTIONRING"
+weapon.ammotype "RestrictionRingAmmo"
+inventory.icon "RRNGICON"
+States
+{
+Spawn:
+RRNG Z 1
+loop
+Ready:
+RRNG A 0 ACS_ExecuteAlways(998,0,810)
+RRNG A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+RRNG A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+RRNG A 1 A_Raise
+Loop
+Fire:
+RRNG A 0 A_JumpIfNoAmmo("NoAmmo")
+RRNG G 0 A_PlaySoundEx("misc/sparkzap","Weapon")
+RRNG G 0 A_FireCustomMissile("RestrictionRing",0,1,8,0)
+RRNG G 0 A_FireCustomMissile("RestrictionRing",15,0,8,0)
+RRNG G 0 A_FireCustomMissile("RestrictionRing",-15,0,8,0)
+RRNG B 2
+RRNG C 12
+RRNG B 4
+RRNG A 14
+Goto Ready+1
+NoAmmo:
+RRNG A 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor RestrictionRing
+{
+PROJECTILE
+scale 2.5
+Height 16
+Radius 16
+Damage (7)
+Speed 42
+damagetype "RestrictionRing"
+Obituary "$OB_RESTRICTIONRING"
+states
+{
+	Spawn:
+	DARS DEFDEF 3 A_ScaleVelocity(0.75)
+	DARS DEF 3 A_ScaleVelocity(0.45)
+	stop
+}
+}
+
+actor RestrictionRingAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 30
++INVENTORY.IGNORESKILL
+}

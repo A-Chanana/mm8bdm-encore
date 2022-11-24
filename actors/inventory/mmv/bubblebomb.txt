@@ -1,0 +1,198 @@
+actor BubbleBombWep : BaseMM8BDMWep 10104
+{
+//$Category MM8BDM-Weapons
+//$Title Bubble Bomb
+//$Sprite BBOMA0
+dropitem "BubbleBombWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Obituary "$OB_BUBBLEBOMB"
+Tag "$TAG_BUBBLEBOMB"
+Inventory.Pickupmessage "$PU_BUBBLEBOMB"
+weapon.ammotype "BubbleBombAmmo"
+inventory.icon "BBOMWI"
+States
+{
+SpawnLoop:
+BBOM A -1
+loop
+Ready:
+BBOM F 0 ACS_ExecuteAlways(998,0,207)
+BBOM F 0 A_TakeInventory("BubbleBombSwitch", 1)
+BBOM F 1 A_WeaponReady
+Goto Ready+2
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BBOM F 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BBOM F 1 A_Raise
+Loop
+Fire:
+BBOM F 0 A_JumpIfNoAmmo("NoAmmo")
+TNT1 A 1
+TNT1 A 0 A_JumpIfInventory("BubbleBombSwitch", 1, "FireSwap")
+BBOM IJ 1
+BBOM F 0 A_PlaySoundEx("weapon/bubblebomb","Weapon")
+BBOM F 0 A_FireCustomMissile("BubbleBomb",0,1,8,0)
+BBOM F 0 A_GiveInventory("BubbleBombFrames", 1)
+BBOM F 0 A_GiveInventory("BubbleBombSwitch", 1)
+BBOM KLMN 1
+goto FireEnd
+FireSwap:
+BBOM OP 1
+BBOM F 0 A_PlaySoundEx("weapon/bubblebomb","Weapon")
+BBOM F 0 A_FireCustomMissile("BubbleBomb2",0,1,8,0)
+BBOM F 0 A_GiveInventory("BubbleBombFrames", 1)
+BBOM F 0 A_TakeInventory("BubbleBombSwitch", 1)
+BBOM QRST 1
+goto FireEnd
+Altfire:
+BBOM F 0 A_JumpIfNoAmmo("NoAmmo")
+TNT1 A 1
+TNT1 A 0 A_JumpIfInventory("BubbleBombSwitch", 1, "AltfireSwap")
+BBOM OP 1
+BBOM F 0 A_PlaySoundEx("weapon/bubblebomb","Weapon")
+BBOM F 0 A_FireCustomMissile("BubbleBomb2",0,1,8,0)
+BBOM F 0 A_GiveInventory("BubbleBombFrames", 1)
+BBOM F 0 A_GiveInventory("BubbleBombSwitch", 1)
+BBOM QRST 1
+goto FireEnd
+AltfireSwap:
+BBOM IJ 1
+BBOM F 0 A_PlaySoundEx("weapon/bubblebomb","Weapon")
+BBOM F 0 A_FireCustomMissile("BubbleBomb",0,1,8,0)
+BBOM F 0 A_GiveInventory("BubbleBombFrames", 1)
+BBOM F 0 A_TakeInventory("BubbleBombSwitch", 1)
+BBOM KLMN 1
+goto FireEnd
+FireEnd:
+TNT1 A 1 A_RailWait
+TNT1 A 0 A_JumpIfInventory("BubbleBombFrames", 1, "FrameRefireCheck")
+goto FireEndTrue
+FrameRefireCheck:
+TNT1 A 0 A_Refire("FireEnd")
+goto FireEndReleased
+FireEndReleased:
+TNT1 A 1 A_RailWait
+TNT1 A 0 A_JumpIfInventory("BubbleBombFrames", 1, "FireEndReleased")
+BBOM F 0 A_TakeInventory("BubbleBombSwitch", 1)
+goto FireEndTrue
+FireEndTrue:
+TNT1 A 0 A_JumpIfNoAmmo("NoAmmoReady")
+BBOM HG 2 A_WeaponReady
+Goto Ready+1
+NoAmmoReady:
+BBOM HG 2
+Goto Ready+1
+NoAmmo:
+BBOM F 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor BubbleBombSwitch : Once {}
+actor BubbleBombFrames : PowerUp { powerup.duration 17 }
+
+actor BubbleBombAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+// Based on WaveBuster from Classes-v9d.pk3
+actor BubbleBomb
+{
+    PROJECTILE
+    +FORCEXYBILLBOARD
+    damagetype "BubbleBomb"
+    Obituary "$OB_BUBBLEBOMB"
+    Radius 10
+    Height 10
+    scale 2.5
+    damage (1)
+    speed 24
+    var int user_DIRECTION;
+    var int user_SPEED;
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SetUserVar("user_DIRECTION",1)
+        TNT1 A 0 A_SetUserVar("user_SPEED", 6)
+        goto SpawnStart
+    SpawnStart:
+        BBOM BB 1 A_Changevelocity(0, -(user_SPEED/2)*user_DIRECTION,0,1)
+        BBOM B 0 A_Changevelocity(0, 3*user_SPEED*user_DIRECTION,0,1)
+        goto SpawnLoop
+    SpawnLoop:
+        BBOM CCD 2
+        BBOM EE 3 A_Changevelocity(0,-user_SPEED*user_DIRECTION,0,1)
+        BBOM DC 3 A_Changevelocity(0,-user_SPEED*user_DIRECTION,0,1)
+        BBOM CCD 2
+        BBOM EE 3 A_Changevelocity(0,user_SPEED*user_DIRECTION,0,1)
+        BBOM DC 3 A_Changevelocity(0,user_SPEED*user_DIRECTION,0,1)
+        loop
+		XDeath:
+		BBOM A 0
+		stop
+		Crash:
+		Death:
+        BBOM A 0 A_Stop
+        BBOM A 0 A_PlaySoundEx("weapon/crackerexplode", "Weapon")
+        BBOM A 0 A_Explode(33, 96, 0, 0, 48)
+        TNT1 A 35 A_SpawnItemEx("ExplosionEffect2")
+        stop
+    }
+}
+
+actor BubbleBomb2 : BubbleBomb
+{
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        TNT1 A 0 A_SetUserVar("user_DIRECTION",-1)
+        TNT1 A 0 A_SetUserVar("user_SPEED", 6)
+        goto SpawnStart
+    }
+}
+
+// LEGACY: UNUSED BECAUSE A_WEAVE SOMETIMES SETS PROJECTILES AS RIPPER.
+/*
+actor BubbleBomb
+{
+    PROJECTILE
+    +FORCEXYBILLBOARD
+    damagetype "BubbleBomb"
+    Obituary "$OB_BUBBLEBOMB"
+    Radius 10
+    Height 10
+    scale 2.5
+    damage (1)
+    speed 20
+    var int user_waveSpeed;
+    var int user_waveSize;
+    States
+    {
+    Spawn:
+        BBOM A 0
+        BBOM A 0 A_SetUserVar(user_waveSpeed, 3)
+        BBOM A 0 A_SetUserVar(user_waveSize, 6.0)
+        goto SpawnLoop
+    SpawnLoop:
+        BBOM BBBBBB 1 A_Weave(user_waveSpeed, 0, user_waveSize, 0)
+        BBOM CCCCCCDDDDDDEEEEEEDDDDDD 1 A_Weave(user_waveSpeed, 0, user_waveSize, 0)
+        goto SpawnLoop + 6
+    Death:
+        BBOM A 0 A_Stop
+        BBOM A 0 A_PlaySoundEx("weapon/crackerexplode", "Weapon")
+        BBOM A 0 A_Explode(50, 96, 0, 0, 48)
+        TNT1 A 35 A_SpawnItemEx("ExplosionEffect2")
+        stop
+    }
+}
+*/

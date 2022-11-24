@@ -1,0 +1,173 @@
+Actor RandomWeapons : MMWeaponGiver
+{
+	+INVENTORY.AUTOACTIVATE
+	States
+	{
+	SpawnWeapons:
+		TNT1 A 0
+		Stop
+	Use:
+		TNT1 A 0 A_GiveInventory("MM1Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM2Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM3Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM4Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM5Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM6Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM7Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM8Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MMBWeapons", 1)
+		TNT1 A 0 A_GiveInventory("MM9Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MM10Weapons", 1)
+		TNT1 A 0 A_GiveInventory("MMVWeapons", 1)
+		TNT1 A 0 A_GiveInventory("MMKWeapons", 1)
+		TNT1 A 0 A_GiveInventory("MMB2Weapons", 1)
+		TNT1 A 0 A_GiveInventory("DawnBreakerWeakWep", 1)
+		TNT1 A 0 A_GiveInventory("BondingPasteWep", 1)
+		Stop
+	}
+}
+
+actor MMB2Weapons : MMWeaponGiver
+{
++INVENTORY.AUTOACTIVATE
+States
+{
+SpawnWeapons:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("BulletVulcanWep")
+TNT1 A 0 A_SpawnItemEx("BrassBulletWep", 32)
+TNT1 A 0 A_SpawnItemEx("TimeBombWep", 32, 0, 0, 0, 0, 0, 45)
+//TNT1 A 0 A_SpawnItemEx("TimeSwitchWep", 32, 0, 0, 0, 0, 0, 90)
+TNT1 A 0 A_SpawnItemEx("FlameShowerWep", 32, 0, 0, 0, 0, 0, 135)
+TNT1 A 0 A_SpawnItemEx("FlameMixerWep", 32, 0, 0, 0, 0, 0, 180)
+TNT1 A 0 A_SpawnItemEx("BarrierWindWep", 32, 0, 0, 0, 0, 0, 225)
+//TNT1 A 0 A_SpawnItemEx("WindCycloneWep", 32, 0, 0, 0, 0, 0, 270)
+//TNT1 A 0 A_SpawnItemEx("DoppelCrashWep", 32, 0, 0, 0, 0, 0, 315)
+//TNT1 A 0 A_SpawnItemEx("DopplerAttackWep", 64)
+//TNT1 A 0 A_SpawnItemEx("CompassNeedleWep", 64, 0, 0, 0, 0, 0, 90)
+//TNT1 A 0 A_SpawnItemEx("CardinalRingWep", 32, 0, 0, 0, 0, 0, 180)
+stop
+Use:
+TNT1 A 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_GiveInventory("BulletVulcanWep", 1)
+TNT1 A 0 A_GiveInventory("BrassBulletWep", 1)
+TNT1 A 0 A_GiveInventory("TimeBombWep", 1)
+//TNT1 A 0 A_GiveInventory("TimeSwitchWep", 1)
+TNT1 A 0 A_GiveInventory("FlameShowerWep", 1)
+TNT1 A 0 A_GiveInventory("FlameMixerWep", 1)
+TNT1 A 0 A_GiveInventory("BarrierWindWep", 1)
+//TNT1 A 0 A_GiveInventory("WindCycloneWep", 1)
+//TNT1 A 0 A_GiveInventory("DoppelCrashWep", 1)
+//TNT1 A 0 A_GiveInventory("DopplerAttackWep", 1)
+//TNT1 A 0 A_GiveInventory("CompassNeedleWep", 1)
+//TNT1 A 0 A_GiveInventory("CardinalRingWep", 1)
+stop
+}
+}
+
+actor RandomKillDrop
+{
++NOINTERACTION
++NOGRAVITY
+-SOLID
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Jump(64, "BigWeaponEnergy")
+TNT1 A 1 A_Jump(64, "SmallHealth")
+TNT1 A 1 A_Jump(64, "BigHealth")
+TNT1 A 1 A_Jump(64, "WTank")
+TNT1 A 1 A_Jump(64, "ETank")
+TNT1 A 1 A_Jump(64, "MTank")
+loop
+
+BigWeaponEnergy:
+TNT1 A 1 A_SpawnItemEx("BigWeaponEnergy")
+stop
+SmallHealth:
+TNT1 A 1 A_SpawnItemEx("SmallHealth")
+stop
+BigHealth:
+TNT1 A 1 A_SpawnItemEx("BigHealth")
+stop
+ETank:
+TNT1 A 1 A_SpawnItemEx("ETank")
+stop
+WTank:
+TNT1 A 1 A_SpawnItemEx("WTank")
+stop
+MTank:
+TNT1 A 1 A_SpawnItemEx("MTank")
+stop
+}
+}
+
+actor ExtraLife : BaseMM8BDMItem
+{
+//Inventory.RespawnTics 550
+inventory.amount 100
+inventory.maxamount 100
+inventory.pickupmessage "Fully replenished!"
++COUNTITEM
+inventory.pickupsound "item/screwup"
+Scale 2.0
+States
+{
+SpawnLoop:
+E1UP A 0
+E1UP A 0 A_JumpIf(tid!=0, 2)
+E1UP A 0 Thing_ChangeTID(0,999)
+E1UP A 12
+Goto SpawnLoop+3
+Pickup:
+E1UP A 0 A_JumpIf(ACS_ExecuteWithResult(984,0),"Success")
+E1UP A 0 A_JumpIfHealthLower(100,"Success")
+fail
+Success:
+E1UP A 0 HealThing(100)
+E1UP A 0 ACS_ExecuteAlways(992, 0, 0, 1)
+stop
+}
+}
+
+actor TrainingBotPermaStop : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+States
+{
+Spawn:
+TNT1 A 0
+stop
+}
+}
+
+actor IsSpecialBot : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+States
+{
+Spawn:
+TNT1 A 0
+stop
+}
+}
+
+actor SpecialBotCanCharge : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+States
+{
+Spawn:
+TNT1 A 0
+stop
+}
+}
+
+actor MakeItWalk : PowerUp
+{
+	powerup.duration 16
+}

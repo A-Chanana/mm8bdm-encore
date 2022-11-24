@@ -1,0 +1,17 @@
+actor ESumaTiger : SumaTiger 20529
+{
+//$Category MM8BDME-Props
+Translation "225:225=92:92"
++SOLID
++CLIENTSIDEONLY
+height 32
+radius 16
+scale 2.5
++RANDOMIZE
+States
+{
+Spawn:
+SUMA AB 7
+loop
+}
+}

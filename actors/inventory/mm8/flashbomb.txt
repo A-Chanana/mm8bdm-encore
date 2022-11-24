@@ -1,0 +1,196 @@
+actor FlashBombWep : BaseMM8BDMWep 11091
+{
+//$Category MM8BDM-Weapons
+//$Title Flash Bomb
+//$Sprite WEA4B0
+dropitem "FlashBombWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_FLASHBOMB"
+Obituary "$OB_FLASHBOMB"
+Tag "$TAG_FLASHBOMB"
+weapon.ammotype "FlashBombAmmo"
+inventory.icon "FLSHBOMI"
+States
+{
+SpawnLoop:
+WEA4 B -1
+loop
+Ready:
+FLSB T 0 ACS_ExecuteAlways(998,0,86)
+FLSB T 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+FLSB T 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+FLSB T 1 A_Raise
+Loop
+Fire:
+FLSB T 0 A_JumpIfNoAmmo("NoAmmo")
+FLSB T 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+FLSB T 0 A_FireCustomMissile("FlashBomb",0,1,8,0)
+FLSB UV 6
+FLSB T 24
+FLSB T 0 A_Refire
+Goto Ready+1
+NoAmmo:
+FLSB T 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor FlashBombAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor FlashBomb
+{
+PROJECTILE
++FORCEXYBILLBOARD
+Radius 6
+Height 7
+scale 2.5
+speed 26
+damage (1)
+damagetype "FlashBomb"
+Obituary "$OB_FLASHBOMB"
+States
+{
+Spawn:
+FLSB BCDE 3
+loop
+XDeath:
+FLEX A 0
+stop
+Crash:
+Death:
+FLEX A 0 A_Stop
+FLEX A 0 A_PlaySoundEx("weapon/flashbomb", "Weapon")
+FLEX A 1 A_SpawnItemEx("FlashBombExplosion")
+stop
+}
+}
+
+actor FlashBombExplosion : FlashBomb
+{
++NOCLIP
++DONTBLAST
++DONTSPLASH
++BRIGHT
+Reactiontime 17
+Scale 3.5
+damagetype "FlashBombExplosion"
+States
+{
+Spawn:
+FLEX AB 1 bright 
+FLEX CD 1 bright
+FLEX A 0 A_Explode(29, 80, 0)
+FLEX EE 0 A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(-40, 40), Random(-32, 32),0,0,0,0)
+FLEX EF 1 bright A_SpawnItemEx("FlashBombFX1",0,0,0,random(-7, 7),random(-7, 7),random(-7, 7),random(0,360))
+FLEX EE 0 A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(-40, 40), Random(-32, 32),0,0,0,0)
+FLEX GF 1 bright A_SpawnItemEx("FlashBombFX1",0,0,0,random(-7, 7),random(-7, 7),random(-7, 7),random(0,360))
+FLEX A 0 A_Explode(29, 80, 0)
+Goto Pattern1
+Pattern1:
+FLEX EF 1 bright A_SpawnItemEx("FlashBombFX1",0,0,0,random(-7, 7),random(-7, 7),random(-7, 7),random(0,360))
+FLEX E 0 A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(-16, -40), Random(-32, 32),0,0,0,0)
+FLEX GF 1 bright A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(16, 40), Random(-32, 32),0,0,0,0)
+FLEX G 0 A_SpawnItemEx("FlashBombFX1",0,0,0,random(-7, 7),random(-7, 7),random(-7, 7),random(0,360))
+Goto DamageNow
+Pattern2:
+FLEX EF 1 bright A_SpawnItemEx("FlashBombFX1",0,0,0,random(-7, 7),random(-7, 7),random(-7, 7),random(0,360))
+FLEX E 0 A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(32, 64), Random(-32, 40),0,0,0,0)
+FLEX E 0 A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(-32, -64), Random(-32, 40),0,0,0,0)
+FLEX EF 1 bright A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(-40, 40), Random(-32, 32),0,0,0,0)
+FLEX G 0 A_SpawnItemEx("FlashBombFX1",0,0,0,random(-7, 7),random(-7, 7),random(-7, 7),random(0,360))
+Goto DamageNow
+DamageNow:
+FLEX A 0 A_JumpIfInventory("CutterFlag", 12, "Damage3")
+FLEX A 0 A_JumpIfInventory("CutterFlag", 4, "Damage2")
+FLEX A 0 A_Explode(29, 80, 0)
+Goto Continue
+Damage2:
+FLEX A 0 A_Explode(20, 80, 0)
+Goto Continue
+Damage3:
+FLEX A 0 A_Explode(16, 80, 0)
+Goto Continue
+Continue:
+FLEX G 0 A_CountDown
+FLEX A 0 A_GiveInventory("CutterFlag", 1)
+FLEX G 0 A_Jump(256, "Pattern1", "Pattern2")
+Goto Death
+Death:
+FLEX A 0 A_Changeflag("NOGRAVITY", 1)
+FLEX G 1 bright
+TNT1 A 1 
+FLEX D 1 bright
+TNT1 A 1 
+FLEX D 1 bright
+TNT1 A 1 
+FLEZ C 1 bright
+stop
+}
+}
+
+actor FlashBombFX1
+{
++NOINTERACTION
+-SOLID
++NOGRAVITY
+//+DOOMBOUNCE
++FORCEXYBILLBOARD
++CLIENTSIDEONLY
++BRIGHT
+Scale 2.5
+States
+{
+Spawn:
+FLEX C 0 bright
+FLEX C 2 bright A_Jump(64, 2)
+FLEX H 2 bright A_Jump(8, "End")
+FLEZ B 1 bright A_Jump(8, "End")
+TNT1 A 2  A_Jump(8, "End")
+FLEZ A 1 bright
+Goto End
+End:
+TNT1 A 0
+stop
+}
+}
+
+actor FlashBombFX2 : FlashBombFX1
+{
+States
+{
+Spawn:
+FLEX C 0 bright
+FLEX C 0 bright A_Jump(240, "Spawn2")
+Goto "FlashBombFX1::Spawn"
+Spawn2:
+FLEX BCH 1 bright
+FLEX H 0 A_Jump(64, "Spawn3")
+TNT1 A 1 
+FLEX H 1 bright
+TNT1 A 1 
+FLEX C 1 bright
+TNT1 A 1 
+FLEX C 1 bright
+Goto End
+Spawn3:
+FLEX H 1 bright
+TNT1 A 1 
+FLEX E 1 bright
+TNT1 A 1 
+FLEX D 1 bright
+Goto End
+}
+}

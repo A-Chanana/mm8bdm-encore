@@ -1,0 +1,53 @@
+//Misc Weps
+Texture FAKEBAR,8,56{Patch BARENER6,0,0{Translation "198:198=76:76", "192:192=71:71"}}
+Texture FAKEVAR, 56, 8{Patch FAKEBAR,0,0{Rotate 90}}
+
+Texture BPSTBAR,8,56{Patch BARENERG,0,0{Translation "192:192=4:4", "198:198=92:92"}}
+Texture BPSTVAR, 56, 8{Patch BPSTBAR,0,0{Rotate 90}}
+
+texture JMETBAR,8,56{patch BARENERG,0,0{Translation "192:192=4:4","198:198=192:192"}}
+texture JMETVAR,56,8{patch JMETBAR,0,0{rotate 90}}
+
+texture RSPNBAR,8,56{patch BARENERG,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+texture RSPNVAR,56,8{patch RSPNBAR,0,0{rotate 90}}
+
+texture BZRRBAR,8,56{patch BARENERG,0,0{Translation"192:192=83:83","198:198=110:110"}}
+texture BZRRVAR,56,8{patch BZRRBAR,0,0{rotate 90}}
+
+texture SSPIBAR,8,56{patch BARENERG,0,0{Translation"192:192=4:4","198:198=93:93"}}
+texture SSPIvAR,56,8{patch SSPIBAR,0,0{rotate 90}}
+
+texture RRNGBAR,8,56{patch BARENERG,0,0{Translation"192:192=33:33","198:198=60:60"}}
+texture RRNGVAR,56,8{patch RRNGBAR,0,0{rotate 90}}
+
+texture ONSGBAR,8,56{patch BARENERG,0,0{Translation"192:192=87:87","198:198=178:178"}}
+texture ONSGVAR,56,8{patch ONSGBAR,0,0{rotate 90}}
+
+
+//MMB2 Weps
+Texture TBOMBAR,8,56{Patch BARENERG,0,0{Translation "198:198=45:45", "192:192=136:136"}}
+Texture TBOMVAR, 56, 8{Patch TBOMBAR,0,0{Rotate 90}}
+
+Texture TSWIBAR,8,56{Patch BARENERG,0,0{Translation "198:198=76:76", "192:192=136:136"}}
+Texture TSWIVAR, 56, 8{Patch TSWIBAR,0,0{Rotate 90}}
+
+Texture BVULBAR,8,56{Patch BARENERG,0,0{Translation "198:198=70:70", "192:192=64:64"}}
+Texture BVULVAR, 56, 8{Patch BVULBAR,0,0{Rotate 90}}
+
+Texture FSHWBAR,8,56{Patch BARENERG,0,0{Translation "198:198=43:43", "192:192=225:225"}}
+Texture FSHWVAR, 56, 8{Patch FSHWBAR,0,0{Rotate 90}}
+
+Texture BRBUBAR,8,56{Patch BARENERG,0,0{Translation "198:198=230:230", "192:192=64:64"}}
+Texture BRBUVAR, 56, 8{Patch BRBUBAR,0,0{Rotate 90}}
+
+Texture FMIXBAR,8,56{Patch BARENERG,0,0{Translation "192:192=205:205", "198:198=76:76"}}
+Texture FMIXVAR, 56, 8{Patch FMIXBAR,0,0{Rotate 90}}
+
+texture BWINBAR,8,56{patch BARENERG,0,0{Translation "192:192=4:4", "198:198=248:248"}}
+texture BWINVAR,56,8{patch BWINBAR,0,0{rotate 90}}
+
+texture CNEDBAR,8,56{patch BARENERG,0,0{Translation "192:192=200:200","198:198=41:41"}}
+texture CNEDVAR,56,8{patch CNEDBAR,0,0{rotate 90}}
+
+texture CRINBAR,8,56{patch BARENERG,0,0{Translation "192:192=200:200","198:198=79:79"}}
+texture CRINVAR,56,8{patch CRINBAR,0,0{rotate 90}}

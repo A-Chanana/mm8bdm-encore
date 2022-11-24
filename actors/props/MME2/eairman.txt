@@ -1,0 +1,32 @@
+actor EGoblin : Goblin 20537
+{
+//$Category MM8BDME-Props
+Translation "168:168=[104,136,252]:[104,136,252]","41:41=[48,97,65]:[48,97,65]","197:197=[51,51,51]:[51,51,51]"
+-SOLID
+}
+
+actor EThunderLord 20551
+{
+//$Category MM8BDME-Props
++CLIENTSIDEONLY
+scale 2.5
+//+NOINTERACTION
+-SOLID
++NOGRAVITY
++FLOATBOB
+States
+{
+Spawn:
+ETLO ABCD 3
+loop
+}
+}
+
+actor EFanFiend : FanFiend 20555
+{
+//$Category MM8BDME-Interactive Props
+Translation "196:196=[104,136,252]:[104,136,252]","198:198=[24,56,88]:[24,56,88]"
++SOLID
+height 70
+radius 40
+}

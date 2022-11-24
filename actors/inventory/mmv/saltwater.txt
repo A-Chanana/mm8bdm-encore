@@ -1,0 +1,184 @@
+actor SaltWaterWep : BaseMM8BDMWep 10110
+{
+    //$Category MM8BDM-Weapons
+    //$Title Salt Water
+    //$Sprite SWATA0
+	dropitem "SaltWaterWep"
+    Weapon.AmmoUse 2
+    Weapon.AmmoGive 28
+    Weapon.SlotNumber 4
+    Obituary "$OB_SALTWATER"
+    Tag "$TAG_SALTWATER"
+    Inventory.Pickupmessage "$PU_SALTWATER"
+    weapon.ammotype "SaltWaterAmmo"
+    inventory.icon "SWATWI"
+    States
+    {
+    SpawnLoop:
+        SWAT A -1
+        loop
+    Ready:
+        SWAT J 0 ACS_ExecuteAlways(998,0,209)
+        SWAT J 1 A_WeaponReady
+        Goto Ready+1
+    Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        SWAT J 1 A_Lower
+        Loop
+    Select:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+        SWAT J 1 A_Raise
+        Loop
+    Fire:
+        SWAT J 0 A_JumpIfNoAmmo("NoAmmo")
+        TNT1 A 1
+        SWAT MN 1
+        SWAT J 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+        SWAT J 0 A_FireCustomMissile("SaltWater",0,1,8,0)
+        SWAT OPQR 1
+        TNT1 A 13
+        TNT1 A 0 A_JumpIfNoAmmo("NoAmmoReady")
+        SWAT LK 2 A_Refire
+        Goto Ready+1
+    NoAmmoReady:
+        SWAT LK 2
+        Goto Ready+1
+    NoAmmo:
+        SWAT J 1 ACS_Execute(979,0)
+        Goto Ready+1
+    }
+}
+
+actor SaltWaterAmmo : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 28
+    +INVENTORY.IGNORESKILL
+}
+
+actor SaltWater
+{
+    PROJECTILE
+    +FORCEXYBILLBOARD
+    +BOUNCEONCEILINGS
+    +USEBOUNCESTATE
+    -NOGRAVITY
+    Damage (33)
+    Obituary "$OB_SALTWATER"
+    damagetype "SaltWater"
+    gravity 1.2
+    Speed 24
+    Height 10
+    Radius 10
+    Scale 2.5
+    States
+    {
+    Spawn:
+        SWAT B 0
+        SWAT B 0 ThrustThingZ(0, 30, 0, 1)
+        SWAT B 1
+        wait
+    Bounce.Ceiling:
+        SWAT B 0 A_ChangeFlag(USEBOUNCESTATE, false)
+        SWAT B 0 A_ChangeFlag(BOUNCEONCEILINGS, false)
+        SWAT B 0 A_ChangeVelocity(momx, momy, momz-1, CVF_REPLACE)
+        goto Spawn+2
+    Death:
+        TNT1 A 0 A_SpawnItemEx("SaltWaterBit", 0, 0, 0, 0.8, 0, 0.5,  12, SXF_MULTIPLYSPEED)
+        TNT1 A 0 A_SpawnItemEx("SaltWaterBit", 0, 0, 0, 0.9, 0, 0.5,   6, SXF_MULTIPLYSPEED)
+        TNT1 A 0 A_SpawnItemEx("SaltWaterBit", 0, 0, 0, 1.0, 0, 0.5,   0, SXF_MULTIPLYSPEED)
+        TNT1 A 0 A_SpawnItemEx("SaltWaterBit", 0, 0, 0, 0.9, 0, 0.5,  -6, SXF_MULTIPLYSPEED)
+        TNT1 A 0 A_SpawnItemEx("SaltWaterBit", 0, 0, 0, 0.8, 0, 0.5, -12, SXF_MULTIPLYSPEED)
+        TNT1 A 0 A_JumpIf(z-floorz < 4, "FloorSplash")
+        TNT1 A 0 A_JumpIf(true, "WallSplash")
+        TNT1 A 1
+        wait
+    WallSplash:
+        TNT1 A 0 A_SpawnItemEx("SaltWaterWallSplash")
+        stop
+    FloorSplash:
+        TNT1 A 0 A_SpawnItemEx("SaltWaterSplash")
+        stop
+    XDeath:
+        TNT1 AAAAA 0 A_SpawnItemEx("SaltWaterBitDie", frandom(-32, 32), frandom(-32, 32), frandom(-32, 32))
+        stop
+    }
+}
+
+actor SaltWaterSplash
+{
+    +NOINTERACTION
+    +NOGRAVITY
+    +CLIENTSIDEONLY
+    -SOLID
+    scale 2.5
+    height 0
+    radius 0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("weapon/saltwatersplash", "body")
+        SWAT CDE 4
+        stop
+    }
+}
+
+actor SaltWaterWallSplash
+{
+    +NOINTERACTION
+    +NOGRAVITY
+    +CLIENTSIDEONLY
+    -SOLID
+    scale 2.5
+    height 0
+    radius 0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("weapon/saltwatersplash", "body")
+        SWAT ST 4
+        stop
+    }
+}
+
+actor SaltWaterBit
+{
+    PROJECTILE
+    +FORCEXYBILLBOARD
+    -NOGRAVITY
+    +HEXENBOUNCE
+    Obituary "$OB_SALTWATER"
+    damagetype "SaltWaterBit"
+    bouncecount 2
+    Damage (11)
+    Speed 20
+    Height 10
+    Radius 10
+    Scale 2.5
+    States
+    {
+    Spawn:
+        SWAT F 1
+        SWAT F 0 A_ChangeFlag(HEXENBOUNCE, false)
+        SWAT F 1
+        wait
+    Death:
+        TNT1 A 0 A_SpawnItemEx("SaltWaterBitDie")
+        stop
+    }
+}
+
+actor SaltWaterBitDie : SaltWaterSplash
+{
+    +FORCEXYBILLBOARD
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("weapon/saltwaterbit", "body")
+        SWAT GHI 3
+        stop
+    }
+}

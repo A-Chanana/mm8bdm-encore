@@ -1,0 +1,8 @@
+ETOPA="ETOPA" {AngleOffset = 360}
+ETOPB="ETOPA" {AngleOffset = 240}
+ETOPC="ETOPA" {AngleOffset = 120}
+ENOPA="ENOPA" {}
+ENOPB="ENOPB" {}
+ENOPC="ENOPC" {}
+ENOPD="ENOPD" {}
+THOOA="THOOA" {}

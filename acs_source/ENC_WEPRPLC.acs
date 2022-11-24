@@ -1,0 +1,142 @@
+#library "encweprplc"
+#include "zcommon.acs"
+#include "8bdmlib.acs"
+
+// Functions by Trillster, script by A-Chan
+
+#DEFINE MAX_WEP_REPLACE 42
+str Wep_Replace[MAX_WEP_REPLACE][3] = 
+{
+//Encore Guts Man
+{"MME1GUT",		"TimeSlowWep",			"TimeBombWep"},
+//Encore Bomb Man
+{"MME1BOM",		"AirShooterWep",		"BulletVulcanWep"},
+{"MME1BOM",		"WaterWaveWep",			"BondingPasteWep"},
+//Encore Elec Man
+{"MME1ELE",		"SparkShockWep",		"BarrierWindWep"},
+{"MME1ELE",		"MetalBladeWep",		"TrailsparkNeedleWep"},
+//Encore Oil Man
+{"MME1OIL",		"WaterBalloonWep",		"FlameShowerWep"},
+{"MME1OIL",		"ArrowBusterUpgrade",	"RevolverUpgrade"},
+//Encore 1 Dr. Wily 1
+{"MME1DW1",		"BlizzardAttackWep",	"TrailsparkNeedleWep"},
+
+//Encore Air Man
+{"MME2AIR",		"DiveMissileWep",		"BrassBulletWep"},
+//Encore Heat Man
+{"MME2HEA",		"FireStormWep",			"FlameMixerWep"},
+//Encore Quick Man
+{"MME2QUI",		"LeafShieldWep",		"FlameMixerWep"},
+//Encore Metal Man
+{"MME2MET",		"QuickBoomerangWep",	"FlameShowerWep"},
+//Encore 2 Dr. Wily 1
+{"MME2DW1",		"LightningBoltWep",		"JusticeMeteorWep"},
+{"MME2DW1",		"PhotonMissileWep",		"BrassBulletWep"},
+//Encore 2 Dr. Wily 3
+{"MME2DW1",		"ArrowBusterUpgrade",	"MaestroUpgrade"},
+
+//Encore Top Man
+{"MME3TOP",		"WaterWaveWep",			"BerserkerRushWep"},
+//Encore Gemini Man
+{"MME3GEM",		"LaserBusterUpgrade",	"JoeUpgrade"},
+//Encore Magnet Man
+{"MME3MAG",		"TripleBladeWep",		"BulletVulcanWep"},
+//Encore Spark Man
+{"MME3SPA",		"QuickBoomerangWep",	"FlameShowerWep"},
+
+//Encore Skull Man
+{"MME4SKU",		"BalladeCrackerWep",	"RevolverUpgrade"},
+
+//Encore Charge Man
+{"MME5CHA",		"BalladeCrackerWep",	"RevolverUpgrade"},
+//Encore Wave Man
+{"MME5WAV",		"TopSpinWep",			"JusticeMeteorWep"},
+//Encore Crystal Man
+{"MME5CRY",		"ScrewCrusherWep",		"BondingPasteWep"},
+{"MME5CRY",		"MegaArmUpgrade",		"BarrierWindWep"},
+//Encore Gravity Man
+{"MME5GRA",		"LightningBoltWep",		"OnslaughtGatlingWep"},
+
+//Encore Tomahawk Man
+{"MME6TOM",		"BlizzardAttackWep",	"BulletVulcanWep"},
+{"MME6TOM",		"ProtoUpgrade",			"RevolverUpgrade"},
+//Encore Knight Man
+{"MME6KNI",		"SaltWaterWep",			"JoeUpgrade"},
+{"MME6KNI",		"RainFlushWep",			"RoyalSpinWep"},
+//Encore Plant Man
+{"MME6PLA",		"ChillSpikeWep",		"RestrictionRingWep"},
+//Encore Mr. X
+{"MME6MRX",		"RingBoomerangWep",		"CardinalRingWep"},
+
+//Encore Freeze Man
+{"MME7FRE",		"MirrorBusterWep",		"BarrierWindWep"},
+//Encore Junk Man
+{"MME7JUN",		"SparkShockWep",		"RestrictionRingWep"},
+//Encore Turbo Man
+{"MME7TUR",		"QuickBoomerangWep",	"BerserkerRushWep"},
+
+//Encore Sword Man
+{"MME8SWO",		"IceWaveWep",			"DawnBreakerWeakWep"},
+
+//Encore Splash Woman
+{"MME9SPL",		"TopSpinWep",			"TimeSwitchWep"},
+
+//Komuso Man
+{"MMB2KOM",		"TimeSlowWep",			"TimeBombWep"},
+//Clock Man
+{"MMB2CLO",		"StarCrashWep",			"ShieldSpiralWep"},
+{"MMB2CLO",		"TimeSlowWep",			"TimeBombWep"},
+{"MMB2CLO",		"CentaurFlashWep",		"TimeSwitchWep"},
+
+//Proto Man
+{"MMEPRO",		"AstroCrushWep",		"JusticeMeteorWep"},
+{"MMEPRO",		"LightningBoltWep",		"OnslaughtGatlingWep"},
+};
+
+script "MME_WeaponReplace" (void)
+{
+if(Timer()>=3){terminate;} 
+int counter = 0;
+str levelname = StrParam(n:PRINTNAME_LEVEL);
+
+While(levelname!=Wep_Replace[counter][0] && counter<MAX_WEP_REPLACE)
+	{
+	counter++;
+	}
+while(levelname==Wep_Replace[counter][0] && counter<MAX_WEP_REPLACE){
+    if(StrIcmp(GetActorClass(0),Wep_Replace[counter][1])==0){
+        SpawnNewWepFunc(Wep_Replace[counter][2]);
+        }
+	counter++;
+    }
+}
+
+function int SpawnNewWepFunc(str classname) {
+	int u = UniqueTID();
+	int r = SpawnSpotForcedCopyVelocity(classname,0,u,GetActorAngle(0)>>8);
+	//SetActorFlag(u,"DROPPED",CheckFlag(0,"DROPPED"));
+	SetActorFlagJ(u,"DROPPED",CheckFlag(0,"DROPPED"));
+    Thing_ChangeTID(u,ActivatorTID());
+    Thing_Remove(ActivatorTID());
+	return r;
+}
+
+function int SpawnSpotForcedCopyVelocity(str classname, int spottid, int tid, int angle) {
+	int r = SpawnSpotForced(classname, spottid, tid, angle);
+	int x = GetActorX(0);
+	int y = GetActorY(0);
+	int z = GetActorZ(0);
+	//printbold(i:x, s:" ", i:y, s:" ", i:z);
+	SetActorVelocity(tid,GetActorVelX(0),GetActorVelY(0),GetActorVelZ(0),0,0);
+	return r;
+}
+
+function void SetActorFlagJ(int tid, str flagname, bool value) {
+	//printbold(s:"ChangeFlag",s:flagname,i:value);	
+	GiveActorInventoryZeroIsSelf(tid,StrParam(s:"ChangeFlag",s:flagname,i:value),1);
+}
+
+function void GiveActorInventoryZeroIsSelf(int tid, str inventory_item, int amount) {
+	if(tid==0) GiveInventory(inventory_item,amount);
+	else GiveActorInventory(tid,inventory_item,amount);
+}

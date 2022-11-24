@@ -1,0 +1,233 @@
+actor FlameSwordWep : BaseMM8BDMWep 11095
+{
+//$Category MM8BDM-Weapons
+//$Title Flame Sword
+//$Sprite WEA4F0
+dropitem "FlameSwordWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_FLAMESWORD"
+Obituary "$OB_FLAMESWORD"
+Tag "$TAG_FLAMESWORD"
+weapon.ammotype "FlameSwordAmmo"
+inventory.icon "FSWORDI"
++WEAPON.NOAUTOAIM
+States
+{
+SpawnLoop:
+WEA4 F -1
+loop
+Ready:
+FHUD A 0 ACS_ExecuteAlways(998,0,81)
+FHUD A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+FHUD A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+FHUD A 1 A_Raise
+Loop
+Fire:
+FHUD A 0 A_JumpIfNoAmmo("NoAmmo")
+FHUD A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+FHUD A 0 A_PlaySoundEx("weapon/flamesword","Weapon")
+FHUD A 0 A_TakeInventory("FlameSwordAmmo",2,TIF_NOTAKEINFINITE)
+FHUD A 0
+FHUD A 0 A_CheckFloor("GroundSwing")
+Goto AirSwing
+GroundSwing:
+FHUD C 1 A_FireCustomMissile("FlameSword",50,0,-16,0,0,-10)
+FHUD C 0 A_SpawnItemEx("FSSParkSpawner",32,0,8,0,0,0,0,0,0)
+FHUD D 1 A_FireCustomMissile("FlameSword",25,0,-8,0,0,-5)
+FHUD E 1 A_FireCustomMissile("FlameSword",0,0,0,0,0,0)
+FHUD F 1 A_FireCustomMissile("FlameSword",-25,0,8,0,0,10)
+FHUD G 1 A_FireCustomMissile("FlameSword",-50,0,16,0,0,20)
+Goto Finish
+AirSwing:
+FHUD J 1 A_FireCustomMissile("FlameSword2",-50,0,16,0,0,20)
+FHUD K 1 A_FireCustomMissile("FlameSword2",-25,0,8,0,0,10)
+FHUD L 1 A_FireCustomMissile("FlameSword2",0,0,0,0,0,0)
+FHUD M 1 A_FireCustomMissile("FlameSword2",25,0,-8,0,0,-5)
+FHUD N 1 A_FireCustomMissile("FlameSword2",50,0,-16,0,0,-10)
+Goto Finish
+Finish:
+TNT1 A 14
+FHUD HI 2
+FHUD A 10
+FHUD A 0 A_Refire
+Goto Ready+1
+NoAmmo:
+FHUD A 1 ACS_Execute(979,0)
+Goto Ready+1
+BotCheck:
+SCLA A 0 A_JumpIf(ACS_NamedExecuteWithResult("StunCheck",1)==1, "BotFire")
+FHUD A 3 ACS_NamedExecuteAlways("Bots_WalkToAttack",0,1,1)
+FHUD A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 120, 0)>0, 2)
+FHUD A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 800, 0)>0, "BotCheck")
+Goto Ready+1
+Botfire:
+FHUD A 0 ACS_NamedExecuteAlways("StateChange",0,2)
+Goto Fire+2
+}
+}
+
+actor FlameSwordAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor FlameSword
+{
+PROJECTILE
++RIPPER
++BRIGHT
+damage (0)
+height 5
+radius 5
+Speed 26
+scale 2.5
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 AAAAA 1 A_SpawnItemEx("FlameSwordTrail")
+Goto Death
+Death:
+TNT1 A 0 
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor FlameSword2 : FlameSword
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 AAAAA 1 A_SpawnItemEx("FlameSwordTrail2")
+Goto Death
+}
+}
+
+actor FlameSwordTrail
+{
++FORCEXYBILLBOARD
+//seesound "weapon/firestorm"
+PROJECTILE
++BRIGHT
+//+RIPPER
+height 8
+radius 8
+damage (25) 
+damagetype "FlameSword"
+Obituary "$OB_FLAMESWORD"
+scale 2.5 
+States
+{
+Spawn:
+FSWD D 0 
+FSWD D 0 A_ChangeVelocity(0, -15, 0, CVF_RELATIVE | CVF_REPLACE)
+FSWD DEF 1 
+stop
+}
+}
+
+actor FlameSwordTrail2 : FlameSwordTrail
+{
+States
+{
+Spawn:
+FSWD D 0 
+FSWD D 0 A_ChangeVelocity(0, 15, 0, CVF_RELATIVE | CVF_REPLACE)
+FSWD DEF 1 
+stop
+}
+}
+
+
+actor FSSParkSpawner
+{
+scale 2.5
+PROJECTILE
++RIPPER
+-SOLID
+-NOGRAVITY
++NOINTERACTION
+damage (0)
+radius 1
+height 1
+speed 0
+ReactionTime 10
+states
+{
+Spawn:
+TNT1 A 1 A_SpawnItemEx("FlameSwordSpark",Random(0,16),Random(-48, -8),8,random(50,55),random(-15,15),random(0,15),0, 0, 0)
+TNT1 A 0 A_SpawnItemEx("FlameSwordSpark",Random(0,16),0,8,random(45,55),random(-15,15),random(-15,15),0, 0, 0)
+TNT1 A 0 A_SpawnItemEx("FlameSwordSpark",Random(0,16),Random(8, 48),8,random(40,55),random(-15,15),random(0,15),0, 0, 0)
+TNT1 A 0 A_CountDown
+loop
+Death:
+TNT1 A 0
+stop
+}
+}
+
+actor FlameSwordSpark : FlameSwordTrail
+{
+damagetype "FlameSwordSpark"
+Obituary "$OB_FLAMESWORD"
++DONTSPLASH
+damage (1)
+height 2
+radius 2
+Scale 2.0
+States
+{
+Spawn:
+FSPK A 0
+FSPK ABCD 1
+stop
+}
+}
+
+actor FlameSwordProtect : PowerProtection
+{
+Powerup.Duration 5
+damagefactor "FlameSword", 0.28
+}
+
+
+actor FlameSwordBit
+{
+damage 0
++RIPPER
+-NOGRAVITY
++CLIENTSIDEONLY
++BRIGHT
+-SOLID
+scale 2.5
+//+NOINTERACTION
+Height 2
+Radius 2
+States
+{
+Spawn:
+FSPK E 2
+TNT1 A 2
+FSPK E 2
+TNT1 A 2
+FSPK E 2
+TNT1 A 2
+FSPK E 2
+TNT1 A 2
+FSPK E 2
+TNT1 A 2
+stop
+}
+}

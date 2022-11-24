@@ -1,0 +1,30 @@
+// Aircon Man
+
+[IntroStrings]
+"This place's air is so unstable... Let me fix that!"
+"Anyone need cooling off?"
+
+[FragStrings]
+"Did you think I was full of hot air?"
+"That's for making fun of my fans, ya jerk!"
+"Sounds like $player_killed is getting hot under the collar!"
+
+[KilledStrings]
+"You just think you're so clever, don't you, $player_killedby?"
+"I guess I'm not cut out for this anymore."
+"Whoa, somebody untie the knot in $player_killedby's core!"
+
+[RoamingStrings]
+"Hah, you look like you just came off the assembly line, $player_random_notself!"
+"There's a conspiracy around here..."
+"Mettaurs, assemble!"
+"Air Man's got nothing on me!"
+"I'm just in it for the fans."
+
+[WinStrings]
+"Get this through your chromes: You've been beaten!"
+"The whole lot of you have to have a combined wattage of 5, maybe less."
+
+[LoseStrings]
+"Back to the glass tube for me!"
+"I've disappointed all of my adoring fans..."

@@ -1,0 +1,123 @@
+//Time Bomb
+sprite TBOMI0, 308, 204 {Offset -272, 46 Patch HSPRF0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMJ0, 308, 204 {Offset -202, 4 Patch HSPRG0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMK0, 308, 204 {Offset -151, -36 Patch HSPRH0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOML0, 308, 204 {Offset -126, -123 Patch HSPRI0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMM0, 312, 108 {Offset -105, -147 Patch HSPRJ0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMN0, 312, 108 {Offset -193, -175 Patch HSPRK0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMO0, 148, 80 {Offset -202, -103 Patch HSPRA0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMP0, 148, 80 {Offset -202, -119 Patch HSPRA0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+sprite TBOMQ0, 148, 80 {Offset -202, -135 Patch HSPRA0, 0, 0 {Translation "192:192=136:136", "198:198=45:45"}}
+
+//Time Switch
+sprite TSWIL0, 148, 80 {Offset -202, -103 Patch HSPRE0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+sprite TSWIM0, 148, 80 {Offset -202, -135 Patch HSPRM0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+sprite TSWIN0, 148, 80 {Offset -202, -119 Patch HSPRL0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+
+sprite TSWIO0, 427, 40 {Offset 52, -145 Patch HSPRN0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+sprite TSWIP0, 427, 52 {Offset 53, -133 Patch HSPRO0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+sprite TSWIQ0, 427, 104 {Offset 53, -81 Patch HSPRP0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+sprite TSWIR0, 427, 112 {Offset 53, -73 Patch HSPRQ0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+sprite TSWIS0, 427, 128 {Offset 53, -57 Patch HSPRR0, 0, 0 {Translation "198:198=76:76", "192:192=136:136"}}
+
+//Bullet Vulcan
+sprite BVULC0, 116, 96 {Offset -184, -94  Patch BUSTB0, 0, 0 {Translation "192:192=64:64", "198:198=70:70"}}
+sprite BVULD0, 124, 96 {Offset -184, -98  Patch BUSTC0, 0, 0 {Translation "192:192=64:64", "198:198=70:70"}}
+sprite BVULE0, 128, 92 {Offset -188, -102 Patch BUSTD0, 0, 0 {Translation "192:192=64:64", "198:198=70:70"}}
+
+//Brass Bullet
+sprite BRBUF0, 116, 96 {Offset -184, -94  Patch BUSTB0, 0, 0 {Translation "192:192=64:64", "198:198=230:230"}}
+sprite BRBUG0, 124, 96 {Offset -184, -98  Patch BUSTC0, 0, 0 {Translation "192:192=64:64", "198:198=230:230"}}
+sprite BRBUH0, 128, 92 {Offset -188, -102 Patch BUSTD0, 0, 0 {Translation "192:192=64:64", "198:198=230:230"}}
+
+//Flame Shower
+sprite FSHWF0, 116, 96 {Offset -184, -94  Patch BUSTB0, 0, 0 {Translation "192:192=225:225", "198:198=43:43"}}
+sprite FSHWG0, 124, 96 {Offset -184, -98  Patch BUSTC0, 0, 0 {Translation "192:192=225:225", "198:198=43:43"}}
+sprite FSHWH0, 128, 92 {Offset -188, -102 Patch BUSTD0, 0, 0 {Translation "192:192=225:225", "198:198=43:43"}}
+
+//Flame Mixer
+sprite FMIXG0, 148, 80 {Offset -202, -103 Patch HSPRE0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+sprite FMIXM0, 148, 80 {Offset -202, -135 Patch HSPRM0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+sprite FMIXN0, 148, 80 {Offset -202, -119 Patch HSPRL0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+
+sprite FMIXH0, 427, 40 {Offset 52, -145 Patch HSPRN0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+sprite FMIXI0, 427, 52 {Offset 53, -133 Patch HSPRO0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+sprite FMIXJ0, 427, 104 {Offset 53, -81 Patch HSPRP0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+sprite FMIXK0, 427, 112 {Offset 53, -73 Patch HSPRQ0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+sprite FMIXL0, 427, 128 {Offset 53, -57 Patch HSPRR0, 0, 0 {Translation "192:192=205:205", "198:198=76:76"}}
+
+//Barrier Wind
+Sprite BWINI0, 116, 96 {Offset -184, -94  Patch BUSTB0, 0, 0 {Translation "192:192=4:4", "198:198=248:248"}}
+Sprite BWINJ0, 124, 96 {Offset -184, -98  Patch BUSTC0, 0, 0 {Translation "192:192=4:4", "198:198=248:248"}}
+Sprite BWINK0, 128, 92 {Offset -188, -102 Patch BUSTD0, 0, 0 {Translation "192:192=4:4", "198:198=248:248"}}
+
+//Trailspark Needle
+sprite CNEHA0, 148, 80 {Offset -202, -103 Patch HSPRE0, 0, 0 {Translation "192:192=200:200", "198:198=41:41"}}
+sprite CNEHB0, 115, 96 {Offset -210, -96  Patch HSPRB0, 0, 0 {Translation "192:192=200:200", "198:198=41:41"}}
+sprite CNEHC0, 128, 128 {Offset -177, -50 Patch HSPRD0, 0, 0 {Translation "192:192=200:200", "198:198=41:41"}}
+
+//Cardinal Ring
+sprite CRIHI0, 308, 204 {Offset -272, 46 Patch HSPRF0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHJ0, 308, 204 {Offset -202, 4 Patch HSPRG0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHK0, 308, 204 {Offset -151, -36 Patch HSPRH0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHL0, 308, 204 {Offset -126, -123 Patch HSPRI0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHM0, 312, 108 {Offset -105, -147 Patch HSPRJ0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHN0, 312, 108 {Offset -193, -175 Patch HSPRK0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHO0, 148, 80 {Offset -202, -103 Patch HSPRA0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHP0, 148, 80 {Offset -202, -119 Patch HSPRA0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+sprite CRIHQ0, 148, 80 {Offset -202, -135 Patch HSPRA0, 0, 0 {Translation "192:192=200:200", "198:198=79:79"}}
+
+//Bonding paste
+sprite BPSTA0, 116, 96 {Offset -184, -94  Patch BUSTB0, 0, 0 {Translation "192:192=4:4", "198:198=92:92"}}
+sprite BPSTB0, 124, 96 {Offset -184, -98  Patch BUSTC0, 0, 0 {Translation "192:192=4:4", "198:198=92:92"}}
+sprite BPSTC0, 128, 92 {Offset -188, -102 Patch BUSTD0, 0, 0 {Translation "192:192=4:4", "198:198=92:92"}}
+
+//Justice Meteor
+Sprite JMETB0, 148, 80 {Offset -202, -103 Patch HSPRE0, 0, 0 {Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETC0, 148, 80 {Offset -202, -135 Patch HSPRM0, 0, 0 {Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETD0, 148, 80 {Offset -202, -119 Patch HSPRL0, 0, 0 {Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETE0, 427, 40 {Offset 52, -145 Patch HSPRN0, 0, 0 {Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETF0, 427, 52 {Offset 53, -133 Patch HSPRO0, 0, 0 {Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETG0, 427, 104 {Offset 53, -81 Patch HSPRP0, 0, 0{Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETH0, 427, 112 {Offset 53, -73 Patch HSPRQ0, 0, 0{Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETI0, 427, 128 {Offset 53, -57 Patch HSPRR0, 0, 0{Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETJ0, 115, 96 {Offset -210, -96 Patch HSPRB0, 0, 0{Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETK0, 115, 96 {Offset -190, -82 Patch HSPRC0, 0, 0{Translation "192:192=4:4", "198:198=192:192"}}
+Sprite JMETL0, 115, 96 {Offset -190, -82 Patch HSPRC0, 0, 0{Translation "192:192=4:4", "198:198=4:4", "0:0=192:192" }}
+Sprite JMETM0, 427, 128 {Offset 53, -57 Patch HSPRR0, 0, 0{Translation "192:192=4:4", "198:198=4:4", "0:0=192:192"}}
+
+//Royal Spin
+sprite RYLSA0,148, 80{Offset -202, -103 Patch HSPRE0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+sprite RYLSB0,115, 96{Offset -202, -103 Patch HSPRB0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+sprite RYLSC0,300,300{Offset -82,  56  Patch RYLHA0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+sprite RYLSD0,300,300{Offset -78,  56 Patch RYLHB0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+
+//Berserker Rush
+sprite BZRRA0,116,96{Offset -184,-94 Patch BUSTB0,0,0 {Translation"192:192=84:84","198:198=110:110"}}
+sprite BZRRB0,124,96{Offset -184,-98 Patch BUSTC0,0,0 {Translation"192:192=84:84","198:198=110:110"}}
+sprite BZRRC0,128,92{Offset -187,-102 Patch BUSTD0,0,0{Translation"192:192=84:84","198:198=110:110"}}
+
+//Shield Spiral
+sprite SSPII0, 148, 80 {Offset -202, -103 Patch HSPRE0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIJ0, 148, 80 {Offset -202, -135 Patch HSPRM0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIK0, 148, 80 {Offset -202, -119 Patch HSPRL0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+
+sprite SSPIL0, 427, 40 {Offset 52, -145 Patch HSPRN0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIM0, 427, 52 {Offset 53, -133 Patch HSPRO0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIN0, 427, 104 {Offset 53, -81 Patch HSPRP0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIO0, 427, 112 {Offset 53, -73 Patch HSPRQ0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIP0, 427, 128 {Offset 53, -57 Patch HSPRR0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+
+sprite SSPIQ0, 115, 96 {Offset -210, -96 Patch HSPRB0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIR0, 115, 96 {Offset -190, -82 Patch HSPRC0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+sprite SSPIS0, 128, 128 {Offset -177, -50 Patch HSPRD0, 0, 0 {Translation "192:192=4:4", "198:198=93:93"}}
+
+//Restriction Ring
+sprite RRNGA0,116,96{Offset -184,-94 Patch BUSTB0,0,0 {Translation"192:192=33:33","198:198=60:60"}}
+sprite RRNGB0,124,96{Offset -184,-98 Patch BUSTC0,0,0 {Translation"192:192=33:33","198:198=60:60"}}
+sprite RRNGC0,128,92{Offset -187,-102 Patch BUSTD0,0,0{Translation"192:192=33:33","198:198=60:60"}}
+
+//Onslaught Gatling
+sprite ONSGA0,116,96{Offset -184,-94 Patch BUSTB0,0,0 {Translation"192:192=87:87","198:198=178:178"}}
+sprite ONSGB0,124,96{Offset -184,-98 Patch BUSTC0,0,0 {Translation"192:192=87:87","198:198=178:178"}}
+sprite ONSGC0,128,92{Offset -187,-102 Patch BUSTD0,0,0{Translation"192:192=87:87","198:198=178:178"}}

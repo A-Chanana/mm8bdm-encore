@@ -1,0 +1,367 @@
+const int CONST_PHOTONMAX = 55;
+const int CONST_PHOTONARM = 30;
+
+actor PhotonMissileWep : BaseMM8BDMWep 10105
+{
+    //$Category MM8BDM-Weapons
+    //$Title Photon Missile
+    //$Sprite PMISA0
+	dropitem "PhotonMissileWep"
+    Weapon.AmmoUse 3
+    Weapon.AmmoGive 28
+    Weapon.SlotNumber 5
+    Inventory.Pickupmessage "$PU_PHOTONMISSILE"
+    Obituary "$OB_PHOTONMISSILE"
+    Tag "$TAG_PHOTONMISSILE"
+    weapon.ammotype "PhotonMissileAmmo"
+    inventory.icon "PMISWI"
+    States
+    {
+    SpawnLoop:
+        PMIS A -1
+        loop
+    Ready:
+        PMIS G 0 ACS_ExecuteAlways(998,0,208)
+        PMIS G 1 A_WeaponReady
+        goto Ready+1
+    Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        PMIS G 1 A_Lower
+        Loop
+    Select:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+        PMIS G 1 A_Raise
+        Loop
+    Fire:
+        PMIS G 0 A_JumpIfNoAmmo("NoAmmo")
+        PMIS G 0 A_TakeInventory("PhotonMissileAmmo", 3, TIF_NOTAKEINFINITE)
+        PMIS H 0 A_PlaySoundEx("weapon/photonmissilestart", "weapon")
+        PMIS H 1
+    HoldB1:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold1", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS H 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "HoldArm")
+        PMIS H 0 A_Refire("HoldB2")
+        goto Launch
+    HoldB2:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold1", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS H 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "HoldArm")
+        PMIS H 0 A_Refire("HoldC1")
+        goto Launch
+    HoldC1:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold2", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS H 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "HoldArm")
+        PMIS H 0 A_Refire("HoldC2")
+        goto Launch
+    HoldC2:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold2", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS H 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "HoldArm")
+        PMIS H 0 A_Refire("HoldD1")
+        goto Launch
+    HoldD1:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold3", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS H 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "HoldArm")
+        PMIS H 0 A_Refire("HoldD2")
+        goto Launch
+    HoldD2:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold3", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS H 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "HoldArm")
+        PMIS H 0 A_Refire("HoldB1")
+        goto Launch
+    
+    HoldArm:
+        PMIS H 0 A_PlaySoundEx("weapon/photonmissilearm", "weapon")
+        goto HoldB3
+
+    HoldB3:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold4", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS I 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS H 0 A_Refire("HoldB4")
+        goto Launch
+    HoldB4:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold4", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS I 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS H 0 A_Refire("HoldC3")
+        goto Launch
+    HoldC3:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold5", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS I 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS H 0 A_Refire("HoldC4")
+        goto Launch
+    HoldC4:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold5", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS I 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS H 0 A_Refire("HoldD3")
+        goto Launch
+    HoldD3:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold3", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS I 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS H 0 A_Refire("HoldD4")
+        goto Launch
+    HoldD4:
+        PMIS H 0 A_SpawnItemEx("PhotonMissileHold3", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS H 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS I 1 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS H 0 A_Refire("HoldB3")
+        goto Launch
+
+    Launch:
+        PMIS G 0 A_PlaySoundEx("weapon/megabuster","Weapon")
+        PMIS G 0 A_GiveInventory("FirePhotonMissileLauncher", 1) // SpreadRune
+        PMIS G 0 A_SpawnItemEx("PhotonMissileHold3", 48*cos(pitch), 8, 48*sin(-pitch)+32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+        PMIS IIHH 1
+        PMIS G 0 A_TakeInventory("PhotonMissileCharge", 999)
+        PMIS G 14
+        goto Ready+1
+    Altfire:
+        PMIS G 0 A_JumpIfNoAmmo("NoAmmo")
+        PMIS G 0 A_TakeInventory("PhotonMissileAmmo", 3, TIF_NOTAKEINFINITE)
+        PMIS H 0 A_PlaySoundEx("weapon/photonmissilestart", "weapon")
+        PMIS H 1
+        goto Launch
+    NoAmmo:
+        PMIS G 1 ACS_Execute(979,0)
+        goto Ready+1
+    }
+}
+
+actor PhotonMissileAmmo : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 28
+    +INVENTORY.IGNORESKILL
+}
+
+actor PhotonMissileCharge : WeaponCharge
+{
+    inventory.maxamount 55
+}
+
+actor PhotonMissileHold1
+{
+    +NOINTERACTION
+    +NOGRAVITY
+    +CLIENTSIDEONLY
+    -SOLID
+    scale 2.5
+    height 0
+    radius 0
+    States
+    {
+    Spawn:
+        PMIS B 0
+        PMIS B 1
+        stop
+    }
+}
+
+actor PhotonMissileHold2 : PhotonMissileHold1
+{
+    States
+    {
+    Spawn:
+        PMIS C 0
+        PMIS C 1
+        stop
+    }
+}
+
+actor PhotonMissileHold3 : PhotonMissileHold1
+{
+    States
+    {
+    Spawn:
+        PMIS D 0
+        PMIS D 1
+        stop
+    }
+}
+
+actor PhotonMissileHold4 : PhotonMissileHold1
+{
+    +BRIGHT
+    States
+    {
+    Spawn:
+        PMIS E 0
+        PMIS E 1
+        stop
+    }
+}
+
+actor PhotonMissileHold5 : PhotonMissileHold1
+{
+    +BRIGHT
+    States
+    {
+    Spawn:
+        PMIS F 0
+        PMIS F 1
+        stop
+    }
+}
+
+actor FirePhotonMissileLauncher : Custominventory
+{
+    States
+    {
+    Pickup:
+        TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "PickupSpread")
+        TNT1 A 0 A_SpawnItemEx("PhotonMissileLauncher", 0, 8, 32, 48*cos(pitch), 0, 48*-sin(pitch), 0, SXF_TRANSFERPITCH)
+        stop
+    PickupSpread:
+        TNT1 A 0 A_SpawnItemEx("PhotonMissileLauncher", 0, 8, 48, 48*cos(pitch), 0, 48*-sin(pitch), 0, SXF_TRANSFERPITCH)
+        TNT1 A 0 A_SpawnItemEx("PhotonMissileLauncher", 0, -6, 24, 48*cos(pitch), 0, 48*-sin(pitch), 0, SXF_TRANSFERPITCH)
+        TNT1 A 0 A_SpawnItemEx("PhotonMissileLauncher", 0, 20, 24, 48*cos(pitch), 0, 48*-sin(pitch), 0, SXF_TRANSFERPITCH)
+        stop
+    }
+}
+
+actor PhotonMissileLauncher
+{
+    PROJECTILE
+    +THRUACTORS
+    +DOOMBOUNCE
+    Radius 10
+    Height 10
+    scale 2.5
+    damage (1)
+    speed 1
+    damagetype "PhotonMissile"
+    Obituary "$OB_PHOTONMISSILE"
+    bouncefactor 0.0
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag(DOOMBOUNCE, false)
+        TNT1 A 0 A_Stop
+        TNT1 A 0 ACS_ExecuteAlways(259, 0, 1)
+        PMIS ZC 1
+        PMIS B 0
+        PMIS B 0 A_JumpIfInTargetInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS B 0 ACS_NamedExecuteAlways("core_loadphotonmissile", 0)
+        PMIS D 2
+        PMIS B 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM+1, "SpawnWait2")
+    SpawnWait:
+        PMIS B 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "SpawnArm")
+        PMIS B 1
+        PMIS B 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS B 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "SpawnArm")
+        PMIS B 1
+        PMIS B 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS C 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "SpawnArm")
+        PMIS C 1
+        PMIS C 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS C 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "SpawnArm")
+        PMIS C 1
+        PMIS C 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS D 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "SpawnArm")
+        PMIS D 1
+        PMIS D 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS D 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONARM, "SpawnArm")
+        PMIS D 1
+        PMIS D 0 A_GiveInventory("PhotonMissileCharge", 1)
+        loop
+    SpawnArm:
+        PMIS D 0 A_PlaySoundEx("weapon/photonmissilearm", "auto")
+        PMIS D 0 A_ChangeFlag(BRIGHT, true)
+    SpawnWait2:
+        PMIS E 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS E 1
+        PMIS E 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS E 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS E 1
+        PMIS E 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS F 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS F 1
+        PMIS F 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS F 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS F 1
+        PMIS F 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS D 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS D 1
+        PMIS D 0 A_GiveInventory("PhotonMissileCharge", 1)
+        PMIS D 0 A_JumpIfInventory("PhotonMissileCharge", CONST_PHOTONMAX, "Launch")
+        PMIS D 1
+        PMIS D 0 A_GiveInventory("PhotonMissileCharge", 1)
+        loop
+    Launch:
+        PMIS D 0 A_PlaySoundEx("weapon/photonmissilelaunch", "auto")
+        PMIS D 0 A_SpawnItemEx("PhotonMissile", 0, 0, 0, 80*cos(pitch), 0, 80*sin(-pitch))
+        TNT1 A 35
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("PhotonMissileExplosion")
+        stop
+    }
+}
+
+actor PhotonMissile : FastProjectile
+{
+    PROJECTILE
+    +RIPPER
+    +BRIGHT
+    missiletype "PhotonMissileTrail"
+    damagetype "PhotonMissile"
+    Obituary "$OB_PHOTONMISSILE"
+    damage (1)
+    Radius 10
+    Height 10
+    scale 2.5
+    Speed 80
+    States
+    {
+    Spawn:
+        PMIS DEF 2
+        loop
+    XDeath:
+		BBOM A 0
+		stop
+	Crash:
+	Death:
+        TNT1 A 0 A_SpawnItemEx("PhotonMissileExplosion")
+        stop
+    }
+}
+
+actor PhotonMissileExplosion
+{
+    PROJECTILE
+    +FORCEXYBILLBOARD
+    +NOINTERACTION
+    Radius 1
+    Height 1
+    scale 2.5
+    damagetype "PhotonMissileExplosion"
+    Obituary "$OB_PHOTONMISSILE"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("weapon/photonmissileexplode", "auto")
+        TNT1 A 0 A_Explode(49, 128, 0, 0, 64)
+        TNT1 A 35 A_SpawnItemEx("ExplosionEffect3")
+        stop
+    }
+}
+
+actor PhotonMissileTrail : PhotonMissileHold3
+{
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        stop
+    }
+}

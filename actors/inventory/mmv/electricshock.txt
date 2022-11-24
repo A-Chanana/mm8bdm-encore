@@ -1,0 +1,227 @@
+actor ElectricShockWep : BaseMM8BDMWep 10106
+{
+    //$Category MM8BDM-Weapons
+    //$Title Electric Shock
+    //$Sprite ESPAA0
+	dropitem "ElectricShockWep"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 56
+    Weapon.SlotNumber 4
+    Inventory.Pickupmessage "$PU_ELECTRICSHOCK"
+    Obituary "$OB_ELECTRICSHOCK"
+    Tag "$TAG_ELECTRICSHOCK"
+    weapon.ammotype "ElectricShockAmmo"
+    inventory.icon "ESPAWI"
+    States
+    {
+    SpawnLoop:
+        ESPA A -1
+        loop
+    Ready:
+        ESPA D 0 ACS_ExecuteAlways(998,0,210)
+        ESPA D 1 A_WeaponReady
+        goto Ready+1
+    Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        ESPA D 1 A_Lower
+        Loop
+    Select:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+        ESPA D 1 A_Raise
+        Loop
+    Altfire:
+    Fire:
+        ESPA D 0 A_JumpIfNoAmmo("NoAmmo")
+        ESPA EF 2
+        TNT1 A 2
+        ESPA GH 1
+    AltHold:
+    Hold:
+        ESPA D 0 A_PlaySoundEx("weapon/electricshock", "Weapon")
+        ESPA D 0 A_FireCustomMissile("ElectricShockBurstStart",0,0,0,0)
+        ESPA I 3 A_FireCustomMissile("ElectricShockDamager",0,1,0,0)
+        ESPA D 0 A_JumpIfNoAmmo("FireEnd")
+        ESPA I 0 A_Refire
+    FireEnd:
+        ESPA JK 7
+        ESPA D 0 A_ClearRefire
+        goto Ready+1
+    NoAmmo:
+        ESPA D 1 ACS_Execute(979,0)
+        Goto Ready+1
+    }
+}
+
+actor ElectricShockAmmo : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 56
+    +INVENTORY.IGNORESKILL
+}
+
+actor ElectricShockBurstStart //: BasicHelper
+{
+    +MISSILE
+    -SOLID
+    +NOCLIP
+    +NOINTERACTION
+    +NOGRAVITY
+    +DONTBLAST
+    +DONTREFLECT
+    +THRUACTORS
+    RenderStyle none
+    Radius 2
+    Height 2
+
+    Speed 15
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Warp(2,0,0,32,0,16+8)//But which interpolation? Does it matter?
+        TNT1 A 1 A_SpawnItemEx("ElectricShockBurst",0,0,0,momx,momy,momz,0,8)
+        stop
+    }
+}
+
+actor ElectricShockBurst : FastProjectile//FastProj to match damager hitbox
+{
+    +MISSILE
+    +NOGRAVITY
+    +SKYEXPLODE
+    +EXPLODEONWATER
+    +DONTSPLASH
+    +PAINLESS
+    +CLIENTSIDEONLY
+    RenderStyle None
+    Damage (0)
+    Radius 10
+    Height 10
+    Speed 15
+    Scale 2.5
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf(Pitch > 18,"Death2")
+        TNT1 A 0 A_SetPitch(Pitch+1)
+        TNT1 A 0 A_SpawnItemEx("ElectricShockBurst",0,0,0,momx,momy,momz,0,552)//512+32+8
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_SpawnItemEx("ElectricShockFX",0,frandom(-9,9),frandom(-9,9))
+        TNT1 A 0 A_SpawnItemEx("ElectricShockBurst2",0,frandom(-16,16),frandom(-16,16))
+        TNT1 A 1
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("ElectricShockEndFX")
+        stop
+    Death2:
+        TNT1 A 0 A_Stop
+        TNT1 A 0 A_SpawnItemEx("ElectricShockEndFX")
+        stop
+    }
+}
+
+actor ElectricShockFX : BasicGraphicEffect
+{
+    +FORCEXYBILLBOARD
+    +BRIGHT
+    States
+    {
+    Spawn:
+        ESPA Q 0
+        ESPA Q 0 A_Jump(256,1,4)
+        ESPA QRS 1
+        stop
+        ESPA XWV 1
+        stop
+    }
+}
+
+actor ElectricShockEndFX : ElectricShockFX
+{
+    States
+    {
+    Spawn:
+        ESPA ZYZY 1
+        ESPA Z 0 A_SetScale(1.25)
+        ESPA ZY 1
+        stop
+    }
+}
+
+actor ElectricShockBurst2
+{
+    +MISSILE
+    +NOGRAVITY
+    +SKYEXPLODE
+    +EXPLODEONWATER
+    +DONTSPLASH
+    +PAINLESS
+    +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
+    +BRIGHT
+    Damage (0)
+    Radius 10
+    Height 10
+    Speed 15
+    Scale 2.5
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf(random(1,4) >= 4,"SpawnReal")
+        stop
+    SpawnReal:
+        TNT1 A 10 A_SetTics(random(2,4)*3)
+        TNT1 A 0 A_PlaySoundEx("weapon/electricshockspark","Auto")
+        TNT1 A 0 A_SetPitch(random(12,18))
+        TNT1 A 0 A_SpawnItemEx("ElectricShockBurst3",0,0,0,0,0,0,0,544)//512+32
+        stop
+    Death:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ElectricShockBurst3 : ElectricShockBurst2
+{
+    +BRIGHT
+    Scale 0.5
+    States
+    {
+    Spawn:
+        ESPA T 0
+        ESPA T 0 A_JumpIf(Pitch < 2,"Death")
+        ESPA T 0 A_SetPitch(Pitch-1)
+        ESPA T 0 A_SpawnItemEx("ElectricShockBurst3",-2*random(0,1)+1, -2*random(0,1)+1, -2*random(0,1)+1,0,0,0,0,544)//512+32
+        ESPA T 0 A_SetTics(random(0,2))
+        ESPA T 0 A_Jump(256,1,2)
+        ESPA T 1
+        stop
+        ESPA U 1
+        stop
+    }
+}
+
+actor ElectricShockDamager : FastProjectile
+{
+    PROJECTILE
+    damagetype "ElectricShock"
+    Obituary "$OB_ELECTRICSHOCK"
+    +SKYEXPLODE
+    +EXPLODEONWATER
+    RenderStyle None
+    Damage (9)
+    Radius 10
+    Height 10
+    speed 150
+    scale 2.5
+    states
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0
+        stop
+    }
+}

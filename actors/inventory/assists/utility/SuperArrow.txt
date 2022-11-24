@@ -1,0 +1,83 @@
+actor SuperArrow : BaseMM8BDMUseItem
+{
+Inventory.RespawnTics 210
+inventory.amount 2
+inventory.maxamount 2
+inventory.pickupmessage "Support Item! Super Arrow!"
+inventory.icon "SAROICON"
+Tag "Super Arrow"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+SARO A -1
+loop
+Use:
+WEA2 D 0 A_Jumpif(floorz<z, "Under")
+WEA2 D 0 A_SpawnItemEx("SuperArrowPlatform", 56, 0, 28, 1)
+stop
+Under:
+WEA2 D 0 A_Stop
+WEA2 D 0 A_SpawnItemEx("SuperArrowPlatform", 0, 0, 0, 1)
+stop
+}
+}
+
+
+actor SuperArrowPlatform
+{
+height 4
+radius 24
+scale 2.5
++FORCEYBILLBOARD
++NOGRAVITY
++SHOOTABLE
++NOTAUTOAIMED
++THRUSPECIES
++CANPASS
++DONTBLAST
++SOLID
++DONTREFLECT
++MISSILE
+damage (35)
+obituary "%o was plunged by %k's Super Arrow."
++INVULNERABLE
++NOTAUTOAIMED
+species "MovingPlatform"
+var int user_playerRiding[64];
+mass 99999999
+//ReactionTime 50
+var int user_countdown;
+maxstepheight 0
+States
+{
+Spawn:
+SARO B 1
+SARO B 0 A_Stop
+MoveStart:
+SARO B 0 ACS_NamedExecuteAlways("core_stickyLifts",0,STICKYMODE_GUTSLIFT)
+SARO B 0 A_PlaySoundEx("weapon/mbuster", "weapon")
+SARO B 3 A_ChangeVelocity(2, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+SARO B 3 A_ChangeVelocity(12, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+SARO B 3 A_ChangeVelocity(18, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+Spawn2:
+SARO B 3 A_SpawnItemEx("SuperArrowTrail",-24,0,-8)
+SARO B 0 A_ChangeVelocity(20, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+goto Spawn2
+Death:
+        SARO F 0 A_Stop
+        SARO F 0 A_PlaySoundEx("misc/MM6Land", "voice")
+        SARO CC 35
+		Goto Death2
+XDeath:
+Death2:
+TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}
+
+Actor SuperArrowTrail : ExplosionEffect1
+{scale 1.0}

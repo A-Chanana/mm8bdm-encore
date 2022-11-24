@@ -1,0 +1,5 @@
+actor EKnightTorch : KnightTorch 20540
+{
+//$Category MM8BDME-Props
+Translation "71:71=91:91","62:62=3:3","79:79=5:5","183:183=206:206","42:42=203:203","225:225=202:202"
+}

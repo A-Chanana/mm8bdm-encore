@@ -1,0 +1,432 @@
+actor PharaohShotWep : BaseMM8BDMWep 10062
+{
+//$Category MM8BDM-Weapons
+//$Title Pharaoh Shot
+//$Sprite WEA2L0
+dropitem "PharaohShotWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_PHARAOHSHOT"
+Obituary "$OB_PHARAOHSHOT"
+Tag "$TAG_PHARAOHSHOT"
+weapon.ammotype "PharaohShotAmmo"
+inventory.icon "PHASSI"
+States
+{
+SpawnLoop:
+WEA2 L -1
+loop
+Ready:
+PHAN A 0 ACS_ExecuteAlways(998,0,31)
+PHAN A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 A 0 A_TakeInventory("PharaohCharge",999)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+PHAN A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+PHAN A 1 A_Raise
+Loop
+Fire:
+PHAN A 0 A_JumpIfNoAmmo("NoAmmo")
+PHAN A 2 A_GiveInventory("PharaohCharge",1)
+PHAN A 0 A_Refire("Hold1")
+Goto Throw1
+Hold1:
+PHAN BCDE 2
+PHAN E 0 A_SpawnItemEx("PharaohFX")
+PHAN A 0 A_Refire("Hold2")
+Goto Throw1
+Hold2:
+TNT1 A 0 A_JumpIfInventory("PharaohCharge",78,"Hold3a")
+TNT1 A 1 A_GiveInventory("PharaohCharge",2)
+TNT1 A 0 A_Refire("Hold2")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge",78,"Throw3")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge",33,"Throw2")
+Goto Throw1
+Hold3a:
+PHAN N 1
+PHAN N 0 A_Refire("Hold3b")
+PHAN N 0 A_JumpIfInventory("PharaohCharge",78,"Throw3")
+PHAN N 0 A_JumpIfInventory("PharaohCharge",33,"Throw2")
+Goto Throw1
+Hold3b:
+PHAN O 1
+PHAN O 0 A_JumpIfInventory("IsBot",1,"Botfire")
+PHAN O 0 A_Refire("Hold3a")
+PHAN O 0 A_JumpIfInventory("PharaohCharge",78,"Throw3")
+PHAN O 0 A_JumpIfInventory("PharaohCharge",33,"Throw2")
+Goto Throw1
+Botfire:
+PHAN O 0 A_Jump(16,"Throw3")
+PHAN O 0 A_Refire("Hold3b")
+Goto Hold3b+3
+Throw1:
+Altfire:
+PHAN F 0 A_JumpIfNoAmmo("NoAmmo")
+PHAN F 0 A_PlaySoundEx("weapon/pharaoh1","Weapon")
+PHAN F 0 A_FireCustomMissile("PharaohShot1",0,1,8,0)
+PHAN F 0 A_TakeInventory("PharaohCharge",999)
+PHAN FGHIJK 2
+TNT1 A 4 A_ClearRefire
+PHAN LMA 2
+Goto Ready+1
+Throw2:
+TNT1 A 0 A_JumpIfInventory("PharaohShotAmmo",2,"Throw2r")
+Goto Throw1
+Throw2r:
+PHAN F 0 A_PlaySoundEx("weapon/pharaoh1","Weapon")
+PHAN F 0 A_TakeInventory("PharaohShotAmmo",2,TIF_NOTAKEINFINITE)
+PHAN F 0 A_FireCustomMissile("PharaohShot2",0,0,8,0)
+PHAN F 0 A_TakeInventory("PharaohCharge",999)
+PHAN FGHIJK 2
+TNT1 A 4 A_ClearRefire
+PHAN LMA 2
+Goto Ready+1
+Throw3:
+TNT1 A 0 A_JumpIfInventory("PharaohShotAmmo",4,"Throw3r")
+Goto Throw2
+Throw3r:
+PHAN F 0 A_TakeInventory("PharaohShotAmmo",4,TIF_NOTAKEINFINITE)
+PHAN F 0 A_PlaySoundEx("weapon/pharaoh2","Weapon")
+PHAN F 0 A_FireCustomMissile("PharaohShot3",0,0,8,0)
+PHAN F 0 A_TakeInventory("PharaohCharge",999)
+PHAN FGHIJK 2
+TNT1 A 4 A_ClearRefire
+PHAN LMA 2
+Goto Ready+1
+NoAmmo:
+PHAN A 1 ACS_Execute(979,0)
+PHAN A 0 A_Refire
+Goto Ready+1
+}
+}
+
+actor PharaohCharge : WeaponCharge
+{
+Inventory.MaxAmount 78
+}
+
+actor PharaohShotAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor PharaohShot1
+{
++FORCEXYBILLBOARD
+PROJECTILE
++BRIGHT
+Radius 10
+Height 10
+scale 2.5
+damage (16)
+damagetype "PharaohShot1"
+Obituary "$OB_PHARAOHSHOT"
+speed 35
+States
+{
+Spawn:
+PHAS A 4
+loop
+Death:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor PharaohShot2
+{
++FORCEXYBILLBOARD
+PROJECTILE
++BRIGHT
+Radius 10
+Height 10
+scale 2.5
+damage (43)
+damagetype "PharaohShot2"
+Obituary "$OB_PHARAOHSHOT"
+speed 35
+States
+{
+Spawn:
+PHAS H 4
+loop
+Death:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor PharaohShot3
+{
++FORCEXYBILLBOARD
+PROJECTILE
++BRIGHT
+Radius 10
+Height 10
+scale 2.5
+damage (1)
+damagetype "PharaohShot3"
+Obituary "$OB_PHARAOHSHOT"
+speed 35
+States
+{
+Spawn:
+PHAS JK 4
+loop
+XDeath:
+DRIL A 0
+stop
+Crash:
+Death:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("PharaohShot3Explosion",0,0,8)
+PHAS LMNO 2
+stop
+}
+}
+
+actor PharaohShot3Explosion : PharaohShot3
+{
+PROJECTILE
+damagetype "PharaohShot3Explosion"
++NOCLIP
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+TNT1 E 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Explode(64,96,0,0,16) //This is really the only important part of this.
+PHAS LMNO 2
+stop
+}
+}
+
+actor PharaohFX
+{
++FORCEXYBILLBOARD
++NOINTERACTION
+-SOLID
++MISSILE
+radius 1
+height 1
++NOGRAVITY
+renderstyle none
+States
+{
+Spawn:
+PLAY A 0
+PLAY A 0 A_JumpIfInTargetInventory("PharaohCharge",78,"Give2")
+PLAY A 0 A_JumpIfInTargetInventory("PharaohCharge",1,"Give")
+stop
+Give:
+PLAY A 1 A_GiveToTarget("PharaohFXGive",1)
+Goto Spawn
+Give2:
+PLAY AAA 1 A_GiveToTarget("PharaohFXGive2",1)
+PLAY A 0 A_JumpIfInTargetInventory("PharaohCharge",78,"Give3")
+stop
+Give3:
+PLAY AAA 1 A_GiveToTarget("PharaohFXGive3",1)
+PLAY A 0 A_JumpIfInTargetInventory("PharaohCharge",78,"Give2")
+stop
+}
+}
+
+actor PharaohFXGive : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 69, "FX8")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 60, "FX7")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 51, "FX6")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 43, "FX5")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 33, "FX4")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 24, "FX3")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 15, "FX2")
+TNT1 A 0 A_JumpIfInventory("PharaohCharge", 6, "FX1")
+stop
+FX1:
+TNT1 A 0 //A_Print("FX1")
+TNT1 A 0 A_SpawnItemEx("PharaohFX1",0,0,90)
+stop
+FX2:
+TNT1 A 0 A_SpawnItemEx("PharaohFX2",0,0,90)
+stop
+FX3:
+TNT1 A 0 //A_Print("FX3")
+TNT1 A 0 A_SpawnItemEx("PharaohFX3",0,0,90)
+stop
+FX4:
+TNT1 A 0 A_SpawnItemEx("PharaohFX4",0,0,90)
+stop
+FX5:
+TNT1 A 0 A_SpawnItemEx("PharaohFX5",0,0,90)
+stop
+FX6:
+TNT1 A 0// A_Print("FX6")
+TNT1 A 0 A_SpawnItemEx("PharaohFX6",0,0,90)
+stop
+FX7:
+TNT1 A 0 A_SpawnItemEx("PharaohFX7",0,0,90)
+stop
+FX8:
+TNT1 A 0// A_Print("FX8")
+TNT1 A 0 A_SpawnItemEx("PharaohFX8",0,0,90)
+stop
+}
+}
+
+actor PharaohFXGive2 : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++AUTOACTIVATE
+states
+{
+Spawn:
+TNT1 A 1
+loop
+Use:
+TNT1 A 0 A_SpawnItemEx("PharaohFX9",0,0,90)
+stop
+}
+}
+
+actor PharaohFXGive3 : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++AUTOACTIVATE
+states
+{
+Spawn:
+TNT1 A 1
+loop
+Use:
+TNT1 A 0 A_SpawnItemEx("PharaohFX10",0,0,90)
+stop
+}
+}
+
+actor PharaohFX1
+{
++FORCEXYBILLBOARD
+-SOLID
++NOGRAVITY
++BRIGHT
+Scale 2.5
+States
+{
+Spawn:
+PHAS B 2
+stop
+}
+}
+
+actor PharaohFX2 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS C 2
+stop
+}
+}
+
+actor PharaohFX3 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS D 2
+stop
+}
+}
+
+actor PharaohFX4 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS E 2
+stop
+}
+}
+
+actor PharaohFX5 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS F 2
+stop
+}
+}
+
+actor PharaohFX6 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS G 2
+stop
+}
+}
+
+actor PharaohFX7 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS H 2
+stop
+}
+}
+
+actor PharaohFX8 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS I 2
+stop
+}
+}
+
+actor PharaohFX9 : PharaohFX1
+{
+States
+{
+Spawn:
+PHAS J 2
+stop
+}
+}
+
+actor PharaohFX10 : PharaohFX1
+{
+damagetype "PharaohHold"
+Obituary "$OB_PHARAOHSHOT"
+States
+{
+Spawn:
+PHAS K 0
+PHAS K 2 A_Explode(7,64,0)
+stop
+}
+}

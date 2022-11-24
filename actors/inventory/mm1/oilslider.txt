@@ -1,0 +1,342 @@
+actor OilSliderWep : BaseMM8BDMWep 20042
+{
+//$Category MM8BDM-Weapons
+//$Title Oil Slider
+//$Sprite WEA7J0
+dropitem "OilSliderWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_OILSLIDER"
+Obituary "$OB_OILSLIDER"
+Tag "$TAG_OILSLIDER"
+weapon.ammotype "OilSliderAmmo"
+Inventory.Icon "OILLI"
+states
+{
+SpawnLoop:
+WEA7 J -1
+loop
+Ready:
+OILL A 0 A_TakeInventory("OilSliderFlag", 999)
+OILL A 0 ACS_ExecuteAlways(998, 0, 95)
+OILL A 0 A_JumpIfInventory("OilSliderFlag",1,"SlideBegin")
+OILL A 1 A_WeaponReady
+goto Ready+2
+Deselect:
+TNT1 A 0 A_TakeInventory("OilSliderFlag", 999)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+OILL A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+OILL A 1 A_Raise
+Loop
+
+Fire:
+OILL A 0 A_JumpIfInventory("OilBoat",1,"OilPogo")
+OILL A 0 A_JumpIfNoAmmo ("NoAmmo")
+OILL A 0 A_PlaySoundEx("weapon/oilshot","Weapon")
+OILL A 0 A_FireCustomMissile("OilShot",0,1,8,0)
+OILL BCA 5
+OILL A 0 A_JumpIfInventory("OilSliderFlag",1,"SlideBegin")
+OILL A 0 A_Refire
+goto Ready+2
+
+SlideBegin:
+OILL A 0 A_GiveInventory("OilSliderFlag",30)
+OILL A 0 A_TakeInventory("OilSliderAmmo",4,TIF_NOTAKEINFINITE)
+OILL A 0 A_GiveInventory("OilBoat", 1)
+OILL A 0 A_GunFlash
+OILL A 0 A_JumpIfInventory("IsBot", 1, "BotSlide") //If Player is Bot, change
+OILL A 0 A_GiveInventory("FlyDeactivate", 1)
+OILL A 0 A_SpawnItemEx("OilSlider", 24, 0, 2, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+OILL AAAAA 1 //A_WeaponReady(WRF_NOSWITCH)
+OILL A 0 A_JumpIfInventory("OilSliderFlag",1,"Slide")
+Goto SlideEnd
+
+Slide:
+OILL A 0 SetPlayerProperty(0, 1, 0)
+OILL A 0 A_TakeInventory("OilSliderFlag",1)
+OILL A 0 A_JumpIfInventory("HasFeetInWater", 1, "UnderWater")
+Goto SlideContinue
+
+UnderWater:
+OILL A 0 A_JumpIf(z-floorz > 32, 1)
+Goto SlideContinue
+OILL A 0 A_JumpIf(momz <= 0, 2)
+OILL A 0 ThrustThingZ(0, 7, 0, 1)
+Goto SlideContinue
+OILL A 0 A_GiveInventory("FlyActivate", 1)
+OILL A 0 ThrustThingZ(0, 5, 0, 0)
+Goto SlideContinue+1
+
+SlideContinue:
+OILL A 0 A_GiveInventory("FlyDeactivate", 1)
+OILL A 0 A_SpawnItemEx("OilSlider", 24, 0, 2, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+OILL AAAAA 1 A_WeaponReady(WRF_NOSWITCH)
+OILL A 0 A_JumpIfInventory("OilSliderFlag", 1, "Slide")
+Goto SlideEnd
+
+BotSlide:
+OILL A 0 A_SpawnItemEx("OilSlider", 24, 0, 2, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+OILL AAAAA 1
+OILL A 0 A_PlaySoundEx("weapon/OilSlider","Weapon")
+OILL A 0 A_GiveInventory("CutterFlag", 1)
+OILL A 0 A_TakeInventory("OilSliderFlag",1)
+OILL A 0 A_JumpIfInventory("Cutterflag", 15, 1)
+Loop
+OILL A 0 A_TakeInventory("Cutterflag", 999)
+OILL A 0 A_Jump(224, "OilPogo")
+Goto SlideEnd
+
+OilPogo:
+OILL A 0
+OILL A 0 //A_Recoil(5)
+OILL A 0 ThrustThingZ(0, 40, 0, 0)
+OILL A 0 A_Jump(256, "SlideEnd")
+Goto SlideEnd
+
+NoAmmo:
+OILL A 1 ACS_Execute(979,0)
+goto Ready+2
+
+SlideEnd:
+OILL A 0 SetPlayerProperty(0,0,0)
+//OILL A 0 SetPlayerProperty(0,0,3)
+OILL A 0 A_GiveInventory("FlyDeactivate", 1)
+OILL A 0 A_StopSound(CHAN_WEAPON)
+OILL A 0 A_TakeInventory("OilSoundTime", 1)
+OILL A 0 A_TakeInventory("OilSliderFlag", 999)
+OILL A 0 A_TakeInventory("OilBoat",999)
+OILL A 10
+goto Ready+2
+
+Flash:
+TNT1 A 0 A_PlaySoundEx("weapon/oilslider","Weapon")
+TNT1 A 0 A_GiveInventory("OilSoundTime", 1)
+FlashLoop:
+TNT1 A 0 A_CheckFloor("FlashGround")
+TNT1 A 0 A_Recoil(-2)
+Goto FlashEnd
+FlashGround:
+TNT1 A 0 A_Recoil(-4)
+FlashEnd:
+TNT1 A 2
+TNT1 A 0 A_JumpIfInventory("OilSoundTime", 1, "FlashLoop")
+TNT1 A 0 A_JumpIfInventory("OilSliderFlag", 1, "Flash")
+TNT1 A 1
+stop
+}
+}
+
+actor OilSoundTime : Powerup
+{
+powerup.duration 8
+}
+
+actor OilSliderAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor OilSliderFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 30
+}
+
+actor OilShot
+{
+PROJECTILE
++FORCEXYBILLBOARD
+Damage (27)
+damagetype "OilShot"
+Obituary "$OB_OILSLIDER"
+Height 5
+Radius 8
+-NOGRAVITY
+Scale 2.0
+speed 28
+States
+{
+Spawn:
+OILL D 0
+OILL D 5 A_CheckFloor("Death")
+loop
+Crash:
+XDeath:
+OILL D 1
+stop
+Death:
+OILL D 0 
+OILL D 0 A_JumpIf(z-floorz<=0,"Death2")
+OILL D 1 A_GiveInventory("CutterFlag", 1)
+OILL D 0 A_JumpIfInventory("CutterFlag", 175, "Xdeath")
+loop
+Death2:
+OILL D 1 A_SpawnItemEx("OilBlob",0,0,0)
+stop
+}
+}
+
+
+Actor OilBlob
+{
++MISSILE
++NODAMAGETHRUST
++NOBLOOD
++DONTSPLASH
++NOEXPLODEFLOOR
++NOTARGETSWITCH
++NOTAUTOAIMED
+Damage (13)
+damagetype "OilShot"
+Obituary "$OB_OILSLIDER"
+Height 10
+Radius 8
+scale 2.5
+mass 99999
+reactiontime 250
+painchance 256
+damagefactor "Ignition", 1.0
+states
+{
+Spawn:
+OILL G 0
+OILL G 1 
+OILL G 0 A_ChangeFlag("SHOOTABLE",1)
+Goto Spawn2
+// pain.OilCanister:
+// pain.PharaohShot1:
+// pain.PharaohShot2:
+// pain.PharaohShot3:
+// pain.FlameBlast:
+// Pain.FireStorm:
+// Pain.FireSpin:
+// Pain.FlameSword:
+// Pain.FlameSwordSpark:
+// pain.AtomicFire1:
+// pain.AtomicFire2:
+// pain.AtomicFire3:
+// pain.ScorchWheel:
+// pain.FireTrap:
+// pain.FirePillar:
+// pain.WaveBurner:
+// pain.MagmaBazooka1:
+// pain.MagmaBazooka2:
+// pain.SolarBlaze:
+pain.Ignition:
+OILL E 0
+OILL E 0 A_ChangeFlag("NOPAIN", true)
+OILL E 1 A_SpawnItemEx("OilBlobFlame",0,0,0)
+OILL E 0 A_Jump(256,"Death")
+stop
+Spawn2:
+OILL G 1 A_Stop
+Goto SlideWait
+SlideWait:
+OILL E 1 A_JumpIfCloser(40, "Slide")
+OILL E 0 A_GiveInventory("CutterFlag", 1)
+OILL E 0 A_JumpIf(z-floorz>0,"NewShot")
+OILL E 0 A_JumpIfInventory("CutterFlag", 175, "Death")
+loop
+Slide:
+OILL E 0
+OILL E 0 A_JumpIfInTargetInventory("OilSliderFlag", 1,"Spawn2")
+OILL A 0 A_PlaySoundEx("weapon/oilshot", "Weapon")
+TNT1 A 2 A_GiveToTarget("OilSliderFlag",30)
+stop
+NewShot:
+OILL E 0 A_SpawnItemEx("OilShot", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+Goto Death 
+Death:
+TNT1 A 0
+stop
+}
+}
+
+actor OilBlobFlame 
+{
+PROJECTILE
+-NOGRAVITY
++NODAMAGETHRUST
++NOBLOOD
++DOOMBOUNCE //Don't ask, it acts derpy otherwise.
++DONTSPLASH
++FLOORHUGGER
++BRIGHT
+Damage (47)
+damagetype "OilFlame"
+Obituary "$OB_OILSLIDER2"
+Height 32
+Radius 8
+scale 2.5
+mass 99999
+reactiontime 100
+States
+{
+Spawn:
+OILF C 0 
+OILF C 0 A_ChangeFlag("DOOMBOUNCE",0)
+OILF C 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+OILF CD 3 A_CountDown
+goto Spawn+3
+Death: 
+TNT1 A 1
+stop
+}
+}
+
+actor OilCheck : Once {}
+
+
+actor OilSlider
+{
+PROJECTILE
++RIPPER
++DONTBLAST
++NOCLIP
++NOINTERACTION
+Radius 8
+Height 16
+scale 2.5
+damage (0)
+damagetype "OilSlider"
+speed 20
+States
+{
+Spawn:
+OILL F 0 
+OILL F 0 A_SpawnItemEx("SliderDamager", 0, 0, 8)
+OILL F 5 
+stop
+}
+}
+
+actor SliderDamager
+{
+PROJECTILE
+damagetype "OilSlider"
+Obituary "$OB_OILSLIDER"
++RIPPER
++NOINTERACTION
++DONTBLAST
+damage (0)
+radius 1
+height 1
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Explode(21,80,0)
+stop
+}
+}
+
+
+actor OilBoat : Inboat
+{
+}

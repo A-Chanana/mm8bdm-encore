@@ -1,0 +1,214 @@
+ACTOR GlueDripper : AcidDripper 23001
+{
+translation "225:225=4:4", "44:44=86:86"
+  //$Category MM8BDME-Interactive Props
+  States
+  {
+  Spawn:
+    TNT1 A 0
+	ACID ABABAB 5 
+  Drip:
+	ACID C 1 A_CustomMissile("GlueDrip",0,0,0,2,0)
+	ACID C 35
+	Goto Spawn
+  }
+}
+
+actor GlueDrip : AcidDrip
+{
++DONTSPLASH
+translation "225:225=4:4", "44:44=86:86"
+States
+	{
+	Spawn:
+		ACID D 1 A_CheckFloor("Death")
+		loop
+	Death:
+		ACID E 3 A_PlaySoundEx("misc/oil","Voice")
+		ACID EEEE 0 A_SpawnItemEx("GlueDroppedFX",0,0,0,random(-10,10),random(-10,10),random(5,10),random(0,360))
+		stop
+	}
+}
+
+actor GlueDroppedFX
+{
+translation "198:198=4:4"
+PROJECTILE
+damage 0
++RIPPER
++DONTSPLASH
+-NOGRAVITY
++CLIENTSIDEONLY
+-SOLID
+scale 2.5
++HEXENBOUNCE
+Height 2
+Radius 2
+States
+{
+Spawn:
+MXP1 E 2
+TNT1 A 2
+MXP1 E 2
+TNT1 A 2
+MXP1 E 2
+TNT1 A 2
+MXP1 E 2
+TNT1 A 2
+stop
+}
+}
+
+actor BondGlueFX : MMSplash
+{
+translation "0:8=86:86", "209:219=4:4"
+States
+{
+Spawn:
+OILS B 0
+OILS B 0 A_PlaySoundEx("misc/oil","Voice")
+OILS ABCDE 5
+stop
+}
+}
+
+actor StickyCeilingStart : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+states
+{
+Spawn:
+TNT1 A 1
+loop
+Pickup:
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 1, "DontGetMeStarted")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingDelay", 1, "DontGetMeStarted")
+TNT1 A 0 A_SpawnItemEx("StickyCeilingLoop")
+TNT1 A 0 A_GiveInventory("CeilingSticking")
+TNT1 A 0 A_GiveInventory("StickyCeilingDelay")
+DontGetMeStarted:
+TNT1 A 0
+stop
+}
+}
+
+actor StickyCeilingLoop
+{
+Height 0
+Radius 0
++NOINTERACTION
+-SOLID
++NOGRAVITY
++MISSILE
+States
+{
+Spawn:
+TNT1 A 1 A_GiveToTarget("CeilingCheck",1)
+TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
+TNT1 A 0 A_JumpIfInTargetInventory("StickyCeilingAngle",1,"Spawn")
+Death:
+TNT1 A 0 A_GiveToTarget("CeilingUnsticking",1)
+TNT1 A 8 A_TakeFromTarget("StickyCeilingAngle",8)
+TNT1 A 0 A_TakeFromTarget("StickyCeilingDelay",8)
+stop
+}
+}
+
+actor CeilingSticking : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+States
+{
+Use:
+PLAY H 0 ACS_NamedExecuteAlways("core_flyplayer",0,0,1)
+PLAY H 0 ACS_NamedExecuteAlways("core_stopplayer",0,0,1)
+stop
+}
+}
+
+actor CeilingCheck : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+States
+{
+Use:
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 8, "Angle315")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 7, "Angle270")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 6, "Angle225")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 5, "Angle180")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 4, "Angle135")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 3, "Angle90")
+TNT1 A 0 A_JumpIfInventory("StickyCeilingAngle", 2, "Angle45")
+
+TNT1 A 0 ThrustThing(64,1,0,0)
+goto ResumeChecks
+Angle45:
+TNT1 A 0 ThrustThing(32,1,0,0)
+goto ResumeChecks
+Angle90:
+TNT1 A 0 ThrustThing(0,1,0,0)
+goto ResumeChecks
+Angle135:
+TNT1 A 0 ThrustThing(224,1,0,0)
+goto ResumeChecks
+Angle180:
+TNT1 A 0 ThrustThing(192,1,0,0)
+goto ResumeChecks
+Angle225:
+TNT1 A 0 ThrustThing(160,1,0,0)
+goto ResumeChecks
+Angle270:
+TNT1 A 0 ThrustThing(128,1,0,0)
+goto ResumeChecks
+Angle315:
+TNT1 A 0 ThrustThing(96,1,0,0)
+goto ResumeChecks
+ResumeChecks:
+TNT1 A 0 A_JumpIf(CallACS("core_checkforjump")==1,"FoundGround")
+TNT1 A 0 A_JumpIfInventory("RushJetCounter", 1, "FoundGround")
+TNT1 A 0 A_JumpIfInventory("RushMarineCounter", 1, "MarineCheck")
+stop
+MarineCheck:
+TNT1 A 0 A_JumpIfInventory("IsUnderwater", 1, "FoundGround")
+TNT1 A 0 A_JumpIfInventory("HasFeetInWater", 1, "FoundGround")
+stop
+FoundGround:
+TNT1 A 0 A_TakeInventory("StickyCeilingAngle",8)
+stop
+}
+}
+
+actor CeilingUnsticking : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+States
+{
+Use:
+PLAY H 0 ACS_NamedExecuteAlways("core_flyplayer",0,0,0)
+PLAY H 0 ACS_NamedExecuteAlways("core_stopplayer",0,0,0)
+PLAY H 0 ThrustThingZ(0,60,1,1)
+stop
+}
+}
+
+actor StickyCeilingAngle : Inventory
+{
+inventory.amount 1
+inventory.maxamount 8
+states
+{
+Spawn:
+TNT1 A 1
+loop
+}
+}
+
+actor StickyCeilingDelay : Once { }

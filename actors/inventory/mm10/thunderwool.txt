@@ -1,0 +1,263 @@
+actor ThunderWoolWep : BaseMM8BDMWep 10101
+{
+//$Category MM8BDM-Weapons
+//$Title Thunder Wool
+//$Sprite THWOA0
+dropitem "ThunderWoolWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Obituary "$OB_THUNDERWOOL"
+Tag "$TAG_THUNDERWOOL"
+Inventory.Pickupmessage "$PU_THUNDERWOOL"
+weapon.ammotype "ThunderWoolAmmo"
+inventory.icon "TWOOLI"
+States
+{
+SpawnLoop:
+THWO A -1
+loop
+Ready:
+THWO N 0 ACS_ExecuteAlways(998,0,201)
+THWO N 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+THWO N 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+THWO N 1 A_Raise
+Loop
+Fire:
+THWO N 0 A_JumpIfNoAmmo("NoAmmo")
+THWO N 0 A_PlaySoundEx("weapon/woolshot","Weapon")
+THWO N 0 A_FireCustomMissile("ThunderWool",0,1,8,0)
+THWO OP 6
+THWO N 18
+THWO N 0 A_Refire
+Goto Ready+1
+NoAmmo:
+THWO N 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor ThunderWoolAmmo : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 28
+    +INVENTORY.IGNORESKILL
+}
+
+const int TWOOL_FLOORDIST = 96;
+
+actor ThunderWool
+{
+PROJECTILE
+Radius 16
+Height 7
++DOOMBOUNCE
+-ALLOWBOUNCEONACTORS
++SKYEXPLODE
+Obituary "$OB_THUNDERWOOL"
+Damagetype "ThunderWool"
+bouncecount 9999
+bouncefactor 0.9
+wallbouncefactor 0.9
++FORCEXYBILLBOARD
+scale 2.5
+damage (27)
+speed 20
+reactiontime 7
+var int user_atFloor;
+States
+{
+Spawn:
+THWO B 0
+THWO BCBC 3 ThrustThingZ(0,9,0,1)
+THWO E 0 ThrustThingZ(0,9,0,1)
+THWO EEBDDCEEB 1
+THWO B 0 A_SpawnItemEx("ThunderWoolLightninginator") // This could be on the same actor, but syncing that sucks.
+stop
+Death:
+TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}
+
+actor ThunderWoolLightninginator : ThunderWool
+{
+	+BRIGHT
+    States
+    {
+    Spawn:
+        THWO F 0
+        THWO F 0 A_PlaySoundEx("weapon/woollightning","Weapon")
+        THWO F 0 A_SetUserVar(user_atFloor, (z-floorz)<96)
+        THWO F 0 A_JumpIf(z-floorz < 64, "SpawnLoopFloor")
+        goto SpawnLoop
+        Spawnloop:
+        THWO B 0 A_SpawnItemEx("ThunderWoolLightning", 0, 0, !user_atFloor*-96 + user_atFloor*-(z-floorz))
+        THWO B 0 A_SpawnItemEx("ThunderWoolRadius", 0, 0, -(z-floorz))
+        THWO CGGG 1
+        THWO B 0 A_SpawnItemEx("ThunderWoolLightning", 0, 0, !user_atFloor*-96 + user_atFloor*-(z-floorz))
+        THWO BFFF 1
+        THWO C 0 A_CountDown
+        loop
+        SpawnLoopFloor:
+        THWO B 0 A_SpawnItemEx("ThunderWoolRadius", 0, 0, -(z-floorz))
+        THWO CGGGBFFF 1
+        THWO C 0 A_CountDown
+        loop
+    }
+}
+
+// Lightning bolt damage
+actor ThunderWoolLightning
+{
+    PROJECTILE
+    Obituary "$OB_THUNDERWOOL"
+	Damagetype "ThunderWoolLightning"
+	speed 0
+	height 32
+	radius 16
+    damage (10)
+	States
+	{
+	Spawn:
+		TNT1 A 0
+        TNT1 A 0 A_JumpIf(z-floorz < 64, "FloorCheck")
+		TNT1 A 0 A_SpawnItemEx("ThunderWoolLightning", 0, 0, -64)
+        goto SpawnWait
+    FloorCheck:
+        TNT1 A 0 A_JumpIf(z-floorz < 8, "SpawnWait")
+        TNT1 A 0 A_SpawnItemEx("ThunderWoolLightning", 0, 0, -(z-floorz))
+        goto SpawnWait
+    SpawnWait:
+        TNT1 A 0 A_SpawnItemEx("ThunderWoolLightningFX")
+		TNT1 A 2
+		stop
+	}
+}
+
+// Explosion damage from the floor
+const int TWOOL_ARCMAX = 8;
+const int TWOOL_WOOLRANGE = 128;
+
+actor ThunderWoolRadius
+{
+	PROJECTILE
+	Obituary "$OB_THUNDERWOOL"
+	Damagetype "ThunderWoolLightning"
+	var int user_angle;
+	var int user_arcnum;
+	States
+	{
+	Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("ThunderWoolImpact")
+        TNT1 A 0 A_Explode(13, TWOOL_WOOLRANGE, 0, 0, TWOOL_WOOLRANGE)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ThunderWoolSparkFX", frandom(-TWOOL_WOOLRANGE, TWOOL_WOOLRANGE), frandom(-TWOOL_WOOLRANGE, TWOOL_WOOLRANGE), frandom(0, TWOOL_WOOLRANGE))
+        TNT1 A 1
+		TNT1 A 0 A_SetUserVar(user_arcnum, TWOOL_ARCMAX+1)
+	SpawnArcs:
+		TNT1 A 0 A_SpawnItemEx("ThunderWoolArc", 16, 0, 0, 0, 0, 0, user_arcnum*(360/TWOOL_ARCMAX), SXF_CLIENTSIDE|SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SetUserVar(user_arcnum, user_arcnum-1)
+		TNT1 A 0 A_JumpIf(user_arcnum > 0, "SpawnArcs")
+		TNT1 A 1 A_JumpIf(true, "End")
+		wait
+	End:
+		TNT1 A 10
+		stop
+	}
+}
+
+actor ThunderWoolArc
+{
+	PROJECTILE
+	+THRUACTORS
+	+FORCEXYBILLBOARD
+	+BRIGHT
+	//+CLIENTSIDEONLY
+	Scale 2.5
+	var int user_length;
+	States
+	{
+	Spawn:
+		TNT1 A 0	
+		TNT1 A 0 A_SetUserVar(user_length, TWOOL_WOOLRANGE/12-1)
+		TNT1 A 0 A_SetPitch(TWOOL_WOOLRANGE/12-1)
+		TNT1 A 0 A_SpawnItemEx("ThunderWoolArcFX", 16, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPITCH)
+		stop
+	}
+}
+
+// Particles
+
+actor ThunderWoolArcFX : ThunderWoolArc
+{
+    +CLIENTSIDEONLY
+	+BRIGHT
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SetPitch(pitch-1)
+		TNT1 A 0 A_JumpIf(pitch < 2, "SizeDown")
+		TNT1 A 0 A_SpawnItemEx("ThunderWoolArcFX", 16, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPITCH)
+		goto Frames
+	SizeDown:
+		TNT1 A 0 A_SetScale(1.75)
+		goto Frames
+	Frames:
+		THWO LMLMLMLML 1
+		stop
+	}
+}
+
+actor ThunderWoolLightningFX
+{
+    +CLIENTSIDEONLY
+	+NOINTERACTION
+	+FORCEYBILLBOARD
+	+BRIGHT
+    height 1
+    radius 1
+    Scale 2.5
+    States
+    {
+    Spawn:
+        THWO H 0
+        THWO HIH 2
+        stop
+    }
+}
+
+actor ThunderWoolImpact
+{
+	+CLIENTSIDEONLY
+	+NOINTERACTION
+	-SOLID
+	+FLOORHUGGER
+	+FORCEXYBILLBOARD
+	+BRIGHT
+	Scale 2.0
+	States
+	{
+	Spawn:
+		THWO JKJKJ 2
+		stop
+	}
+}
+
+actor ThunderWoolSparkFX : ThunderWoolImpact
+{
+    Scale 1.75
+    States
+    {
+    Spawn:
+        THWO VSTU 1
+        stop
+    }
+}

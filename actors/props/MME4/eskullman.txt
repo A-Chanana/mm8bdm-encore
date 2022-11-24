@@ -1,0 +1,61 @@
+actor ESkeletonJoe 20530
+{
+//$Category MM8BDME-Props
++SOLID
++CLIENTSIDEONLY
+height 32
+radius 32
+scale 2.5
++RANDOMIZE
+States
+{
+Spawn:
+SKEE AB 10
+loop
+}
+}
+
+actor EBlueSkeletonJoe : ESkeletonJoe
+{
+-CLIENTSIDEONLY
+reactiontime 360
+States
+{
+Spawn:
+SKEE AB 10
+SKEE A 0 A_Countdown
+loop
+Death:
+SKEE A 0 A_SpawnItem("EBlueSkeletonJoeReady",0,0,0,0)
+stop
+}
+}
+
+actor EBlueSkeletonJoeReady
+{
++MISSILE
++NOGRAVITY
++DONTBLAST
++SHOOTABLE
++NOTAUTOAIMED
++DONTREFLECT
+Health 200
++RIPPER
+speed 0
+scale 2.5
+height 30
+radius 25
++FOILINVUL
+States
+{
+Spawn:
+SKEE CD 10
+loop
+Death:
+SKEE A 0 A_PlaySoundEX("misc/undbel","Voice")
+SKEE ACACACACACAC 2
+SKEE A 0 ACS_Execute(4,0)
+SKEE A 0 A_SpawnItem("ESkeletonJoe",0,0,0,0)
+stop
+}
+}

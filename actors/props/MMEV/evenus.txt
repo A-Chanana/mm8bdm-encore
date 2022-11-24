@@ -1,0 +1,5 @@
+actor EFeeber : Feeber 21767
+{
+//$Category MM8BDME-Props
+Translation "227:227=72:72"
+}

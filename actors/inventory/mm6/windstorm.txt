@@ -1,0 +1,133 @@
+actor WindStormWep : BaseMM8BDMWep 10071
+{
+//$Category MM8BDM-Weapons
+//$Title Wind Storm
+//$Sprite WEA2V0
+dropitem "WindStormWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_WINDSTORM"
+Obituary "$OB_WINDSTORM"
+Tag "$TAG_WINDSTORM"
+weapon.ammotype "WindStormAmmo"
+inventory.icon "WINDSI"
+States
+{
+SpawnLoop:
+WEA2 V -1
+loop
+Ready:
+BUBB D 0 ACS_ExecuteAlways(998,0,41)
+BUBB D 1 A_WeaponReady
+goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BUBB D 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BUBB D 1 A_Raise
+Loop
+Fire:
+BUBB D 0 A_JumpIfNoAmmo("NoAmmo")
+BUBB D 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+BUBB E 0 A_FireCustomMissile("WindStormStart",0,1,8,0)
+BUBB EF 5
+BUBB D 2
+BUBB D 0 A_Refire
+goto Ready+1
+NoAmmo:
+BUBB D 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor WindStormAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor WindStormStart
+{
+PROJECTILE
+-NOGRAVITY
++RIPPER
+Damage (11)
+damagetype "WindStorm"
+Obituary "$OB_WINDSTORM"
+Height 8
+Radius 16
+Scale 2.5
+Speed 25
+States
+{
+Spawn:
+WINS ABCD 4
+loop
+Death:
+TNT1 A 0 A_JumpIf(z-floorz==0,"Death2")
+TNT1 A 1
+stop
+Death2:
+TNT1 A 1 A_SpawnItemEx("WindStorm",0,0,0,18,0,0,0,0,0)
+stop
+}
+}
+
+actor WindStorm// : MaceFX1
+{
+-SOLID
+PROJECTILE
+-NOGRAVITY
++RIPPER
+Damage (11)
+damagetype "WindStorm"
+Obituary "$OB_WINDSTORM"
+Height 16
+Radius 16
+Scale 2.5
+gravity 3.0
++NOEXPLODEFLOOR
++STEPMISSILE
+maxstepheight 15
++BOUNCEONCEILINGS
+BounceCount 1
+speed 20
+reactiontime 50
+States
+{
+Spawn:
+WINS A 0 A_SpawnItemEx("WindBlower", 0, 0, 32, momx, momy, momz+20, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WINS A 4 A_CountDown
+WINS B 0 A_SpawnItemEx("WindBlower", 0, 0, 32, momx, momy, momz+20, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WINS B 4 A_CountDown
+WINS C 0 A_SpawnItemEx("WindBlower", 0, 0, 32, momx, momy, momz+20, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WINS C 4 A_CountDown
+WINS D 0 A_SpawnItemEx("WindBlower", 0, 0, 32, momx, momy, momz+20, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WINS D 4 A_CountDown
+loop
+}
+}
+
+actor WindBlower
+{
+PROJECTILE
++RIPPER
++DONTBLAST
+Damage 0
+speed 0
+Scale 2.5
+damagetype "WindBlower"
+Obituary "$OB_WINDSTORM"
++DONTSPLASH
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 AA 2 A_Explode(20, 35, 0)
+stop
+}
+}

@@ -1,0 +1,122 @@
+actor DrillBombWep : BaseMM8BDMWep 10050
+{
+//$Category MM8BDM-Weapons
+//$Title Drill Bomb
+//$Sprite WEAPV0
+dropitem "DrillBombWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_DRILLBOMB"
+Obituary "$OB_DRILLBOMB"
+Tag "$TAG_DRILLBOMB"
+weapon.ammotype "DrillBombAmmo"
+inventory.icon "DRILLSI"
+States
+{
+SpawnLoop:
+WEAP V -1
+loop
+Ready:
+DRIL D 0 ACS_ExecuteAlways(998,0,19)
+DRIL D 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+DRIL D 0 A_GiveInventory("DrillFlag",2)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+DRIL D 1 A_Lower
+Loop
+Select:
+DRIL D 0 A_TakeInventory("DrillFlag",99)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+DRIL D 1 A_Raise
+Loop
+Fire:
+DRIL D 0 A_JumpIfNoAmmo("NoAmmo")
+DRIL D 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+DRIL D 0 A_FireCustomMissile("DrillBomb",0,1,8,0)
+DRIL EFD 6
+DRIL D 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+Goto Hold
+Hold:
+DRIL D 1 A_RailWait
+DRIL D 0 A_Refire
+AltHold:
+DRIL D 0 A_ClearRefire
+DRIL D 10 A_GiveInventory("DrillFlag",2)
+DRIL D 0 A_TakeInventory("DrillFlag",999)
+Goto Ready+1
+BotCheck:
+DRIL D 5 A_RailWait
+DRIL D 0 A_Jump(128, "BotCheck")
+Goto Hold+2
+NoAmmo:
+DRIL D 1 ACS_Execute(979,0)
+Goto Hold
+}
+}
+
+actor DrillFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 2
+}
+
+actor DrillBombAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor DrillBomb 
+{
+PROJECTILE
++EXPLODEONWATER
+Speed 20
+Damage 1
+damagetype "DrillBomb"
+Obituary "$OB_DRILLBOMB"
+Scale 2.5
+Height 6
+Radius 6
+States
+{
+Spawn:
+DRIL A 0
+DRIL A 0 A_PlaySoundEx("weapon/drillfly","Weapon")
+DRIL AAABBBCCC 1 A_JumpIfInTargetInventory("DrillFlag",2,"Death")
+loop
+XDeath:
+DRIL A 0
+stop
+Crash:
+Death:
+DRIL A 0 A_Stop
+DRIL A 0 A_TakeFromTarget("DrillFlag",99)
+ENOP A 0 A_SpawnItemEx("DrillBombExplosion")
+stop
+}
+}
+
+actor DrillBombExplosion : DrillBomb
+{
+PROJECTILE
+damagetype "DrillBombExplosion"
++NOCLIP
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+TNT1 E 0
+DRIL A 0 A_PlaySoundEx("weapon/drillexplode", "Weapon")
+DRIL A 0 A_Explode(66, 96, 0) //This is really the only important part of this.
+TNT1 A 35 A_SpawnItemEx("ExplosionEffect2")
+stop
+}
+}
+
+actor DrillExplode : ExplosionEffect2 {}

@@ -1,0 +1,267 @@
+Actor FlameMixerWep : BaseMM8BDMWep
+{
+//$Category MM8BDME-Weapons
+//$Title Flame Mixer
+dropitem "FlameMixerWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 27
+Weapon.SlotNumber 4
+Obituary "$OB_FLAMEMIXER"
+Tag "$TAG_FLAMEMIXER"
+Inventory.Pickupmessage "$PU_FLAMEMIXER"
+weapon.ammotype "FlameMixerAmmo"
+inventory.icon "FMIXICON"
+States
+{
+SpawnLoop:
+FMIX E -1
+loop
+Ready:
+FMIX G 0 ACS_ExecuteAlways(998,0,248)
+FMIX G 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+FMIX G 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+FMIX G 1 A_Raise
+Loop
+Fire:
+FMIX G 0 A_JumpIfNoAmmo("NoAmmo")
+FMIX G 0 A_JumpIfInventory("IsSpecialBot", 1 ,"StoveManCheck")
+FMIX A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+FMIX HI 2
+FMIX G 0 A_PlaySoundEx("weapon/flamemixer","Weapon")
+FMIX J 2 A_FireCustomMissile("FlameMixerSpawner",0,1,0,0)
+FMIX K 2 A_FireCustomMissile("FlameMixerSpawner",0,1,0,0)
+FMIX L 2 A_FireCustomMissile("FlameMixerSpawner",0,1,0,0)
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 20
+FMIX E 0 A_Refire
+Goto Ready+1
+NoAmmo:
+FMIX G 1 ACS_Execute(979,0)
+Goto Ready+1
+StoveManCheck:
+BVUL A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 130, 0)>0, 2)
+BVUL B 1 A_GiveInventory("FlameShowerWep",1)
+BVUL B 1 A_SelectWeapon("FlameShowerWep")
+Goto Fire+3
+BotCheck:
+SCLA A 0 A_JumpIf(ACS_NamedExecuteWithResult("StunCheck",1)==1, "BotFire")
+FHUD A 3 ACS_NamedExecuteAlways("Bots_WalkToAttack",0,1,1)
+FHUD A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 130, 0)>0, 2)
+FHUD A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 800, 0)>0, "BotCheck")
+Goto Ready+1
+Botfire:
+FHUD A 0 ACS_NamedExecuteAlways("StateChange",0,2)
+Goto Fire+3
+}
+}
+
+Actor FlameMixerAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 27
++INVENTORY.IGNORESKILL
+}
+
+actor FlameMixerSpawner
+{
+PROJECTILE
++NOINTERACTION
++NOCLIP
+Damage(0)
+Height 1
+Radius 1
+Speed 0
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("FlameMixer", 0,0,0,0,0,0,0)
+TNT1 A 0 A_SpawnItemEx("FlameMixer", 0,0,0,0,0,0,-90)
+TNT1 A 0 A_SpawnItemEx("FlameMixer", 0,0,0,0,0,0,90)
+TNT1 A 0 A_SpawnItemEx("FlameMixer", 0,0,0,0,0,0,180)
+stop
+}
+}
+
+actor FlameMixer
+{
+PROJECTILE
++BRIGHT
++RIPPER
++DONTBLAST
+Radius 13
+Height 26
+scale 2.5
+damage (3)
+damagetype "FlameMixer"
+Obituary "$OB_FLAMEMIXER"
+speed 0
+var int user_speed;
+var int user_maxturn;
+var int user_turndivisor;
+var int user_turndivisor_add;
+States
+{
+Spawn:
+FMIX A 0
+TNT1 A 0 A_SetUserVar("user_speed", 17)
+TNT1 A 0 A_SetUserVar("user_maxturn", 1500)
+TNT1 A 0 A_SetUserVar("user_turndivisor", 10)
+TNT1 A 0 A_SetUserVar("user_turndivisor_add", 24)
+Spawn2:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor-user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor-user_turndivisor_add)
+
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor-user_turndivisor_add)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor-user_turndivisor_add)
+
+FMIX A 2
+
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor-user_turndivisor_add)
+
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor+user_turndivisor_add)
+
+FMIX BA 2
+
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+TNT1 A 0 A_SetUserVar("user_turndivisor",user_turndivisor-user_turndivisor_add)
+
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX A 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+
+TNT1 A 0 A_Setangle(angle-user_maxturn/user_turndivisor)
+FMIX B 2 A_ChangeVelocity(user_speed,0,0,CVF_RELATIVE|CVF_REPLACE)
+
+FMIX A 0 A_CustomMissile("FlameMixerReturn",0,0,0,0)
+
+goto stop
+death:
+TNT1 A 0 A_SpawnItemEx("FlameMixerBounce",0,0,0,14,0,0,0,1)
+stop
+}
+}
+
+actor FlameMixerBounce
+{
+PROJECTILE
++BRIGHT
++RIPPER
+DamageType "FlameMixer"
+Obituary "$OB_FLAMEMIXER"
+Speed 30
+Damage (3)
+radius 13
+height 26
+scale 2.5
++BOUNCEONWALLS
+reactiontime 10
+States
+{
+Spawn:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+FMIX AB 2 A_Countdown
+loop
+death:
+FMIX A 0 A_CustomMissile("FlameMixerReturn",0,0,0,0)
+stop
+}
+}
+
+actor FlameMixerReturn : RollingCutter
+{
++BRIGHT
+radius 0
+height 0
+speed 30
+damagetype "FlameMixer"
+damage 0
++DONTSPLASH
++NOINTERACTION
+States
+{
+Spawn:
+FMIX A 0
+FMIX A 0 A_FaceTarget
+FMIX A 0 A_JumpIfCloser(60,"Death")
+FMIX AA 1 A_SpawnItemEx("FlameMixerDamager",0,0,0,2,0,0)
+FMIX A 0 A_FaceTarget
+FMIX A 0 A_JumpIfCloser(60,"Death")
+FMIX BB 1 A_SpawnItemEx("FlameMixerDamager",0,0,0,2,0,0)
+FMIX A 0 A_Countdown
+FMIX A 0 A_FaceTarget
+FMIX A 0 A_JumpIfCloser(60,"Death")
+FMIX A 0 A_CustomMissile("FlameMixerReturn",0,0,0,0)
+stop
+}
+}
+
+actor FlameMixerDamager
+{
+PROJECTILE
+damagetype "FlameMixer"
+Obituary "$OB_FLAMEMIXER"
++RIPPER
++DONTBLAST
+damage (3)
+radius 13
+height 26
+States
+{
+Spawn:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 2
+stop
+}
+}

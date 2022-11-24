@@ -1,0 +1,184 @@
+actor BerserkerRushWep : BaseMM8BDMWep
+{
+dropitem "BerserkerRushWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 112
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_BERSERKERRUSH"
+Obituary "$OB_BERSERKERRUSH"
+Tag "$TAG_BERSERKERRUSH"
+weapon.ammotype "BerserkerRushAmmo"
+inventory.icon "BZRRICON"
+States
+{
+Spawn:
+BZRR Z 1
+loop
+Ready:
+BZRR A 0 ACS_ExecuteAlways(998,0,808)
+BZRR A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BZRR A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BZRR A 1 A_Raise
+Loop
+Fire:
+BZRR A 0 A_JumpIfNoAmmo("NoAmmo")
+BZRR A 0 A_JumpIfHealthLower(8,"Fire7") //Lucky if you get here
+BZRR A 0 A_JumpIfHealthLower(13,"Fire6") //Upon tickled on low hp
+BZRR A 0 A_JumpIfHealthLower(40,"Fire5") //Weps that deal >60
+BZRR A 0 A_JumpIfHealthLower(50,"Fire4") //Weps that deal >50 and <60
+BZRR A 0 A_JumpIfHealthLower(67,"Fire3") //Weps that kill in 3 hits
+BZRR A 0 A_JumpIfHealthLower(76,"Fire2") //Weps that kill in 4 hits
+BZRR A 0 A_JumpIfHealthLower(90,"Fire1") //Upon tickled on full hp
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 4
+BZRR C 9
+BZRR A 7
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+//Tier Shots
+Fire1:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 3 A_JumpIfHealthLower(76,"Fire2a")
+Fire1a:
+BZRR C 8 A_JumpIfHealthLower(76,"Fire2b")
+Fire1b:
+BZRR A 7
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+Fire2:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 3 A_JumpIfHealthLower(67,"Fire3a")
+Fire2a:
+BZRR C 7 A_JumpIfHealthLower(67,"Fire3b")
+Fire2b:
+BZRR A 6
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+Fire3:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 3 A_JumpIfHealthLower(50,"Fire4a")
+Fire3a:
+BZRR C 6 A_JumpIfHealthLower(50,"Fire4b")
+Fire3b:
+BZRR A 5
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+Fire4:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 3 A_JumpIfHealthLower(40,"Fire5a")
+Fire4a:
+BZRR C 5 A_JumpIfHealthLower(40,"Fire5b")
+Fire4b:
+BZRR A 4
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+Fire5:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 2 A_JumpIfHealthLower(13,"Fire6a")
+Fire5a:
+BZRR C 4 A_JumpIfHealthLower(13,"Fire6b")
+Fire5b:
+BZRR A 3
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+Fire6:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 1 A_JumpIfHealthLower(8,"Fire7a")
+Fire6a:
+BZRR C 3 A_JumpIfHealthLower(8,"Fire7b")
+Fire6b:
+BZRR A 2
+BZRR A 2 A_WeaponReady
+Goto Ready+1
+Fire7:
+BZRR A 0 A_PlaySoundEx("weapon/napalm","Weapon")
+BZRR A 0 A_FireCustomMissile("BerserkerRushShot",0,1,8,0)
+BZRR B 1
+Fire7a:
+BZRR C 2
+Fire7b:
+BZRR A 1
+BZRR A 1 A_WeaponReady
+Goto Ready+1
+
+NoAmmo:
+BZRR A 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor BerserkerRushAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 112
++INVENTORY.IGNORESKILL
+}
+
+actor BerserkerRushShot
+{
+Translation "202:202=110:110","199:199=110:110", "4:4=83:83"
+PROJECTILE
+Obituary "$OB_BERSERKERRUSH"
+damagetype "BerserkerRush"
+damage (10)
+radius 11
+height 11
+speed 38
+scale 3.25
+States
+{
+Spawn:
+TNT1 A 0
+SpawnLOOP:
+DKC1 F 0
+DKC1 F 0 ThrustThingZ(0,1,0,1)
+DKC1 F 8
+DKC1 F 0 A_ChangeFlag("NOGRAVITY",0)
+DKC1 F 0 A_ScaleVelocity(0.5)
+goto Spawn2
+Spawn2:
+DKC1 F 2
+loop
+XDeath:
+DKC1 G 0 A_Stop
+stop
+Crash:
+Death:
+DKC1 G 0 A_Stop
+DKC1 G 0 A_SpawnItemEx("BerserkerRushExplosion")
+stop
+}
+}
+
+actor BerserkerRushExplosion : BerserkerRushShot
+{
+PROJECTILE
+damagetype "BerserkerRushExplosion"
++NOCLIP
++NOGRAVITY
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+DKC1 G 0
+DKC1 G 0 A_Explode(10,64,0,0,12) //This is really the only important part of this.
+DKC1 GHIJK 2
+stop
+}
+}

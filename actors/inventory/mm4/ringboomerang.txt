@@ -1,0 +1,126 @@
+actor RingBoomerangWep : BaseMM8BDMWep 10058
+{
+//$Category MM8BDM-Weapons
+//$Title Ring Boomerang
+//$Sprite WEA2H0
+dropitem "RingBoomerangWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_RINGBOOMERANG"
+Obituary "$OB_RINGBOOMERANG"
+Tag "$TAG_RINGBOOMERANG"
+weapon.ammotype "RingBoomerangAmmo"
+inventory.icon "RINGSI"
+States
+{
+SpawnLoop:
+WEA2 H -1
+loop
+Ready:
+RING E 0 ACS_ExecuteAlways(998,0,27)
+RING E 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+RING E 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+RING E 1 A_Raise
+Loop
+Fire:
+RING E 0 A_JumpIfNoAmmo("NoAmmo")
+RING E 0 A_PlaySoundEx("weapon/ringboomerang","Weapon")
+RING E 0 A_FireCustomMissile("RingBoomerang",0,1,8,0)
+RING FG 4
+RING E 15
+RING E 0 A_Refire
+Goto Ready+1
+NoAmmo:
+RING E 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor RingBoomerangAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor RingBoomerang
+{
+PROJECTILE
+Radius 12
+Height 12
+scale 2.5
+damage (16)
++RIPPER
++HEXENBOUNCE
++NOTARGETSWITCH
++CANBOUNCEWATER
+meleerange 12
+damagetype "RingBoomerang"
+Obituary "$OB_RINGBOOMERANG"
+speed 65
+reactiontime 20
+States
+{
+Spawn:
+RING A 0
+RING ABCD 2
+RING A 0 A_Stop
+RING A 0 A_ChangeFlag("RIPPER", 0)
+RING ABCD 2
+Goto Death
+Death:
+RING A 0
+RING A 0 A_CustomMissile("ReturningRing",0,0,0,0)
+stop
+}
+}
+
+actor ReturningRing : RingBoomerang
+{
++NOINTERACTION
+damagetype "RingBoomerang"
+radius 0
+height 0
+States
+{
+Spawn:
+RING A 0
+RING A 0 A_JumpIfCloser(32,"Death")
+RING AA 1 A_SpawnItemEx("RingBoomerangDamager",0,0,0,2,0,0)
+RING B 0 A_JumpIfCloser(32,"Death")
+RING BB 1 A_SpawnItemEx("RingBoomerangDamager",0,0,0,2,0,0)
+RING C 0 A_JumpIfCloser(32,"Death")
+RING CC 1 A_SpawnItemEx("RingBoomerangDamager",0,0,0,2,0,0)
+RING D 0 A_JumpIfCloser(32,"Death")
+RING DD 1 A_SpawnItemEx("RingBoomerangDamager",0,0,0,2,0,0)
+RING A 0 A_Stop
+stop
+Death:
+RING A 0
+stop
+}
+}
+
+actor RingBoomerangDamager
+{
+damagetype "RingBoomerang"
+Obituary "$OB_RINGBOOMERANG"
+PROJECTILE
++DONTBLAST
+damage (16)
+radius 12
+height 12
+States
+{
+Spawn:
+TNT1 A 2
+stop
+}
+}

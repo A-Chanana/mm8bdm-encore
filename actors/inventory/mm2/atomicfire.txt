@@ -1,0 +1,228 @@
+actor AtomicFireWep : BaseMM8BDMWep 10010
+{
+//$Category MM8BDM-Weapons
+//$Title Atomic Fire
+//$Sprite WEAPE0
+dropitem "AtomicFireWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_ATOMICFIRE"
+Obituary "$OB_ATOMICFIRE"
+weapon.ammotype "AtomicFireAmmo"
+Tag "$TAG_ATOMICFIRE"
+inventory.pickupsound "weapon/weaponup"
+inventory.icon "ATOMI"
++WEAPON.AMMO_OPTIONAL
+Scale 2.0
+States
+{
+SpawnLoop:
+WEAP E -1
+loop
+Ready:
+HEAT G 0 ACS_ExecuteAlways(998,0,3)
+HEAT G 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+HEAT G 1
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+HEAT G 1
+Loop
+Altfire:
+HEAT G 0 A_JumpIfNoAmmo("NoAmmo")
+HEAT G 4
+Goto Fire1
+Fire:
+HEAT G 0 A_JumpIfNoAmmo("NoAmmo")
+HEAT G 1
+goto Hold
+Hold:
+HEAT G 0 A_JumpIfNoAmmo("NoAmmo")
+HEAT G 0 A_JumpIfInventory("WeaponCharge",1,"Hold2Start")
+HEAT G 2 A_GiveInventory("WeaponCharge",1)
+HEAT G 0 A_Refire
+Goto Fire1
+Hold2Start:
+HEAT G 0 A_GunFlash("Sound.Heat", GFF_NOEXTCHANGE)//A_PlaySoundEx("weapon/heat1", "SoundSlot5", 1)
+Hold2:
+HEAT G 0 A_JumpIfInventory("WeaponCharge",35,"Hold3Start")
+HEAT H 1 ACS_ExecuteAlways(991,0,60,0,1)
+HEAT G 0 A_Refire("Hold2.a")
+Goto Fire1
+Hold2.a:
+HEAT G 0 ACS_ExecuteAlways(991,0,3)
+HEAT G 1 A_GiveInventory("WeaponCharge",1)
+HEAT G 0 A_Refire("Hold2")
+Goto Fire1
+Hold3Start:
+Hold3:
+HEAT G 0 A_JumpIfInventory("WeaponCharge",65,"Hold4Start")
+HEAT I 1 ACS_ExecuteAlways(991,0,61,0,3)
+HEAT G 0 A_Refire("Hold3.a")
+Goto Fire2
+Hold3.a:
+HEAT G 1 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_GiveInventory("WeaponCharge",1)
+HEAT G 0 A_Refire("Hold3")
+Goto Fire2
+BotFire:
+HEAT G 0 A_Jump(16, "Fire3")
+HEAT G 0 A_Refire("Hold4")
+Goto Fire3
+Hold4Start:
+Hold4:
+HEAT J 1 ACS_ExecuteAlways(991,0,62,0,7)
+HEAT G 0 A_Refire("Hold4.a")
+Goto Fire3
+Hold4.a:
+HEAT G 1 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_JumpIfInventory("IsBot", 1, "BotFire")
+HEAT G 0 A_Refire("Hold4")
+Goto Fire3
+Fire1:
+HEAT G 0 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_TakeInventory("WeaponCharge",500)
+HEAT G 0 A_ClearRefire
+HEAT G 0 A_PlaySoundEx("weapon/atomicfire","Weapon")
+HEAT G 0 A_TakeInventory("AtomicFireAmmo",1,TIF_NOTAKEINFINITE)
+HEAT G 0 A_FireCustomMissile("AtomicFire1",0,0,8,0)
+HEAT KL 2
+Goto Ready+1
+Fire2:
+HEAT G 0 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_TakeInventory("WeaponCharge",500)
+HEAT G 0 A_ClearRefire
+HEAT G 0 A_PlaySoundEx("weapon/atomicfire","Weapon")
+HEAT G 0 A_JumpIfInventory("AtomicFireAmmo", 5, "Fire2r")
+HEAT G 0 A_TakeInventory("AtomicFireAmmo",5,TIF_NOTAKEINFINITE)
+HEAT G 0 A_FireCustomMissile("AtomicFire1",0,0,8,0)
+HEAT KL 2
+Goto Ready+1
+Fire2r:
+HEAT G 0 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_TakeInventory("AtomicFireAmmo",5,TIF_NOTAKEINFINITE)
+HEAT G 0 A_FireCustomMissile("AtomicFire2",0,0,8,0)
+HEAT KL 2
+Goto Ready+1
+Fire3:
+HEAT G 0 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_TakeInventory("WeaponCharge",500)
+HEAT G 0 A_ClearRefire
+HEAT G 0 A_PlaySoundEx("weapon/atomicfire","Weapon")
+HEAT G 0 A_JumpIfInventory("AtomicFireAmmo", 14, "Fire3r")
+HEAT G 0 A_JumpIfInventory("AtomicFireAmmo", 5, "Fire2r")
+HEAT G 0 A_TakeInventory("AtomicFireAmmo",14,TIF_NOTAKEINFINITE)
+HEAT G 0 A_FireCustomMissile("AtomicFire1",0,0,8,0)
+HEAT KL 3
+HEAT G 3
+Goto Ready+1
+Fire3r:
+HEAT G 0 ACS_ExecuteAlways(991,0,3)
+HEAT G 0 A_TakeInventory("AtomicFireAmmo",14,TIF_NOTAKEINFINITE)
+HEAT G 0 A_FireCustomMissile("AtomicFire3",0,0,8,0)
+HEAT KL 5
+HEAT G 4
+Goto Ready+1
+NoAmmo:
+HEAT G 1 ACS_Execute(979,0)
+HEAT G 0 A_Refire
+Goto Ready+1
+
+Sound.Heat:
+TNT1 A 0 A_JumpIfInventory("WeaponCharge",65,"Sound.Heat3")
+TNT1 A 0 A_JumpIfInventory("WeaponCharge",35,"Sound.Heat2")
+TNT1 A 4 A_PlaySoundEx("weapon/heat1", "Weapon", 0)
+TNT1 A 1 A_JumpIfInventory("WeaponCharge",1,"Sound.Heat")
+stop
+Sound.Heat2:
+TNT1 A 4 A_PlaySoundEx("weapon/heat2", "Weapon", 0)
+TNT1 A 1 A_JumpIfInventory("WeaponCharge",1,"Sound.Heat")
+stop
+Sound.Heat3:
+TNT1 A 4 A_PlaySoundEx("weapon/heat3", "Weapon", 0)
+TNT1 A 1 A_JumpIfInventory("WeaponCharge",1,"Sound.Heat")
+stop
+}
+}
+
+actor AtomicFireAmmo : Ammo
+{
++INVENTORY.IGNORESKILL
+inventory.amount 1
+inventory.maxamount 28
+}
+
+actor AtomicFire1
+{
+scale 2.5
+PROJECTILE
++FORCEXYBILLBOARD
++BRIGHT
+Radius 4
+Height 4
+Damage (16)
+damagetype "AtomicFire1"
+Obituary "$OB_ATOMICFIRE"
+Speed 24
+States
+{
+Spawn:
+HEAT AB 3
+loop
+Death:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor AtomicFire2 : AtomicFire1
+{
+Radius 10
+Height 10
+Damage (67)
+damagetype "AtomicFire2"
++DONTBLAST
+speed 30
+States
+{
+Spawn:
+HEAT CD 3
+loop
+Death:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor AtomicFire3 : AtomicFire1
+{
+Radius 15
+Height 15
++RIPPER
++DONTBLAST
+damagetype "AtomicFire3"
+Damage (100)
+speed 10
+States
+{
+Spawn:
+HEAT EF 3
+HEAT E 0 A_ScaleVelocity(2.0)
+HEAT E 0 A_PlaySoundEx("weapon/atomicfire", "body")
+HEAT EF 3
+HEAT E 0 A_ScaleVelocity(2.0)
+HEAT E 0 A_PlaySoundEx("weapon/atomicfire", "body")
+HEAT EF 3 A_PlaySoundEx("weapon/atomicfire", "body")
+goto Spawn+7
+Death:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}

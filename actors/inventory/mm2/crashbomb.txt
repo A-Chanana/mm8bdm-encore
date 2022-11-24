@@ -1,0 +1,124 @@
+actor CrashBombWep : BaseMM8BDMWep 10054
+{
+//$Category MM8BDM-Weapons
+//$Title Crash Bomb
+//$Sprite WEA2C0
+dropitem "CrashBombWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Inventory.Pickupmessage "$PU_CRASHBOMB"
+Obituary "$OB_CRASHBOMB"
+Tag "$TAG_CRASHBOMB"
+weapon.ammotype "CrashBombAmmo"
+inventory.icon "CRASSI"
+States
+{
+SpawnLoop:
+WEA2 C -1
+loop
+Ready:
+CRAS X 0 ACS_ExecuteAlways(998,0,23)
+CRAS X 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+CRAS X 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+CRAS X 1 A_Raise
+Loop
+Fire:
+CRAS X 0 A_JumpIfNoAmmo("NoAmmo")
+CRAS X 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+CRAS X 0 A_FireCustomMissile("CrashBomb",0,1,8,0)
+CRAS YZ 5
+CRAS X 23
+CRAS X 0 A_Refire
+Goto Ready+1
+NoAmmo:
+CRAS X 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor CrashBombAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor CrashBomb
+{
+PROJECTILE
+Radius 6
+Height 6
+DamageType "CrashBomb"
+Obituary "$OB_CRASHBOMB"
+scale 2.5
+damage 1
+speed 40
+States
+{
+Spawn:
+CRAS A 1
+loop
+Death:
+CRAS A 0 A_JumpIf(z-floorz<5, "Floor")
+CRAS A 0 A_JumpIf(z-ceilingz==0-6, "Ceiling")
+CRAS B 3 A_PlaySound("weapon/crashland")
+CRAS C 3
+CRAS DCDCDCDCDCDCDC 3
+Goto Crash
+Floor:
+CRAS E 3 A_PlaySound("weapon/crashland")
+CRAS F 3
+CRAS GFGFGFGFGFGFGF 3
+Goto Crash
+Ceiling:
+CRAS H 3 A_PlaySound("weapon/crashland")
+CRAS I 3
+CRAS JIJIJIJIJIJIJI 3
+Goto Crash
+Crash:
+CRAS A 0 A_SpawnItemEx("CrashBombExplosion")
+stop
+XDeath:
+CRAS A 0
+stop
+}
+}
+
+actor CrashBombExplosion : CrashBomb
+{
+PROJECTILE
+damagetype "CrashBombExplosion"
++NOCLIP
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+TNT1 E 0
+TNT1 A 0 A_PlaySoundEx("weapon/crashexplode", "Weapon")
+TNT1 A 0 A_SpawnItemEx("CrashBombExplode")
+TNT1 AAAA 9 A_Explode(24,64,0)
+stop
+}
+}
+
+actor CrashBombExplode : BasicGraphicEffect
+{
+    +FORCEXYBILLBOARD
+    +BRIGHT
+    States
+    {
+    Spawn:
+        CRAS KKLMNNOPQQRSTTVWKKLMNNOPQQRSTTVW 1
+        stop
+    }
+}

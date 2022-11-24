@@ -1,0 +1,88 @@
+Actor BrassBulletWep : BaseMM8BDMWep
+{
+//$Category MM8BDME-Weapons
+//$Title Brass Bullet
+dropitem "BrassBulletWep"
+Weapon.AmmoUse 3
+Weapon.AmmoGive 27
+Weapon.SlotNumber 3
+Obituary "$OB_BRASSBULLET"
+Tag "$TAG_BRASSBULLET"
+Inventory.Pickupmessage "$PU_BRASSBULLET"
+weapon.ammotype "BrassBulletAmmo"
+inventory.icon "BRBUICON"
+States
+{
+SpawnLoop:
+BRBU I -1
+loop
+Ready:
+BRBU F 0 ACS_ExecuteWithResult(998,246)
+BRBU F 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BRBU F 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BRBU F 1 A_Raise
+Loop
+Fire:
+BRBU F 0 A_JumpIfNoAmmo("NoAmmo")
+BRBU E 0 A_JumpIfInventory("IsSpecialBot", 1 ,"BulletManCheck")
+BRBU F 0 A_PlaySoundEx("weapon/brassbullet","Weapon")
+BRBU G 4 A_FireCustomMissile("BrassBullet",0,1,8,0)
+BRBU HFFFFF 4
+BRBU F 20
+Goto Ready+1
+NoAmmo:
+BRBU F 1 ACS_Execute(979,0)
+Goto Ready+1
+BulletManCheck:
+TOPH A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 800, 0)>0, 1)
+Goto Fire+2
+BUTS B 1 A_GiveInventory("BulletVulcanWep",1)
+BUST B 1 A_SelectWeapon("BulletVulcanWep")
+Goto Fire+2
+}
+}
+
+Actor BrassBulletAmmo : Ammo
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 28
+	+INVENTORY.IGNORESKILL
+}
+
+actor BrassBullet
+{
+PROJECTILE
+DamageType "BrassBullet"
+Obituary "$OB_BRASSBULLET"
+Speed 30
++SEEKERMISSILE
+var int user_dmg;
+Damage (7+user_dmg)
+radius 8
+height 8
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 2
+Spawn2:
+BRBU AAABBBAAABBB 1 A_SeekerMissile(20,20,SMF_PRECISE|SMF_LOOK,256,2)
+BRBU A 0 A_PlaySoundEx("weapon/brassbeep","Body")
+BRBU A 0 A_SetUserVar("user_dmg",user_dmg+5)
+BRBU A 0 A_GiveInventory("CutterFlag",1)
+BRBU A 0 A_GiveInventory("CutterFlag",9,"loopit")
+loop
+loopit:
+BRBU AAABBB 1 A_SeekerMissile(20,20,SMF_PRECISE|SMF_LOOK,256,2)
+loop
+Death:
+MMFX BCDE 2
+stop
+}
+}

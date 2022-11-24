@@ -1,0 +1,16 @@
+actor EBaccone : Baccone 20618
+{
+//$Category MM8BDM-Props
+Translation "221:221=112:112"
+}
+
+actor TireSpring : PlantSpring 20637
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+TSPR A -1
+stop
+}
+}

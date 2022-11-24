@@ -1,0 +1,194 @@
+actor DustCrusherWep : BaseMM8BDMWep 10061
+{
+//$Category MM8BDM-Weapons
+//$Title Dust Crusher
+//$Sprite WEA2K0
+dropitem "DustCrusherWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 2
+Inventory.Pickupmessage "$PU_DUSTCRUSHER"
+Obituary "$OB_DUSTCRUSHER"
+Tag "$TAG_DUSTCRUSHER"
+weapon.ammotype "DustCrusherAmmo"
+inventory.icon "DUSTSI"
+States
+{
+SpawnLoop:
+WEA2 K -1
+loop
+Ready:
+DSTS B 0 ACS_ExecuteAlways(998,0,30)
+DSTS B 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+DSTS B 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+DSTS B 1 A_Raise
+Loop
+Fire:
+DSTS B 0 A_JumpIfNoAmmo("NoAmmo")
+DSTS B 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+DSTS B 0 A_FireCustomMissile("DustCrusher",0,1,8,0)
+DSTS CD 6
+DSTS B 16
+DSTS B 0 A_Refire
+Goto Ready+1
+NoAmmo:
+DSTS B 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor DustCrusherAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor DustCrusher
+{
+PROJECTILE
+Radius 10
+Height 10
+scale 2.5
+damage (47)
+speed 35
+damagetype "DustCrusher"
+Obituary "$OB_DUSTCRUSHER"
+States
+{
+Spawn:
+DUST A 4
+loop
+XDeath:
+DRIL A 0
+stop
+Crash:
+TNT1 A 6 A_SpawnItemEx("ExplosionEffect1")
+TNT1 A 0 A_SpawnItemEx("DustBit1C",0,0,0,28,0,0,45)
+TNT1 A 0 A_SpawnItemEx("DustBit2C",0,0,0,28,0,0,-45)
+TNT1 A 0 A_SpawnItemEx("DustBit3C",0,0,0,28,0,0,225)
+TNT1 A 0 A_SpawnItemEx("DustBit4C",0,0,0,28,0,0,-225)
+stop
+Death:
+TNT1 A 6 A_SpawnItemEx("ExplosionEffect1")
+MMFX A 0 A_SpawnItemEx("DustBit1",0,0,0,28,0,0,45)
+MMFX A 0 A_SpawnItemEx("DustBit2",0,0,0,28,0,0,-45)
+MMFX A 0 A_SpawnItemEx("DustBit3",0,0,0,28,0,0,225)
+MMFX A 0 A_SpawnItemEx("DustBit4",0,0,0,28,0,0,-225)
+stop
+}
+}
+
+actor DustBit1
+{
+PROJECTILE
++THRUACTORS
+Radius 6
+Height 6
+scale 2.5
+damage (20)
+damagetype "DustCrusherBit"
+Obituary "$OB_DUSTCRUSHER"
+ReactionTime 90
+speed 28
+states
+{
+Spawn:
+DUST B 3
+DUST B 0 A_ChangeFlag(THRUACTORS, false)
+DUST B 4 
+loop
+}
+}
+
+actor DustBit2 : DustBit1
+{
+states
+{
+Spawn:
+DUST C 3
+DUST C 0 A_ChangeFlag(THRUACTORS, false)
+DUST C 4
+loop
+}
+}
+
+actor DustBit3 : DustBit1
+{
+states
+{
+Spawn:
+DUST D 3
+DUST D 0 A_ChangeFlag(THRUACTORS, false)
+DUST D 4
+loop
+}
+}
+
+actor DustBit4 : DustBit1
+{
+states
+{
+Spawn:
+DUST E 3
+DUST E 0 A_ChangeFlag(THRUACTORS, false)
+DUST E 4
+loop
+}
+}
+
+actor DustBit1C : DustBit1
+{
++THRUACTORS
+states
+{
+Spawn:
+DUST B 3 
+DUST B 0 A_ChangeFlag("THRUACTORS", 0)
+DUST B 4 A_CountDown
+goto Spawn+2
+}
+}
+
+actor DustBit2C : DustBit1C
+{
+
+states
+{
+Spawn:
+DUST C 3 
+DUST C 0 A_ChangeFlag("THRUACTORS", 0)
+DUST C 4 A_CountDown
+goto Spawn+2
+}
+}
+
+actor DustBit3C : DustBit1C
+{
+states
+{
+Spawn:
+DUST D 3 
+DUST D 0 A_ChangeFlag("THRUACTORS", 0)
+DUST D 4 A_CountDown
+goto Spawn+2
+}
+}
+
+actor DustBit4C : DustBit1C
+{
+states
+{
+Spawn:
+DUST E 3 
+DUST E 0 A_ChangeFlag("THRUACTORS", 0)
+DUST E 4 A_CountDown
+goto Spawn+2
+}
+}

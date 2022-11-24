@@ -1,0 +1,224 @@
+actor RollingCutterWep : BaseMM8BDMWep 10056
+{
+//$Category MM8BDM-Weapons
+//$Title Rolling Cutter
+//$Sprite WEA2F0
+dropitem "RollingCutterWep"
+Weapon.AmmoUse 4
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_ROLLINGCUTTER"
+Obituary "$OB_ROLLINGCUTTER"
+Tag "$TAG_ROLLINGCUTTER"
+weapon.ammotype "RollingCutterAmmo"
+inventory.icon "RCUTSI"
+States
+{
+SpawnLoop:
+WEA2 F -1
+loop
+Ready:
+BUSH S 0 ACS_ExecuteAlways(998,0,25)
+BUSH S 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+BUSH S 0 A_TakeInventory("CutterFlag",999)
+BUSH S 1 A_WeaponReady
+Goto Ready+2
+ReadyNoAmmo:
+BUS2 B 1 A_WeaponReady
+BUS2 B 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BUSH S 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BUSH S 1 A_Raise
+Loop
+Fire:
+BUSH S 0 A_JumpIfNoAmmo("NoAmmo")
+BUSH T 0 A_TakeInventory("RollingCutterFlag", 1)
+BUSH T 2 A_FireCustomMissile("RollingCutter",0,1,8,0)
+BUSH UVWXY 2
+Goto Check
+Check:
+TNT1 A 1 A_GiveInventory("CutterFlag",1)
+TNT1 A 0 A_JumpIfInventory("CutterFlag",100,"Return")
+TNT1 A 0 A_JumpIfInventory("RollingCutterFlag",1,"Return")
+Goto Check
+Return:
+BUSH Y 0 A_TakeInventory("CutterFlag",999)
+BUSH Y 0 A_TakeInventory("RollingCutterFlag",1)
+BUSH YZ 2 
+BUSH S 0 A_Refire
+Goto Ready+1
+NoAmmo:
+BUS2 B 1 ACS_Execute(979,0)
+Goto ReadyNoAmmo
+}
+}
+
+actor RollingCutterAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor RollingCutter
+{
+PROJECTILE
+Radius 8
+Height 8
+scale 2.5
+damage (0)
++DONTSPLASH
++DOOMBOUNCE
++RIPPER
++NOTARGETSWITCH
++SKYEXPLODE
+meleerange 12
+reactiontime 48
+//+FLOAT
+damagetype "RollingCutter"
+speed 22
+FloatSpeed 16
+bouncefactor 1.0
+wallbouncefactor 1.0
+States
+{
+Spawn:
+RCUT A 0
+RCUT A 0 A_PlaySound("weapon/rollingcutter")
+RCUT A 0 A_JumpIfInTargetInventory("CutterFlag",999,"Death")
+RCUT AAAA 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT BBBB 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT CCCC 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT DDDD 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT A 0 A_PlaySound("weapon/rollingcutter")
+RCUT A 0 A_JumpIfInTargetInventory("CutterFlag",999,"Death")
+RCUT AAAA 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT BBBB 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT A 0 A_CustomMissile("ReturningCutter1",0,0,0,0)
+stop
+Death:
+RCUT A 0 A_GiveToTarget("RollingCutterFlag",1)
+stop
+}
+}
+
+actor ReturningCutter1 : RollingCutter
+{
+radius 0
+height 0
+speed 24
+damagetype "RollingCutter"
+damage 0
++DONTSPLASH
++NOINTERACTION
+States
+{
+Spawn:
+RCUT A 0
+RCUT A 0 A_FaceTarget
+RCUT A 0 A_JumpIfCloser(60,"Death")
+RCUT CCCC 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT A 0 A_JumpIfInTargetInventory("CutterFlag",999,"Death")
+RCUT A 0 A_CustomMissile("ReturningCutter2",0,0,0,0)
+stop
+}
+}
+
+actor ReturningCutter2 : RollingCutter
+{
+radius 0
+height 0
+speed 24
+damagetype "RollingCutter"
+damage 0
++DONTSPLASH
++NOINTERACTION
+States
+{
+Spawn:
+RCUT A 0
+RCUT A 0 A_FaceTarget
+RCUT A 0 A_JumpIfCloser(60,"Death")
+RCUT DDDD 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT A 0 A_Countdown
+RCUT A 0 A_JumpIfInTargetInventory("CutterFlag",999,"Death")
+RCUT A 0 A_CustomMissile("ReturningCutter3",0,0,0,0)
+stop
+}
+}
+
+actor ReturningCutter3 : RollingCutter
+{
+radius 0
+height 0
+speed 24
+damagetype "RollingCutter"
+damage 0
++DONTSPLASH
++NOINTERACTION
+States
+{
+Spawn:
+RCUT A 0
+RCUT A 0 A_FaceTarget
+RCUT A 0 A_JumpIfCloser(60,"Death")
+RCUT A 0 A_PlaySound("weapon/rollingcutter")
+RCUT AAAA 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT A 0 A_JumpIfInTargetInventory("CutterFlag",999,"Death")
+RCUT A 0 A_CustomMissile("ReturningCutter4",0,0,0,0)
+stop
+}
+}
+
+actor ReturningCutter4 : RollingCutter
+{
+radius 0
+height 0
+speed 24
+damagetype "RollingCutter"
+damage 0
++DONTSPLASH
++NOINTERACTION
+States
+{
+Spawn:
+RCUT A 0
+RCUT A 0 A_FaceTarget
+RCUT A 0 A_JumpIfCloser(60,"Death")
+RCUT BBBB 1 A_SpawnItemEx("RollingCutterDamager",0,0,0,2,0,0)
+RCUT A 0 A_JumpIfInTargetInventory("CutterFlag",999,"Death")
+RCUT A 0 A_CustomMissile("ReturningCutter1",0,0,0,0)
+stop
+}
+}
+
+actor RollingCutterDamager
+{
+PROJECTILE
+damagetype "RollingCutter"
+Obituary "$OB_ROLLINGCUTTER"
++RIPPER
++DONTBLAST
+damage (10)
+radius 16
+height 16
+States
+{
+Spawn:
+TNT1 A 2
+stop
+}
+}
+
+actor CutterFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 999
+}
+
+actor RollingCutterFlag : Once {}

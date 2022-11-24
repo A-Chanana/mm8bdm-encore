@@ -1,0 +1,112 @@
+{
+	name = "\cdMaestro"
+	accuracy = 1
+	intellect = 4
+	evade = 4
+	anticipation = 1
+	reactiontime = 4
+	perception = 3
+	favoriteweapon = "MaestroBuster"
+	color = "00 00 00"
+	gender = "male"
+	skin = "base"
+	class = "Maestro"
+	revealed = true
+	script = "humanbot"
+	chatfrequency = 0
+}
+
+{
+	name = "\cgBreakman"
+	accuracy = 1
+	intellect = 3
+	evade = 0
+	anticipation = 1
+	reactiontime = 2
+	perception = 1
+	favoriteweapon = "ProtoBuster"
+	color = "00 00 00"
+	gender = "male"
+	skin = "ProtoMan-Break"
+	class = "Protoman"
+	revealed = true
+	script = "humanbot"
+	chatlump = "chats/BOTPROT.txt"
+	chatfrequency = 50
+}
+
+{
+	name = "\cnBulletman"
+	accuracy = 1
+	intellect = 3
+	evade = 0
+	anticipation = 1
+	reactiontime = 2
+	perception = 1
+	favoriteweapon = "PhotonMissileWep"
+	color = "00 00 00"
+	gender = "male"
+	skin = "BulletMan"
+	class = "BulletMan"
+	revealed = true
+	script = "humanbot"
+	chatlump = "chats/BOTBUL.txt"
+	chatfrequency = 50
+}
+
+{
+	name = "\cuClockman"
+	accuracy = 1
+	intellect = 3
+	evade = 0
+	anticipation = 1
+	reactiontime = 2
+	perception = 1
+	favoriteweapon = "TimeSlowWep"
+	color = "00 00 00"
+	gender = "male"
+	skin = "ClockMan"
+	class = "ClockMen"
+	revealed = true
+	script = "humanbot"
+	chatlump = "chats/BOTCLK.txt"
+	chatfrequency = 50
+}
+
+{
+	name = "\cnAirconman"
+	accuracy = 1
+	intellect = 3
+	evade = 0
+	anticipation = 1
+	reactiontime = 2
+	perception = 1
+	favoriteweapon = "WindStormWep"
+	color = "00 00 00"
+	gender = "male"
+	skin = "AirconMan"
+	class = "AirconMan"
+	revealed = true
+	script = "humanbot"
+	chatlump = "chats/BOTAIC.txt"
+	chatfrequency = 50
+}
+
+{
+	name = "\ciBondman"
+	accuracy = 1
+	intellect = 3
+	evade = 0
+	anticipation = 1
+	reactiontime = 2
+	perception = 1
+	favoriteweapon = "OilSliderWep"
+	color = "00 00 00"
+	gender = "male"
+	skin = "Bondman"
+	class = "Bondman"
+	revealed = true
+	script = "humanbot"
+	chatlump = "chats/BOTBND.txt"
+	chatfrequency = 50
+}

@@ -1,0 +1,106 @@
+actor ScrewCrusherWep : BaseMM8BDMWep 10077
+{
+//$Category MM8BDM-Weapons
+//$Title Screw Crusher
+//$Sprite WEA3D0
+dropitem "ScrewCrusherWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 112
+Weapon.SlotNumber 3
+Inventory.Pickupmessage "$PU_SCREWCRUSHER"
+Obituary "$OB_SCREWCRUSHER"
+Tag "$TAG_SCREWCRUSHER"
+weapon.ammotype "ScrewCrusherAmmo"
+inventory.icon "SCRWSI"
+States
+{
+SpawnLoop:
+WEA3 D -1
+loop
+Ready:
+SCRH A 0 ACS_ExecuteAlways(998,0,48)
+SCRH A 0 A_JumpIfNoAmmo("NoAmmo")
+SCRH A 1 A_WeaponReady
+Goto Ready+2
+ReadyNoAmmo:
+SCRH J 1 A_WeaponReady
+SCRH J 0 A_JumpIfNoAmmo("ReadyNoAmmo")
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SCRH A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SCRH A 1 A_Raise
+Loop
+Fire:
+SCRH A 0 A_JumpIfNoAmmo("NoAmmo")
+SCRH A 0 A_PlaySoundEx("weapon/screwcrusher","Weapon")
+SCRH A 0 A_FireCustomMissile("ScrewCrusherSpawner",0,1,8,0)
+SCRH ABCD 2
+//BUSH QR 1 
+SCRH F 0 A_Refire
+SCRH EEFFGG 1 A_WeaponReady
+SCRH A 4
+Goto Ready+1
+NoAmmo:
+SCRH J 1 ACS_Execute(979,0)
+Goto ReadyNoAmmo
+}
+}
+
+actor ScrewCrusherAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 112
++INVENTORY.IGNORESKILL
+}
+
+actor ScrewCrusherSpawner
+{
+PROJECTILE
++NOINTERACTION
++NOCLIP
+Damage(0)
+Height 1
+Radius 1
+Speed 0
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_SpawnItemEx("ScrewCrusher")
+stop
+}
+}
+
+actor ScrewCrusher
+{
+PROJECTILE
+damagetype "ScrewCrusher"
+Obituary "$OB_SCREWCRUSHER"
+scale 2.5
+-NOGRAVITY
++DOOMBOUNCE
+-BOUNCEAUTOOFF
+-ALLOWBOUNCEONACTORS
++CANBOUNCEWATER
+bouncecount 5
+bouncefactor 0.8
+Speed 16
+Radius 15
+Height 8
+gravity 1.8
+Damage (27)
+reactiontime 30
+States
+{
+Spawn:
+SCRE A 0
+SCRE A 0 A_Recoil(-16)
+TNT1 A 1 ThrustThingZ(0, 65, 0, 1)
+SCRE AB 3 A_CountDown
+Goto Spawn+3
+}
+}

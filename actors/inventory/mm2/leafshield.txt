@@ -1,0 +1,198 @@
+actor LeafShieldWep : BaseMM8BDMWep 10011
+{
+//$Category MM8BDM-Weapons
+//$Title Leaf Shield
+//$Sprite WEAPF0
+dropitem "LeafShieldWep"
+Weapon.AmmoUse 7
+Weapon.AmmoGive 28
+Weapon.SlotNumber 7
+Inventory.Pickupmessage "$PU_LEAFSHIELD"
+Obituary "$OB_LEAFSHIELD"
+Tag "$TAG_LEAFSHIELD"
+weapon.ammotype "LeafShieldAmmo"
+inventory.icon "LEAFI"
+States
+{
+SpawnLoop:
+WEAP F -1
+loop
+Ready:
+LEAF A 0 ACS_ExecuteAlways(998,0,2)
+LEAF A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+LEAF A 0 A_TakeInventory("ShieldCheck", 1)
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 99)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+LEAF A 1 A_Lower
+Goto Deselect+1
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+LEAF A 1 A_Raise
+Loop
+Fire:
+LEAF A 0 A_JumpIfInventory("ShieldCheck",1,"ShieldThrow")
+LEAF A 0 A_JumpIfNoAmmo("NoAmmo")
+LEAF A 0 A_TakeInventory("BasicArmor",9999)
+goto ShieldActivate
+Hold:
+LEAF A 1
+goto Ready+1
+ShieldActivate:
+LEAF A 0 A_TakeInventory("LeafShieldAmmo", 7,TIF_NOTAKEINFINITE)
+LEAF A 0 A_GiveInventory("ShieldCheck",1)
+LEAF BCDEF 1
+LEAF A 0 A_GiveInventory("LeafShieldCharge", 31)
+TNT1 A 0 A_GunFlash("Sound.Leaf", GFF_NOEXTCHANGE)//A_PlaySoundEx("weapon/leafshield", "Weapon", 1, 0)
+LEAF A 0 A_SpawnItemEx("LeafShieldWarper",0,0,0,0,0,0,0,0)
+LEAF GG 1 A_SpawnItemEx("LeafShieldGuard", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+LEAF A 0 A_JumpIfInventory("LeafShieldCounter", 1, "ShieldAttack")
+LEAF HH 1 A_SpawnItemEx("LeafShieldGuard", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+LEAF A 0 A_JumpIfInventory("LeafShieldCounter", 1, "ShieldAttack")
+ShieldLoop:
+LEAF A 0 A_WeaponReady
+LEAF A 1 A_SpawnItemEx("LeafShieldGuard", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+LEAF A 0 A_JumpIfInventory("LeafShieldCounter", 1, "ShieldAttack")
+LEAF A 0 A_WeaponReady
+LEAF A 1 A_SpawnItemEx("LeafShieldGuard", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+LEAF A 0 A_JumpIfInventory("LeafShieldCounter", 1, "ShieldAttack")
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 1)
+LEAF A 0 A_JumpIfInventory("LeafShieldCharge", 1, "ShieldLoop")
+goto ShieldThrow
+ShieldAttack:
+TNT1 A 0 A_StopSoundEx("Weapon")
+LEAF A 0 A_PlaySoundEx("weapon/leafshieldcounter", "body")
+LEAF A 0 A_GiveInventory("LeafShieldCharge", 32)
+ShieldAttackLoop:
+LEAF A 2 A_FireCustomMissile("LeafShieldCounterShot", 0, 0, 20, 20)
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 2)
+LEAF A 0 A_JumpIfInventory("LeafShieldCharge", 1, 1)
+goto ShieldThrow
+LEAF A 2 A_FireCustomMissile("LeafShieldCounterShot", 0, 0, 20, -20)
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 2)
+LEAF A 0 A_JumpIfInventory("LeafShieldCharge", 1, 1)
+goto ShieldThrow
+LEAF A 2 A_FireCustomMissile("LeafShieldCounterShot", 0, 0, -20, 20)
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 2)
+LEAF A 0 A_JumpIfInventory("LeafShieldCharge", 1, 1)
+goto ShieldThrow
+LEAF A 2 A_FireCustomMissile("LeafShieldCounterShot", 0, 0, -20, -20)
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 2)
+LEAF A 0 A_JumpIfInventory("LeafShieldCharge", 1, "ShieldAttackLoop")
+goto ShieldThrow
+ShieldThrow:
+LEAF A 0 A_TakeInventory("LeafShieldCharge", 999)
+LEAF IJ 2
+LEAF A 0 A_TakeInventory("ShieldCheck",999)
+LEAF A 0 A_FireCustomMissile("LeafShield",0,0,0,0)
+LEAF K 15
+LEAF JI 3
+goto Ready+1
+NoAmmo:
+LEAF A 1 ACS_Execute(979,0)
+goto Ready+1
+Sound.Leaf:
+TNT1 A 4 A_PlaySoundEx("weapon/leafshield", "Weapon", 0)
+TNT1 A 1 A_JumpIfInventory("LeafShieldCharge",1,"Sound.Leaf")
+stop
+}
+}
+
+actor LeafShieldWarper : BaseShieldWarper
+{
+	States
+	{
+	Shield:
+	WOOD AABBCCDDAABBCCDDAABBCCDD 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_INTERPOLATE|WARPF_NOCHECKPOSITION)
+	LFSH FFGGHHEEFFGGHHEEFFGGHHFF 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_INTERPOLATE|WARPF_NOCHECKPOSITION)
+	LFSH BBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDD 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_INTERPOLATE|WARPF_NOCHECKPOSITION)
+	loop
+	}
+}
+
+actor LeafShieldGuard
+{
+	+SHOOTABLE
+	+NOTARGETSWITCH
+	+NODAMAGE
+	-SOLID
+	+GHOST
+	+NOBLOOD
+    +SLIDESONWALLS
+    +NOTAUTOAIMED
+	height 58
+	radius 35
+	painchance 256
+	health 100
+	scale 2.5
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 AA 1
+		stop
+	Pain:
+		TNT1 A 0 A_GiveToTarget("LeafShieldCounter", 1)
+		stop
+	Death:
+		TNT1 A 0
+		stop
+	}
+}
+
+actor LeafShieldCounter : Powerup
+{
+	powerup.duration 10
+}
+
+actor LeafShield
+{
+scale 2.5
+PROJECTILE
+Damage (27)
+Obituary "$OB_LEAFSHIELD"
+damagetype "LeafShield"
+//+RIPPER
+Speed 25
+Radius 12
+Height 12
+States
+{
+Spawn:
+WOOD EFGH 2
+loop
+}
+}
+
+actor LeafShieldCounterShot
+{
+	PROJECTILE
+	Obituary "$OB_LEAFSHIELD"
+	damagetype "LeafShieldShot"
+	height 12
+	radius 6
+	Speed 45
+	scale 2.5
+	damage (11)
+	States
+	{
+	Spawn:
+		LFS1 AB 1
+		loop
+	}
+}
+
+
+
+actor LeafShieldAmmo : Ammo
+{
+	inventory.amount 1
+	inventory.maxamount 28
+	+INVENTORY.IGNORESKILL
+}
+
+actor LeafShieldCharge : WeaponCharge
+{
+	inventory.maxamount 32
+}

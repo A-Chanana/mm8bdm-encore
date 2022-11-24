@@ -1,0 +1,499 @@
+actor EBoatActivate : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+states
+{
+Spawn:
+TNT1 A 1
+loop
+Pickup:
+TNT1 A 0 A_SpawnItemEx("EBoatGiver")
+TNT1 A 0 A_GiveInventory("InBoat")
+TNT1 A 0 A_SpawnItemEx("EBoatFront",1,0,0,0,0,0)
+TNT1 A 0 A_SpawnItemEx("EBoatBack",-30,0,0,0,0,0)
+stop
+}
+}
+
+actor EBoatGiver
+{
+Height 0
+Radius 0
++NOINTERACTION
+-SOLID
++NOGRAVITY
++MISSILE
+States
+{
+Spawn:
+TNT1 A 1 A_GiveToTarget("EBoatFX",1)
+TNT1 A 0 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_INTERPOLATE) //PART OF FAILSAFE
+TNT1 A 0 A_JumpIf(z-floorz > 360, "DeathX") //FAILSAFE
+TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
+TNT1 A 0 A_JumpIfInTargetInventory("InBoat",1,"Spawn")
+Goto Death
+DeathX:
+TNT1 A 0 A_TakeFromTarget("InBoat")
+Death:
+TNT1 A 0 A_GiveToTarget("BoatDeathFX",1)
+stop
+}
+}
+
+actor EBoatFront : BasicGraphicEffect
+{
+translation "109:109=39:39"
+    -FORCEXYBILLBOARD
+    mass 31
+    States
+    {
+    Spawn:
+        WAVB B 0
+        goto SpawnLoop
+    SpawnLoop:
+        "----" "#" 1 A_Warp(AAPTR_TARGET, mass-30, 0, 0, 0, WARPF_INTERPOLATE)
+        "----" "#" 0 A_JumpIfInTargetInventory("InBoat", 1, "SpawnLoop")
+        "----" "#" 1 A_JumpIf(true, "End")
+        wait
+    End:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor EBoatBack : EBoatFront
+{
+    mass 0
+    States
+    {
+    Spawn:
+        WAVB A 0
+        goto SpawnLoop
+    }
+}
+
+actor EBoatFX : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+states
+{
+Spawn:
+TNT1 A 1
+loop
+Pickup:
+TNT1 A 0 A_GiveInventory("FlyDeactivate", 1)
+TNT1 A 0 A_JumpIfInventory("HasFeetInWater", 1, "UnderWater")
+Goto AirCheck
+
+UnderWater:
+TNT1 A 0 A_JumpIf(z-floorz > 52, 1)
+Goto AirCheck
+TNT1 A 0 A_JumpIf(momz <= 0, 2)
+TNT1 A 0 ThrustThingZ(0, 2.5, 0, 1)
+Goto AirCheck
+TNT1 A 0 A_GiveInventory("FlyActivate", 1)
+TNT1 A 0 ThrustThingZ(0, 1.5, 0, 0)
+Goto AirCheck
+
+AirCheck:
+TNT1 A 0 A_JumpIf(z < 54,1)
+Goto Air
+TNT1 A 0 A_Recoil(-1)
+Stop
+
+Air:
+TNT1 A 0 A_ChangeVelocity(momx*1.025, momy*1.025, momz, CVF_REPLACE)
+stop
+}
+}
+
+actor EBoatFrontFX 
+{
+translation "109:109=39:39"
++NOTIMEFREEZE
++CLIENTSIDEONLY
+-SOLID
++NOGRAVITY
++NOINTERACTION
+scale 2.5
+height 0
+radius 0
+States
+{
+Spawn:
+WAVB B 2
+stop
+}
+}
+
+actor EBoatBackFX : EBoatFrontFX
+{
+translation "109:109=39:39"
++NOTIMEFREEZE
+States
+{
+Spawn:
+WAVB A 2
+stop
+}
+}
+
+actor EVboy 20531
+{
+//$Category MM8BDM-Props
+//$Arg0 Solid State
+//$Arg0Type 11
+//$Arg0Enum { 0 = "Solid"; 1 = "Non-Solid"; }
++SOLID
+height 28
++FORCEYBILLBOARD
+radius 16
+scale 2.5
++NOGRAVITY
++RANDOMIZE
+gravity 0.0
+States
+{
+Spawn:
+VBOY A 0
+VBOY A 0 A_JumpIf(args[0]==1, "Unsolid")
+Static:
+VBOY ABC 3
+loop
+Unsolid:
+VBOY A 1 A_SpawnItemEx("EVboy_Unsolid")
+stop
+}
+}
+
+actor EVboy_Unsolid : EVBoy { -SOLID +NOGRAVITY}
+
+actor EDolphin
+{
+translation "215:246=5:5"
+PROJECTILE
+Damage 0
++DONTBLAST
++RIPPER
++BLOODLESSIMPACT
++DONTREFLECT
++CLIENTSIDEONLY
+scale 2.5
+speed 12
+-SOLID
+-NOGRAVITY
+States
+{
+Spawn:
+DOLP A 0
+DOLP A 0 A_SpawnItemEx("MMSplash")
+DOLP A 8
+Goto Spawn+2
+Death:
+DOLP A 0 A_SpawnItemEx("MMSplash")
+stop
+}
+}
+
+actor EDolphinYashichi : EDolphin
+{
+States
+{
+Spawn:
+YASH A 0
+YASH A 0 A_SpawnItemEx("MMSplash")
+YASH A 8
+Goto Spawn+2
+Death:
+YASH A 0 A_SpawnItemEx("MMSplash")
+stop
+}
+}
+
+actor EWaveSpike 20815
+{
+Translation "74:74=245:245", "87:87=62:62", "4:4=68:68"
+//$Category MM8BDM-Interactive Props
++DONTBLAST
++NOGRAVITY
++THRUGHOST
+Height 16
+radius 16
+scale 2.5
+states
+{
+Spawn:
+TNT1 A 0 
+TNT1 A 1 A_SpawnItemEx("SpikeDamager") // From Spiney
+goto Graphic
+Graphic:
+WVSK A -1
+stop
+}
+}
+
+actor EWaveBubbleSpawner 20816
+{
+translation "103:103=39:39", "97:97=32:32"
+//$Category MM8BDM-Interactive Props
+//$Arg0 Height
+//$NotAngled
+-SOLID
++NOGRAVITY
++NOINTERACTION
++FORCEYBILLBOARD
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 0 
+TNT1 A 0 A_JumpIf(args[0]==0, "Spawn2")
+TNT1 A 0 A_GiveInventory("CutterFlag", args[0])
+Goto Spawn2
+Spawn2:
+TNT1 A 70
+WAVB CD 5
+WAVB A 0 A_RadiusGive("EBubbleBump", 40, RGF_PLAYERS, 1)
+WAVB EF 5
+TNT1 A 0 A_SpawnItemEx("EWaveBubble",0,0,45,0,0,4)
+TNT1 A 0 A_Jump(128, 2)
+TNT1 A 35
+TNT1 A 1
+loop
+}
+}
+
+actor EBubbleBump : CustomInventory
+{
+inventory.pickupmessage ""
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.QUIET
+height 16
+radius 16
+States
+{
+Spawn:
+TNT1 A 2
+stop
+Pickup:
+TNT1 A 0
+TNT1 A 0 ThrustThingZ(0, 37, 0, 0)
+stop
+}
+}
+
+actor EWaveBubble
+{
+translation "102:103=39:39", "97:98=32:32"
+height 12
+radius 24
+scale 2.5
+-SHOOTABLE
++NOGRAVITY
++SOLID
++FORCEYBILLBOARD
+States
+{
+Spawn:
+WAVB G 0
+WAVB G 1 A_JumpIfInTargetInventory("CutterFlag", 7, "Seventh")
+WAVB G 0 A_JumpIfInTargetInventory("CutterFlag", 6, "Sixth")
+WAVB G 0 A_JumpIfInTargetInventory("CutterFlag", 5, "Fifth")
+WAVB G 0 A_JumpIfInTargetInventory("CutterFlag", 4, "Forth")
+WAVB G 0 A_JumpIfInTargetInventory("CutterFlag", 3, "Third")
+WAVB G 0 A_JumpIfInTargetInventory("CutterFlag", 2, "Second")
+WAVB G 0 A_JumpIfInTargetInventory("CutterFlag", 1, "First")
+Goto Ceiling
+First:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 128, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFirst")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 128, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFirst")
+loop
+SquishFirst:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 128, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFirst")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 128, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFirst")
+Goto First
+Second:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 192, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSecond")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 192, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSecond")
+loop
+SquishSecond:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 192, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSecond")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 192, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSecond")
+Goto Second
+Third:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 256, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishThird")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 256, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishThird")
+loop
+SquishThird:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 256, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishThird")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 256, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishThird")
+Goto Third
+Forth:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 320, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishForth")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 320, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishForth")
+loop
+SquishForth:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 320, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishForth")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 320, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishForth")
+Goto Forth
+Fifth:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 384, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFifth")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 384, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFifth")
+loop
+SquishFifth:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 384, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFifth")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 384, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishFifth")
+Goto Fifth
+Sixth:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 448, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSixth")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 448, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSixth")
+loop
+SquishSixth:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 448, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSixth")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 448, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSixth")
+Goto Sixth
+Seventh:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 512, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSeventh")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-floorz > 512, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSeventh")
+loop
+SquishSeventh:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 512, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSeventh")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-floorz > 512, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishSeventh")
+Goto Seventh
+Ceiling:
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-ceilingz > -96, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishCeiling")
+WAVB G 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB GG 1 A_JumpIf(z-ceilingz > -96, "Death")
+WAVB G 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishCeiling")
+loop
+SquishCeiling:
+WAVB I 0 A_TakeInventory("EWaveBubbleFlag", 1)
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-ceilingz > -96, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishCeiling")
+WAVB I 0 A_SpawnItemEx("EWaveBubbleDetect", 0, 0, 32, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+WAVB II 1 A_JumpIf(z-ceilingz > -96, "Death")
+WAVB I 0 A_JumpIfInventory("EWaveBubbleFlag", 1, "SquishCeiling")
+Goto Ceiling
+Death:
+WAVB H 5 A_Stop
+stop
+}
+}
+
+actor EWaveBubbleDetect
+{
+PROJECTILE
++LOOKALLAROUND
++SKYEXPLODE
++DONTBLAST
++DONTREFLECT
+Scale 2.5
+Speed 0
+Damage (0)
+radius 24
+height 4
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 2 
+stop
+Death:
+TNT1 A 0
+TNT1 A 0 A_GiveToTarget("EWaveBubbleFlag", 1)
+stop
+}
+}
+
+Actor EWaveBubbleFlag : Once {}
+
+actor EOctoperOA 20817
+{
+translation "60:60=191:191", "58:58=180:180", "183:183=63:63", "227:227=61:61", "117:117=226:226", "103:103=229:229"
+//$Category MM8BDM-Props
++SOLID
++CLIENTSIDEONLY
++FORCEYBILLBOARD
++MOVEWITHSECTOR
+height 28
+radius 16
+scale 2.5
+States
+{
+Spawn:
+OCTO A 1
+loop
+}
+}

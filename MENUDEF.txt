@@ -1,0 +1,264 @@
+//-------------------------------------------------------------------------------------------
+//
+// The option menu
+//
+//-------------------------------------------------------------------------------------------
+
+OptionMenu "OptionsMenu"
+{
+	Title "OPTIONS"
+	// [Russ] These were moved to the main menu.
+	//Submenu "Multiplayer Options",		"ZA_MultiplayerOptions" // [TP]
+	//StaticText " " // [TP]
+	Submenu "Customize Controls",		"CustomizeControls"
+	Submenu "Mouse options",			"MouseOptions"
+	Submenu "Joystick options",			"JoystickOptions"
+	StaticText " "
+	Submenu "Message Options", 			"MessageOptions"
+	StaticText " "
+	Submenu "Sound Options",			"SoundOptions"
+	Submenu "Display Options",			"VideoOptions"
+	Submenu "Set video mode",			"VideoModeMenu"
+	Submenu "Advanced Options",			"8BDMAdvancedOptions"
+	
+	StaticText " "
+	
+	StaticText	"MM8BDM Options", 1
+	StaticText " "
+	Option "Display Health Number",			"mm8bdm_healthnumber", "OnOff"
+	Option "Display Ammo Number",			"mm8bdm_ammonumber", "OnOff"
+	Option "Pickup Weapon Colors",			"mm8bdm_noenergycolors", "OffOn"
+	Option "Show Critical Death Gibs",		"mm8bdm_enablegibs", "OnOff"
+	Option "Show Map Creator Cards",		"mm8bdm_mapcards", "8BDM_MapCards"
+	Option "CTF Objective Compass",			"mm8bdm_noctfradar", "OffOn"
+	
+	StaticText " "
+	
+	StaticText	"Music Preferences", 1
+	StaticText " "
+	Option "Tengu Man Stage",			"mm8bdm_music_tenguman", "MM8Music"
+	Option "Enker Stage",			"mm8bdm_music_enker", "MM10Music"
+	Option "Punk Stage",			"mm8bdm_music_punk", "MM10Music"
+	Option "Ballade Stage",			"mm8bdm_music_ballade", "MM10Music"
+	
+	StaticText " "
+	
+	StaticText	"Encore Preferences", 1
+	StaticText " "
+	Option "Encore map textures",			"enc_ogtextures", "OffOn"
+}
+
+ListMenu "PlayerMenu"
+{
+	StaticTextCentered 160, 6, "$MNU_PLAYERSETUP"
+	Font "SmallFont"//, "White", "Cyan"
+	Linespacing 14
+	Position 48, 36
+	IfGame(Doom, Heretic, Strife, Chex)
+	{
+		MouseWindow 0, 220
+		PlayerDisplay 220, 55, "00 00 00", "00 AA AA", 1, "PlayerDisplay"
+	}
+	IfGame(Hexen)
+	{
+		MouseWindow 0, 220
+		PlayerDisplay 220, 75, "00 07 00", "40 53 40", 1, "PlayerDisplay"
+	}
+	
+	IfGame (Doom, Strife, Chex)
+	{
+		PlayerNameBox "Name", 0, "Playerbox"
+		Selector "-", -16, -1
+	}
+	IfGame(Heretic, Hexen)
+	{
+		PlayerNameBox "Name", 5, "Playerbox"
+		Selector "-", -16, 1
+	}
+	
+	// [TP] Zandronum does not store team in userinfo
+	// ValueText "Team", "Team"
+	// [TP] For now Zandronum doesn't support colorsets either.
+	// ValueText "Color", "Color"
+	Linespacing 14
+	//Slider "Red", "Red", 0, 255, 16
+	//Slider "Green", "Green", 0, 255, 16
+	//Linespacing 14
+	//Slider "Blue", "Blue", 0, 255, 16
+	ValueText "Class", "Class"
+	TextItem "Weapon Loadout", "s", "WeaponLoadoutMenu"
+	ValueText "Skin", "Skin"
+	ValueText "Gender", "Gender", "Gender"
+	ValueText "Autoaim", "Autoaim", "Autoaim"
+	//Slider "Handicap", "Handicap", 0, 200, 5 // [TP]
+	// [TP] This is moved to weapon setup
+	// ValueText "Switch on pickup", "Switch", "OffOn"
+	ValueText "Always Run", "AlwaysRun", "OnOff"
+	//ValueText "Chat Substitution", "chat_substitution", "OnOff" (doesn't work :/)
+	TextItem "Weapon Setup", "w", "ZA_WeaponSetup" // [TP]
+	
+	Class "PlayerMenu"
+}
+
+OptionMenu WeaponLoadoutMenu
+{
+	Title "WEAPON LOADOUT OPTIONS"
+	StaticText""
+	StaticText""
+	StaticText""
+	StaticText""
+	StaticText""
+	StaticText""
+	StaticText""
+	Option "Buster", "enc_weaponslot0", "EncBusterChoice", "enc_customloadouts"
+	StaticText""
+	Option "Weapon 1", "enc_weaponslot1", "EncWeaponChoice", "enc_customloadouts"
+	StaticText""
+	Option "Weapon 2", "enc_weaponslot2", "EncWeaponChoice", "enc_customloadouts"
+	StaticText""
+	Option "Weapon 3", "enc_weaponslot3", "EncWeaponChoice", "enc_customloadouts"
+	StaticText""
+	Option "Weapon 4", "enc_weaponslot4", "EncWeaponChoice", "enc_customloadouts"
+	StaticText""
+	Option "Weapon 5", "enc_weaponslot5", "EncWeaponChoice", "enc_customloadouts"
+
+}
+
+OptionValue "EncBusterChoice"
+{
+	999,"Random"
+	0, "Proto Buster"
+	1, "Arrow Buster"
+	2, "Laser Buster"
+	3, "Bass Buster"
+	4, "Duo Fist"
+	5, "Mega Arm"
+	6, "Maestro Buster"
+	7, "Revolver Buster"
+	8, "Joe Buster"
+}
+
+OptionValue "EncWeaponChoice"
+{
+	999,"Random"
+	0, "Super Arm"
+	1, "Hyper Bomb"
+	2, "Ice Slasher"
+	3, "Thunder Beam"
+	4, "Fire Storm"
+	5, "Rolling Cutter"
+	//6, "Time Slow"
+	7, "Oil Slider"
+	8, "Bubble Lead"
+	9, "Metal Blade"
+	10,"Atomic Fire"
+	11,"Leaf Shield"
+	12,"Air Shooter"
+	13,"Quick Boomerang"
+	14,"Crash Bomb"
+	//15,"Time Stopper"
+	16,"Magnet Missile"
+	17,"Top Spin"
+	18,"Needle Cannon"
+	19,"Shadow Blade"
+	20,"Gemini Laser"
+	21,"Search Snake"
+	22,"Hard Knuckle"
+	23,"Spark Shock"
+	24,"Drill Bomb"
+	25,"Ring Boomerang"
+	26,"Dust Crusher"
+	27,"Pharaoh Shot"
+	28,"Skull Barrier"
+	29,"Dive Missile"
+	//30,"Rain Flush"
+	//31,"Flash Stopper"
+	32,"Napalm Bomb"
+	33,"Charge Kick"
+	34,"Gyro Attack"
+	35,"Power Stone"
+	36,"Water Wave"
+	37,"Crystal Eye"
+	38,"Star Crash"
+	//39,"Gravity Hold"
+	40,"Blizzard Attack"
+	41,"Flame Blast"
+	42,"Yamato Spear"
+	//43,"Plant Barrier"
+	44,"Silver Tomahawk"
+	45,"Wind Storm"
+	46,"Knight Crush"
+	47,"Centaur Flash"
+	48,"Freeze Cracker"
+	49,"Noise Crush"
+	50,"Wild Coil"
+	51,"Danger Wrap"
+	52,"Scorch Wheel"
+	53,"Junk Shield"
+	54,"Slash Claw"
+	55,"Thunder Bolt"
+	//56,"Astro Crush"
+	57,"Flame Sword"
+	58,"Thunder Claw"
+	59,"Homing Sniper"
+	60,"Water Balloon"
+	61,"Mega Ball"
+	62,"Flash Bomb"
+	63,"Ice Wave"
+	64,"Tornado Hold"
+	65,"Tengu Blade"
+	66,"Wave Burner"
+	67,"Spread Drill"
+	68,"Magic Card"
+	69,"Remote Mine"
+	70,"Copy Vision"
+	71,"Ice Wall"
+	//72,"Lightning Bolt"
+	73,"Plug Ball"
+	74,"Laser Trident"
+	//75,"Black Hole Bomb"
+	76,"Jewel Satellite"
+	77,"Concrete Shot"
+	//78,"Tornado Blow"
+	79,"Hornet Chaser"
+	80,"Magma Bazooka"
+	81,"Solar Blaze"
+	82,"Wheel Cutter"
+	83,"Rebound Striker"
+	84,"Thunder Wool"
+	85,"Commando Bomb"
+	86,"Chill Spike"
+	87,"Water Shield"
+	88,"TripleBlade"
+	89,"Grab Buster"
+	90,"Bubble Bomb"
+	91,"Photon Missile"
+	92,"Salt Water"
+	93,"Commando Bomb"
+	94,"Black Hole"
+	95,"Deep Digger"
+	96,"Break Dash"
+	97,"Spark Chaser"
+	98,"Sakugarne"
+	99,"Ballade Cracker"
+	100,"Screw Crusher"
+	101,"Mirror Buster"
+	//102,"Dawn Breaker"
+	103,"Dawn Breaker"
+	104,"Bonding Paste"
+	//105,"Justice Meteor"
+	106,"Royal Spin"
+	107,"Berserker Rush"
+	108,"Shield Spiral"
+	109,"Restriction Ring"
+	//110,"Onslaught Gatling"
+	111,"Time Bomb"
+	112,"Time Switch"
+	113,"Bullet Vulcan"
+	114,"Flame Shower"
+	115,"Brass Bullet"
+	116,"Flame Mixer"
+	117,"Barrier Wind"
+	118,"Trailspark Needle"
+	119,"Cardinal Ring"
+}

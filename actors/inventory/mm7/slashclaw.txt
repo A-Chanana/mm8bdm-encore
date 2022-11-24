@@ -1,0 +1,84 @@
+actor SlashClawWep : BaseMM8BDMWep 10088
+{
+//$Category MM8BDM-Weapons
+//$Title Slash Claw
+//$Sprite WEA3Q0
+dropitem "SlashClawWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_SLASHCLAW"
+Obituary "$OB_SLASHCLAW"
+Tag "$TAG_SLASHCLAW"
+weapon.ammotype "SlashClawAmmo"
+inventory.icon "SCLASI"
+States
+{
+SpawnLoop:
+WEA3 Q -1
+loop
+Ready:
+SCLA A 0 ACS_ExecuteAlways(998,0,69)
+SCLA A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SCLA A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SCLA A 1 A_Raise
+Loop
+Fire:
+SCLA A 0 A_JumpIfNoAmmo("NoAmmo")
+SCLA A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+SCLA BC 1
+SCLA A 0 A_PlaySoundEx("weapon/slashclaw","Weapon")
+SCLA A 0 A_FireCustomMissile("SlashClaw",0,1,11,-8)
+SCLA DE 2
+SCLA F 4
+SCLA G 15
+SCLA CBA 2 A_WeaponReady
+Goto Ready+1
+NoAmmo:
+SCLA A 1 ACS_Execute(979,0)
+Goto Ready+1
+BotCheck:
+SCLA A 0 A_JumpIf(ACS_NamedExecuteWithResult("StunCheck",1)==1, "BotFire")
+SCLA A 3 ACS_NamedExecuteAlways("Bots_WalkToAttack",0,1,1)
+SCLA A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 115, 0)>0, 2)
+SCLA A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 800, 0)>0, "BotCheck")
+Goto Ready+1
+Botfire:
+SCLA A 0 ACS_NamedExecuteAlways("StateChange",0,2)
+Goto Fire+2
+}
+}
+
+actor SlashClaw
+{
+PROJECTILE
+Radius 5
+Height 5
+scale 2.5
+damage (0)
++RIPPER
++DONTBLAST
++FORCEXYBILLBOARD
+damagetype "SlashClaw"
+Obituary "$OB_SLASHCLAW"
+speed 15
+States
+{
+Spawn:
+SCLA HIJKL 1 A_Explode(25,80,0)
+stop
+}
+}
+
+actor SlashClawAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}

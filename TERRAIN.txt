@@ -1,0 +1,47 @@
+splash EncOil{baseclass MMEncOil}
+
+terrain EncOil
+{
+	splash EncOil
+	footclip		12
+}
+
+splash steam{baseclass SteamPoof}
+
+terrain steam
+{
+	splash steam
+}
+
+splash EnLava{baseclass EncoreLava}
+
+splash BondOil{baseclass BondGlueFX}
+
+terrain BondOil
+{
+	splash BondOil
+	footclip		12
+}
+
+floor BONDGLUE BondOil
+
+terrain Encorelava
+{
+	splash EnLava
+}
+
+floor EJLAVA Encorelava
+floor EJNKLAV Encorelava
+floor E9MLAVX Encorelava
+
+floor ENOLSLIK EncOil
+
+floor CLKSTM steam
+floor CLKSTMF steam
+floor CLKSTM1 steam
+
+floor EHFALL lava
+floor EMGMLVX lava
+floor EFIRLAV lava
+floor ESWRLAVX lava
+floor ESLRLAVX lava

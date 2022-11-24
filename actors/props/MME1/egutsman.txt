@@ -1,0 +1,5 @@
+actor EPicketMan : PicketMan 20525
+{
+//$Category MM8BDME-Props
+Translation "216:216=111:111"
+}

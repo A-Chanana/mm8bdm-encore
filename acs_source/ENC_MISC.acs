@@ -1,0 +1,91 @@
+#library "encmisc"
+#include "zcommon.acs"
+
+//Runs some ENTER ACS on respawn
+script "encore_respawn" RESPAWN 
+{
+	ACS_NamedExecuteAlways("encore_customloadouts",0);
+	ACS_NamedExecuteAlways("Bots_enter", 0);
+}
+
+// Spawns pickups upon death based on enc_deathdrops
+script "encore_death_pickups" DEATH
+{
+	if(GetCvar("instagib")==1){terminate;}
+	
+	if(GetCvar("enc_deathdrops")==1){
+		SpawnSpot("RandomKillDrop", ActivatorTID(), 0);
+		delay(1);
+		}
+	else if(GetCvar("enc_deathdrops")==2){
+		SpawnSpot("ExtraLife", ActivatorTID(), 0);
+		delay(1);
+		}
+}
+
+// Switches different CVARS to set up the gamemode
+script "encore_checkcampaignmode" (void)
+{
+	SetResultValue(0); // Is everything off?
+	// Is anything encore-related on?
+	if(GetCvar("enc_customloadouts")>=7 ||
+		GetCvar("enc_sweaponslot0")==6 ||
+		GetCvar("Enc_SpecialBots")>0 ||
+		GetCvar("Enc_Campaignhandler")>0 ||
+		GetCvar("Enc_DeathDrops")>0)
+		{SetResultValue(1);} 
+
+	// BotRush
+	if(GetCvar("enc_customloadouts")>=7 &&
+		GetCvar("enc_sweaponslot0")==6 &&
+		GetCvar("Enc_SpecialBots")==1 &&
+		GetCvar("Enc_Campaignhandler")==0 &&
+		GetCvar("Enc_DeathDrops")==2)
+		{SetResultValue(2);}
+		
+	// MMB2 campaign
+	if(GetCvar("enc_customloadouts")>=7 &&
+		GetCvar("enc_sweaponslot0")==6 &&
+		GetCvar("Enc_SpecialBots")==1 &&
+		GetCvar("Enc_Campaignhandler")==1 &&
+		GetCvar("Enc_DeathDrops")==1)
+		{SetResultValue(3);}
+}
+script "encore_setcampaignmode" (int setencoremode)
+{
+Switch(SetEncoreMode)
+	{
+	// Everything off
+	Case 0:
+	SetCVar("enc_customloadouts",0);
+	SetCVar("enc_sweaponslot0",0);
+	SetCvar("Enc_SpecialBots", 0);
+	SetCvar("Enc_Campaignhandler", 0);
+	SetCvar("Enc_Campaignallies", 0);
+	SetCvar("Enc_ForceLoadouts", 0);
+	SetCvar("Enc_DeathDrops", 0);
+	break;
+	
+	// BotRush
+	Case 1:
+	SetCVar("enc_customloadouts",7);
+	SetCVar("enc_sweaponslot0",6);
+	SetCvar("Enc_SpecialBots", 1);
+	SetCvar("enc_campaignhandler", 0);
+	SetCvar("Enc_Campaignallies", 0);
+	SetCvar("Enc_ForceLoadouts", 0);
+	SetCvar("Enc_DeathDrops", 2);
+	break;
+	
+	// Encore MMB2 Campaign
+	Case 2:
+	SetCVar("enc_customloadouts",7);
+	SetCVar("enc_sweaponslot0",6);
+	SetCvar("Enc_SpecialBots", 1);
+	SetCvar("enc_campaignhandler", 1);
+	SetCvar("Enc_Campaignallies", 0);
+	SetCvar("Enc_ForceLoadouts", 0);
+	SetCvar("Enc_DeathDrops", 1);
+	break;
+	}
+}

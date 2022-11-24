@@ -1,0 +1,494 @@
+// [Russ] In your source code, always include "zcommon.acs" before this file.
+// This was done for clarity and organizational purposes.
+
+// This file contains a number of variables added to make expanding 8BDM easier.
+// If using SLADE 3.1.0.5 or later, include this file in the same directory
+// as your source ACS before compiling. 
+// Otherwise, extract it to the same folder as your acc.exe.
+// Note that this file SHOULD NOT be compiled on its own.
+
+#DEFINE TEAM_LIGHT 0
+#DEFINE TEAM_WILY 1
+#DEFINE TEAM_COSSACK 2
+#DEFINE TEAM_KING 3
+
+// These are used in WEPACS
+#DEFINE COLOR_LIGHT 230
+#DEFINE COLOR_WILY 231
+#DEFINE COLOR_COSSACK 232
+#DEFINE COLOR_KING 233
+
+#define PLN_RESPAWN 2000
+#define PLN_EXITUNITIMAGE 3000
+#define PLN_EDDIETEMP 3100
+#define PLN_EXITUNITPOINT 4000
+
+#define STICKYMODE_GUTSLIFT	0
+#define STICKYMODE_MAGFLY	1
+
+BOOL IsTeamGame = 0; // Is mode a team game?
+
+int timestop=-1; // Is time stopper active?
+int MaxFrags; // Frag limit for match
+int intensePlaying = false; // whether intense music is playing
+int ServerMAX = 32; // Max number of players (Default: 32)
+
+// [Russ] Stores player's default gravity for situational uses in customized classes.
+int PlayerGravity[64];
+
+// [Russ] These are global ints to allow values to be rolled at the beginning of rounds only.
+global int 5: RangedWepRandom;
+global int 6: RapidWepRandom;
+global int 7: CloseWepRandom;
+global int 8: PowerWepRandom;
+global int 9: ShieldWepRandom;
+
+//Functions
+
+// [Russ] Gets the absolute maximum number of players in the server.
+function int GetMaxPlayers(void)
+{
+	int ret = GetCVAR("sv_MaxClients");
+	
+	if(PlayerCount()>ret) // admins can join above the max player limit.
+	{
+		ret = PlayerCount();
+	}
+	return ret;
+}
+
+// [Mess] The following function returns:
+// 0 if they haven't pressed jump (in a given tic)
+// 1 if the player pressed jump
+// 2 if the player released jump
+// 3 if the player is holding jump
+Function int JumpStatus (int Buttons, int OldButtons)
+{
+	int JumpNow = Buttons & BT_JUMP;
+	int JumpOld = OldButtons & BT_JUMP;
+	If(JumpNow > JumpOld){Return 1;}
+	If(JumpNow < JumpOld){Return 2;}
+	If(JumpNow > 0 &&  JumpOld > 0){Return 3;}
+	Return 0;
+}
+
+// [Mess] Remaining Lives for LMS boss music
+Function int LivesLeft (int p)
+{
+	//If(ACS_ExecuteWithResult(975) != 2){Return 1;}
+	Return((GetPlayerLivesLeft(p)) + (GetActorProperty(p+1000, APROP_HEALTH) > 0));
+}
+
+// [Mess] Boss Music Selection Function
+Function void BossMusicSelect(int ThePar, int Type)
+{
+		Switch(Type)
+		{
+			Case 0:
+			if(StrLen(GetCvarString("mm8bdm_map_bossmusic")) == 0){
+				if(ThePar==1){SetMusic("MM1BOSS");}
+				else if(ThePar==2){SetMusic("MM2BOSS");}
+				else if(ThePar==3){SetMusic("MM3BOSS");}
+				else if(ThePar==4){SetMusic("MM4BOSS");}
+				else if(ThePar==5){SetMusic("MM5BOSS");}
+				else if(ThePar==6){SetMusic("MM6BOSS");}
+				else if(ThePar==7){SetMusic("MM7BOSS");}
+				else if(ThePar==8){SetMusic("MM7OBOS");}
+				else if(ThePar==9){SetMusic("MM8BOSS");}
+				else if(ThePar==10){SetMusic("MM1PBOSS");}
+				else if(ThePar==11){SetMusic("DUOMUS");}
+				else if(ThePar==12){SetMusic("MMBBOSS");}
+				else if(ThePar==13){SetMusic("MMBOBOS");}
+				else if(ThePar==14){SetMusic("MMWTBOSS");}
+				else if(ThePar==15){SetMusic("MM9BOSS");}
+				break;
+			}
+			else
+			{
+			SetMusic(GetCvarString("mm8bdm_map_bossmusic"));
+			break;
+			}
+			Case 1:
+			if(StrLen(GetCvarString("mm8bdm_map_victorymusic")) == 0){
+				if(ThePar==1){SetMusic("MM1VIC");}
+				else if(ThePar==2){SetMusic("MM2VIC");}
+				else if(ThePar==3){SetMusic("MM3VIC");}
+				else if(ThePar==4){SetMusic("MM4VIC");}
+				else if(ThePar==5){SetMusic("MM4VIC");}
+				else if(ThePar==6){SetMusic("MM4VIC");}
+				else if(ThePar==7){SetMusic("MM7VIC");}
+				else if(ThePar==8){SetMusic("MM7VIC");}
+				else if(ThePar==9){SetMusic("MM4VIC");}
+				else if(ThePar==10){SetMusic("MM1VIC");}
+				else if(ThePar==11){SetMusic("MM4VIC");}
+				else if(ThePar==12){SetMusic("MM4VIC");}
+				else if(ThePar==13){SetMusic("MM4VIC");}
+				else if(ThePar==14){SetMusic("MMWTVIC");}
+				else if(ThePar==15){SetMusic("MM2VIC");}
+				break;
+			}
+			else
+			{
+			SetMusic(GetCvarString("mm8bdm_map_victorymusic"));
+			break;
+			}
+			Case 2:
+			if(StrLen(GetCvarString("mm8bdm_map_intensemusic")) == 0){
+				if(ThePar==0){SetMusic("MM6BOSS2");}
+				else if(ThePar==1){SetMusic("MM1PWBOS");}
+				else if(ThePar==2){SetMusic("GUTSBOSS");}
+				else if(ThePar==3){SetMusic("PROMBOSS");}
+				else if(ThePar==4){SetMusic("MM4BOSS2");}
+				else if(ThePar==5){SetMusic("MM5BOSS2");}
+				else if(ThePar==6){SetMusic("MM6BOSS2");}
+				else if(ThePar==7){SetMusic("MM7BASS2");}
+				else if(ThePar==8){SetMusic("MM7BASS2");}
+				else if(ThePar==9){SetMusic("ERBATTLE");}
+				else if(ThePar==10){SetMusic("MM1PWBOS");}
+				else if(ThePar==11){SetMusic("ERBATTLE");}
+				else if(ThePar==12){SetMusic("MMWTFBOS");}
+				else if(ThePar==13){SetMusic("MMWTFBOS");}
+				else if(ThePar==14){SetMusic("MMWTFBOS");}
+				else if(ThePar==15){SetMusic("MM9FBOS");}
+				break;
+			}
+			else
+			{
+			SetMusic(GetCvarString("mm8bdm_map_intensemusic"));
+			break;
+			}
+		}
+}
+
+//[Russ] boss music state update
+function void setBossMusicState(int x) {
+    SetCVar("mm8bdm_bossstate", x);
+}
+
+function int getBossMusicState(void) {
+	return GetCVar("mm8bdm_bossstate");
+}
+
+//[Mess] Used by ridable items (Item2, Ice wall etc)
+Function int SpeedCheck (int x1, int x2, int y1, int y2)
+{
+	int x, y;
+	x = x1 - x2 >> 16;
+	y = y1 - y2 >> 16;
+	return(sqrt8( x*x + y*y ));
+}
+
+function int onPlatformZ (int tid1z, int tid2z, int height)
+{
+	return tid2z==(tid1z+(height<<16));
+}
+
+function int onPlatformXY (int tid1x, int tid1y, int tid2x, int tid2y, int radius)
+{
+	int x, y, d;
+	x = tid1x - tid2x >> 16;
+	y = tid1y - tid2y >> 16;
+	d = sqrt8(x*x + y*y);
+	return d<=radius;
+}
+
+
+// Finds the pitch between two Z points
+Function int VectorPitch (Int TID1, Int TID2, int ZAdjust)
+{
+	If(ZAdjust != 0){ZAdjust = ZAdjust << 16;}
+	Return(VectorAngle(xydistance(TID1, TID2)<<16,GetActorZ(TID1)-(GetActorZ(TID2)-ZAdjust)));
+}
+
+// Returns absolute value
+function int abs (int x)
+{
+    if (x < 0)
+	{
+        return -x;
+	}
+    return x;
+}
+
+// Returns the closest integer, rounded up
+function int ceilOld(int fixedIn)
+{
+	if(fixedIn % 65536 != 0)
+	{
+		return (fixedIn >> 16) + 1;
+	}
+	return fixedIn >> 16;
+}
+
+function int max(int x, int y)
+{
+	if(x > y)
+	{
+		return x;
+	}
+	return y;
+}
+
+function int min (int x, int y)
+{
+if(x<y)return x;
+return y;
+}
+
+
+// sqrt and distance functions from ZDoom wiki
+function int sqrt8(int number)
+{
+	if(number <= 3)
+	{
+		if(number > 0)
+		{
+			return 1;
+		}
+		return 0;
+	}
+
+	int oldAns = number >> 1,                     // initial guess
+	    newAns = (oldAns + number / oldAns) >> 1; // first iteration
+
+	// main iterative method
+	while(newAns < oldAns)
+	{
+		oldAns = newAns;
+		newAns = (oldAns + number / oldAns) >> 1;
+	}
+
+	return oldAns;
+}
+
+// Distance measuring functions
+function int xyzDistance (int tid1, int tid2)
+{
+	int x, y, z, d;
+	x = GetActorX(tid1) - GetActorX(tid2) >> 16; // Convert fixed point to integer
+	y = GetActorY(tid1) - GetActorY(tid2) >> 16;
+	z = GetActorZ(tid1) - GetActorZ(tid2) >> 16;
+	d = sqrt8( x*x + y*y + z*z );
+	return d;
+}
+
+function int xyDistance (int tid1, int tid2)
+{
+	int x, y, d;
+	x = GetActorX(tid1) - GetActorX(tid2) >> 16;
+	y = GetActorY(tid1) - GetActorY(tid2) >> 16;
+	d = sqrt8( x*x + y*y );
+	return d;
+}
+
+function int zdistance (int tid1, int tid2)
+{
+	int z;
+	z = GetActorZ(tid1) - GetActorZ(tid2) >> 16;
+	return z;
+}
+
+
+// [Mess] Function to determine the closest player
+function int ClosestPlayer (int max_distance)
+{
+	int LowestDistance=max_distance;
+	int ClosestPlayerTID;
+	int CurrentDistance;
+	int FiringPlayer=ACS_ExecuteWithResult(257,0);
+	for(int h=0;h<=ServerMAX-1;h++)
+		{
+		if(PlayerInGame(h) && h+1000 != FiringPlayer && h+1000 != ActivatorTID())
+			{
+			CurrentDistance = xyzdistance(ActivatorTID(), h+1000);
+				If(LowestDistance==0){LowestDistance=CurrentDistance;ClosestPlayerTID=h+1000;}
+				If(CurrentDistance < LowestDistance)
+				{
+				LowestDistance=CurrentDistance;
+				ClosestPlayerTID=h+1000;
+				}
+			}
+		}
+	Return ClosestPlayerTID;
+}
+
+// [Mess] Checks to see if there's a team with 1 player left and one team with 1 or greater.
+Function int LMSBossCheck (int blue, int red, int orange, int purple)
+{
+	int Check1;
+	int Check2;
+	If(blue == 1 || red == 1 || orange == 1 || purple == 1){Check1 = 1;}
+	If(Blue == 0){Check2++;}
+	If(Red == 0){Check2++;}
+	If(Orange == 0){Check2++;}
+	If(Purple == 0){Check2++;}
+	Return(Check1 == 1 && Check2 >= 2);
+}
+
+// [Russ] Returns the number of teams who have 1 active player AND who are about to win the map
+function int TLMSBossCount(int blue, int red, int green, int gold)
+{
+	int maxTeams = getCVar("sv_maxteams");
+	int maxWins = getCVar("winlimit");
+
+	int count = 0;
+
+	for(int i = 0; i < maxTeams; i++) {
+		if(GetTeamProperty(i, TPROP_Score) == maxWins-1 && TeamArray(i, blue, red, green, gold) == 1)
+			count++;
+	}
+
+	return count;
+}
+
+function int TeamArray(int i, int blue, int red, int green, int gold)
+{
+	if(i == 0)
+		return blue;
+	if(i == 1)
+		return red;
+	if(i == 2)
+		return green;
+	if(i == 3)
+		return gold;
+	return 0;
+}
+
+// Returns frags from Orange Team
+Function int OrangeFrags(void)
+{
+	int O = ActivatorTID();
+	int CossackFrags=0;
+	For(int i = 0; i < ServerMAX; i++)
+		{
+		If(!PlayerInGame(i)){continue;}
+		SetActivator(i+1000);
+		If(GetPlayerInfo(i, PLAYERINFO_TEAM) == 2)
+			{
+			CossackFrags+=PlayerFrags();
+			}
+		}
+	SetActivator(O);
+	return(CossackFrags);
+}
+
+// Returns frags from Purple Team
+Function int PurpleFrags(void)
+{
+	int O = ActivatorTID();
+	int KingFrags=0;
+	For(int i = 0; i < ServerMAX; i++)
+		{
+		If(!PlayerInGame(i)){continue;}
+		SetActivator(i+1000);
+		If(GetPlayerInfo(i, PLAYERINFO_TEAM) == 3)
+			{
+			KingFrags+=PlayerFrags();
+			}
+		}
+	SetActivator(O);
+	return(KingFrags);
+}
+
+// Makes facer face target
+// takes in two TIDs
+function int ActorFace (int facer, int target)
+{
+	int x = (GetActorX(target) - GetActorX(facer));
+	int y = (GetActorY(target) - GetActorY(facer));
+	SetActorAngle(facer, VectorAngle(x, y));
+	return 0;
+}
+
+// (Russ) Thrust an actor towards another with offsets
+
+function void actorPull(int puller, int pullee, int force, int xOff, int yOff, int zOff)
+{
+	int angle = VectorAngle((GetActorX(puller)+xOff)-GetActorX(pullee), (GetActorY(puller)+yOff)-GetActorY(pullee));
+	int pitch = pitchBetween(puller, pullee, xOff, yOff, zOff);
+	
+	angle = angle >> 8; // Convert fixed point angle to byte angle.
+	int horizForce = fixedMul(cos(pitch), force<<16)>>16;
+	int vertiForce = fixedMul(sin(pitch), force<<16)>>16;
+	
+	//PrintBold(s:"pitch: ", f:pitch, s:"\n",
+	//          s:"horizontal force: ", i:horizForce, s:"\n",
+	//		  s:"vertical force: ", i:vertiForce, s:"\n");
+	//
+	
+	ThrustThing(angle, horizForce, horizForce>30, pullee);
+	ThrustThingZ(pullee, vertiForce*4, 0, 0);
+}
+
+// (Russ) Stolen from Evil Escort, which in turn was stolen from the ZDoom forum
+function int pitchBetween(int looker, int target, int xOff, int yOff, int zOff)
+{
+	int x, y, z, ang, pitch, len;
+	x = (getactorx(target) + xOff) - getactorx(looker);
+    y = (getactory(target) + yOff)- getactory(looker);
+
+	ang = vectorangle(x,y);
+	if(((ang+0.125)%0.5) > 0.25) len = fixeddiv(y, sin(ang));
+	else len = fixeddiv(x, cos(ang));
+
+	z = (getactorz(target) - zOff) - getactorz(looker);
+
+	pitch = -vectorangle(len, z);
+	return pitch;
+}
+
+
+// (Russ)
+function int normalize(int x)
+{
+    while(x < 0)
+    {
+        x += 1.0;
+    }
+    while(x > 1.0)
+    {
+        x -= 1.0;
+    }
+    return x;
+}
+
+
+function void SetInventory(str inv, int amt)
+{
+	int oldamt = CheckInventory(inv);
+	if(oldamt>amt)
+	{
+		TakeInventory(inv, oldamt-amt);
+	}
+	else
+	{
+		GiveInventory(inv, amt-oldamt);
+	}
+}
+
+
+
+// Hookshot
+function int magnitudeThree(int x, int y, int z)
+{
+    return sqrt8(x*x + y*y + z*z);
+}
+
+// Taken from unkown
+function int ActorLookAt(int looker, int target, int zoff, int lookerzoff)
+{
+   int x, y, z, ang, pitch, len;
+   x = getactorx(target) - getactorx(looker);
+   y = getactory(target) - getactory(looker);
+
+   ang = vectorangle(x,y);
+   if(((ang+0.125)%0.5) > 0.25) len = fixeddiv(y, sin(ang));
+   else len = fixeddiv(x, cos(ang));
+
+   z = (getactorz(target) + zoff) - (getactorz(looker)+lookerzoff);
+
+   pitch = -vectorangle(len, z);
+
+   setactorpitch(looker, pitch);
+   return 0;
+}

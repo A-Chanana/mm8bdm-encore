@@ -1,0 +1,330 @@
+actor ScorchWheelWep : BaseMM8BDMWep 10086
+{
+//$Category MM8BDM-Weapons
+//$Title Scorch Wheel
+//$Sprite WEA3M0
+dropitem "ScorchWheelWep"
+Weapon.AmmoUse 7
+Weapon.AmmoGive 28
+Weapon.SlotNumber 7
+Inventory.Pickupmessage "$PU_SCORCHWHEEL"
+Obituary "$OB_SCORCHWHEEL"
+Tag "$TAG_SCORCHWHEEL"
+weapon.ammotype "ScorchWheelAmmo"
+inventory.icon "SWHESI"
+States
+{
+SpawnLoop:
+WEA3 M -1
+loop
+Ready:
+SWHE G 0 ACS_ExecuteAlways(998,0,59)
+TNT1 A 0 A_TakeInventory("ScorchWheelPowerup", 999)
+SWHE G 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SWHE G 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SWHE G 1 A_Raise
+Loop
+Fire:
+SWHE G 0 A_JumpIfNoAmmo("NoAmmo")
+SWHE G 0 A_GiveInventory("WheelCount", 80)
+Altfire:
+SWHE G 0 A_JumpIfNoAmmo("NoAmmo")
+SWHE HIJKL 2
+SWHE G 0 A_SpawnItemEx("ScorchWheelWarper")
+SWHE G 0 A_PlaySoundEx("weapon/scorchwheel","Weapon")
+TNT1 A 0 A_GiveInventory("ScorchWheelPowerup", 1)
+Wheel:
+TNT1 A 1 A_JumpIfInventory("WheelCount",1,"Hold")
+Goto Throw
+Hold:
+TNT1 A 0 A_JumpIfInventory("IsBot", 1, "BotThrow")
+TNT1 A 1 A_TakeInventory("WheelCount",1)
+TNT1 A 1 A_Refire("Wheel")
+Throw:
+TNT1 A 0 A_TakeInventory("ScorchWheelPowerup", 999)
+TNT1 A 0 A_TakeInventory("WheelCount",99)
+TNT1 A 15 A_FireCustomMissile("ScorchWheel",0,1,0,0)
+SWHE MN 2 A_ClearRefire
+Goto Ready+1
+BotThrow:
+TNT1 A 0 A_Jump(10, "Throw")
+goto Hold+1
+NoAmmo:
+SWHE G 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor ScorchWheelPowerup : PowerSpeed
+{
++POWERSPEED.NOTRAIL
+Speed 1.45
+}
+
+actor WheelCount : Inventory
+{
+inventory.amount 1
+inventory.maxamount 80
+}
+
+actor ScorchWheelAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor ScorchWheel
+{
+-SOLID
++MISSILE
++RIPPER
++BRIGHT
+Radius 18
+Height 40
+scale 2.5
+speed 16
+damage (1)
+damagetype "ScorchWheel"
+Obituary "$OB_SCORCHWHEEL"
+maxstepheight 15
+-NOGRAVITY
++NOBLOOD
+painchance 0
+reactiontime 10
+States
+{
+Spawn:
+FLMB H 0 A_SpawnItemEx("OilPitIgnite",0,0,0)
+SWHE ABCDEF 2 A_SpawnItemEx("ScorchWheelDamager",0,0,0)
+loop
+Death:
+TNT1 A 0 A_CustomMissile("ScorchWheel2",0,0,0,2,0)
+TNT1 A 1 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor ScorchWheel2
+{
+damagetype "ScorchWheel2"
+Obituary "$OB_SCORCHWHEEL"
++MISSILE
+-NOGRAVITY
++RIPPER
++BRIGHT
++NOEXPLODEFLOOR
++STEPMISSILE
+maxstepheight 15
++BOUNCEONCEILINGS
+BounceCount 1
+damage (1)
+Radius 18
+Height 40
+speed 16
+scale 2.5
+States
+{
+Spawn:
+SWHE A 0
+SWHE A 0 A_SpawnItemEx("OilPitIgnite",0,0,0)
+SWHE ABCDEF 2 A_SpawnItemEx("ScorchWheelDamager",0,0,0)
+loop
+Death:
+TNT1 AAAA 0 A_SpawnItemEx("ScorchBit",0,0,0,random(-10,10),random(-10,10),random(10,15),random(0,360))
+TNT1 A 1 A_SpawnItemEx("OilPitIgnite",0,0,8)
+stop
+}
+}
+
+actor ScorchWheelDamager : ScorchWheel
+{
+PROJECTILE
+damagetype "ScorchWheelDamager"
++NOCLIP
+damage (0)
+radius 16
+height 16
+Scale 2.5
+States
+{
+Spawn:
+TNT1 E 0
+TNT1 A 2 A_Explode(14,50,0)
+stop
+}
+}
+
+actor WheelFrameCheck : CutterFlag
+{
+}
+
+actor WheelCheck
+{
+PROJECTILE
+Damage 0
+speed 60
+radius 32
+height 32
+renderstyle none
+States
+{
+Spawn:
+PLAY A 4 
+stop
+Death:
+PLAY H 0
+PLAY H 20 A_SpawnItem("WheelBlocker")
+stop
+}
+}
+
+actor WheelBlocker
+{
+renderstyle none
++SOLID
++SHOOTABLE
++NOGRAVITY
++DONTRIP
+Health 1
+States
+{
+Spawn:
+PLAY A 18
+stop
+Death:
+PLAY A 1
+stop
+}
+}
+
+actor ScorchBit
+{
+damage 0
++RIPPER
+-NOGRAVITY
++CLIENTSIDEONLY
+-SOLID
++BRIGHT
+scale 2.5
+//+NOINTERACTION
+Height 2
+Radius 2
+States
+{
+Spawn:
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+SWHE O 1
+TNT1 A 1
+stop
+}
+}
+
+actor ScorchWheelWarper : BaseShieldWarper
+{
+	+BRIGHT
+	States
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 A 1 ACS_NamedExecuteAlways("core_shieldwarper_scorch", 0, "test")
+	Shield:
+	SWHE AABBCCDDEEFF 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_INTERPOLATE|WARPF_NOCHECKPOSITION)
+	loop
+	}
+}
+
+/*
+actor ScorchWheelFX1
+{
+scale 2.5
+- SOLID
++NOGRAVITY
++CLIENTSIDEONLY
++NOTIMEFREEZE
+States
+{
+Spawn:
+SWHE A 1
+SWHE A 1
+stop
+}
+}
+
+actor ScorchWheelFX2 : ScorchWheelFX1
+{
+States
+{
+Spawn:
+SWHE B 1
+SWHE B 1
+stop
+}
+}
+
+actor ScorchWheelFX3 : ScorchWheelFX1
+{
+States
+{
+Spawn:
+SWHE C 1
+SWHE C 1
+stop
+}
+}
+
+actor ScorchWheelFX4 : ScorchWheelFX1
+{
+States
+{
+Spawn:
+SWHE D 1
+SWHE D 1
+stop
+}
+}
+
+actor ScorchWheelFX5 : ScorchWheelFX1
+{
+States
+{
+Spawn:
+SWHE E 1
+SWHE E 1
+stop
+}
+}
+
+actor ScorchWheelFX6 : ScorchWheelFX1
+{
+States
+{
+Spawn:
+SWHE F 1
+SWHE F 1
+stop
+}
+}*/

@@ -1,0 +1,191 @@
+actor EChangkeyLauncher
+{
+    +NOINTERACTION
+    +NOTIMEFREEZE
+    var int user_gravity;
+    var int user_speed;
+    var int user_height;
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIf(user_gravity < 0, "Reverse")
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+		TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        stop
+    Reverse:
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+		TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkeyCeiling", 0, 0, 0, user_speed, 0, user_height)
+        stop
+	YashichiCheck:
+        TNT1 A 0 A_JumpIf(random(1, 8) == 8, "Yashichi")
+		TNT1 A 1 A_JumpIf(true, "Spawn")
+		wait
+    Yashichi:
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+		TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("SolarChangkeyYashichi", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        TNT1 A 0 A_PlaySoundEx("misc/solartrap", "body")
+        TNT1 A 2 A_SpawnItemEx("ESolarChangkey", 0, 0, 0, user_speed, 0, user_height)
+        stop
+    }
+}
+
+actor ESolarChangkey
+{
+    PROJECTILE
+    -NOGRAVITY
+    +DONTBLAST
+    +THRUACTORS
+    +BRIGHT
+    Damage (3)
+    damagetype "SolarChangkey"
+	translation "41:41=207:207", "216:216=200:200"
+    Height 10
+    radius 6
+    Scale 2.5
+    States
+    {
+    Spawn:
+        HOTH C 0
+        HOTH C 0 A_ClearTarget
+        HOTH C 0 A_ChangeFlag(THRUACTORS, false)
+        HOTH C 1 A_JumpIf(true, "SpawnLoop")
+        wait
+    SpawnLoop:
+        HOTH CD 2
+        goto Spawn+3
+    Death:
+        HOTH C 1
+        stop
+    }
+}
+
+actor ESolarChangkeyCeiling : ESolarChangkey
+{
+    +NOGRAVITY
+    States
+    {
+    SpawnLoop:
+        HOTH C 1
+        HOTH CDDC 1 A_ChangeVelocity(0, 0, 1.0)
+        goto SpawnLoop+1
+    }
+}
+
+actor ESola0 : Sola0 20833
+{
+//$Category MM8BDME-Props
+translation "225:225=77:77", "248:248=193:193"
+States
+{
+Spawn:
+TNT1 A 0
+SOLF A 1 A_JumpIf(args[0]==1, "HousePlant")
+Charge:
+SOLF B 4
+SOLF C 4 bright
+SOLF B 4
+SOLF C 4 bright
+SOLF B 4
+SOLF C 4 bright
+SOLF B 4
+SOLF C 4 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 2
+SOLF C 2 bright
+SOLF B 16
+SOLF D 2 Bright
+SOLF DDDDDDDDDD 0 A_SpawnItemEx("ESola0Particle", 27, -1, 49, frandom(0.5, 1.0), 0, frandom(-0.5, 0.5), frandom(-45, 45), SXF_MULTIPLYSPEED)
+SOLF E 5 bright
+SOLF E 30
+SOLF FAAA 5 
+loop
+}
+}
+
+actor ESola0Particle : Sola0Particle
+{
+translation "225:225=77:77", "248:248=193:193"
+}
+
+actor ESolarBirdSpawner
+{
++NOGRAVITY
+-SOLID
+scale 2.5
+height 32
+radius 16
+States
+{
+Spawn:
+SZFX A 0
+TNT1 A 1 A_Jump (256, "Orange", "Ourple")
+wait
+Orange:
+TNT1 A 1 A_SpawnItemEx("ESuzak",0,0,0,5)
+stop
+Ourple:
+TNT1 A 1 A_SpawnItemEX("EFenix",0,0,0,5)
+stop
+}
+}
+
+actor ESuzak : Suzak
+{
+translation "225:225=41:41", "215:215=35:35"
+}
+actor EFenix : Suzak
+{
+translation "225:225=164:164", "215:215=65:65"
+}

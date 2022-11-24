@@ -1,0 +1,27 @@
+weapon/RevolverBusterReload FMR
+
+weapon/bulletvulcan BULLVUL
+	$volume weapon/bulletvulcan 1.2
+weapon/bulletsplit BULSPLIT
+	$volume weapon/bulletsplit 1.2
+
+weapon/brassbullet BRASBULL
+	$volume weapon/brassbullet 1.2
+weapon/brassbeep BULLBEEP
+	$volume weapon/brassbeep 1.2
+
+weapon/flameshower FSHOWER
+weapon/flamemixer FMIXCIR
+	$volume weapon/flamemixer 1.2
+
+weapon/timebomb TBOMBWEP
+	$volume weapon/timebomb 0.7
+	
+weapon/cneedle CNEED
+
+weapon/bwindjet PUMPJET
+
+weapon/timeswitch TSWITCH
+weapon/timeswitchdissipate TSLIGHT
+
+weapon/hadouken HDKN

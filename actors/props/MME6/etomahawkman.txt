@@ -1,0 +1,5 @@
+actor EColton : Colton 20556
+{
+//$Category MM8BDME-Props
+Translation "104:104=147:147"
+}

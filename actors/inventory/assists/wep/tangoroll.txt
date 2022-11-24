@@ -1,0 +1,151 @@
+actor TangoSummon : BaseMM8BDMUseItem 10156
+{
+//$Category MM8BDM-Assists
+//$Title Tango Roll
+//$Sprite WEA3B0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_TANGOROLL"
+Tag "$TAG_TANGOSUMMON"
+inventory.icon "TANGOSI"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+WEA3 B -1
+loop
+Use:
+WEA3 B 0 A_PlaySoundEx("item/refill","Voice")
+WEA3 B 0 A_SpawnItemEx("TangoTeleport", 40, 0, 256, 0, 0, -24, 0, SXF_NOCHECKPOSITION, 0)
+stop
+}
+}
+
+actor TangoTeleport
+{
+Radius 12
+Height 32
+scale 2.5
++NOINTERACTION
++DONTBLAST
++SKYEXPLODE
+PROJECTILE
+states
+{
+Spawn:
+TANG H 0
+TANG H 9
+TANG H 0 A_ChangeFlag("NOINTERACTION", 0)
+TANG HHHHH 1 A_CheckFloor("Next")
+Next:
+TANG H 0 A_ChangeFlag("NOINTERACTION", 0)
+TANG H 0
+Goto Death
+Death:
+TNT1 A 0 A_SpawnItemEx("Tango",0,0,3,0,0,momz,0,SXF_NOCHECKPOSITION,0)
+stop
+}
+}
+
+actor Tango
+{
++DONTBLAST
+- SOLID
++MISSILE
++NOCLIP
++SKYEXPLODE
++CANBOUNCEWATER
+speed 0
+scale 2.5
+Radius 12
+Height 32
+reactiontime 250
+meleerange 80
+states
+{
+Spawn:
+TANG H 0 A_Jump(256,"Death")
+TANG H 1 A_ChangeFlag("MISSILE",0)
+TANG H 0 A_ChangeVelocity(0, 0, -32, CVF_REPLACE)
+TANG H 1 A_JumpIf(z-floorz<=0, "Look")
+Goto Spawn+2
+Look:
+TANG I 0 A_ChangeFlag("NOCLIP",0)
+TANG IJ 2
+TANG I 0 A_PlaySoundEx("item/tango","Voice")
+TANG ABCDBCA 4
+TANG A 0 A_SpawnItemEx("TangoAttack",0,0,0,30,0,9)
+stop
+Death:
+TANG F 0 A_SpawnItemEx("TangoDeath",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+stop
+}
+}
+
+actor TangoAttack
+{
+PROJECTILE
+Bouncetype Classic
++BOUNCEONWALLS
++BOUNCEONFLOORS
++BOUNCEONCEILINGS
++USEBOUNCESTATE
++FORCEXYBILLBOARD
+wallbouncefactor 1.0
+bouncefactor 1.0
+Damage (20)
+-NOGRAVITY
++CANBOUNCEWATER
+speed 30
+damagetype "Tango"
+scale 2.5
++RIPPER
+Height 20
+Radius 20
+Obituary "$OB_TANGOROLL"
+reactiontime 25
+States
+{
+Spawn:
+TANG E 0 A_CountDown
+TANG EFG 3
+loop
+Bounce.Floor:
+BUBA E 0 ThrustThingZ(0,40,0,0)
+Goto Spawn
+Death:
+TANG E 0 A_SpawnItemEx("TangoDeath",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+stop
+}
+}
+
+actor TangoDeath
+{
+PROJECTILE
++RIPPER
+Damagetype "Tango"
++DONTBLAST
++BLOODLESSIMPACT
++CLIENTSIDEONLY
+scale 2.5
+Damage 0
+Speed 30
+Radius 4
+reactiontime 35
+Height 60
+States
+{
+Spawn:
+TANG JI 2
+TANG H 0 ThrustThingZ(0, 40, 0, 1)
+TANG H 1 A_CountDown
+Goto Spawn+3
+Death:
+TANG H 0
+stop
+}
+}

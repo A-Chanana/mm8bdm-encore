@@ -1,0 +1,30 @@
+// Clock Man
+
+[IntroStrings]
+"Huh? It's time already? Alright, let's go!"
+"Heh... Not even history will remember them!"
+
+[FragStrings]
+"You're outta time, $player_killed!"
+"Oops! Too late for you!"
+"You took too long! Get out!"
+
+[KilledStrings]
+"I'll kick you into next week for that, $player_killedby!"
+"Careful, those bells were expensive!"
+"Fighting you was a waste of my time!"
+
+[RoamingStrings]
+"Does anyone here have the time?... Or a mirror?"
+"What is today, but yesterday's tomorrow?"
+"Time is a universal law, it cannot be resisted!"
+"Can we make this quick? I got a meeting with \cqthe boss\c- in 7 minutes."
+
+[WinStrings]
+"Sorry, that's all the time we have for today, bots!"
+"Now that that's done, time to clock out for today."
+"My grandfather would be so proud of us..."
+
+[LoseStrings]
+"Ugh, I KNEW we should've arrived 10 minutes earlier!"
+"At least our perfect attendance streak is still safe."

@@ -1,0 +1,135 @@
+actor CentaurFlashWep : BaseMM8BDMWep 10080
+{
+//$Category MM8BDM-Weapons
+//$Title Centaur Flash
+//$Sprite WEA3G0
+dropitem "CentaurFlashWep"
+Weapon.AmmoUse 4
+Weapon.AmmoGive 28
+Weapon.SlotNumber 6
+Inventory.Pickupmessage "$PU_CENTAURFLASH"
+Obituary "$OB_CENTAURFLASH"
+Tag "$TAG_CENTAURFLASH"
+weapon.ammotype "CentaurFlashAmmo"
+inventory.icon "CENTSI"
+States
+{
+SpawnLoop:
+WEA3 G -1
+loop
+Ready:
+CENF A 0 ACS_ExecuteAlways(998,0,51)
+CENF A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+CENF A 0 ACS_NamedExecuteAlways("core_cantseekplayer", 0, 0, false)
+CENF A 0 A_ChangeFlag(INVISIBLE, false)
+CENF A 0 A_SetTranslucent(1.0, 0)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+CENF A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+CENF A 1 A_Raise
+Loop
+Fire:
+CENF A 0 A_JumpIfInventory("CentaurFlashWait", 1, "FireWait")
+CENF A 0 A_JumpIfNoAmmo("NoAmmo")
+CENF BC 2
+CENF A 0 A_GiveInventory("CentaurFlashWait", 1)
+CENF A 0 A_PlaySoundEx("weapon/centaurflash","Weapon")
+CENF AAAAAAAAAA 0 A_SpawnItemEx("CentaurFlashFX", 0, 0, 28, 256/12, 0, random2(256/12), random(0, 359))
+CENF AAAAAAAAAA 0 A_SpawnItemEx("CentaurFlashFX", 0, 0, 28, 256/12, 0, random2(256/12), random(0, 359))
+CENF D 2 A_GunFlash
+CENF A 0 A_FireCustomMissile("CentaurFlash",0,1,8,0)
+CENF A 0 ACS_ExecuteAlways(976,0)
+CENF D 53
+CENF D 0 A_PlaySoundEx("weapon/centauruncloak", "Item")
+CENF CBA 2
+CENF A 0 A_Refire
+Goto Ready+1
+FireWait:
+CENF A 1
+goto Ready+1
+Flash:
+TNT1 A 2 A_SetTranslucent(0.5, 0)
+TNT1 A 0 ACS_NamedExecuteAlways("core_cantseekplayer", 0, 0, true)
+TNT1 A 0 A_ChangeFlag(INVISIBLE, true)
+TNT1 A 0 A_SetTranslucent(0.0, 0)
+TNT1 A 0 ACS_ExecuteAlways(976,0)
+TNT1 A 53
+TNT1 A 0 ACS_NamedExecuteAlways("core_cantseekplayer", 0, 0, false)
+TNT1 A 0 A_ChangeFlag(INVISIBLE, false)
+TNT1 A 2 A_SetTranslucent(0.25, 0)
+TNT1 A 2 A_SetTranslucent(0.5, 0)
+TNT1 A 2 A_SetTranslucent(1.0, 0)
+stop
+NoAmmo:
+CENF A 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor CentaurFlashWait : Powerup { powerup.duration 75 }
+
+actor ScreenFlash : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.AUTOACTIVATE
+States
+{
+Pickup:
+TNT1 A 1 ACS_ExecuteAlways(976,0)
+stop
+}
+}
+
+actor CentaurFlash
+{
+-SOLID
++NOGRAVITY
+PROJECTILE
++NOINTERACTION
++DONTBLAST
+damage 0
+radius 1
+height 1
+damagetype "CentaurFlash"
+Obituary "$OB_CENTAURFLASH"
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Blast(0,255,192,25.0)
+TNT1 AA 2 A_Explode(18,256,0)
+stop
+}
+}
+
+actor CentaurFlashFX
+{
++NOINTERACTION
++NOGRAVITY
++CLIENTSIDEONLY
++FORCEXYBILLBOARD
+-SOLID
++BRIGHT
+scale 2.5
+height 0
+radius 0
+States
+{
+Spawn:
+TNT1 A 0
+CFL5 ABCD 3
+stop
+}
+}
+
+actor CentaurFlashAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}

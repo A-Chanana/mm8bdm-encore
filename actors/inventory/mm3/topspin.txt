@@ -1,0 +1,225 @@
+actor TopSpinWep : BaseMM8BDMWep 10039
+{
+//$Category MM8BDM-Weapons
+//$Title Top Spin
+//$Sprite WEAPJ0
+dropitem "TopSpinWep"
+Weapon.AmmoUse 4
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Inventory.Pickupmessage "$PU_TOPSPIN"
+Tag "$TAG_TOPSPIN"
+Obituary "$OB_TOPSPIN"
+weapon.ammotype "TopSpinAmmo"
+inventory.icon "TOPSI"
+States
+{
+SpawnLoop:
+WEAP J -1
+loop
+Ready:
+TOPH A 0 ACS_ExecuteAlways(998,0,9)
+TOPH A 0 A_TakeInventory("SpinTime",1)
+ReadyReal:
+TOPH A 1 A_WeaponReady
+Goto Ready+2
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+TOPH A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+TOPH A 1 A_Raise
+Loop
+Fire:
+TOPH A 0 A_JumpIfInventory("SpinTime",1,"SpinEnd")
+TOPH A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+TOPH A 0 A_JumpIfNoAmmo("NoAmmo")
+TOPH A 0 A_CheckFloor("ReadyReal")//A_JumpIf(z-floorz<=0 || momz==0, "NoAmmo")
+Goto SpinBegin
+SpinBegin:
+TOPH A 0 A_TakeInventory("TopSpinAmmo", 4, TIF_NOTAKEINFINITE)
+TOPH A 0 A_TakeInventory("JumpCancler", 1)
+TOPH A 0 A_GunFlash //A_PlaySoundEx("weapon/topspin","Weapon")
+TOPH A 0 A_GiveInventory("SpinTime",1)
+TOPH A 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH A 0 A_SetAngle(angle-20.0) 
+TOPH A 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH B 1 A_CheckFloor("SpinEnd")
+TOPH B 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH B 0 A_SetAngle(angle-20.0) 
+TOPH B 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH B 1 A_CheckFloor("SpinEnd")
+TOPH B 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH B 0 A_SetAngle(angle-20.0) 
+TOPH B 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH C 1 A_CheckFloor("SpinEnd")
+TOPH C 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH C 0 A_SetAngle(angle-20.0) 
+TOPH C 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH C 1 A_CheckFloor("SpinEnd")
+TOPH C 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH C 0 A_SetAngle(angle-20.0) 
+TOPH C 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH D 1 A_CheckFloor("SpinEnd")
+TOPH D 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH D 0 A_SetAngle(angle-20.0) 
+TOPH D 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH D 1 A_CheckFloor("SpinEnd")
+TOPH D 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH D 0 A_SetAngle(angle-20.0) 
+TOPH D 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH E 1 A_CheckFloor("SpinEnd")
+TOPH E 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH E 0 A_SetAngle(angle-20.0) 
+TOPH E 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH E 1 A_CheckFloor("SpinEnd")
+Spin:
+TNT1 A 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TNT1 A 0 A_SetAngle(angle-20.0) 
+TNT1 A 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TNT1 A 1 A_CheckFloor("SpinEnd")
+TNT1 A 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TNT1 A 0 A_SetAngle(angle-20.0) 
+TNT1 A 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TNT1 A 1 A_CheckFloor("SpinEnd")
+TNT1 A 0 A_GiveInventory("CutterFlag", 1)
+TNT1 A 0 A_JumpIfInventory("CutterFlag", 15, "MomentumCheck")
+Loop
+MomentumCheck:
+TNT1 A 0 A_TakeInventory("CutterFlag", 15)
+TNT1 A 0 A_JumpIfInventory("StrongSpring", 1, "Spin")
+TNT1 A 0 A_GiveInventory("TopSpinFlag", 1)
+TNT1 A 0 A_JumpIfInventory("TopSpinFlag", 5, "SpinEnd")
+TNT1 A 0 A_JumpIf(momz==0, "SpinEnd")
+Goto Spin
+SpinEnd:
+TNT1 A 0 A_TakeInventory("TopSpinFlag", 5)
+TOPH A 0 A_TakeInventory("SpinTime",1)
+TOPH A 0 A_StopSound(CHAN_WEAPON)
+TOPH A 1 //ACS_Execute(979,0)
+TOPH A 0 A_TakeInventory("CutterFlag", 15)
+//TOPH A 0 A_Refire
+Goto Ready+1
+BotCheck:
+SCLA A 0 A_JumpIf(ACS_NamedExecuteWithResult("StunCheck",1)==1, "BotFire")
+TOPH A 3 ACS_NamedExecuteAlways("Bots_WalkToAttack",0,1,1)
+TOPH A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 120, 0)>0, 2)
+TOPH A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 800, 0)>0, "BotCheck")
+Goto Ready+1
+TOPH A 0 ACS_NamedExecuteAlways("StateChange",0,2)
+TOPH A 0 A_JumpIf(momz==0, 1)
+Goto Fire+3
+TOPH A 0 ThrustThingZ(0,40,0,1)
+Botfire:
+TOPH A 0
+Goto Fire+3
+NoAmmo:
+TOPH A 1 ACS_Execute(979,0)
+Goto Ready+1
+Flash:
+TNT1 A 18 A_PlaySoundEx("weapon/topspin","Weapon")
+//TNT1 A 0 A_JumpIfInventory("SpinTime", 1, "Flash")
+Goto NoFlash
+NoFlash:
+TNT1 A 0
+stop
+
+Altfire:
+TOPH A 0 A_JumpIfInventory("SpinTime",1,"SpinEnd")
+TOPH A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+TOPH A 0 A_JumpIfNoAmmo("NoAmmo")
+TOPH A 0 A_CheckFloor("ReadyReal")//A_JumpIf(z-floorz<=0 || momz==0, "NoAmmo")
+Goto SpinBegin2
+SpinBegin2:
+TOPH A 0 A_TakeInventory("TopSpinAmmo", 4, TIF_NOTAKEINFINITE)
+TOPH A 0 A_TakeInventory("JumpCancler", 1)
+TOPH A 0 A_GunFlash //A_PlaySoundEx("weapon/topspin","Weapon")
+TOPH A 0 A_GiveInventory("SpinTime",1)
+TOPH A 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH A 0 A_SetAngle(angle+20.0) 
+TOPH A 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH F 1 A_CheckFloor("SpinEnd")
+TOPH F 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH F 0 A_SetAngle(angle+20.0) 
+TOPH F 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH F 1 A_CheckFloor("SpinEnd")
+TOPH F 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH F 0 A_SetAngle(angle+20.0) 
+TOPH F 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH G 1 A_CheckFloor("SpinEnd")
+TOPH G 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH G 0 A_SetAngle(angle+20.0) 
+TOPH G 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH G 1 A_CheckFloor("SpinEnd")
+TOPH G 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH G 0 A_SetAngle(angle+20.0) 
+TOPH G 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH H 1 A_CheckFloor("SpinEnd")
+TOPH H 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH H 0 A_SetAngle(angle+20.0) 
+TOPH H 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH H 1 A_CheckFloor("SpinEnd")
+TOPH H 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH H 0 A_SetAngle(angle+20.0) 
+TOPH H 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH I 1 A_CheckFloor("SpinEnd")
+TOPH I 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TOPH I 0 A_SetAngle(angle+20.0) 
+TOPH I 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TOPH I 1 A_CheckFloor("SpinEnd")
+Spin2:
+TNT1 A 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TNT1 A 0 A_SetAngle(angle+20.0) 
+TNT1 A 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TNT1 A 1 A_CheckFloor("SpinEnd")
+TNT1 A 0 A_SpawnItemEx("TopRadius",8,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+TNT1 A 0 A_SetAngle(angle+20.0) 
+TNT1 A 0 A_JumpIfInventory("CutterFlag",999,"Ready")
+TNT1 A 1 A_CheckFloor("SpinEnd")
+TNT1 A 0 A_GiveInventory("CutterFlag", 1)
+TNT1 A 0 A_JumpIfInventory("CutterFlag", 15, "MomentumCheck2")
+Loop
+MomentumCheck2:
+TNT1 A 0 A_TakeInventory("CutterFlag", 15)
+TNT1 A 0 A_JumpIfInventory("StrongSpring", 1, "Spin2")
+TNT1 A 0 A_GiveInventory("TopSpinFlag", 1)
+TNT1 A 0 A_JumpIfInventory("TopSpinFlag", 5, "SpinEnd")
+TNT1 A 0 A_JumpIf(momz==0, "SpinEnd")
+Goto Spin2
+}
+}
+
+actor TopSpinFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 5
+}
+
+actor TopSpinAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor TopRadius
+{
+PROJECTILE
+scale 2.5
+damagetype "TopSpin"
+Obituary "$OB_TOPSPIN"
+Speed 0
++DONTBLAST
+height 1
+radius 1
+States
+{
+Spawn:
+TNT1 A 0
+TOPS A 2 A_Explode(15,90,0)
+stop
+}
+}
+
+actor SpinTime : Once {}

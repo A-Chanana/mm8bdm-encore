@@ -1,0 +1,3088 @@
+{
+mapname = MAP03
+gamemode = deathmatch
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+}
+
+{
+mapname = MM7STR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = "Sniper Joe"
+bot[1] = "Sniper Joe"
+bot[2] = "Sniper Joe"
+bot[3] = "Sniper Joe"
+bot[4] = "Sniper Joe"
+bot[5] = "Sniper Joe"
+bot[6] = "Sniper Joe"
+bot[7] = "Sniper Joe"
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1GUT
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Gutsman
+bot[1] = Aquaman
+bot[2] = Snakeman
+bot[3] = Crashman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1BOM
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Bombman
+bot[1] = Magmaman
+bot[2] = Hardman
+bot[3] = Bondman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1ELE
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Elecman
+bot[1] = Clownman
+bot[2] = Cloudman
+bot[3] = Plugman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1FIR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Fireman
+bot[1] = Coldman
+bot[2] = Skullman
+bot[3] = Napalmman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1TIM
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Timeman
+bot[1] = Shadowman
+bot[2] = Darkman2
+bot[3] = Gravityman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1OIL
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Oilman
+bot[1] = Fakeman
+bot[2] = Burnerman
+bot[3] = Grenademan
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME1DW1
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Gutsman
+bot[1] = Hardman
+bot[2] = Metalman
+bot[3] = Fireman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2AIR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Airman
+bot[1] = Shademan
+bot[2] = Frostman
+bot[3] = Woodman
+bot[4] = Gyroman
+bot[5] = Diveman
+bot[6] = Cloudman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2BUB
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Bubbleman
+bot[1] = Splashwoman
+bot[2] = Quickman
+bot[3] = Burstman
+bot[4] = Windman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2HEA
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Heatman
+bot[1] = Pharaohman
+bot[2] = Bubbleman
+bot[3] = Flameman
+bot[4] = Skullman
+bot[5] = Brightman
+bot[6] = Enker
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2QUI
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Quickman
+bot[1] = Chillman
+bot[2] = Chargeman
+bot[3] = Pumpman
+bot[4] = Flashman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2MET
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Metalman
+bot[1] = Ringman
+bot[2] = Clownman
+bot[3] = Dustman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2DW1
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = "Sniper Joe"
+bot[1] = Waveman
+bot[2] = Commandoman
+bot[3] = Stoneman
+bot[4] = Snakeman
+bot[5] = Dustman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MME2DW3
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+instagib = 1
+bot[0] = Maestro
+}
+
+{
+mapname = MME3TOP
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Topman
+bot[1] = Cutman
+bot[2] = Strikeman
+bot[3] = Solarman
+bot[4] = Darkman3
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME3HAR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Hardman
+bot[1] = Breakman
+bot[2] = Concreteman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+}
+
+{
+mapname = MME3GEM
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Geminiman
+bot[1] = Geminiman
+bot[2] = Geminiman
+bot[3] = Geminiman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME3MAG
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Magnetman
+bot[1] = Tomahawkman
+bot[2] = Gyroman
+bot[3] = Magicman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME3SPA
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Sparkman
+bot[1] = Junkman
+bot[2] = Magnetman
+bot[3] = Napalmman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME4SKU
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Skullman
+bot[1] = Coldman
+bot[2] = Shademan
+bot[3] = Waveman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME5CHA
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Chargeman
+bot[1] = Grenademan
+bot[2] = Turboman
+bot[3] = Blizzardman
+bot[4] = Iceman
+bot[5] = Nitroman
+bot[6] = Bombman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MME5NAP
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Napalmman
+bot[1] = Plantman
+bot[2] = Darkman1
+bot[3] = Pirateman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME5GRA
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Gravityman
+bot[1] = Punk
+bot[2] = Darkman4
+bot[3] = Shadowman
+bot[4] = Magnetman
+bot[5] = Burstman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MME5WAV
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Waveman
+bot[1] = Groundman
+bot[3] = Commandoman
+bot[4] = Turboman
+bot[5] = Aquaman
+bot[6] = Flameman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MME5CRY
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Jewelman
+bot[1] = Crystalman
+bot[2] = Bondman
+bot[3] = Needleman
+bot[4] = Magmaman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME6TOM
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Tomahawkman
+bot[1] = Cloudman
+bot[2] = Stoneman
+bot[3] = Blizzardman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME6KNI
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Knightman
+bot[1] = Yamatoman
+bot[2] = Blademan
+bot[3] = Swordman
+bot[4] = Searchman
+bot[5] = Toadman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MME6PLA
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Plantman
+bot[1] = Burnerman
+bot[2] = Toadman
+bot[3] = Woodman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME6MRX
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Concreteman
+bot[1] = Pirateman
+bot[2] = Magnetman
+bot[3] = Centaurman
+bot[4] = Magmaman
+bot[5] = Groundman
+bot[6] = Gyroman
+bot[7] = Needleman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+}
+
+{
+mapname = MME7FRE
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Freezeman
+bot[1] = Geminiman
+bot[2] = Sheepman
+bot[3] = Napalmman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME7TUR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Turboman
+bot[1] = Flameman
+bot[2] = Metalman
+bot[3] = Darkman1
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME8SWO
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Swordman
+bot[1] = Tenguman
+bot[2] = "Hyper Storm H"
+bot[3] = Drillman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MME9SPL
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Hornetman
+bot[1] = Nitroman
+bot[2] = Topman
+bot[3] = Tenguman
+bot[4] = Burstman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME9MAG
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Magmaman
+bot[1] = Burstman
+bot[2] = Coldman
+bot[3] = Concreteman
+bot[4] = Freezeman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME9GAL
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Galaxyman
+bot[1] = Astroman
+bot[2] = Topman
+bot[3] = Magicman
+bot[4] = Windman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MME10SOL
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Solarman
+bot[1] = Heatman
+bot[2] = Nitroman
+bot[3] = Pirateman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+}
+
+{
+mapname = MMB2KOM
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Cloudman
+bot[1] = Blademan
+bot[2] = Tenguman
+bot[3] = Ballade
+bot[4] = Pharaohman
+bot[5] = Crystalman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMB2CLO
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Clockman
+bot[1] = Clockman
+bot[2] = Yamatoman
+bot[3] = Geminiman
+bot[4] = Snakeman
+bot[5] = Crystalman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMEPRO
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Napalmman
+bot[1] = Aquaman
+bot[2] = Chargeman
+bot[3] = Ballade
+bot[4] = Enker
+bot[5] = Punk
+bot[6] = "Hyper Storm H"
+bot[7] = "Mega Water S"
+bot[8] = "Buster Rod G"
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+botteam[8] = "Dr. Wily Team"
+}
+
+{
+mapname = MAP01
+gamemode = deathmatch
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+}
+
+{
+mapname = MAP02
+gamemode = deathmatch
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+}
+
+{
+mapname = TRAINING
+gamemode = deathmatch
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = "Sniper Joe"
+}
+
+{
+mapname = TEAMFIX
+gamemode = deathmatch
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+}
+
+{
+mapname = MM1CUT
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Cutman
+bot[1] = Megaman
+bot[2] = Magnetman
+}
+
+{
+mapname = MM1GUT
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Gutsman
+bot[1] = Iceman
+bot[2] = Needleman
+bot[3] = Bombman
+}
+
+{
+mapname = MM1BOM
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Bombman
+bot[1] = Crashman
+bot[2] = Napalmman
+bot[3] = Commandoman
+bot[4] = Grenademan
+}
+
+{
+mapname = MM1ELE
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Elecman
+bot[1] = Cutman
+bot[2] = Sparkman
+}
+
+{
+mapname = MM1ICE
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Iceman
+bot[1] = Megaman
+bot[2] = Blizzardman
+bot[3] = Bubbleman
+bot[4] = Toadman
+bot[5] = Chillman
+}
+
+{
+mapname = MM1FIR
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Fireman
+bot[1] = Heatman
+bot[2] = Megaman
+bot[3] = Cutman
+bot[4] = "Sniper Joe"
+bot[5] = Gutsman
+}
+
+{
+mapname = MM1TIM
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Timeman
+bot[1] = Flashman
+bot[2] = Metalman
+bot[3] = Centaurman
+}
+
+{
+mapname = MM1OIL
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Oilman
+bot[1] = Junkman
+bot[2] = Fireman
+bot[3] = Flameman
+bot[4] = Frostman
+}
+
+{
+mapname = MM1DW1
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Timeman
+bot[1] = "Sniper Joe"
+bot[2] = Cutman
+bot[3] = Elecman
+bot[4] = Fireman
+bot[5] = Oilman
+}
+
+{
+mapname = MM1DW2
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = "Sniper Joe"
+bot[2] = Iceman
+bot[3] = Gutsman
+bot[4] = Bombman
+bot[5] = Timeman
+}
+
+{
+mapname = MM2BUB
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Bubbleman
+bot[1] = "Sniper Joe"
+bot[2] = Diveman
+bot[3] = Waveman
+bot[4] = Aquaman
+}
+
+{
+mapname = MM2AIR
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Airman
+bot[1] = "Sniper Joe"
+bot[2] = Tenguman
+bot[3] = Topman
+bot[4] = Gyroman
+}
+
+{
+mapname = MM2HEA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Heatman
+bot[1] = Megaman
+bot[2] = Burnerman
+bot[3] = Fireman
+bot[4] = Hardman
+bot[5] = Solarman
+}
+
+{
+mapname = MM2FLA
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Flashman
+bot[1] = Pharaohman
+bot[2] = Frostman
+bot[3] = Brightman
+bot[4] = Freezeman
+bot[5] = Burstman
+bot[6] = Bombman
+}
+
+{
+mapname = MM2QUI
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Quickman
+bot[1] = Gravityman
+bot[2] = Needleman
+bot[3] = Elecman
+bot[4] = Flashman
+bot[5] = Nitroman
+}
+
+{
+mapname = MM2WOO
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Woodman
+bot[1] = Toadman
+bot[2] = Plantman
+bot[3] = Cutman
+bot[4] = Searchman
+bot[5] = Centaurman
+}
+
+{
+mapname = MM2CRA
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Crashman
+bot[1] = Bombman
+bot[2] = Skullman
+bot[3] = Commandoman
+bot[4] = Chargeman
+bot[5] = "Sniper Joe"
+}
+
+{
+mapname = MM2MET
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Metalman
+bot[1] = Blademan
+bot[2] = Slashman
+bot[3] = Hardman
+bot[4] = Swordman
+bot[5] = Quickman
+}
+
+{
+mapname = MM2DW1
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Metalman
+bot[1] = Airman
+bot[2] = Bubbleman
+bot[3] = Quickman
+bot[4] = Crashman
+bot[5] = Flashman
+bot[6] = Heatman
+bot[7] = Woodman
+}
+
+{
+mapname = MM2DW3
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Alien
+}
+
+{
+mapname = MM3SNA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Snakeman
+bot[1] = Woodman
+bot[2] = Toadman
+bot[3] = Sheepman
+bot[4] = Burstman
+bot[5] = Gutsman
+}
+
+{
+mapname = MM3TOP
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Topman
+bot[1] = Ringman
+bot[2] = Chargeman
+bot[3] = Plantman
+bot[4] = Strikeman
+bot[5] = Springman
+}
+
+{
+mapname = MM3NEE
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Needleman
+bot[1] = Iceman
+bot[2] = Knightman
+bot[3] = Fireman
+bot[4] = Brightman
+bot[5] = Skullman
+}
+
+{
+mapname = MM3HAR
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Hardman
+bot[1] = Stoneman
+bot[2] = Skullman
+bot[3] = Drillman
+}
+
+{
+mapname = MM3GEM
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Geminiman
+bot[1] = Geminiman
+bot[2] = Flashman
+bot[3] = Crystalman
+bot[4] = Bubbleman
+}
+
+{
+mapname = MM3MAG
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Magnetman
+bot[1] = Metalman
+bot[2] = Junkman
+bot[3] = Dustman
+bot[4] = Sparkman
+}
+
+{
+mapname = MM3SPA
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Sparkman
+bot[1] = Elecman
+bot[2] = Clownman
+bot[3] = Dynamoman
+bot[4] = Quickman
+bot[5] = Metalman
+}
+
+{
+mapname = MM3SHA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Shadowman
+bot[1] = Yamatoman
+bot[2] = Tenguman
+bot[3] = Pirateman
+bot[4] = Woodman
+bot[5] = Heatman
+}
+
+{
+mapname = MM3DW2
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Needleman
+bot[1] = Shadowman
+bot[2] = Geminiman
+bot[3] = Hardman
+bot[4] = Sparkman
+}
+
+{
+mapname = MM4PHA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Pharaohman
+bot[1] = Swordman
+bot[2] = Groundman
+bot[3] = Stoneman
+bot[4] = Snakeman
+bot[5] = Napalmman
+}
+
+{
+mapname = MM4DIV
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Diveman
+bot[1] = Bubbleman
+bot[2] = Pumpman
+bot[3] = Waveman
+bot[4] = Aquaman
+bot[5] = Pirateman
+}
+
+{
+mapname = MM4DRI
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = DrillMan
+bot[1] = Groundman
+bot[2] = HardMan
+bot[3] = BombMan
+bot[4] = CrashMan
+}
+
+{
+mapname = MM4TOA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Toadman
+bot[1] = Diveman
+bot[2] = Snakeman
+bot[3] = Fireman
+bot[4] = Pumpman
+bot[5] = Plantman
+}
+
+{
+mapname = MM4DUS
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Dustman
+bot[1] = Toadman
+bot[2] = Junkman
+bot[3] = Magnetman
+bot[4] = Clownman
+}
+
+{
+mapname = MM4RIN
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Ringman
+bot[1] = Astroman
+bot[2] = Crashman
+bot[3] = Starman
+bot[4] = Shadowman
+bot[5] = "Sniper Joe"
+}
+
+{
+mapname = MM4SKU
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Skullman
+bot[1] = Tomahawkman
+bot[2] = Knightman
+bot[3] = Gutsman
+bot[4] = Megaman
+bot[5] = "Sniper Joe"
+}
+
+{
+mapname = MM4BRI
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Brightman
+bot[1] = Elecman
+bot[2] = Sparkman
+bot[3] = Dynamoman
+bot[4] = Sheepman
+bot[5] = Megaman
+}
+
+{
+mapname = MM4DC1
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Brightman
+bot[1] = Toadman
+bot[2] = Drillman
+bot[3] = Pharaohman
+bot[4] = Ringman
+bot[5] = Dustman
+bot[6] = Diveman
+bot[7] = Skullman
+}
+
+{
+mapname = MM5CHA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Chargeman
+bot[1] = Cutman
+bot[2] = Nitroman
+bot[3] = Turboman
+bot[4] = Quickman
+bot[5] = Airman
+}
+
+{
+mapname = MM5STO
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Stoneman
+bot[1] = Gutsman
+bot[2] = Napalmman
+bot[3] = Crashman
+bot[5] = Drillman
+}
+
+{
+mapname = MM5NAP
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Napalmman
+bot[1] = Pirateman
+bot[2] = Grenademan
+bot[3] = Crashman
+bot[4] = Bombman
+bot[5] = Burstman
+}
+
+{
+mapname = MM5WAV
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Waveman
+bot[1] = Bubbleman
+bot[2] = Quickman
+bot[3] = Diveman
+bot[4] = Magnetman
+bot[5] = Stoneman
+}
+
+{
+mapname = MM5GYR
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Gyroman
+bot[1] = Airman
+bot[2] = Windman
+bot[3] = Cloudman
+bot[4] = Tenguman
+}
+
+{
+mapname = MM5GRA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Gravityman
+bot[1] = Metalman
+bot[2] = Flashman
+bot[3] = Magnetman
+bot[4] = Brightman
+bot[5] = Elecman
+}
+
+{
+mapname = MM5STA
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Starman
+bot[1] = Astroman
+bot[2] = Skullman
+bot[3] = Ringman
+bot[4] = Gravityman
+}
+
+{
+mapname = MM5CRY
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Crystalman
+bot[1] = Geminiman
+bot[2] = Pirateman
+bot[3] = Blizzardman
+bot[4] = Chillman
+bot[5] = Groundman
+}
+
+{
+mapname = MM5DAR
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Gravityman
+bot[1] = Starman
+bot[2] = Stoneman
+bot[3] = Waveman
+bot[4] = Gyroman
+bot[5] = Chargeman
+bot[6] = Napalmman
+bot[7] = Crystalman
+}
+
+{
+mapname = MM6TOM
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Tomahawkman
+bot[1] = Yamatoman
+bot[2] = Pharaohman
+bot[3] = Strikeman
+bot[4] = Slashman
+bot[5] = Stoneman
+}
+
+{
+mapname = MM6CEN
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Centaurman
+bot[1] = Knightman
+bot[2] = Crystalman
+bot[3] = Timeman
+bot[4] = Topman
+bot[5] = Geminiman
+}
+
+{
+mapname = MM6KNI
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Knightman
+bot[1] = Yamatoman
+bot[2] = Skullman
+bot[3] = Swordman
+bot[4] = Blademan
+bot[5] = Shademan
+}
+
+{
+mapname = MM6BLI
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Blizzardman
+bot[1] = Iceman
+bot[2] = Diveman
+bot[3] = Freezeman
+bot[4] = Bubbleman
+}
+
+{
+mapname = MM6PLA
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Plantman
+bot[1] = Woodman
+bot[2] = Burnerman
+bot[3] = Searchman
+bot[4] = Toadman
+}
+
+{
+mapname = MM6FLA
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Flameman
+bot[1] = Heatman
+bot[2] = Solarman
+bot[3] = Pharaohman
+bot[4] = Oilman
+}
+
+{
+mapname = MM6WIN
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Windman
+bot[1] = Airman
+bot[2] = Cloudman
+bot[3] = Brightman
+bot[4] = Chargeman
+bot[5] = Gravityman
+}
+
+{
+mapname = MM6YAM
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Yamatoman
+bot[1] = Knightman
+bot[2] = Shadowman
+bot[3] = Skullman
+bot[4] = Tenguman
+}
+
+{
+mapname = MM6MRX
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Blizzardman
+bot[1] = Centaurman
+bot[2] = Flameman
+bot[3] = Knightman
+bot[4] = Plantman
+bot[5] = Tomahawkman
+bot[6] = Windman
+bot[7] = Yamatoman
+}
+
+{
+mapname = MM6DW1
+gamemode = deathmatch
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+}
+
+{
+mapname = MM7FRE
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Freezeman
+bot[1] = Blizzardman
+bot[2] = Crystalman
+bot[3] = Geminiman
+bot[4] = Napalmman
+bot[5] = Flashman
+}
+
+{
+mapname = MM7JUN
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Junkman
+bot[1] = Dustman
+bot[3] = Gravityman
+bot[4] = Magnetman
+bot[5] = Metalman
+bot[6] = "Sniper Joe"
+}
+
+{
+mapname = MM7BUR
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Burstman
+bot[1] = Bubbleman
+bot[2] = Toadman
+bot[3] = Centaurman
+bot[4] = Waveman
+}
+
+{
+mapname = MM7CLO
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Cloudman
+bot[1] = Airman
+bot[2] = Gyroman
+bot[3] = Windman
+bot[4] = Toadman
+bot[5] = Tenguman
+bot[6] = Topman
+}
+
+{
+mapname = MM7SPR
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Springman
+bot[1] = Topman
+bot[2] = Clownman
+bot[3] = Magicman
+bot[4] = Starman
+}
+
+{
+mapname = MM7SLA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Slashman
+bot[1] = Pharaohman
+bot[2] = Plantman
+bot[3] = Woodman
+bot[4] = Searchman
+bot[5] = Burnerman
+}
+
+{
+mapname = MM7SHA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Shademan
+bot[1] = Shadowman
+bot[2] = Magicman
+bot[3] = Knightman
+bot[4] = Crystalman
+bot[5] = Skullman
+bot[6] = Snakeman
+}
+
+{
+mapname = MM7TUR
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Turboman
+bot[1] = Quickman
+bot[2] = Chargeman
+bot[3] = Stoneman
+bot[4] = Crashman
+bot[5] = Napalmman
+}
+
+{
+mapname = MM7DW1
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Freezeman
+bot[1] = Springman
+bot[2] = Cloudman
+bot[3] = Turboman
+bot[4] = Shademan
+bot[5] = Junkman
+}
+
+{
+mapname = MM7DW2
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Junkman
+bot[1] = Burstman
+bot[2] = Slashman
+bot[3] = Springman
+bot[4] = Freezeman
+}
+
+{
+mapname = MM7DW3
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Junkman
+bot[1] = Burstman
+bot[2] = Springman
+bot[3] = Turboman
+bot[4] = Freezeman
+bot[5] = Shademan
+bot[6] = Cloudman
+}
+
+{
+mapname = MM7DW4
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Slashman
+bot[1] = Cloudman
+bot[2] = Springman
+bot[3] = Turboman
+bot[4] = Freezeman
+bot[5] = Shademan
+}
+
+{
+mapname = MM8TEN
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Tenguman
+bot[1] = Gyroman
+bot[2] = Yamatoman
+bot[3] = Frostman
+bot[4] = Ringman
+}
+
+{
+mapname = MM8AST
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Astroman
+bot[1] = Starman
+bot[2] = Geminiman
+bot[3] = Flashman
+bot[4] = Shadowman
+bot[5] = "Sniper Joe"
+}
+
+{
+mapname = MM8SWO
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Swordman
+bot[1] = Slashman
+bot[2] = Drillman
+bot[3] = Pharaohman
+bot[4] = Shademan
+bot[5] = Knightman
+}
+
+{
+mapname = MM8CLO
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Clownman
+bot[1] = Yamatoman
+bot[2] = Springman
+bot[3] = Chargeman
+bot[4] = Turboman
+}
+
+{
+mapname = MM8SEA
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Searchman
+bot[1] = Woodman
+bot[2] = Snakeman
+bot[3] = Napalmman
+bot[4] = Centaurman
+}
+
+{
+mapname = MM8FRO
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Frostman
+bot[1] = Blizzardman
+bot[2] = Freezeman
+bot[3] = Turboman
+bot[4] = Brightman
+}
+
+{
+mapname = MM8GRE
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Grenademan
+bot[1] = Crashman
+bot[2] = Dustman
+bot[3] = Skullman
+bot[4] = Junkman
+bot[5] = Searchman
+}
+
+{
+mapname = MM8AQU
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Aquaman
+bot[1] = Clownman
+bot[2] = Waveman
+bot[3] = Bubbleman
+bot[4] = Astroman
+}
+
+{
+mapname = MM8DUO
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Grenademan
+bot[1] = Searchman
+bot[2] = Ringman
+bot[3] = "Sniper Joe"
+}
+
+{
+mapname = MM8DW1
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Aquaman
+bot[1] = Tenguman
+bot[2] = Astroman
+bot[3] = Grenademan
+bot[4] = Swordman
+bot[5] = Clownman
+bot[6] = "Sniper Joe"
+}
+
+{
+mapname = MM8DW2
+gamemode = deathmatch
+fraglimit = 25
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Aquaman
+bot[1] = Frostman
+bot[2] = Searchman
+bot[3] = Grenademan
+bot[4] = Tenguman
+bot[5] = Clownman
+bot[6] = Astroman
+bot[7] = Swordman
+}
+
+{
+mapname = MMBMUS
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Toadman
+bot[3] = Blizzardman
+bot[4] = Heatman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+}
+
+{
+mapname = MMBTEN
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Tenguman
+bot[3] = Snakeman
+bot[4] = Airman
+bot[5] = Skullman
+bot[6] = Gyroman
+bot[7] = Windman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+
+{
+mapname = MMBAST
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Astroman
+bot[3] = Starman
+bot[4] = Yamatoman
+bot[5] = Geminiman
+bot[6] = Shadowman
+bot[7] = Ringman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+{
+mapname = MMBDYN
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Dynamoman
+bot[3] = Grenademan
+bot[4] = Quickman
+bot[5] = Brightman
+bot[6] = Sparkman
+bot[7] = Napalmman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+{
+mapname = MMBCOL
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Coldman
+bot[3] = Frostman
+bot[4] = Freezeman
+bot[5] = Flashman
+bot[6] = Crystalman
+bot[7] = Knightman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+{
+mapname = MMBGRO
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Groundman
+bot[3] = Swordman
+bot[4] = Crashman
+bot[5] = Drillman
+bot[6] = Pharaohman
+bot[7] = Stoneman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+{
+mapname = MMBPIR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Pirateman
+bot[3] = Aquaman
+bot[4] = Diveman
+bot[5] = Waveman
+bot[6] = Bubbleman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+}
+
+{
+mapname = MMBBUR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Burnerman
+bot[3] = Searchman
+bot[4] = Woodman
+bot[5] = Flameman
+bot[6] = Heatman
+bot[7] = Slashman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+{
+mapname = MMBMAG
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Magicman
+bot[3] = Clownman
+bot[4] = Chargeman
+bot[5] = Topman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+}
+
+{
+mapname = MMBKIN
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Tenguman
+bot[1] = Astroman
+bot[2] = Dynamoman
+bot[3] = Coldman
+bot[4] = Groundman
+bot[5] = Pirateman
+bot[6] = Burnerman
+bot[7] = Magicman
+botteam[0] = "King Team"
+botteam[1] = "King Team"
+botteam[2] = "King Team"
+botteam[3] = "King Team"
+botteam[4] = "King Team"
+botteam[5] = "King Team"
+botteam[6] = "King Team"
+botteam[7] = "King Team"
+}
+
+{
+mapname = MMBDW1
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Bass
+bot[2] = Tenguman
+bot[3] = Dynamoman
+bot[4] = Burnerman
+bot[5] = Magicman
+bot[6] = Coldman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+
+{
+mapname = MMWTBRG
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Cutman
+bot[1] = Elecman
+bot[2] = Woodman
+bot[3] = Snakeman
+bot[4] = Airman
+bot[5] = Cloudman
+bot[6] = Slashman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MMWTMWS
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Timeman
+bot[1] = Oilman
+bot[2] = Bubbleman
+bot[3] = Brightman
+bot[4] = Groundman
+bot[5] = Tenguman
+bot[6] = Quickman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MMWTHSH
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Gutsman
+bot[1] = Bombman
+bot[2] = Aquaman
+bot[3] = Hardman
+bot[4] = Stoneman
+bot[5] = Frostman
+bot[6] = "Sniper Joe"
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MMWTDW1
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Fireman
+bot[1] = Iceman
+bot[2] = Heatman
+bot[3] = Bubbleman
+bot[4] = Snakeman
+bot[5] = Burnerman
+bot[6] = Waveman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MMWTDW2
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Protoman
+bot[1] = "???"
+bot[2] = Needleman
+bot[3] = Geminiman
+bot[4] = Woodman
+bot[5] = Gravityman
+bot[6] = Bubbleman
+bot[7] = Hardman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+}
+
+{
+mapname = MM9CON
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Concreteman
+bot[1] = Stoneman
+bot[2] = Skullman
+bot[3] = Woodman
+bot[4] = Waveman
+bot[5] = Burnerman
+bot[6] = Shademan
+bot[7] = Searchman
+}
+
+{
+mapname = MM9TOR
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Tornadoman
+bot[1] = Airman
+bot[2] = Cloudman
+bot[3] = Toadman
+bot[4] = Ringman
+}
+
+{
+mapname = MM9SPL
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Splashwoman
+bot[1] = Diveman
+bot[2] = Bubbleman
+bot[3] = Geminiman
+bot[4] = Burstman
+bot[5] = Aquaman
+bot[6] = Pirateman
+}
+
+{
+mapname = MM9PLU
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Plugman
+bot[1] = Sparkman
+bot[2] = Junkman
+bot[3] = Dynamoman
+bot[4] = Brightman
+}
+
+{
+mapname = MM9JEW
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Jewelman
+bot[1] = Crystalman
+bot[2] = Drillman
+bot[3] = Frostman
+bot[4] = Snakeman
+bot[5] = Flashman
+}
+
+{
+mapname = MM9HOR
+gamemode = deathmatch
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Hornetman
+bot[1] = Slashman
+bot[2] = Plantman
+bot[3] = Pharaohman
+bot[4] = Heatman
+bot[5] = Topman
+bot[6] = Quickman
+bot[7] = Tenguman
+}
+
+{
+mapname = MM9MAG
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Magmaman
+bot[1] = Flameman
+bot[2] = Needleman
+bot[3] = Swordman
+bot[4] = Dustman
+}
+
+{
+mapname = MM9GAL
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Galaxyman
+bot[1] = Starman
+bot[2] = Crashman
+bot[3] = Gravityman
+bot[4] = Metalman
+bot[5] = Astroman
+bot[6] = Springman
+bot[7] = Magnetman
+}
+
+{
+mapname = MM9DW1
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Tornadoman
+bot[1] = Splashwoman
+bot[2] = Grenademan
+bot[3] = Shadowman
+bot[4] = Gyroman
+bot[5] = Turboman
+bot[6] = Clownman
+bot[7] = Ringman
+bot[8] = Hardman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+botteam[8] = "Dr. Wily Team"
+}
+
+{
+mapname = MM9DW2
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Tornadoman
+bot[1] = Splashwoman
+bot[2] = Grenademan
+bot[3] = Shadowman
+bot[4] = Gyroman
+bot[5] = Turboman
+bot[6] = Clownman
+bot[7] = Ringman
+bot[8] = Hardman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+botteam[8] = "Dr. Wily Team"
+}
+
+
+{
+mapname = MM9FAK
+gamemode = teamplay
+playerteam = "Dr. Wily Team"
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Fakeman
+bot[1] = Fakeman
+bot[2] = Fakeman
+bot[3] = Fakeman
+bot[4] = Fakeman
+bot[5] = Fakeman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Light Team"
+botteam[2] = "Dr. Light Team"
+botteam[3] = "Dr. Light Team"
+botteam[4] = "Dr. Light Team"
+botteam[5] = "Dr. Light Team"
+}
+
+
+{
+mapname = MM10BLA
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Blademan
+bot[1] = Knightman
+bot[2] = Stoneman
+bot[3] = Snakeman
+bot[4] = Swordman
+}
+
+
+{
+mapname = MM10PUM
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Pumpman
+bot[1] = Aquaman
+bot[2] = Waveman
+}
+
+
+{
+mapname = MM10COM
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Commandoman
+bot[1] = Napalmman
+bot[2] = Searchman
+bot[3] = Grenademan
+bot[4] = Crashman
+bot[5] = Groundman
+}
+
+{
+mapname = MM10CHI
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Chillman
+bot[1] = Geminiman
+bot[2] = Freezeman
+bot[3] = Blizzardman
+bot[4] = Crystalman
+bot[5] = Flashman
+}
+
+{
+mapname = MM10SHE
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Sheepman
+bot[1] = Sparkman
+bot[2] = Clownman
+bot[3] = Dynamoman
+bot[4] = Cloudman
+bot[5] = Gravityman
+bot[6] = Slashman
+}
+
+{
+mapname = MM10STR
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Strikeman
+bot[1] = Woodman
+bot[2] = Chargeman
+bot[3] = Hardman
+bot[4] = Tomahawkman
+bot[5] = Springman
+}
+
+
+{
+mapname = MM10NIT
+gamemode = deathmatch
+fraglimit = 15
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Nitroman
+bot[1] = Turboman
+bot[2] = Quickman
+bot[3] = Topman
+bot[4] = Centaurman
+}
+
+
+{
+mapname = MM10SOL
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Solarman
+bot[1] = Heatman
+bot[2] = Metalman
+bot[3] = Junkman
+bot[4] = Plantman
+}
+
+
+
+{
+mapname = MM10DW1
+gamemode = deathmatch
+fraglimit = 25
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = "Sniper Joe"
+bot[1] = Woodman
+bot[2] = Geminiman
+bot[3] = Napalmman
+bot[4] = Flameman
+bot[5] = Slashman
+bot[6] = Frostman
+}
+
+{
+mapname = MM10DW4
+gamemode = deathmatch
+fraglimit = 20
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Blademan
+bot[1] = Commandoman
+bot[2] = Sheepman
+bot[3] = Solarman
+bot[4] = Strikeman
+bot[5] = Pumpman
+bot[6] = Chillman
+bot[7] = Nitroman
+}
+
+
+{
+mapname = MMVMER
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Dustman
+bot[1] = Mercury
+bot[2] = Quickman
+bot[3] = Nitroman
+bot[4] = Turboman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVVEN
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Toadman
+bot[1] = Venus
+bot[2] = Bubbleman
+bot[3] = Burstman
+bot[4] = Snakeman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVJUP
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Brightman
+bot[1] = Jupiter
+bot[2] = Starman
+bot[3] = Freezeman
+bot[4] = Geminiman
+bot[5] = Dynamoman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVURA
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Pharaohman
+bot[1] = Uranus
+bot[2] = Shademan
+bot[3] = Groundman
+bot[4] = Hardman
+bot[5] = Blizzardman
+bot[6] = Knightman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+
+{
+mapname = MMVPLU
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Drillman
+bot[1] = Pluto
+bot[2] = Stoneman
+bot[3] = Crystalman
+bot[4] = Needleman
+bot[5] = Frostman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVSAT
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Ringman
+bot[1] = Saturn
+bot[2] = Flameman
+bot[3] = Napalmman
+bot[4] = Chargeman
+bot[5] = Gravityman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVMAR
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Skullman
+bot[1] = Mars
+bot[2] = Tomahawkman
+bot[3] = Commandoman
+bot[4] = Yamatoman
+bot[5] = Crashman
+bot[6] = Blademan
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVNEP
+gamemode = teamplay
+playerteam = "Dr. Cossack Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Diveman
+bot[1] = Neptune
+bot[2] = Magnetman
+bot[3] = Gyroman
+bot[4] = Waveman
+bot[5] = Aquaman
+bot[6] = Cloudman
+botteam[0] = "Dr. Cossack Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+}
+
+
+{
+mapname = MMKENK
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Megaman
+bot[1] = Enker
+bot[2] = Punk
+bot[3] = Ballade
+bot[4] = Sparkman
+bot[5] = Woodman
+bot[6] = Springman
+bot[7] = Clownman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+}
+
+{
+mapname = MMKPUN
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Protoman
+bot[1] = Enker
+bot[2] = Punk
+bot[3] = Ballade
+bot[4] = Pumpman
+bot[5] = Pirateman
+bot[6] = Airman
+bot[7] = Metalman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+}
+
+
+{
+mapname = MMKBAL
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = Bass
+bot[1] = Enker
+bot[2] = Punk
+bot[3] = Ballade
+bot[4] = Astroman
+bot[5] = Grenademan
+bot[6] = Windman
+bot[7] = Solarman
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+}
+
+{
+mapname = MMVDW1
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 0
+dmflags = 6967428
+dmflags2 = 2097168
+compatflags = 0
+bot[0] = "Dr. Wily"
+bot[1] = Mercury
+bot[2] = Venus
+bot[3] = Saturn
+bot[4] = Neptune
+bot[5] = Uranus
+bot[6] = Jupiter
+bot[7] = Mars
+bot[8] = Pluto
+botteam[0] = "Dr. Light Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+botteam[6] = "Dr. Wily Team"
+botteam[7] = "Dr. Wily Team"
+botteam[8] = "Dr. Wily Team"
+}

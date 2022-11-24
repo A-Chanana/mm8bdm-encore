@@ -1,0 +1,118 @@
+actor SolarBlazeWep : BaseMM8BDMWep 10096
+{
+//$Category MM8BDM-Weapons
+//$Title Solar Blaze
+//$Sprite SOLAA0
+dropitem "SolarBlazeWep"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 28
+Weapon.SlotNumber 5
+Obituary "$OB_SOLARBLAZE"
+Tag "$TAG_SOLARBLAZE"
+Inventory.Pickupmessage "$PU_SOLARBLAZE"
+weapon.ammotype "SolarBlazeAmmo"
+inventory.icon "SOLARI"
+States
+{
+SpawnLoop:
+SOLA A -1
+loop
+Ready:
+SOLA F 0 ACS_ExecuteAlways(998,0,198)
+SOLA F 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SOLA F 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SOLA F 1 A_Raise
+Loop
+Fire:
+SOLA F 0 A_JumpIfNoAmmo("NoAmmo")
+SOLA F 0 A_PlaySoundEx("weapon/solarshoot","Weapon")
+SOLA F 0 A_FireCustomMissile("SolarBlaze",0,1,8,0)
+SOLA GH 6
+SOLA F 24
+SOLA F 0 A_Refire
+Goto Ready+1
+NoAmmo:
+SOLA F 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor SolarBlazeAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor SolarBlaze
+{
+PROJECTILE
++HEXENBOUNCE
+-ALLOWBOUNCEONACTORS
++FORCEXYBILLBOARD
++CANBOUNCEWATER
++BRIGHT
+Obituary "$OB_SOLARBLAZE"
+DamageType "SolarBlaze"
+bouncefactor 0.5
+wallbouncefactor 0.5
+bouncecount 9999
+Radius 8
+Height 16
+scale 2.5
+damage (23)
+speed 40
+reactiontime 1
+States
+{
+Spawn:
+SOLA BCBC 3
+SOLA B 0 A_Stop
+SOLA BCBC 3
+SOLA B 1 A_Countdown
+wait
+XDeath:
+SOLA B 0
+stop
+Crash:
+Death:
+TNT1 B 0 A_PlaySoundEx("weapon/solarblaze","weapon")
+TNT1 B 0 A_SpawnItemEx("SolarWave",0,0,0,28,0,0,0)
+TNT1 B 0 A_SpawnItemEx("SolarWave",0,0,0,28,0,0,90)
+TNT1 B 0 A_SpawnItemEx("SolarWave",0,0,0,28,0,0,-90)
+TNT1 B 0 A_SpawnItemEx("SolarWave",0,0,0,28,0,0,180)
+TNT1 B 0 A_SpawnItemEx("OilPitIgnite",0,0,-16)
+TNT1 A 35 A_SpawnItemEx("ExplosionEffect1")
+stop
+}
+}
+
+actor SolarWave
+{
+PROJECTILE
++RIPPER
++THRUACTORS
++BRIGHT
+Obituary "$OB_SOLARBLAZE"
+DamageType "SolarBlazeWave"
+Radius 8
+Height 16
+scale 2.5
+damage (17)
+speed 40
+States
+{
+Spawn:
+SOLA D 0
+SOLA Z 1
+SOLA Z 0 A_ChangeFlag(THRUACTORS, false)
+SOLA DE 2
+goto Spawn+3
+}
+}

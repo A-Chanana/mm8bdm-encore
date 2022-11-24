@@ -1,0 +1,144 @@
+#library "colotrans"
+#include "zcommon.acs"
+#include "8bdmlib.acs"
+
+// [Mike] Player Translations
+int PlayerTranslation[64];
+
+script "colotrns_open" OPEN
+{
+	ServerMAX = GetMaxPlayers();
+	IsTeamGame = ACS_ExecuteWithResult(975, 1);
+}
+
+script "core_synccolors" (void)
+{
+    PlayerTranslation[PlayerNumber()] = 0;
+
+    //Syncs Player colors
+    for(int i=0; i<ServerMAX; i++)
+    {
+        If(PlayerInGame(i) && CheckActorInventory(i + 1000,"NoTeamTranslation")==0)
+        {
+            Switch(GetPlayerInfo(i, PLAYERINFO_TEAM))
+            {
+			Case 0:
+				Thing_SetTranslation(i+1000, COLOR_LIGHT);
+				break;
+			Case 1:
+				Thing_SetTranslation(i+1000, COLOR_WILY);
+				break;
+			Case 2:
+				Thing_SetTranslation(i+1000, COLOR_COSSACK);
+				break;
+			Case 3:
+				Thing_SetTranslation(i+1000, COLOR_KING);
+				break;
+			default:
+				SetActivator(i+1000);
+				Thing_SetTranslation(i+1000, -1);
+				break;
+            }
+        }
+    }
+}
+
+// Player Color (alternate, no sound)
+//
+script 991 (int weap, int nosound, int teamcolor)
+{
+	ACS_ExecuteAlways(998, 0, weap, 1, teamcolor);
+}
+
+//Color Translation script
+script 998 (int weap, int nosound, int teamcolor) 
+{
+	int addcolor;
+	if(nosound==0 && CheckInventory("NoWeaponSwitchSound")==0)
+	{
+		LocalAmbientSound("menu/cursor",127); // Play weapon switch noise
+	}
+
+	if(CheckInventory("NoWeaponTranslation")>0 &&
+		CheckInventory("SpecialBotCanCharge")==0){
+	terminate;
+	}
+	
+	Switch(teamcolor)
+			{
+			Case 0:
+				addcolor = 0;
+				break;
+			Case 1:
+				addcolor = 740;
+				break;
+			Case 2:
+				addcolor = 740+4;
+				break;
+			Case 3:
+				addcolor = 740+4*2;
+				break;
+			Case 4:
+				addcolor = 740+4*3;
+				break;
+			Case 5:
+				addcolor = 740+4*4;
+				break;
+			Case 6:
+				addcolor = 740+4*5;
+				break;
+			Case 7:
+				addcolor = 740+4*6;
+				break;
+			}
+	
+	If(IsTeamGame==1 && CheckInventory("NoTeamTranslation")==0)
+		{
+		Switch(PlayerTeam())
+			{
+			Case 0:
+				weap = addcolor+COLOR_LIGHT;
+				break;
+			Case 1:
+				weap = addcolor+COLOR_WILY;
+				break;
+			Case 2:
+				weap = addcolor+COLOR_COSSACK;
+				break;
+			Case 3:
+				weap = addcolor+COLOR_KING;
+				break;
+			}
+		}
+	If(CheckInventory("SpecialBotCanCharge")>0)
+		{
+		If(CheckInventory("IsSpecialBot")>0)
+			{
+				If(weap == 3){weap = 746;} //Heat Man
+				else If(weap == 55){weap = 846;} //Shade Man
+				else If(weap == 71){weap = 850;}
+				else If(weap == 72){weap = 851;}
+				else If(weap == 73){weap = 851;}
+				else If(weap == 58){weap = 844;} //Spring Man
+				else If(weap == 88){weap = 864;} //Search Man
+				else If(weap == 191){weap = 886;} //Magma Man
+				else If(weap == 213){weap = 967;} //Pluto
+				else If(weap == 52){weap = 943;} //Enker
+			}
+		else If(CheckInventory("IsSpecialBot")==0)
+			{
+				If(addcolor==0){weap = 742;} //Auto
+				else If(addcolor>0){weap = addcolor+COLOR_COSSACK;}
+			}
+		}	
+	//printbold(i:weap);
+	Thing_SetTranslation(0, weap);
+	PlayerTranslation[PlayerNumber()] = weap;
+}
+
+// Copy the translation of the target. Used by teleport FX. Probably limited use since SXF_TRANSFERTRANSLATION exists.
+Script "core_copytranslation" (void)
+{
+	SetActivatorToTarget(0);
+	SetResultValue(PlayerTranslation[ActivatorTID()-1000]);
+}

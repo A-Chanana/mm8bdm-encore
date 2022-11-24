@@ -1,0 +1,400 @@
+Actor BondingPasteWep : BaseMM8BDMWep
+{
+dropitem "BondingPasteWep"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 40
+Weapon.SlotNumber 3
+Obituary "$OB_BONDINGPASTE"
+Tag "$TAG_BONDINGPASTE"
+Inventory.Pickupmessage "$PU_BONDINGPASTE"
+weapon.ammotype "BondingPasteAmmo"
+inventory.icon "BPSTICON"
+States
+{
+SpawnLoop:
+BPST Z -1
+loop
+Ready:
+BPST A 0 ACS_ExecuteAlways(998,0,257)
+BPST A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+BPST A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+BPST A 1 A_Raise
+Loop
+Fire:
+BPST A 0 A_JumpIfNoAmmo("NoAmmo")
+BPST A 0 A_PlaySoundEx("weapon/oilshot","Weapon")
+GUTA A 0 A_JumpIfInventory("IsBot", 1, "BotCheck")
+BPST A 0 A_GiveInventory("BondingPasteShot_CI",1)
+RangedFire:
+BPST BC 2
+BPST A 1
+BPST A 0 A_Refire
+Goto Ready+1
+NoAmmo:
+BPST A 1 ACS_Execute(979,0)
+Goto Ready+1
+BotCheck:
+BPST A 0 A_JumpIf(ACS_ExecuteWithResult(247, 0, 500, 0)==0, 2)
+BPST A 0 A_GiveInventory("BondingPasteShot_CIAngle1",1)
+Goto RangedFire
+BPST A 0 A_GiveInventory("BondingPasteShot_CIAngle2",1)
+Goto RangedFire
+}
+}
+
+Actor BondingPasteAmmo : Ammo
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 40
+	+INVENTORY.IGNORESKILL
+}
+
+
+//Shots
+actor BondingPasteShot
+{
+translation "198:198=92:92", "192:192=86:86"
+PROJECTILE
++FORCEXYBILLBOARD
+Damage (9)
+damagetype "BondingPaste"
+Obituary "$OB_BONDINGPASTE"
+Height 8
+Radius 8
+-NOGRAVITY
+Scale 2.0
+speed 28
+States
+{
+Spawn:
+BPST E 0
+BPST EFG 2 A_CheckFloor("Death")
+loop
+Crash:
+XDeath:
+BPST G 1
+stop
+Death:
+BPST G 0 
+BPST G 0 A_JumpIf(z-floorz<=0,"Death2")
+BPST G 1 A_GiveInventory("CutterFlag", 1)
+BPST G 0 A_JumpIfInventory("CutterFlag", 175, "Xdeath")
+loop
+Death2:
+BPST G 1 A_SpawnItemEx("BondingBlob",0,0,0)
+stop
+}
+}
+
+actor BondingPasteShotB : BondingPasteShot
+{
+translation "192:192=196:196", "198:198=205:205"
+States
+{
+Death2:
+BPST G 1 A_SpawnItemEx("BondingBlobB",0,0,0)
+stop
+}
+}
+actor BondingPasteShotR : BondingPasteShot
+{
+translation "198:198=171:171", "192:192=170:170"
+States
+{
+Death2:
+BPST G 1 A_SpawnItemEx("BondingBlobR",0,0,0)
+stop
+}
+}
+actor BondingPasteShotG : BondingPasteShot
+{
+translation "198:198=104:104", "192:192=138:138"
+States
+{
+Death2:
+BPST G 1 A_SpawnItemEx("BondingBlobG",0,0,0)
+stop
+}
+}
+actor BondingPasteShotY : BondingPasteShot
+{
+translation "198:198=229:229", "192:192=214:214"
+States
+{
+Death2:
+BPST G 1 A_SpawnItemEx("BondingBlobY",0,0,0)
+stop
+}
+}
+
+actor BondingPasteShot_CI : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("LightTeamFlag",1,"FireB")
+TNT1 A 0 A_JumpIfInventory("WilyTeamFlag",1,"FireR")
+TNT1 A 0 A_JumpIfInventory("CossackTeamFlag",1,"FireG")
+TNT1 A 0 A_JumpIfInventory("KingTeamFlag",1,"FireY")
+TNT1 A 0 A_JumpIfInventory("MM8BDMPlayer",1,"FireX")
+TNT1 A 0
+stop
+FireX:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShot",frandom(-3,3),1,8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotB",frandom(-3,3),1,8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotR",frandom(-3,3),1,8,0)
+goto Done
+FireG:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotG",frandom(-3,3),1,8,0)
+goto Done
+FireY:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotY",frandom(-3,3),1,8,0)
+goto Done
+}
+}
+
+actor BondingPasteShot_CIAngle1 : BondingPasteShot_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShot",frandom(-3,3),1,8,0,0,10)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotB",frandom(-3,3),1,8,0,0,10)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotR",frandom(-3,3),1,8,0,0,10)
+goto Done
+FireG:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotG",frandom(-3,3),1,8,0,0,10)
+goto Done
+FireY:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotY",frandom(-3,3),1,8,0,0,10)
+goto Done
+}
+}
+
+actor BondingPasteShot_CIAngle2 : BondingPasteShot_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShot",frandom(-3,3),1,8,0,0,20)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotB",frandom(-3,3),1,8,0,0,20)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotR",frandom(-3,3),1,8,0,0,20)
+goto Done
+FireG:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotG",frandom(-3,3),1,8,0,0,20)
+goto Done
+FireY:
+TNT1 A 0 A_FireCustomMissile("BondingPasteShotY",frandom(-3,3),1,8,0,0,20)
+goto Done
+}
+}
+
+//Blobs
+Actor BondingBlob
+{
+translation "198:198=92:92", "192:192=86:86"
++MISSILE
++NODAMAGETHRUST
++NOBLOOD
++DONTSPLASH
++NOEXPLODEFLOOR
++RIPPER
++NOTARGETSWITCH
++NOTAUTOAIMED
+Damage (0)
+damagetype "BondingPaste"
+Obituary "$OB_BONDINGPASTE"
+Height 10
+Radius 8
+scale 2.5
+yscale 2.0
+mass 99999
+reactiontime 250
+states
+{
+Spawn:
+BPST D 0
+BPST D 1 
+BPST D 0
+Goto Spawn2
+Spawn2:
+BPST D 1 A_Stop
+Goto SlideWait
+SlideWait:
+BPST D 1 A_GiveInventory("CutterFlag", 1)
+BPST D 0 A_RadiusGive("BondingPasteFlag",64,RGF_PLAYERS|RGF_MONSTERS|RGF_NOTARGET,1)
+BPST D 0 A_JumpIf(z-floorz>0,"NewShot")
+BPST D 0 A_JumpIfInventory("CutterFlag", 245, "Death")
+loop
+NewShot:
+BPST D 0 A_SpawnItemEx("BondingPasteShot", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+Goto Death 
+Death:
+TNT1 A 0
+stop
+}
+}
+
+actor BondingBlobB : BondingBlob
+{
+translation "192:192=196:196", "198:198=205:205"
+states
+{
+Spawn:
+BPST D 0
+BPST D 1 
+BPST D 0
+Goto Spawn2
+Spawn2:
+BPST D 1 A_Stop
+Goto SlideWait
+SlideWait:
+BPST D 1 A_GiveInventory("CutterFlag", 1)
+BPST D 0 A_RadiusGive("BondingPasteFlagB",64,RGF_PLAYERS|RGF_MONSTERS,1)
+BPST D 0 A_JumpIf(z-floorz>0,"NewShot")
+BPST D 0 A_JumpIfInventory("CutterFlag", 245, "Death")
+loop
+NewShot:
+BPST D 0 A_SpawnItemEx("BondingPasteShotB", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+Goto Death 
+}
+}
+actor BondingBlobR : BondingBlob
+{
+translation "198:198=171:171", "192:192=170:170"
+states
+{
+Spawn:
+BPST D 0
+BPST D 1 
+BPST D 0
+Goto Spawn2
+Spawn2:
+BPST D 1 A_Stop
+Goto SlideWait
+SlideWait:
+BPST D 1 A_GiveInventory("CutterFlag", 1)
+BPST D 0 A_RadiusGive("BondingPasteFlagR",64,RGF_PLAYERS|RGF_MONSTERS,1)
+BPST D 0 A_JumpIf(z-floorz>0,"NewShot")
+BPST D 0 A_JumpIfInventory("CutterFlag", 245, "Death")
+loop
+NewShot:
+BPST D 0 A_SpawnItemEx("BondingPasteShotR", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+Goto Death 
+}
+}
+actor BondingBlobG : BondingBlob
+{
+translation "198:198=104:104", "192:192=138:138"
+states
+{
+Spawn:
+BPST D 0
+BPST D 1 
+BPST D 0
+Goto Spawn2
+Spawn2:
+BPST D 1 A_Stop
+Goto SlideWait
+SlideWait:
+BPST D 1 A_GiveInventory("CutterFlag", 1)
+BPST D 0 A_RadiusGive("BondingPasteFlagG",64,RGF_PLAYERS|RGF_MONSTERS,1)
+BPST D 0 A_JumpIf(z-floorz>0,"NewShot")
+BPST D 0 A_JumpIfInventory("CutterFlag", 245, "Death")
+loop
+NewShot:
+BPST D 0 A_SpawnItemEx("BondingPasteShotG", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+Goto Death 
+}
+}
+actor BondingBlobY : BondingBlob
+{
+translation "198:198=229:229", "192:192=214:214"
+states
+{
+Spawn:
+BPST D 0
+BPST D 1 
+BPST D 0
+Goto Spawn2
+Spawn2:
+BPST D 1 A_Stop
+Goto SlideWait
+SlideWait:
+BPST D 1 A_GiveInventory("CutterFlag", 1)
+BPST D 0 A_RadiusGive("BondingPasteFlagY",64,RGF_PLAYERS|RGF_MONSTERS,1)
+BPST D 0 A_JumpIf(z-floorz>0,"NewShot")
+BPST D 0 A_JumpIfInventory("CutterFlag", 245, "Death")
+loop
+NewShot:
+BPST D 0 A_SpawnItemEx("BondingPasteShotY", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM)
+Goto Death 
+}
+}
+
+//Flags
+actor BondingPasteFlag : PowerSpeed {Powerup.Duration 18 Speed 0.40}
+actor BondingPasteFlagB : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIfInventory("LightTeamFlag",1,"Nope")
+goto Pickup2
+Pickup2:
+TNT1 A 0 A_GiveInventory("BondingPasteFlag",1)
+stop
+Nope:
+TNT1 A 0
+stop
+}
+}
+actor BondingPasteFlagR : BondingPasteFlagB
+{
+states
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIfInventory("WilyTeamFlag",1,"Nope")
+goto Pickup2
+}
+}
+actor BondingPasteFlagG : BondingPasteFlagB
+{
+states
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIfInventory("CossackTeamFlag",1,"Nope")
+goto Pickup2
+}
+}
+actor BondingPasteFlagY : BondingPasteFlagB
+{
+states
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIfInventory("KingTeamFlag",1,"Nope")
+goto Pickup2
+}
+}

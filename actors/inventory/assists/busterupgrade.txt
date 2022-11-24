@@ -1,0 +1,438 @@
+actor BassUpgrade : BaseMM8BDMUseItem 10155
+{
+//$Category MM8BDM-Weapons
+//$Title Bass Upgrade
+//Inventory.RespawnTics 350
+//$Sprite WEA3A0
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_BASSBUSTER"
+Tag "$TAG_BASSUPGRADE"
+inventory.icon "BASSUP"
+Inventory.PickupSound "item/1up"
+Inventory.RespawnTics 350
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+WEA3 A 1
+loop
+Use:
+WEA2 Q 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",1)
+WEA3 A 0 A_GiveInventory("BassBuster",1)
+WEA3 A 0 A_SelectWeapon("BassBuster")
+stop
+}
+}
+
+actor ProtoUpgrade : BaseMM8BDMUseItem 10153
+{
+//$Category MM8BDM-Weapons
+//$Title Proto Upgrade
+//Inventory.RespawnTics 350
+//$Sprite WEA2Q0
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_PROTOBUSTER"
+Tag "$TAG_PROTOUPGRADE"
+inventory.icon "PROTUP"
+Inventory.PickupSound "item/1up"
+Inventory.RespawnTics 350
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+WEA2 Q 1
+Loop
+Use:
+WEA2 Q 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",2)
+WEA2 Q 0 A_GiveInventory("ProtoBuster",1)
+WEA2 Q 0 A_SelectWeapon("ProtoBuster")
+stop
+Death:
+TNT1 A 0
+Stop
+}
+}
+
+actor AdaptorUpgrade : BaseMM8BDMUseItem 10158
+{
+//$Category MM8BDM-Weapons
+//$Title Adaptor Upgrade
+//$Sprite WEA3P0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_SUPERADAPTOR"
+Tag "$TAG_ADAPTORUPGRADE"
+inventory.icon "ADAPSI"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+WEA3 P 1
+Loop
+Use:
+WEA2 Q 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",3)
+WEA3 A 0 A_GiveInventory("SuperadaptorWep",1)
+WEA3 A 0 A_SelectWeapon("SuperadaptorWep")
+stop
+Death:
+WEA3 P 1
+stop
+}
+}
+
+actor LaserBusterUpgrade : BaseMM8BDMUseItem 11100
+{
+//$Category MM8BDM-Weapons
+//$Title Laser Upgrade
+//$Sprite WEA4K0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_LASERBUSTER"
+Tag "$TAG_LASERBUSTERUPGRADE"
+inventory.icon "LASERSI"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+WEA4 K 1
+loop
+Use:
+ARRS I 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",4)
+ARRS I 0 A_GiveInventory("LaserBuster",1)
+ARRS I 0 A_SelectWeapon("LaserBuster")
+stop
+}
+}
+
+
+actor ArrowBusterUpgrade : BaseMM8BDMUseItem 11101
+{
+//$Category MM8BDM-Weapons
+//$Title Arrow Upgrade
+//$Sprite WEA4L0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_ARROWBUSTER"
+Tag "$TAG_ARROWBUSTERUPGRADE"
+inventory.icon "ARROWSH"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+WEA4 L 1
+loop
+Use:
+ARRS I 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",5)
+ARRS I 0 A_GiveInventory("ArrowBuster",1)
+ARRS I 0 A_SelectWeapon("ArrowBuster")
+stop
+}
+}
+
+actor DuoFistUpgrade : BaseMM8BDMUseItem 11102
+{
+//$Category MM8BDM-Weapons
+//$Title Duo Upgrade
+//$Sprite DUOFA0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_DUOFIST"
+Tag "$TAG_DUOFISTUPGRADE"
+inventory.icon "DUOHAND"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+DUOF A 1
+loop
+Use:
+DUOF A 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",6)
+DUOF A 0 A_GiveInventory("DuoFist",1)
+DUOF A 0 A_SelectWeapon("DuoFist")
+stop
+}
+}
+
+actor TrebleBoostUpgrade : BaseMM8BDMUseItem 10020
+{
+//$Category MM8BDM-Weapons
+//$Title Treble Upgrade
+//$Sprite TRBBI0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_TREBLEBOOST"
+Tag "$TAG_TREBLEBOOSTUPGRADE"
+inventory.icon "TREBBOO"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+TRBB I 1
+loop
+Use:
+TRBB I 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",7)
+TRBB I 0 A_GiveInventory("TrebleBoost",1)
+TRBB I 0 A_GiveInventory("TrebleFlightCounter",28)
+TRBB I 0 A_SelectWeapon("TrebleBoost")
+stop
+}
+}
+
+actor MegaArmUpgrade : BaseMM8BDMUseItem 10111
+{
+//$Category MM8BDM-Weapons
+//$Title Mega Arm
+//$Sprite MARMA0
+Inventory.RespawnTics 350
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "$PU_MEGAARM"
+Tag "$TAG_MEGAARMUPGRADE"
+inventory.icon "MARMWI"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
++INVBAR
+states
+{
+SpawnLoop:
+MARM A 1
+loop
+Use:
+TRBB I 0 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 0 A_TakeInventory("BusterGiven", 999)
+TNT1 A 0 A_GiveInventory("BusterGiven",8)
+TRBB I 0 A_GiveInventory("MegaArm",1)
+TRBB I 0 A_SelectWeapon("MegaArm")
+stop
+}
+}
+
+actor BusterGiven : Inventory 
+{
+Inventory.amount 1
+Inventory.maxamount 999
+}
+
+actor TakeBuster : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++AUTOACTIVATE
+States
+{
+SpawnLoop:
+TNT1 A 1
+Stop
+Use:
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 11, "KeepJoe")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 10, "KeepRevolver")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 9, "KeepMaestro")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 8, "KeepMegaArm")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 7, "KeepTreble")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 6, "KeepDuo")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 5, "KeepArrow")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 4, "KeepLaser")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 3, "KeepAdaptor")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 2, "KeepProto")
+TNT1 A 0 A_JumpIfInventory("BusterGiven", 1, "KeepBass")
+Goto Death
+KeepJoe:
+//TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepRevolver:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+//TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepMaestro:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+//TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepMegaArm:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+//TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepTreble:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+//TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepDuo:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+//TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepArrow:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+//TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepLaser:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+//TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepAdaptor:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+//TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepProto:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+//TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+KeepBass:
+TNT1 A 0 A_TakeInventory("JoeBuster",1)
+TNT1 A 0 A_TakeInventory("RevolverBuster",1)
+TNT1 A 0 A_TakeInventory("MaestroBuster",1)
+TNT1 A 0 A_TakeInventory("MegaArm", 1)
+TNT1 A 0 A_TakeInventory("TrebleBoost",1)
+TNT1 A 0 A_TakeInventory("ProtoBuster",1)
+TNT1 A 0 A_TakeInventory("MegaBuster",1)
+TNT1 A 0 A_TakeInventory("SuperadaptorWep",1)
+TNT1 A 0 A_TakeInventory("LaserBuster",1)
+TNT1 A 0 A_TakeInventory("ArrowBuster",1)
+TNT1 A 0 A_TakeInventory("DuoFist",1)
+//TNT1 A 0 A_TakeInventory("BassBuster",1)
+Goto Death
+Death:
+TNT1 A 0 A_TakeInventory("BusterGiven",999)
+stop
+}
+}

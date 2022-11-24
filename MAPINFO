@@ -1,0 +1,52 @@
+clearepisodes
+clearskills
+
+episode MAP01
+{
+name = "Story"
+}
+
+episode MAP03
+{
+name = "Encore!"
+}
+
+episode TRAINING
+{
+name = "Training"
+noskillmenu
+}
+
+episode BOTRUSH
+{
+name = "Bot Rush"
+noskillmenu
+}
+
+episode VCREDITS
+{
+name = "Credits"
+noskillmenu
+}
+
+skill easy
+{
+   SpawnFilter = easy 
+   name = "Easy"
+   textcolor = "green"
+   ACSReturn = 1
+   Key = 1
+   DoubleAmmoFactor = 1.0 // DO NOT CHANGE, SEE CMM FOR DETAILS
+   
+}
+
+skill normal
+{
+   SpawnFilter = normal 
+   name = "Normal"
+   textcolor = "cyan"
+   ACSReturn = 2
+   Key = 2
+   DefaultSkill
+   DoubleAmmoFactor = 1.0 // DO NOT CHANGE, SEE CMM FOR DETAILS
+}

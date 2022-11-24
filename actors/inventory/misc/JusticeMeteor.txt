@@ -1,0 +1,299 @@
+actor JusticeMeteorWep : BaseMM8BDMWep
+{
+//258
+	dropitem "JusticeMeteorWep"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 168
+    Weapon.SlotNumber 4
+    Inventory.Pickupmessage "$PU_JusticeMeteor"
+    Obituary "$OB_JusticeMeteor"
+    Tag "$TAG_JusticeMeteor"
+    weapon.ammotype "JusticeMeteorAmmo"
+    inventory.icon "JMETICON"
+    States
+    {
+    SpawnLoop:
+        JMET A -1
+        loop
+    Ready:
+        JMET B 0 ACS_ExecuteAlways(998,0,868)
+        JMET B 1 A_WeaponReady
+        goto Ready+1
+    Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        JMET B 1 A_SetTranslucent(1.0, 0)
+        Loop
+    Select:
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+        JMET B 1 
+        Loop
+    Fire:
+		JMET B 0 A_JumpIfNoAmmo("AltFire")
+		JMET B 0 A_GiveInventory("JusticeMeteorProtect", 1)
+        JMET B 0 ACS_NamedExecuteAlways("core_flyplayer",0,0,2)
+        JMET B 0 ACS_NamedExecuteAlways("core_stopplayer",0,0,1)
+		JMET B 0 A_PlaySoundEx("misc/sunstarbeamcharge", "Weapon")
+		JMET D 3 A_SpawnItemEx("JusticeMeteorSparkSpawner")
+		JMET E 4 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET F 3 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET G 2 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET H 1
+		JMET I 3
+		JMET M 3 ACS_ExecuteAlways(998,0,868,1)
+		JMET M 0 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET I 3 ACS_ExecuteAlways(998,0,258,1,7)
+		JMET M 3 ACS_ExecuteAlways(998,0,868,1)
+		JMET M 0 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET I 3 ACS_ExecuteAlways(998,0,258,1,7)
+		JMET M 3 ACS_ExecuteAlways(998,0,868,1)
+		JMET M 0 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET I 3 ACS_ExecuteAlways(998,0,258,1,7)
+		JMET M 3 ACS_ExecuteAlways(998,0,868,1)
+		JMET M 0 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET I 3 ACS_ExecuteAlways(998,0,258,1,7)
+		JMET M 3 ACS_ExecuteAlways(998,0,868,1)
+		JMET M 0 ACS_NamedExecuteAlways("StateChange",0,2)
+		JMET I 3 ACS_ExecuteAlways(998,0,258,1,7)
+        goto DashBegin
+    Altfire:
+		JMET B 0 A_JumpIfInventory("DuoPunchCooldown", 1, 6)
+        JMET B 0 A_PlaySoundEx("weapon/minchrgshot", "Weapon")
+        JMET B 0 A_FireCustomMissile("MidFist", 0, 0, 8, 0)
+        JMET J 2 A_GiveInventory("DuoPunchCooldown", 1)
+		JMET L 2
+		JMET K 2
+		JMET J 6
+		JMET B 1 A_Refire("Altfire")
+		JMET B 0 A_JumpIfInventory("IsBot", 1, "NoAmmo")
+		goto Ready+1
+    DashBegin:
+		JMET B 0 ACS_NamedExecuteAlways("core_stopplayer",0,0,0)
+		JMET B 0 ACS_NamedExecuteAlways("core_freezeplayer",0,0,1)
+		JMET B 0 A_StopSoundEx ("SoundSlot5")
+		JMET B 0 A_PlaySoundEx("misc/9thunder", "Weapon")
+        JMET B 0 A_TakeInventory("JusticeMeteorAmmo",4,TIF_NOTAKEINFINITE)
+        JMET H 1
+        JMET GFE 1 ACS_ExecuteAlways(998,0,868,1)
+		JMET B 0 A_SetTranslucent(0.0, 0)
+		JMET E 1 A_SpawnItemEx("JusticeMeteorFX",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
+    DashLoop:
+        TNT1 A 0 A_GiveInventory("JusticeMeteorSpeed", 1)
+        TNT1 A 1 A_FireCustomMissile("JusticeMeteorCheck", 0, 0, 0, -15)
+        TNT1 A 0 A_FireCustomMissile("JusticeMeteorDamager", 0, 0, 0, -20)
+		TNT1 A 0 A_JumpIfInventory("JusticeMeteorRecoil", 1, "DashStop")
+        TNT1 A 0 A_TakeInventory("JusticeMeteorAmmo", 1)
+        TNT1 A 0 A_Refire("DashStop")
+		TNT1 A 0 A_JumpIfNoAmmo("DashStop")
+		loop
+	DashStop:
+		JMET B 0 A_PlaySoundEx("weapon/breakdashimpact", "weapon")
+		JMET B 0 ACS_ExecuteAlways(998,0,868,1)
+		JMET B 0 A_SetTranslucent(1.0, 0)
+		JMET C 1 A_SpawnItemEx("JusticeMeteorExplosion",16,0,0)
+		JMET B 0 A_TakeInventory("BasicArmor", 1000)
+		JMET B 0 ACS_NamedExecuteAlways("core_flyplayer",0,0,0)
+        JMET B 0 ACS_NamedExecuteAlways("core_freezeplayer",0,0,0)
+        JMET B 0 A_ZoomFactor(1.0)
+		JMET G 0 A_TakeInventory("JusticeMeteorAmmo", 4)
+        JMET B 0 A_GiveInventory("JusticeMeteorRecoil", 1)
+		JMET CB 4
+        JMET B 10
+        goto Ready+1
+    NoAmmo:
+        JMET B 1 ACS_Execute(979,0)
+        goto Ready+1
+    }
+}
+
+actor JusticeMeteorRecoil : Powerup
+{
+    powerup.duration 10
+}
+
+actor JusticeMeteorAmmo : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 28
+    +INVENTORY.IGNORESKILL
+}
+
+actor JusticeMeteorSpeed : CustomInventory
+{
+    States
+    {
+    Pickup:
+        TNT1 A 0 A_CheckFloor("Floor")
+        TNT1 A 0 A_ChangeVelocity(60*cos(pitch), 0, 60*sin(-pitch), CVF_RELATIVE|CVF_REPLACE)
+        stop
+    Floor:
+        TNT1 A 0 A_ChangeVelocity(60*cos(pitch), 0, (60*sin(-pitch) > 0) * 60*sin(-pitch), CVF_RELATIVE|CVF_REPLACE)
+        stop
+    }
+}
+
+actor JusticeMeteorFX
+{
+    PROJECTILE
+	+NOCLIP
+	+NOINTERACTION
+	+THRUGHOST
+    height 32
+    radius 32
+    speed 50
+	scale 2.5
+    States
+    {
+    Spawn:
+        JMET QP 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
+        JMET Q 0 A_JumpIfInTargetInventory("JusticeMeteorRecoil", 1, "Death")
+        JMET P 0 A_JumpIfInTargetInventory("IsDead", 1, "Death")
+		JMET Q 0 A_SpawnItemEx("JusticeMeteorSparkFX",16,0,16)
+		loop
+		Death:
+		JMET Q 0
+		stop
+    }
+}
+
+actor JusticeMeteorDamager
+{
+    PROJECTILE
+	+RIPPER
+    Obituary "$OB_JusticeMeteor"
+    Damagetype "JusticeMeteor"
+    height 32
+    radius 32
+    speed 35
+    Damage (25)
+	scale 2.5
+    States
+    {
+    Spawn:
+		TNT1 A 0
+        TNT1 A 1 //A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
+		stop
+    }
+}
+
+actor JusticeMeteorCheck : FastProjectile
+{
+    PROJECTILE
+    Obituary "$OB_JusticeMeteor"
+    Damagetype "JusticeMeteor"
+    height 32
+    radius 18
+    speed 50
+    Damage (0)
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        stop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("JusticeMeteorQuake")
+        TNT1 A 0 A_GiveToTarget("JusticeMeteorRecoil", 1)
+        stop
+    }
+}
+
+actor JusticeMeteorQuake
+{
+    +NOINTERACTION
+	+NOCLIP
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 Radius_Quake(2, 4, 0, 2, 0)
+		TNT1 A 1
+		stop
+	}
+}
+
+actor JusticeMeteorProtect : BasicArmorPickup
+{
+Armor.Savepercent 75
+Armor.Saveamount 1000
+States
+{
+Spawn:
+JSHI V 1
+loop
+}
+}
+
+actor DuoPunchCooldown : Powerup
+{
+    powerup.duration -1
+}
+
+actor JusticeMeteorSparkFX
+{
+    PROJECTILE
+	+NOCLIP
+	+NOINTERACTION
+	+THRUGHOST
+	+CLIENTSIDEONLY
+    Obituary "$OB_JusticeMeteor"
+    Damagetype "JusticeMeteor"
+    height 32
+    radius 32
+    speed 10
+    Damage (0)
+	scale 5.0
+	translation "198:198=192:192"
+    States
+    {
+    Spawn:
+        INTQ ABCDEFGFEDCBA 2
+		stop
+    }
+}
+
+actor JusticeMeteorSparkSpawner
+{
+    PROJECTILE
+	+NOCLIP
+	+NOINTERACTION
+	+THRUGHOST
+	+CLIENTSIDEONLY
+    Obituary "$OB_JusticeMeteor"
+    Damagetype "JusticeMeteor"
+    height 32
+    radius 32
+    speed 10
+    Damage (0)
+	scale 5.0
+	translation "198:198=192:192"
+	reactiontime 49
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
+		TNT1 A 1 A_SpawnItemEX("JusticeMeteorSparkFX",0,0,0,4,15,4,random(0,360))
+		TNT1 A 0 A_Countdown
+		loop
+    }
+}
+
+actor JusticeMeteorExplosion : PharaohShot3
+{
+PROJECTILE
+Obituary "$OB_JusticeMeteor"
+Damagetype "JusticeMeteor"
++NOCLIP
+damage (0)
+radius 16
+height 16
+Scale 5.0
+States
+{
+Spawn:
+TNT1 E 0
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+TNT1 A 0 A_Explode(45,128,0,0,16)
+JMET LMNO 2
+stop
+}
+}

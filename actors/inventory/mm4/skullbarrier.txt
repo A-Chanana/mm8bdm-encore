@@ -1,0 +1,386 @@
+actor SkullBarrierWep : BaseMM8BDMWep 10065
+{
+//$Category MM8BDM-Weapons
+//$Title Skull Barrier
+//$Sprite WEA2O0
+dropitem "SkullBarrierWep"
+Inventory.Pickupmessage "$PU_SKULLBARRIER"
+inventory.pickupsound "weapon/weaponup"
+Weapon.AmmoUse 7
+Weapon.AmmoGive 28
+Weapon.SlotNumber 7
+Obituary "$OB_SKULLBARRIER"
+Tag "$TAG_SKULLBARRIER"
+weapon.ammotype "SkullBarrierAmmo"
+inventory.icon "SKLBSI"
+States
+{
+SpawnLoop:
+WEA2 O -1
+loop
+Ready:
+SKLA A 0 ACS_ExecuteAlways(998,0,34)
+SKLA A 0 A_JumpIfInventory("SkullShieldCheck", 1, "ShieldActivateSwitch")
+SKLA A 1 A_WeaponReady
+Goto Ready+1
+ShieldActivateSwitch:
+SKLA IJ 2 A_WeaponReady(WRF_NOFIRE)
+SKLA K 5 A_WeaponReady(WRF_NOFIRE)
+goto ShieldActive
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SKLA A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SKLA A 1 A_Raise
+Loop
+Fire:
+SKLA A 0 A_JumpIfInventory("SkullBarrierCooldown", 1, "NoAmmo")
+SKLA A 0 A_JumpIfInventory("SkullShieldCheck", 1, "ShieldActive")
+SKLA A 0 A_JumpIfInventory("SkullBarrierProtection", 1, "NoAmmo")
+SKLA A 0 A_JumpIfNoAmmo("NoAmmo")
+SKLA A 0 A_GiveInventory("SkullShieldCheck", 130)
+SKLA A 0 A_PlaySoundEX("weapon/skullactivate","Weapon")
+SKLA A 0 A_TakeInventory("SkullBarrierAmmo", 7, TIF_NOTAKEINFINITE)
+SKLA A 0 A_SpawnItemEx("SkullBarrierWatcher")
+SKLA A 0 A_SpawnItemEx("SkullBarrierWarper")
+SKLA A 0 //A_GiveInventory("SkullBarrierProtection", 1)
+SKLA A 0 ACS_ExecuteAlways(982, 0, 1) // protection script
+SKLA A 0 A_JumpIfInventory("IsSpecialBot", 1, "SkullManBot")
+SKLA A 0 A_JumpIfInventory("IsBot", 1, "ScrewBot")
+goto ShieldActivate
+ShieldActivate:
+SKLA IJ 2
+SKLA K 5
+ShieldActive:
+SKLA K 1 A_WeaponReady
+SKLA K 0 A_JumpIfInventory("SkullShieldCheck", 1, "ShieldActive")
+Goto ShieldEnd
+ShieldEnd:
+SKLA K 0 A_TakeInventory("SkullShieldCheck", 999)
+SKLA JJIIAA 1
+SKLA A 4
+Goto Ready+1
+NoAmmo:
+SKLA A 1 ACS_Execute(979,0)
+Goto Ready+1
+SkullManBot:
+BUTS B 1 A_GiveInventory("RevolverBusterSkull",1)
+BUST B 1 A_SelectWeapon("RevolverBusterSkull")
+goto Ready+2
+ScrewBot:
+BUTS B 1 A_GiveInventory("MegaBuster",1)
+BUST B 1 A_SelectWeapon("MegaBuster")
+goto Ready+2
+}
+}
+
+actor SkullBarrierAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor SkullShieldCheck : Inventory
+{
+inventory.amount 1
+inventory.maxamount 130
+}
+
+actor SkullShieldNot : SkullShieldCheck {}
+
+actor SkullBreakSound : CustomInventory
+{
+	+INVENTORY.AUTOACTIVATE
+	States
+	{
+		Use:
+			TNT1 A 0 A_PlaySoundEx("weapon/skullcounter", "body")
+			stop
+	}
+}
+
+actor SkullBarrierWatcher
+{
+	+MISSILE
+	+NOINTERACTION
+	+DONTBLAST
+	+NOGRAVITY
+	-SOLID
+	Height 1
+	Radius 1
+	var int user_countdown;
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 AA 1 //A_GiveToTarget("SkullBarrierFX1",1)
+			TNT1 A 0 A_TakeFromTarget("SkullShieldCheck",1)
+			TNT1 A 0 A_SetUserVar("user_countdown", user_countdown + 1)
+			TNT1 A 0 A_JumpIfInTargetInventory("BasicArmor", 1, "DeathSilent")
+			TNT1 A 0 A_JumpIfInTargetInventory("ShieldCheck", 1, "DeathSilent")
+			TNT1 A 0 A_JumpIf(user_countdown >= 130, "DeathSilent")
+			TNT1 A 0 A_JumpIfInTargetInventory("ShieldHits", 1, "Spawn")
+			Goto Death
+		Death:
+			TNT1 A 0 A_GiveToTarget("SkullBreakSound", 1)
+		DeathSilent:
+			TNT1 A 0 A_TakeFromTarget("SkullShieldCheck", 999)
+			TNT1 A 0 A_TakeFromTarget("ShieldHits", 999)
+			TNT1 A 0 A_GiveToTarget("SkullBarrierProtection", 1)
+			TNT1 A 0 A_GiveToTarget("SkullBarrierCooldown", 1)
+			stop
+		End:
+			TNT1 A 0
+			TNT1 A 1 A_TakeFromTarget("SkullShieldCheck", 1)
+			stop
+	}
+}
+
+actor SkullBarrierWarper : BaseShieldWarper
+{
+	+BRIGHT
+	States
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 A 0 ACS_NamedExecuteAlways("core_shieldwarper_skull", 0)
+	TNT1 A 0 A_Jump(256, "Shield")
+	Goto Shield
+	Shield:
+	SKLC AABBCCDDEEFFGGHH 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_INTERPOLATE|WARPF_NOCHECKPOSITION)
+	loop
+	}
+}
+
+/*
+actor SkullBarrierFX1 : CustomInventory
+{
+	+INVENTORY.AUTOACTIVATE
+	States
+	{
+		Use:
+			/*TNT1 A 0 A_JumpIfInventory("SkullShieldNot", 1, "End")
+			TNT1 A 0 A_GiveInventory("SkullBarrierProtection", 1)
+			TNT1 A 0 A_SpawnItemEx("SkullShield", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			TNT1 A 0 A_Jump(256, "Frame")
+			Goto Frame
+		Frame:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier1", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+		End:
+			TNT1 A 0
+			stop
+	}
+}
+
+actor SkullBarrierFX2 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier2", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrierFX3 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier3", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrierFX4 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier4", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrierFX5 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier5", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrierFX6 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier6", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrierFX7 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier7", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrierFX8 : SkullBarrierFX1
+{
+	States
+	{
+		Use:
+			TNT1 A 0 A_SpawnItemEx("SkullBarrier8", 0, 0, 0, momx, momy, momz, 0, SXF_ABSOLUTEMOMENTUM, 0)
+			stop
+	}
+}
+
+actor SkullBarrier1
+{
+scale 2.5
+-SOLID
++NOGRAVITY
++CLIENTSIDEONLY
++NOTIMEFREEZE
+States
+{
+Spawn:
+SKLC A 1
+SKLC A 1
+stop
+}
+}
+
+actor SkullBarrier2 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC B 1
+SKLC B 1
+stop
+}
+}
+
+actor SkullBarrier3 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC C 1
+SKLC C 1
+stop
+}
+}
+
+actor SkullBarrier4 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC D 1
+SKLC D 1
+stop
+}
+}
+
+actor SkullBarrier5 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC E 1
+SKLC E 1
+stop
+}
+}
+
+actor SkullBarrier6 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC F 1
+SKLC F 1
+stop
+}
+}
+
+actor SkullBarrier7 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC G 1
+SKLC G 1
+stop
+}
+}
+
+actor SkullBarrier8 : SkullBarrier1
+{
+States
+{
+Spawn:
+SKLC H 1
+SKLC H 1
+stop
+}
+}
+
+*/
+
+// LEGACY
+actor SkullBarrierGiver : CustomInventory
+{
+//$Category MM8BDM-Weapons
+//$Title Skull Barrier
+Inventory.Pickupmessage "$PU_SKULLBARRIER"
+inventory.pickupsound "weapon/weaponup"
+Inventory.RespawnTics 1800
+scale 2.0
+states
+{
+Spawn:
+WEA2 O 1
+loop
+Pickup:
+WEA2 O 0 A_JumpIfInventory("SkullBarrierWep",1,"Failure")
+WEA2 O 0 A_GiveInventory("SkullBarrierWep")
+stop
+Failure:
+WEA2 O 1
+fail
+}
+}
+
+actor SkullBarrierProtection : PowerProtection 
+{
+powerup.duration 10
+damagefactor "NORMAL", 0.0
+damagefactor "CRUSH", 1.0
+damagefactor "TELEFRAG", 1.0
+damagefactor "LaserTrident", 1.0
+}
+
+actor SkullBarrierCooldown : PowerProtection
+{
+damagefactor "Falling", 0.0
+damagefactor "Fire", 0.0
+damagefactor "Drowning", 0.0
+damagefactor "Slime", 0.0
+damagefactor "Spiney", 0.0
+damagefactor "Ice", 0.0
+powerup.duration 160
+}

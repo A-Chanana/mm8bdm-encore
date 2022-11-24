@@ -1,0 +1,59 @@
+actor EPlantManGrass : PlantManGrass 20548
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(128,"Spawn2")
+EGRA A -1
+stop
+Spawn2:
+EGRA B -1
+stop
+}
+}
+
+actor EPlantBugSpawner : PlantBugSpawner 20549
+{
+//$Category MM8BDME-Props
+States
+{
+Spawn:
+TNT1 A 5 A_Look
+loop
+See:
+TNT1 A 40
+TNT1 A 0 A_Jump(8,"BugSpawn1")
+TNT1 A 0 A_Jump(8,"BugSpawn2")
+TNT1 A 0 A_Jump(8,"BugSpawn3")
+loop
+BugSpawn1:
+TNT1 A 1 A_CustomMissile("EPlantBug1",random(10,110),0,0,2,0)//A_SpawnItemEx("PlantBug1",0,0,random(10,110),10,0,0,0)
+Goto See
+BugSpawn2:
+TNT1 A 1 A_CustomMissile("EPlantBug2",random(10,110),0,0,2,0)
+Goto See
+BugSpawn3:
+TNT1 A 1 A_CustomMissile("EPlantBug3",random(10,110),0,0,2,0)
+Goto See
+}
+}
+
+actor EPlantBug1 : PlantBug1
+{
+//$Category MM8BDME-Props
+Translation "193:193=176:176"
+}
+
+actor EPlantBug2 : PlantBug2
+{
+//$Category MM8BDME-Props
+Translation "58:58=3:3","58:58=3:3"
+}
+
+actor EPlantBug3 : PlantBug3
+{
+//$Category MM8BDME-Props
+Translation "104:104=40:40","216:216=106:106"
+}

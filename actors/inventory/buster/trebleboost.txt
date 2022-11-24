@@ -1,0 +1,203 @@
+actor TrebleBoost : BaseMM8BDMWep
+{
+dropitem "TrebleBoostUpgrade"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 28
+Weapon.SlotNumber 1
+Inventory.Pickupmessage "$PU_TREBLEBOOST"
+Obituary "$OB_TREBLEBOOST"
+Tag "$TAG_TREBLEBOOST"
+weapon.ammotype "BusterAmmo"
+inventory.icon "NULLICON"
+Dropitem ""
+States
+{
+SpawnLoop:
+TRBB I 1
+stop
+Ready:
+TREB B 0
+TREB B 0 ACS_ExecuteAlways(998,0,178)
+TREB B 2 A_GiveInventory("TrebleBoostActive", 1)
+TREB B 0 A_SpawnItemEx("TrebleBoostWings",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
+TREB B 0 A_JumpIfInventory("BusterGiven",1,"TakeBusters")
+Goto Ready2
+TakeBusters:
+TNT1 A 0 A_GiveInventory("TakeBuster",1)
+Goto Ready2
+Ready2:
+TREB B 1 A_WeaponReady
+Loop
+Deselect:
+TREB B 0 A_TakeInventory("TrebleBoostActive", 1)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+TREB B 1 A_Lower
+Goto Deselect+1
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+TREB B 1 A_Raise
+Loop
+Hold:
+TREB C 0
+TREB C 0 A_JumpIfNoAmmo("NoAmmo")
+TREB C 0 A_JumpIfInventory("TrebleFlightFlag",1,"FireR")
+Goto NoAmmo
+Fire:
+TREB C 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+TREB C 0 A_FireCustomMissile("BoostShot",-15,0,8,0)
+TREB C 0 A_FireCustomMissile("BoostShot",15,0,8,0)
+TREB C 0 A_FireCustomMissile("BoostShot",0,0,8,0)
+TREB DDDCCC 1
+TREB B 6
+goto Ready2
+}
+}
+
+actor TrebleBoostJet : PowerUp
+{
+    powerup.duration 10
+}
+
+actor TrebleBoostDelay : PowerUp
+{
+    powerup.duration 40
+}
+
+actor TrebleBoostActive : Once {}
+
+actor TrebleBoostAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor BoostShot : FastProjectile
+{
+PROJECTILE
++FORCEXYBILLBOARD
++BRIGHT
+damagetype "TrebleBoost"
+Obituary "$OB_TREBLEBOOST"
+Speed 64
+Damage (10)
+Radius 5
+Height 5
+scale 2.5
+States
+{
+Spawn:
+BASB A 1
+loop
+}
+}
+
+actor TrebleFlightFlag : Once {}
+
+actor TrebleFlightCounter : Inventory
+{
+inventory.amount 1
+inventory.maxamount 28
+}
+
+actor TrebleBoostWings : BaseShieldWarper
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("core_shieldwarper", 0, 1)
+		TNT1 A 0 A_Jump(256, "Shield")
+		Goto Shield
+	Shield:
+        TREB G 1 A_Warp(AAPTR_TARGET, -12, 0, 18, 0, WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION)
+	Disabled:
+        TREB G 0 A_JumpIfInTargetInventory("TrebleBoostJet", 1, "Smoke")
+        TREB G 0 A_JumpIfInTargetInventory("TrebleBoostActive", 1,"Shield")
+		TREB G 1 A_Warp(AAPTR_TARGET, -12, 0, 18, 0, WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION)
+        loop
+    Smoke:
+        TREB G 0 A_SpawnItemEx("TrebleBoostTrail", 0, 18, 0, 0, 0, -5)
+        TREB G 0 A_SpawnItemEx("TrebleBoostTrail", 0, -16, 0, 0, 0, -5)
+        TREB FE 1 bright A_Warp(AAPTR_TARGET, -12, 0, 18, 0, WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION)
+        goto Disabled
+	}
+}
+
+actor TrebleBoostTrail
+{
+    +NOINTERACTION
+    +NOGRAVITY
+    +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
+    -SOLID
+    +BRIGHT
+    scale 2.5
+    height 0
+    radius 0
+    States
+    {
+    Spawn:
+        MMFX ZBCDE 1
+        stop
+    }
+}
+
+
+// LEGACY
+
+
+actor TrebleBoostTeleport
+{
+Radius 8
+Height 8
+scale 2.5
++NOINTERACTION
+PROJECTILE
++DONTBLAST
+states
+{
+Spawn:
+TFOG A 7
+stop
+}
+}
+
+
+
+actor TrebleBoostWatcher
+{
+Height 0
+Radius 0
++NOINTERACTION
++NOGRAVITY
++MISSILE
+States
+{
+Spawn:
+TNT1 A 0 
+TNT1 A 0 A_GiveToTarget("FlyActivate", 1)
+Goto TakeAmmo
+TakeAmmo:
+TNT1 A 0 A_TakeFromTarget("TrebleBoostAmmo",1,TIF_NOTAKEINFINITE)
+TNT1 A 0 A_TakeInventory("CutterFlag", 10)
+Goto Spawn2
+Spawn2:
+TNT1 A 1 A_GiveInventory("CutterFlag", 1)
+TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
+TNT1 A 0 A_JumpIfInventory("CutterFlag", 10, "TakeAmmo")
+TNT1 A 0 A_JumpIfInTargetInventory("TrebleBoostAmmo",1,1)
+Goto Death
+TNT1 A 0 A_JumpIfInTargetInventory("TrebleFlightFlag",1,"Spawn2")
+Goto Death
+Death:
+TNT1 A 0 A_TakeFromTarget("TrebleFlightFlag",1)
+TNT1 A 0 A_GiveToTarget("FlyDeActivate", 1)
+stop
+}
+}
+
+actor TrebleBoostStart : TrebleBoost
+{
+dropitem ""
+}

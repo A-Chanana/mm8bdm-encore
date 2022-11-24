@@ -1,0 +1,183 @@
+actor Enc_MagmaPoolDetect_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_SpawnItemEx("Enc_MagmaPoolDetect")
+stop
+}
+}
+
+actor Enc_MagmaPoolDetect
+{
+PROJECTILE
++NOINTERACTION
++DONTBLAST
+states
+{
+Spawn:
+TNT1 A 0 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
+TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("core_targetexists")==0,"Exit")
+TNT1 A 1 A_JumpIf(z < 1,"DoTheThing")
+loop
+DoTheThing:
+TNT1 A 0 A_GiveToTarget("Enc_MagmaBounceHarm",1)
+TNT1 A 0 A_GiveToTarget("Enc_MagmaSmokeMaker",1)
+TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(975,0)==2,2)
+TNT1 A 8
+goto Spawn
+TNT1 A 8 A_SpawnItemEx("Enc_MagmaDamageStacker")
+goto Spawn
+Exit:
+TNT1 A 0
+stop
+}
+}
+
+actor Enc_MagmaDamageStacker
+{
+PROJECTILE
++NOINTERACTION
++DONTBLAST
+states
+{
+Spawn:
+TNT1 A 1
+TNT1 A 0 A_JumpIfInTargetInventory("Enc_MagmaDamageStack4", 1, 5)
+TNT1 A 0 A_JumpIfInTargetInventory("Enc_MagmaDamageStack3", 1, 5)
+TNT1 A 0 A_JumpIfInTargetInventory("Enc_MagmaDamageStack2", 1, 5)
+TNT1 A 0 A_JumpIfInTargetInventory("Enc_MagmaDamageStack", 1, 5)
+TNT1 A 0 A_GiveToTarget("Enc_MagmaDamageStack",1)
+stop
+TNT1 A 0 A_GiveToTarget("Enc_MagmaDamageStack5",1)
+TNT1 A 0 A_GiveToTarget("Enc_MagmaDamageStack4",1)
+TNT1 A 0 A_GiveToTarget("Enc_MagmaDamageStack3",1)
+TNT1 A 0 A_GiveToTarget("Enc_MagmaDamageStack2",1)
+TNT1 A 0 A_GiveToTarget("Enc_MagmaDamageStack",1)
+stop
+}
+}
+
+Actor Enc_MagmaSmokeMaker : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("Enc_MagmaFloorCheck",0,0,0)
+stop
+No:
+TNT1 A 0
+stop
+}
+}
+
+actor Enc_MagmaFloorCheck
+{
+PROJECTILE
++NOINTERACTION
++DONTBLAST
+reactiontime 118
+states
+{
+Spawn:
+TNT1 A 0 
+TNT1 AAAA 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
+Spawn2:
+TNT1 A 1 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
+TNT1 A 0 A_JumpIfInventory("RushJetCounter", 1, "Death")
+TNT1 A 0 A_JumpIfInventory("RushMarineCounter", 1, "Death")
+TNT1 A 0 A_GiveToTarget("Enc_MagmaSmokeSpawn",1)
+TNT1 A 0 A_Countdown
+loop
+Death:
+TNT1 A 0
+stop
+}
+}
+
+Actor Enc_MagmaSmokeSpawn : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIfInventory("Enc_MagmaSmokeDelay",1,"No")
+TNT1 A 0 A_SpawnItemEx("Enc_MagmaSmokeFX",-4,0,8)
+TNT1 A 0 A_GiveInventory("Enc_MagmaSmokeDelay",1)
+stop
+No:
+TNT1 A 0
+stop
+}
+}
+
+actor Enc_MagmaSmokeDelay : Powerup {Powerup.Duration 4}
+
+actor Enc_MagmaSmokeFX
+{
++FORCEYBILLBOARD
++NOGRAVITY
++NOINTERACTION
++CLIENTSIDEONLY
+scale 4.5
+translation "210:210=5:5"
+States
+{
+Spawn:
+MTLK EFGHIJ 4
+stop
+}
+}
+
+Actor Enc_MagmaBounceHarm : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(975,0)==2,"LMSHitbox")
+TNT1 A 0 A_SpawnItemEx("Enc_MagmaDamageHbox")
+stop
+LMSHitbox:
+TNT1 A 0 A_SpawnItemEx("Enc_MagmaDamageHbox_LMS")
+stop
+}
+}
+
+actor Enc_MagmaDamageHbox
+{
+-SOLID
++NOGRAVITY
++NOINTERACTION
+damagetype "Fire"
+mass 30
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_ClearTarget
+TNT1 A 0 A_Explode(mass,2,0,0,2)
+TNT1 A 1
+stop
+}
+}
+
+actor Enc_MagmaDamageHbox_LMS : Enc_MagmaDamageHbox
+{
+mass 5
+}
+
+actor Enc_MagmaDamageStack : PowerProtection
+{
+Powerup.Duration 118
+DamageFactor "Fire", 2.0
+}
+
+actor Enc_MagmaDamageStack2 : Enc_MagmaDamageStack{}
+
+actor Enc_MagmaDamageStack3 : Enc_MagmaDamageStack{}
+
+actor Enc_MagmaDamageStack4 : Enc_MagmaDamageStack{}
+
+actor Enc_MagmaDamageStack5 : Enc_MagmaDamageStack{}
