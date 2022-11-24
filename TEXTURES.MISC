@@ -1,0 +1,7 @@
+graphic M_DOOM, 1000, 1000
+{
+	Offset 40, 0
+    XScale 1.5
+    YScale 1.5
+    Patch MEGAMAN, 0, 0
+}

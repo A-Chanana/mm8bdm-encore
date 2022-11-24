@@ -23,7 +23,7 @@ States
 		EACI D 1 A_CheckFloor("Death")
 		loop
 	Death:
-		EACI E 6 A_PlaySoundEx("misc/splash","Voice")
+		EACI E 6 A_PlaySoundEx("misc/oil","Voice")
 		EACI F 6
 		stop
 	}
