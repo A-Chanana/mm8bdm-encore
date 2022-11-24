@@ -107,7 +107,7 @@ translation "208:208=87:87", "216:220=178:178"
 damagetype "OnslaughtGatling"
 PROJECTILE
 Speed 50
-damage (11)
+damage (13)
 Obituary "$OB_ONSLAUGHTGATLING"
 Height 8
 Radius 8
