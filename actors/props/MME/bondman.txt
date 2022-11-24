@@ -24,7 +24,7 @@ States
 		ACID D 1 A_CheckFloor("Death")
 		loop
 	Death:
-		ACID E 3 A_PlaySoundEx("misc/oil","Voice")
+		ACID E 3 //A_PlaySoundEx("misc/oil","Voice")
 		ACID EEEE 0 A_SpawnItemEx("GlueDroppedFX",0,0,0,random(-10,10),random(-10,10),random(5,10),random(0,360))
 		stop
 	}
