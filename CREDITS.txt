@@ -1,0 +1,44 @@
+== General ==
+- Original SkirmishBots code by Beed28, modified by A-Chan.
+- Original DOS Reborn wepreplace code by Trillster, modified by A-Chan.
+- Encore texture toggle by Trillster.
+- General bot weapon AI improvements by A-Chan.
+- Encore gamemodes by A-Chan.
+- Encore mapcard code by MegaVile and A-Chan.
+
+== Skins ==
+- Clock Man skin by Universal22.
+- Bullet Man skin by A-Chan.
+- Bond Man skin by Seafra Yeager.
+
+== Bots ==
+- Bullet Man botchat by Dedede Man.
+- Clock Man botchat by Fr3ak.
+- Stove Man botchat by Dedede Man.
+- Aircon Man botchat by Fr3ak.
+- Bond Man botchat by Scott and MegaVile.
+
+== Weapons ==
+- General vanilla balance changes by A-Chan.
+- Deep Digger Saxton Hale rework by MegaVile.
+- Homing Sniper Hyperfighting rework by Messatsu.
+
+- Maestro Buster Adaptor by A-Chan.
+- Revolver Buster Adaptor by A-Chan.
+- Joe Buster Adaptor by A-Chan.
+- Berserker Rush by MegaVile, sprites from Classes.
+- Shield Spiral by MegaVile.
+- Restriction Ring by MegaVile.
+- Onslaught Gatling by MegaVile.
+- Justice Meteor by A-Chan.
+- Royal Spin by MegaVile.
+- Bonding Paste by MegaVile, sprites by A-Chan.
+- Bullet Vulcan by A-Chan.
+- Brass Bullet by Fr3ak, sprites by A-Chan.
+- Time Switch by A-Chan.
+- Time Bomb by Great Glass, sprites by A-Chan.
+- Flame Shower by Great Glass, sprites by A-Chan.
+- Flame Mixer by A-Chan.
+- Barrier Wind by A-Chan.
+- Trailspark Needle by MegaVile and A-Chan.
+- Cardinal Ring by MegaVile, sprites by A-Chan.
