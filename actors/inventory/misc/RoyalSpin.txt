@@ -15,7 +15,7 @@ Spawn:
 RSPN Z 1
 loop
 Ready:
-RYLS A 0 ACS_ExecuteAlways(998,0,928)
+RYLS A 0 ACS_ExecuteAlways(998,0,259)
 RYLS A 1 A_WeaponReady
 Goto Ready+1
 Deselect:

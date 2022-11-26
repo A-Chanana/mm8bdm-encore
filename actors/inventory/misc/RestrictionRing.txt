@@ -15,7 +15,7 @@ Spawn:
 RRNG Z 1
 loop
 Ready:
-RRNG A 0 ACS_ExecuteAlways(998,0,810)
+RRNG A 0 ACS_ExecuteAlways(998,0,262)
 RRNG A 1 A_WeaponReady
 Goto Ready+1
 Deselect:

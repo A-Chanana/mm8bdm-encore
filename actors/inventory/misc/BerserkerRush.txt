@@ -15,7 +15,7 @@ Spawn:
 BZRR Z 1
 loop
 Ready:
-BZRR A 0 ACS_ExecuteAlways(998,0,808)
+BZRR A 0 ACS_ExecuteAlways(998,0,260)
 BZRR A 1 A_WeaponReady
 Goto Ready+1
 Deselect:

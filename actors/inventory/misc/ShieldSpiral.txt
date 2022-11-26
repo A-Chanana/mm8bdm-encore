@@ -15,7 +15,7 @@ actor ShieldSpiralWep : BaseMM8BDMWep
 		SSPI Z -1
 		loop
     Ready:
-		SSPI I 0 ACS_ExecuteAlways(998,0,257)
+		SSPI I 0 ACS_ExecuteAlways(998,0,261)
 		SSPI I 1 A_WeaponReady
 		Goto Ready+1
     Deselect:

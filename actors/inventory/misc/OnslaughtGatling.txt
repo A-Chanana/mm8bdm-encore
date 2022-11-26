@@ -15,7 +15,7 @@ Spawn:
 ONSG Z 1
 loop
 Ready:
-ONSG A 0 ACS_ExecuteAlways(998,0,811)
+ONSG A 0 ACS_ExecuteAlways(998,0,263)
 ONSG A 1 A_WeaponReady
 Goto Ready+1
 Deselect:
