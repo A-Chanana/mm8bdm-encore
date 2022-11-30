@@ -1,0 +1,57 @@
+actor ESoccerBallPlatform : SoccerBallPlatform  20828
+{
+//$Category MM8BDME-Interactive Props
+//$Title ESoccer Ball
+states
+{
+	Death:
+	STKB A 0 A_SpawnItemEx("ESoccerBallPlatformRising",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH)
+	stop
+}
+}
+
+actor ESoccerBallPlatformRising : SoccerBallPlatformRising
+{
+states
+{
+	Death:
+	STKB A 1 A_SpawnItemEx("ESoccerBallPlatform", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH)
+	stop
+}
+}
+
+actor ETheKeeper : TheKeeper 21761
+{
+//$Category MM8BDME-Props
+}
+
+actor EMechaPitchan : MechaPitchan 20832
+{
+//$Category MM8BDME-Props
+radius 32
+height 32
+renderstyle none
++NOINTERACTION
+states
+{
+Spawn:
+MPIT A 0
+MPIT A 1 A_Jump(256, "Blue", "Orange")
+Blue:
+MPIT A 1 A_SpawnItemEx("EBluePitchan")
+stop
+Orange:
+MPIT A 1 A_SpawnItemEx("EOrangePitchan")
+stop
+}
+}
+
+actor EBluePitchan : BluePitchan
+{
+translation "192:192=4:4", "198:198=71:71"
+}
+
+actor EOrangePitchan : BluePitchan
+{
+translation "192:192=4:4", "198:198=172:172"
+}

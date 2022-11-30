@@ -29,6 +29,7 @@
 #include "actors/Props/MME9/esplashwoman.txt"
 #include "actors/Props/MME9/egalaxyman.txt"
 #include "actors/Props/MME9/emagmaman.txt"
+#include "actors/Props/MME10/estrikeman.txt"
 #include "actors/Props/MME10/esolarman.txt"
 #include "actors/Props/MMEB/emuseum.txt"
 #include "actors/Props/MMEV/evenus.txt"
