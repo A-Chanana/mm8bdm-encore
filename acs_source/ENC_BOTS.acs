@@ -1,8 +1,11 @@
 #library "encbots"
 #include "zcommon.acs"
 
-//Special Bots
-//Ported partially from Skirmish Bots
+////////
+// Special Bots
+// Ported partially from Skirmish Bots
+// Grants weapons, colors, and some AI changes to bots
+////////
 
 #DEFINE SUPERADAPTOR 77
 #DEFINE TREBLEBOOST 178
@@ -224,98 +227,97 @@ str EnemyInfo[MAXCHARACTERS][3] = {
 {"DangerWrapWep", "burstman",  BURSTMAN},			//50
 {"ThunderBoltWep", "cloudman",  CLOUDMAN},			//51
 {"WildCoilWep", "springman",  SPRINGMAN},			//52
-{"SlashClawWep", "slashman (rm7fc)",  SLASHMAN},	//53
-{"SlashClawWep", "slashman",  SLASHMAN},			//54
-{"NoiseCrushWep", "shademan",  SHADEMAN},			//55
-{"ScorchWheelWep", "turboman",  TURBOMAN},			//56
+{"SlashClawWep", "slashman",  SLASHMAN},			//53
+{"NoiseCrushWep", "shademan",  SHADEMAN},			//54
+{"ScorchWheelWep", "turboman",  TURBOMAN},			//55
 
-{"TenguBladeWep", "tenguman",  TENGUMAN},			//57
-{"AstroCrushWep", "astroman",  ASTROMAN},			//58
-{"FlameSwordWep", "swordman",  SWORDMAN},			//59
-{"ThunderClawWep", "clownman",  CLOWNMAN},			//60
-{"HomingSniperWep", "searchman",  SEARCHMAN},		//61
-{"IceWaveWep", "frostman",  FROSTMAN},				//62
-{"FlashBombWep", "grenademan",  GRENADEMAN},		//63
-{"WaterBalloonWep", "aquaman",  AQUAMAN},			//64
+{"TenguBladeWep", "tenguman",  TENGUMAN},			//56
+{"AstroCrushWep", "astroman",  ASTROMAN},			//57
+{"FlameSwordWep", "swordman",  SWORDMAN},			//58
+{"ThunderClawWep", "clownman",  CLOWNMAN},			//59
+{"HomingSniperWep", "searchman",  SEARCHMAN},		//60
+{"IceWaveWep", "frostman",  FROSTMAN},				//61
+{"FlashBombWep", "grenademan",  GRENADEMAN},		//62
+{"WaterBalloonWep", "aquaman",  AQUAMAN},			//63
 
-{"LightningBoltWep", "dynamoman",  DYNAMOMAN},		//65
-{"IceWallWep", "coldman",  COLDMAN},				//66
-{"SpreadDrillWep", "groundman",  GROUNDMAN},		//67
-{"RemoteMineWep", "pirateman",  PIRATEMAN},			//68
-{"WaveBurnerWep", "burnerman",  BURNERMAN},			//69
-{"MagicCardWep", "magicman",  MAGICMAN},			//70
+{"LightningBoltWep", "dynamoman",  DYNAMOMAN},		//64
+{"IceWallWep", "coldman",  COLDMAN},				//65
+{"SpreadDrillWep", "groundman",  GROUNDMAN},		//66
+{"RemoteMineWep", "pirateman",  PIRATEMAN},			//67
+{"WaveBurnerWep", "burnerman",  BURNERMAN},			//68
+{"MagicCardWep", "magicman",  MAGICMAN},			//69
 
-{"ConcreteShotWep", "concreteman",  CONCRETEMAN},	//71
-{"TornadoBlowWep", "tornadoman",  TORNADOMAN},		//72
-{"LaserTridentWep", "splashwoman",  SPLASHWOMAN},	//73
-{"PlugBallWep", "plugman",  PLUGMAN},				//74
-{"JewelSatelliteWep", "jewelman",  JEWELMAN},		//75
-{"HornetChaserWep", "hornetman",  HORNETMAN},		//76
-{"MagmaBazookaWep", "magmaman",  MAGMAMAN},			//77
-{"BlackHoleBombWep", "galaxyman",  GALAXYMAN},		//78
+{"ConcreteShotWep", "concreteman",  CONCRETEMAN},	//70
+{"TornadoBlowWep", "tornadoman",  TORNADOMAN},		//71
+{"LaserTridentWep", "splashwoman",  SPLASHWOMAN},	//72
+{"PlugBallWep", "plugman",  PLUGMAN},				//73
+{"JewelSatelliteWep", "jewelman",  JEWELMAN},		//74
+{"HornetChaserWep", "hornetman",  HORNETMAN},		//75
+{"MagmaBazookaWep", "magmaman",  MAGMAMAN},			//76
+{"BlackHoleBombWep", "galaxyman",  GALAXYMAN},		//77
 
-{"TripleBladeWep", "blademan",  BLADEMAN},			//79
-{"WaterShieldWep", "pumpman",  PUMPMAN},			//80
-{"CommandoBombWep", "commandoman",  COMMANDOMAN},	//81
-{"ChillSpikeWep", "chillman",  CHILLMAN},			//82
-{"ThunderWoolWep", "sheepman",  SHEEPMAN},			//83
-{"ReboundStrikerWep", "strikeman",  STRIKEMAN},		//84
-{"WheelCutterWep", "nitroman",  NITROMAN},			//85
-{"SolarBlazeWep", "solarman",  SOLARMAN},			//86
+{"TripleBladeWep", "blademan",  BLADEMAN},			//78
+{"WaterShieldWep", "pumpman",  PUMPMAN},			//79
+{"CommandoBombWep", "commandoman",  COMMANDOMAN},	//80
+{"ChillSpikeWep", "chillman",  CHILLMAN},			//81
+{"ThunderWoolWep", "sheepman",  SHEEPMAN},			//82
+{"ReboundStrikerWep", "strikeman",  STRIKEMAN},		//83
+{"WheelCutterWep", "nitroman",  NITROMAN},			//84
+{"SolarBlazeWep", "solarman",  SOLARMAN},			//85
 
-{"GrabBusterWep", "mercury",  MERCURY},				//87
-{"BubbleBombWep", "venus",  VENUS},					//88
-{"PhotonMissileWep", "mars",  MARS},				//89
-{"ElectricShockWep", "jupiter",  JUPITER},			//90
-{"BlackHoleWep", "saturn",  SATURN},				//91
-{"DeepDiggerWep", "uranus",  URANUS},				//92
-{"BreakDashWep", "pluto",  PLUTO},					//93
-{"SaltWaterWep", "neptune",  NEPTUNE},				//94
+{"GrabBusterWep", "mercury",  MERCURY},				//86
+{"BubbleBombWep", "venus",  VENUS},					//87
+{"PhotonMissileWep", "mars",  MARS},				//88
+{"ElectricShockWep", "jupiter",  JUPITER},			//89
+{"BlackHoleWep", "saturn",  SATURN},				//90
+{"DeepDiggerWep", "uranus",  URANUS},				//91
+{"BreakDashWep", "pluto",  PLUTO},					//92
+{"SaltWaterWep", "neptune",  NEPTUNE},				//93
 
-{"SparkChaserWep", "terra", TERRA},					//95
-{"MirrorBusterWep", "enker", ENKER},				//96
-{"ScrewCrusherWep", "punk", PUNK},					//97
-{"BalladeCrackerWep", "ballade", BALLADE},			//98
-{"SakugarneWep", "quint", QUINT},					//99
-{"MaestroBuster", "maestro", MAESTRO},				//100
-{"ProtoBuster", "protoman", CPROTO},				//101
-{"ProtoBuster", "breakman", CPROTO},				//102
-{"BassBuster", "bass", CBASS},						//103
-{"DuoFist", "duo", CDUO},							//104
-{"JusticeMeteorWep", "originalduo", ORIGINDUO},		//105
-{"MM8Weapons", "evilrobot", EVILROBOT},				//106
-{"RandomWeapons", "dr. wily", DRWILYCSUIT},			//107
-{"LaserBuster", "megaman\ct?", 0},					//108
+{"SparkChaserWep", "terra", TERRA},					//94
+{"MirrorBusterWep", "enker", ENKER},				//95
+{"ScrewCrusherWep", "punk", PUNK},					//96
+{"BalladeCrackerWep", "ballade", BALLADE},			//97
+{"SakugarneWep", "quint", QUINT},					//98
+{"MaestroBuster", "maestro", MAESTRO},				//99
+{"ProtoBuster", "protoman", CPROTO},				//100
+{"ProtoBuster", "breakman", CPROTO},				//101
+{"BassBuster", "bass", CBASS},						//102
+{"DuoFist", "duo", CDUO},							//103
+{"JusticeMeteorWep", "originalduo", ORIGINDUO},		//104
+{"MM8Weapons", "evilrobot", EVILROBOT},				//105
+{"RandomWeapons", "dr. wily", DRWILYCSUIT},			//106
+{"LaserBuster", "megaman\ct?", 0},					//107
 
-{"MegaBuster", "alien", ALIEN},						//109
-{"JoeBuster", "sniper joe", BUBBLEMAN},				//110
-{"MegaBallWep", "roll", CROLL},						//111
-{"RandomWeapons", "auto", BUBBLEMAN},				//112
-{"RandomWeapons", "???", BUBBLEMAN},				//113
-{"MegaBuster", "helmetless megaman", 0},			//114
-{"MegaBuster", "megaman", 0},						//115
-{"MM2Weapons", "docrobot", DOCROBOT},				//116
-{"BerserkerRushWep", "darkman1", BUBBLEMAN},		//117
-{"ShieldSpiralWep", "darkman2", DARKMANTWO},		//118
-{"RestrictionRingWep", "darkman3", DARKMANTHREE},	//119
-{"OnslaughtGatlingWep", "darkman4", CPROTO},		//120
-{"RoyalSpinWep", "king", KINGMAN},					//121
-{"ThunderClawWep", "buster rod g", BUSTERRODG},		//122
-{"WaterWaveWep", "mega water s", MEGAWATERS},		//123
-{"BreakDashWep", "hyper storm h", HYPERSTORMH},		//124
-{"RevolverBuster", "fakeman", FAKEMAN},				//125
-{"SolarBlazeWep", "sunstar", SUNSTAR},				//126
-{"DawnBreakerWeakWep", "ra thor", RATHOR},			//127
-{"RandomWeapons", "bba megaman", 0},				//128
+{"MegaBuster", "alien", ALIEN},						//108
+{"JoeBuster", "sniper joe", BUBBLEMAN},				//109
+{"MegaBallWep", "roll", CROLL},						//110
+{"RandomWeapons", "auto", BUBBLEMAN},				//111
+{"RandomWeapons", "???", BUBBLEMAN},				//112
+{"MegaBuster", "megaman", 0},						//113
+{"MM2Weapons", "docrobot", DOCROBOT},				//114
+{"BerserkerRushWep", "darkman1", BUBBLEMAN},		//115
+{"ShieldSpiralWep", "darkman2", DARKMANTWO},		//116
+{"RestrictionRingWep", "darkman3", DARKMANTHREE},	//117
+{"OnslaughtGatlingWep", "darkman4", CPROTO},		//118
+{"RoyalSpinWep", "king", KINGMAN},					//119
+{"ThunderClawWep", "buster rod g", BUSTERRODG},		//120
+{"WaterWaveWep", "mega water s", MEGAWATERS},		//121
+{"BreakDashWep", "hyper storm h", HYPERSTORMH},		//122
+{"RevolverBuster", "fakeman", FAKEMAN},				//123
+{"SolarBlazeWep", "sunstar", SUNSTAR},				//124
+{"DawnBreakerWeakWep", "ra thor", RATHOR},			//125
+{"RandomWeapons", "bba megaman", 0},				//126
 
-{"BulletVulcanWep", "bulletman", BULLETMAN},		//129
-{"FlameShowerWep", "stoveman", STOVEMAN},			//130
-{"DoppelCrashWep", "komusoman", KOMUSOMAN},			//131
-{"TimeBombWep", "clockman", CLOCKMANR},				//132
-{"BarrierWindWep", "airconman", AIRCONMAN},			//133
-{"TrailsparkNeedleWep", "compassman", COMPASSMAN},	//134
+{"BulletVulcanWep", "bulletman", BULLETMAN},		//127
+{"FlameShowerWep", "stoveman", STOVEMAN},			//128
+{"DoppelCrashWep", "komusoman", KOMUSOMAN},			//129
+{"TimeBombWep", "clockman", CLOCKMANR},				//130
+{"BarrierWindWep", "airconman", AIRCONMAN},			//131
+{"TrailsparkNeedleWep", "compassman", COMPASSMAN},	//132
+{"Sakugarne", "shadow megaman", QUINT},				//133
 
-{"BondingPasteWep", "bondman", PHARAOHMAN}			//135
+{"BondingPasteWep", "bondman", PHARAOHMAN}			//134
 };
 
 function int LookupBotId (void)
@@ -433,7 +435,7 @@ script "Bots_enter" ENTER
 	
 	if (botName == "tenguman") { GiveInventory("TornadoHoldWep", 1); }
 	else if (botName == "evilrobot") { TakeInventory("MegaBallWep", 1); }
-	else if (botName == "king") 
+	else if (botName == "king")
 		{ 
 			GiveInventory("FlameSwordWep", 1);
 			GiveInventory("GeminiLaserWep", 1);
@@ -624,4 +626,43 @@ Switch(which)
 	break;
 	}
 SetResultValue(data);
+}
+
+////////
+// Campaign bot handler
+// Stuff for allies and foes
+////////
+script "Encore_AddBotAlly" OPEN
+{
+	Delay(35);
+	if(GetCvar("enc_campaignallies")<1){terminate;}	
+	str CampaignAlly, Command;
+	
+	CampaignAlly = GetCvar("enc_campaignally1");
+	if(CampaignAlly>=0)
+		{
+		Command = StrParam(s:"addbot ", s:"\"", s:EnemyInfo[CampaignAlly][1], s:"\"", s:"\"", s:"dr. light team", s:"\"");
+		ConsoleCommand(command);
+		Delay(18);
+		}
+	
+	if(GetCvar("enc_campaignallies")<2){terminate;}	
+	
+	CampaignAlly = GetCvar("enc_campaignally2");
+	if(CampaignAlly>=0)
+		{
+		Command = StrParam(s:"addbot ", s:"\"", s:EnemyInfo[CampaignAlly][1], s:"\"", s:"\"", s:"dr. light team", s:"\"");
+		ConsoleCommand(command);
+		Delay(18);
+		}
+	
+	if(GetCvar("enc_campaignallies")<3){terminate;}	
+	
+	CampaignAlly = GetCvar("enc_campaignally3");
+	if(CampaignAlly>=0)
+		{
+		Command = StrParam(s:"addbot ", s:"\"", s:EnemyInfo[CampaignAlly][1], s:"\"", s:"\"", s:"dr. light team", s:"\"");
+		ConsoleCommand(command);
+		Delay(18);
+		}
 }

@@ -1,0 +1,70 @@
+#library "encmapcard"
+#include "zcommon.acs"
+
+////////
+// Encore campaign data handler
+////////
+
+// Sets max ally amount based on the map
+script "Encore_CampaignAllyCount" OPEN
+{
+	if(GetCvar("enc_chapter")<1){SetCVar("enc_campaignallies",0); terminate;}
+	str levelname = StrParam(n:PRINTNAME_LEVEL);
+	
+	if(StrIcmp(levelname,"MAP01")==0 ||
+		StrIcmp(levelname,"MAP02")==0 ||
+		StrIcmp(levelname,"MAP03")==0 ||
+		StrIcmp(levelname,"TRAINING")==0 ||
+		StrIcmp(levelname,"BOTRUSH")==0 ||
+		StrIcmp(levelname,"MME1DW1")==0 ||
+		StrIcmp(levelname,"MME2DW3")==0)
+    {
+        SetCVar("enc_campaignallies",0);
+    }
+    else if(StrIcmp(levelname,"MME2BUB")==0 ||
+			StrIcmp(levelname,"MME2AIR")==0 ||
+			StrIcmp(levelname,"MME2HEA")==0 ||
+			StrIcmp(levelname,"MME2QUI")==0 ||
+			StrIcmp(levelname,"MME2DW1")==0 ||
+			StrIcmp(levelname,"MME3TOP")==0 ||
+			StrIcmp(levelname,"MME5CHA")==0 ||
+			StrIcmp(levelname,"MME5GRA")==0 ||
+			StrIcmp(levelname,"MME6KNI")==0 ||
+			StrIcmp(levelname,"MME9SPL")==0 ||
+			StrIcmp(levelname,"MMB2KOM")==0 ||
+			StrIcmp(levelname,"MMB2CLO")==0 ||
+			StrIcmp(levelname,"MMEPRO")==0)
+    {
+        SetCVar("enc_campaignallies",2);
+    }
+    else
+    {
+        SetCVar("enc_campaignallies",1);
+    }
+}
+
+// Sets main weapon and bots
+script "Encore_CampaignSet" OPEN
+{
+	if(GetCvar("enc_chapter")<1){terminate;}
+	SetCVar("enc_customloadouts",7);
+	SetCVar("enc_sweaponslot0",6);
+	SetCVar("enc_specialbots",1);
+	SetCVar("enc_deathdrops",1);
+}
+
+// Disables encore mode
+Script "Encore_Shutdown" (void)
+{
+if(GetCVar("enc_chapter")!=0)
+	{
+	SetCVar("enc_chapter",0);
+	SetCVar("enc_customloadouts",0);
+	SetCVar("enc_specialbots",0);
+	SetCVar("enc_deathdrops",0);
+	ConsoleCommand("sv_weapondrop 0");
+	
+	str Command = StrParam(s:"\"map",n:PRINTNAME_LEVEL,s:"\"");
+	ConsoleCommand(Command);
+	}
+}

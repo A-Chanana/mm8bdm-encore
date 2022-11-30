@@ -25,12 +25,12 @@ server int enc_sweaponslot5 = 0;
 //
 // Singleplayer
 //
-server bool enc_campaignhandler = false;
+server noarchive int enc_chapter = 0;
 
-server int enc_campaignallies = 1;
-server int enc_campaignally1 = 113;
+server noarchive int enc_campaignallies = 0;
+server int enc_campaignally1 = 112;
 server int enc_campaignally2 = 0;
-server int enc_campaignally3 = 0;
+server int enc_campaignally3 = 1;
 
 // Training Room
 user int enc_trainingweaponno = 0;

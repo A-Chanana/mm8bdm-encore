@@ -561,10 +561,11 @@ str BusterWeapons[MAX_BUSTERS][2] =
 
 Script "encore_customloadouts" ENTER
 {
+delay(1);
 if(GetCvar("enc_customloadouts")==0){terminate;}
 if(GetCvar("instagib")==1){terminate;}
 if(GetCvar("enc_specialbots")==1 && PlayerIsBot(PlayerNumber())){terminate;}
-delay(1);
+
 //Buster
 int chosebuster = GetCvar("enc_weaponslot0");
 if(GetCvar("enc_weaponslot0")>=MAX_BUSTERS-2){chosebuster = Random(0, MAX_BUSTERS-3);}
