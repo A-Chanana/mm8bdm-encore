@@ -28,7 +28,7 @@ server int enc_sweaponslot5 = 0;
 server noarchive int enc_chapter = 0;
 
 server noarchive int enc_campaignallies = 0;
-server int enc_campaignally1 = 112;
+server int enc_campaignally1 = 122;
 server int enc_campaignally2 = 0;
 server int enc_campaignally3 = 1;
 

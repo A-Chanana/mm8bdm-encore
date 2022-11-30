@@ -167,7 +167,7 @@
 
 #DEFINE MAXCHARACTERS 138
 
-str EnemyInfo[MAXCHARACTERS][3] = {
+str EnemyInfo[MAXCHARACTERS][4] = {
 {"RollingCutterWep", "cutman", CUTMAN},				//0
 {"SuperArmWep", "gutsman", GUTSMAN},				//1
 {"IceSlasherWep", "iceman", ICEMAN},				//2
@@ -176,6 +176,7 @@ str EnemyInfo[MAXCHARACTERS][3] = {
 {"ThunderBeamWep", "elecman", ELECMAN},				//5
 {"TimeSlowWep", "timeman", TIMEMAN},				//6
 {"OilSliderWep", "oilman", OILMAN},					//7
+{"LaserBuster", "megaman\ct?", 0},					//125
 
 {"MetalBladeWep", "metalman", METALMAN},			//8
 {"AirShooterWep", "airman", AIRMAN},				//9
@@ -185,128 +186,128 @@ str EnemyInfo[MAXCHARACTERS][3] = {
 {"TimeStopperWep", "flashman", FLASHMAN},			//13
 {"AtomicFireWep", "heatman", HEATMAN},				//14
 {"LeafShieldWep", "woodman", WOODMAN},				//15
+{"MegaBuster", "alien", ALIEN},						//16
 
-{"NeedleCannonWep", "needleman", NEEDLEMAN},		//16
-{"MagnetMissileWep", "magnetman", MAGNETMAN},		//17
-{"GeminiLaserWep", "geminiman", GEMINIMAN},			//18
-{"HardKnuckleWep", "hardman", HARDMAN},				//19
-{"TopSpinWep", "topman", TOPMAN},					//20
-{"SearchSnakeWep", "snakeman", SNAKEMAN},			//21
-{"SparkShockWep", "sparkman", SPARKMAN},			//22
-{"ShadowBladeWep", "shadowman", SHADOWMAN},			//23
+{"NeedleCannonWep", "needleman", NEEDLEMAN},		//17
+{"MagnetMissileWep", "magnetman", MAGNETMAN},		//18
+{"GeminiLaserWep", "geminiman", GEMINIMAN},			//19
+{"HardKnuckleWep", "hardman", HARDMAN},				//20
+{"TopSpinWep", "topman", TOPMAN},					//21
+{"SearchSnakeWep", "snakeman", SNAKEMAN},			//22
+{"SparkShockWep", "sparkman", SPARKMAN},			//23
+{"ShadowBladeWep", "shadowman", SHADOWMAN},			//24
+{"MM2Weapons", "docrobot", DOCROBOT},				//25
+{"ProtoBuster", "breakman", CPROTO},				//26
 
-{"FlashStopperWep", "brightman",  BRIGHTMAN},		//24
-{"RainFlushWep", "toadman",  TOADMAN},				//25
-{"DrillBombWep", "drillman",  DRILLMAN},			//26
-{"PharaohShotWep", "pharaohman",  PHARAOHMAN},		//27
-{"RingBoomerangWep", "Ringman",  RINGMAN},			//28
-{"DustCrusherWep", "dustman",  DUSTMAN},			//29
-{"DiveMissileWep", "diveman",  DIVEMAN},			//30
-{"SkullBarrierWep", "skullman",  SKULLMAN},			//31
+{"FlashStopperWep", "brightman",  BRIGHTMAN},		//27
+{"RainFlushWep", "toadman",  TOADMAN},				//28
+{"DrillBombWep", "drillman",  DRILLMAN},			//29
+{"PharaohShotWep", "pharaohman",  PHARAOHMAN},		//30
+{"RingBoomerangWep", "Ringman",  RINGMAN},			//31
+{"DustCrusherWep", "dustman",  DUSTMAN},			//32
+{"DiveMissileWep", "diveman",  DIVEMAN},			//33
+{"SkullBarrierWep", "skullman",  SKULLMAN},			//34
 
-{"GravityHoldWep", "gravityman",  GRAVITYMAN},		//32
-{"WaterWaveWep", "waveman",  WAVEMAN},				//33
-{"PowerStoneWep", "stoneman",  STONEMAN},			//34
-{"GyroAttackWep", "gyroman",  GYROMAN},				//35
-{"StarCrashWep", "starman",  STARMAN},				//36
-{"ChargeKickWep", "chargeman",  CHARGEMAN},			//37
-{"NapalmBombWep", "napalmman",  NAPALMMAN},			//38
-{"CrystalEyeWep", "crystalman",  CRYSTALMAN},		//39
+{"GravityHoldWep", "gravityman",  GRAVITYMAN},		//35
+{"WaterWaveWep", "waveman",  WAVEMAN},				//36
+{"PowerStoneWep", "stoneman",  STONEMAN},			//37
+{"GyroAttackWep", "gyroman",  GYROMAN},				//38
+{"StarCrashWep", "starman",  STARMAN},				//39
+{"ChargeKickWep", "chargeman",  CHARGEMAN},			//40
+{"NapalmBombWep", "napalmman",  NAPALMMAN},			//41
+{"CrystalEyeWep", "crystalman",  CRYSTALMAN},		//42
+{"BerserkerRushWep", "darkman1", BUBBLEMAN},		//43
+{"ShieldSpiralWep", "darkman2", DARKMANTWO},		//44
+{"RestrictionRingWep", "darkman3", DARKMANTHREE},	//45
+{"OnslaughtGatlingWep", "darkman4", CPROTO},		//46
 
-{"BlizzardAttackWep", "blizzardman",  BLIZZARDMAN},	//40
-{"CentaurFlashWep", "centaurman",  CENTAURMAN},		//41
-{"FlameBlastWep", "flameman",  FLAMEMAN},			//42
-{"KnightCrushWep", "knightman",  KNIGHTMAN},		//43
-{"PlantBarrierWep", "plantman",  PLANTMAN},			//44
-{"SilverTomahawkWep", "tomahawkman",  TOMAHAWKMAN},	//45
-{"WindStormWep", "windman",  WINDMAN},				//46
-{"YamatoSpearWep", "yamatoman",  YAMATOMAN},		//47
+{"BlizzardAttackWep", "blizzardman",  BLIZZARDMAN},	//47
+{"CentaurFlashWep", "centaurman",  CENTAURMAN},		//48
+{"FlameBlastWep", "flameman",  FLAMEMAN},			//49
+{"KnightCrushWep", "knightman",  KNIGHTMAN},		//50
+{"PlantBarrierWep", "plantman",  PLANTMAN},			//51
+{"SilverTomahawkWep", "tomahawkman",  TOMAHAWKMAN},	//52
+{"WindStormWep", "windman",  WINDMAN},				//53
+{"YamatoSpearWep", "yamatoman",  YAMATOMAN},		//54
 
-{"FreezeCrackerWep", "freezeman",  FREEZEMAN},		//48
-{"JunkShieldWep", "junkman",  JUNKMAN},				//49
-{"DangerWrapWep", "burstman",  BURSTMAN},			//50
-{"ThunderBoltWep", "cloudman",  CLOUDMAN},			//51
-{"WildCoilWep", "springman",  SPRINGMAN},			//52
-{"SlashClawWep", "slashman",  SLASHMAN},			//53
-{"NoiseCrushWep", "shademan",  SHADEMAN},			//54
-{"ScorchWheelWep", "turboman",  TURBOMAN},			//55
+{"FreezeCrackerWep", "freezeman",  FREEZEMAN},		//55
+{"JunkShieldWep", "junkman",  JUNKMAN},				//56
+{"DangerWrapWep", "burstman",  BURSTMAN},			//57
+{"ThunderBoltWep", "cloudman",  CLOUDMAN},			//58
+{"WildCoilWep", "springman",  SPRINGMAN},			//59
+{"SlashClawWep", "slashman",  SLASHMAN},			//60
+{"NoiseCrushWep", "shademan",  SHADEMAN},			//61
+{"ScorchWheelWep", "turboman",  TURBOMAN},			//62
 
-{"TenguBladeWep", "tenguman",  TENGUMAN},			//56
-{"AstroCrushWep", "astroman",  ASTROMAN},			//57
-{"FlameSwordWep", "swordman",  SWORDMAN},			//58
-{"ThunderClawWep", "clownman",  CLOWNMAN},			//59
-{"HomingSniperWep", "searchman",  SEARCHMAN},		//60
-{"IceWaveWep", "frostman",  FROSTMAN},				//61
-{"FlashBombWep", "grenademan",  GRENADEMAN},		//62
-{"WaterBalloonWep", "aquaman",  AQUAMAN},			//63
+{"TenguBladeWep", "tenguman",  TENGUMAN},			//63
+{"AstroCrushWep", "astroman",  ASTROMAN},			//64
+{"FlameSwordWep", "swordman",  SWORDMAN},			//65
+{"ThunderClawWep", "clownman",  CLOWNMAN},			//66
+{"HomingSniperWep", "searchman",  SEARCHMAN},		//67
+{"IceWaveWep", "frostman",  FROSTMAN},				//68
+{"FlashBombWep", "grenademan",  GRENADEMAN},		//69
+{"WaterBalloonWep", "aquaman",  AQUAMAN},			//70
+{"JusticeMeteorWep", "originalduo", ORIGINDUO},		//71
+{"MM8Weapons", "evilrobot", EVILROBOT},				//72
 
-{"LightningBoltWep", "dynamoman",  DYNAMOMAN},		//64
-{"IceWallWep", "coldman",  COLDMAN},				//65
-{"SpreadDrillWep", "groundman",  GROUNDMAN},		//66
-{"RemoteMineWep", "pirateman",  PIRATEMAN},			//67
-{"WaveBurnerWep", "burnerman",  BURNERMAN},			//68
-{"MagicCardWep", "magicman",  MAGICMAN},			//69
+{"LightningBoltWep", "dynamoman",  DYNAMOMAN},		//73
+{"IceWallWep", "coldman",  COLDMAN},				//74
+{"SpreadDrillWep", "groundman",  GROUNDMAN},		//75
+{"RemoteMineWep", "pirateman",  PIRATEMAN},			//76
+{"WaveBurnerWep", "burnerman",  BURNERMAN},			//77
+{"MagicCardWep", "magicman",  MAGICMAN},			//78
+{"RoyalSpinWep", "king", KINGMAN},					//79
 
-{"ConcreteShotWep", "concreteman",  CONCRETEMAN},	//70
-{"TornadoBlowWep", "tornadoman",  TORNADOMAN},		//71
-{"LaserTridentWep", "splashwoman",  SPLASHWOMAN},	//72
-{"PlugBallWep", "plugman",  PLUGMAN},				//73
-{"JewelSatelliteWep", "jewelman",  JEWELMAN},		//74
-{"HornetChaserWep", "hornetman",  HORNETMAN},		//75
-{"MagmaBazookaWep", "magmaman",  MAGMAMAN},			//76
-{"BlackHoleBombWep", "galaxyman",  GALAXYMAN},		//77
+{"ConcreteShotWep", "concreteman",  CONCRETEMAN},	//80
+{"TornadoBlowWep", "tornadoman",  TORNADOMAN},		//81
+{"LaserTridentWep", "splashwoman",  SPLASHWOMAN},	//82
+{"PlugBallWep", "plugman",  PLUGMAN},				//83
+{"JewelSatelliteWep", "jewelman",  JEWELMAN},		//84
+{"HornetChaserWep", "hornetman",  HORNETMAN},		//85
+{"MagmaBazookaWep", "magmaman",  MAGMAMAN},			//86
+{"BlackHoleBombWep", "galaxyman",  GALAXYMAN},		//87
+{"RevolverBuster", "fakeman", FAKEMAN},				//88
 
-{"TripleBladeWep", "blademan",  BLADEMAN},			//78
-{"WaterShieldWep", "pumpman",  PUMPMAN},			//79
-{"CommandoBombWep", "commandoman",  COMMANDOMAN},	//80
-{"ChillSpikeWep", "chillman",  CHILLMAN},			//81
-{"ThunderWoolWep", "sheepman",  SHEEPMAN},			//82
-{"ReboundStrikerWep", "strikeman",  STRIKEMAN},		//83
-{"WheelCutterWep", "nitroman",  NITROMAN},			//84
-{"SolarBlazeWep", "solarman",  SOLARMAN},			//85
+{"TripleBladeWep", "blademan",  BLADEMAN},			//89
+{"WaterShieldWep", "pumpman",  PUMPMAN},			//90
+{"CommandoBombWep", "commandoman",  COMMANDOMAN},	//91
+{"ChillSpikeWep", "chillman",  CHILLMAN},			//92
+{"ThunderWoolWep", "sheepman",  SHEEPMAN},			//93
+{"ReboundStrikerWep", "strikeman",  STRIKEMAN},		//94
+{"WheelCutterWep", "nitroman",  NITROMAN},			//95
+{"SolarBlazeWep", "solarman",  SOLARMAN},			//96
 
-{"GrabBusterWep", "mercury",  MERCURY},				//86
-{"BubbleBombWep", "venus",  VENUS},					//87
-{"PhotonMissileWep", "mars",  MARS},				//88
-{"ElectricShockWep", "jupiter",  JUPITER},			//89
-{"BlackHoleWep", "saturn",  SATURN},				//90
-{"DeepDiggerWep", "uranus",  URANUS},				//91
-{"BreakDashWep", "pluto",  PLUTO},					//92
-{"SaltWaterWep", "neptune",  NEPTUNE},				//93
+{"GrabBusterWep", "mercury",  MERCURY},				//97
+{"BubbleBombWep", "venus",  VENUS},					//98
+{"PhotonMissileWep", "mars",  MARS},				//99
+{"ElectricShockWep", "jupiter",  JUPITER},			//100
+{"BlackHoleWep", "saturn",  SATURN},				//101
+{"DeepDiggerWep", "uranus",  URANUS},				//102
+{"BreakDashWep", "pluto",  PLUTO},					//103
+{"SaltWaterWep", "neptune",  NEPTUNE},				//104
+{"SparkChaserWep", "terra", TERRA},					//105
+{"SolarBlazeWep", "sunstar", SUNSTAR},				//106
 
-{"SparkChaserWep", "terra", TERRA},					//94
-{"MirrorBusterWep", "enker", ENKER},				//95
-{"ScrewCrusherWep", "punk", PUNK},					//96
-{"BalladeCrackerWep", "ballade", BALLADE},			//97
-{"SakugarneWep", "quint", QUINT},					//98
-{"MaestroBuster", "maestro", MAESTRO},				//99
-{"ProtoBuster", "protoman", CPROTO},				//100
-{"ProtoBuster", "breakman", CPROTO},				//101
-{"BassBuster", "bass", CBASS},						//102
-{"DuoFist", "duo", CDUO},							//103
-{"JusticeMeteorWep", "originalduo", ORIGINDUO},		//104
-{"MM8Weapons", "evilrobot", EVILROBOT},				//105
-{"RandomWeapons", "dr. wily", DRWILYCSUIT},			//106
-{"LaserBuster", "megaman\ct?", 0},					//107
+{"MirrorBusterWep", "enker", ENKER},				//107
+{"ScrewCrusherWep", "punk", PUNK},					//108
+{"BalladeCrackerWep", "ballade", BALLADE},			//109
+{"SakugarneWep", "quint", QUINT},					//110
+{"DawnBreakerWeakWep", "ra thor", RATHOR},			//111
 
-{"MegaBuster", "alien", ALIEN},						//108
-{"JoeBuster", "sniper joe", BUBBLEMAN},				//109
-{"MegaBallWep", "roll", CROLL},						//110
-{"RandomWeapons", "auto", BUBBLEMAN},				//111
-{"RandomWeapons", "???", BUBBLEMAN},				//112
-{"MegaBuster", "megaman", 0},						//113
-{"MM2Weapons", "docrobot", DOCROBOT},				//114
-{"BerserkerRushWep", "darkman1", BUBBLEMAN},		//115
-{"ShieldSpiralWep", "darkman2", DARKMANTWO},		//116
-{"RestrictionRingWep", "darkman3", DARKMANTHREE},	//117
-{"OnslaughtGatlingWep", "darkman4", CPROTO},		//118
-{"RoyalSpinWep", "king", KINGMAN},					//119
-{"ThunderClawWep", "buster rod g", BUSTERRODG},		//120
-{"WaterWaveWep", "mega water s", MEGAWATERS},		//121
-{"BreakDashWep", "hyper storm h", HYPERSTORMH},		//122
-{"RevolverBuster", "fakeman", FAKEMAN},				//123
-{"SolarBlazeWep", "sunstar", SUNSTAR},				//124
-{"DawnBreakerWeakWep", "ra thor", RATHOR},			//125
+{"ThunderClawWep", "buster rod g", BUSTERRODG},		//112
+{"WaterWaveWep", "mega water s", MEGAWATERS},		//113
+{"BreakDashWep", "hyper storm h", HYPERSTORMH},		//114
+
+{"MaestroBuster", "maestro", MAESTRO},				//115
+{"MegaBuster", "megaman", 0},						//116
+{"MegaBallWep", "roll", CROLL},						//117
+{"ProtoBuster", "protoman", CPROTO},				//118
+{"BassBuster", "bass", CBASS},						//119
+{"RandomWeapons", "auto", BUBBLEMAN},				//120
+{"RandomWeapons", "???", BUBBLEMAN},				//121
+{"DuoFist", "duo", CDUO},							//122
+{"JoeBuster", "sniper joe", BUBBLEMAN},				//123
+{"RandomWeapons", "dr. wily", DRWILYCSUIT},			//124
 {"RandomWeapons", "bba megaman", 0},				//126
 
 {"BulletVulcanWep", "bulletman", BULLETMAN},		//127
