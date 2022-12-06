@@ -121,18 +121,16 @@ actor EGravityUpLoop
 Height 0
 Radius 0
 +NOINTERACTION
--SOLID
 +NOGRAVITY
-+NOCLIP
 +MISSILE
 States
 {
 Spawn:
-TNT1 A 0 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
-TNT1 A 1 A_SpawnItemEx("EGravityUpParticles",random(-70,70),random(-70,70),floorz-z+5,0,0,26,0,SXF_CLIENTSIDE)
+TNT1 A 0 A_Warp(AAPTR_TARGET,0,0,0,0,WARPF_NOCHECKPOSITION)
+TNT1 A 1 A_SpawnItemEx("EGravityUpParticles",random(-70,70),random(-70,70),floorz-z+5,0,0,26,0,SXF_TRANSFERPOINTERS)
 TNT1 A 0 A_RadiusGive("ThrustPressUp",250,RGF_OBJECTS|RGF_NOSIGHT,1)
 TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
-TNT1 A 0 A_JumpIfInTargetInventory("EGravityKeepUp",1,"Spawn")
+TNT1 A 1 A_JumpIfInTargetInventory("EGravityKeepUp",1,"Spawn")
 Death:
 TNT1 A 1 A_GiveToTarget("EGravityDown")
 stop
@@ -142,31 +140,26 @@ stop
 actor EGravityUpParticles
 {
     PROJECTILE
-	+NOCLIP
 	+NOINTERACTION
 	+CLIENTSIDEONLY
-	+THRUGHOST
 	translation "198:198=41:41"
     height 32
     radius 32
     speed 50
 	scale 2.5
-	var int user_height;
-	var int user_randomx;
-	var int user_randomy;
 	Reactiontime 105
     States
     {
     Spawn:
-		INTQ C 1
-        //INTQ C 1 A_JumpIfInTargetInventory("IsDead", 1, "Death")
+		INTQ C 0
+        INTQ C 1 A_JumpIfInTargetInventory("IsDead", 1, "Death")
 		INTQ C 0 A_JumpIfInTargetInventory("EGravityKeepDown", 1, "Transform")
 		INTQ C 0 A_Countdown
 		loop
-		Transform:
+	Transform:
 		TNT1 A 1 A_SpawnItemEx("EGravityDownParticles",0,0,0,0,0,-26,0,SXF_CLIENTSIDE)
 		stop
-		Death:
+	Death:
 		INTQ C 0
 		stop
     }
@@ -198,51 +191,26 @@ actor EGravityDownLoop
 Height 0
 Radius 0
 +NOINTERACTION
--SOLID
 +NOGRAVITY
-+NOCLIP
 +MISSILE
 States
 {
 Spawn:
-TNT1 A 0 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
-TNT1 A 1 A_SpawnItemEx("EGravityDownParticles",random(-70,70),random(-70,70),ceilingz-z-5,0,0,-26,0,SXF_CLIENTSIDE)
+TNT1 A 0 A_Warp(AAPTR_TARGET,0,0,0,0,WARPF_NOCHECKPOSITION)
+TNT1 A 1 A_SpawnItemEx("EGravityDownParticles",random(-70,70),random(-70,70),ceilingz-z-5,0,0,-26,0,SXF_TRANSFERPOINTERS)
 TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
-TNT1 A 0 A_JumpIfInTargetInventory("EGravityKeepDown",1,"Spawn")
+TNT1 A 1 A_JumpIfInTargetInventory("EGravityKeepDown",1,"Spawn")
 Death:
 TNT1 A 1 //A_GiveToTarget("EGravityDown")
 stop
 }
 }
-/*
-actor EGravityDownLoop
-{
-Height 0
-Radius 0
-+NOINTERACTION
--SOLID
-+NOGRAVITY
-+MISSILE
-States
-{
-Spawn:
-TNT1 A 0 A_Warp(AAPTR_TARGET, 0, 0, 0, 0, WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION )
-TNT1 A 1 A_SpawnItemEx("EGravityDownParticles",random(-70,70),random(-70,70),ceilingz-z-10,0,0,-16,0,SXF_CLIENTSIDE)
-TNT1 A 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
-TNT1 A 0 A_JumpIfInTargetInventory("EGravityKeepDown",1,"Spawn")
-Death:
-TNT1 A 0
-stop
-}
-}
-*/
+
 actor EGravityDownParticles
 {
     PROJECTILE
-	+NOCLIP
 	+NOINTERACTION
 	+CLIENTSIDEONLY
-	+THRUGHOST
     height 32
     radius 32
     speed 50
@@ -252,14 +220,14 @@ actor EGravityDownParticles
     {
     Spawn:
 		INTQ C 1
-        //INTQ C 1 A_JumpIfInTargetInventory("IsDead", 1, "Death")
+        INTQ C 1 A_JumpIfInTargetInventory("IsDead", 1, "Death")
 		INTQ C 0 A_JumpIfInTargetInventory("EGravityKeepUp", 1, "Transform")
 		INTQ C 0 A_Countdown
 		loop
-		Transform:
+	Transform:
 		TNT1 A 1 A_SpawnItemEx("EGravityUpParticles",0,0,0,0,0,26,0,SXF_CLIENTSIDE)
 		stop
-		Death:
+	Death:
 		INTQ C 0
 		stop
     }
