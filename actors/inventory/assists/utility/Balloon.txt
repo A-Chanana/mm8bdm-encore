@@ -1,23 +1,16 @@
-actor BalloonItem : BaseMM8BDMUseItem 10148
+actor BalloonItem : BaseMM8BDMUseItem
 {
-Inventory.RespawnTics 210
-inventory.amount 999
-inventory.maxamount 999
-inventory.pickupmessage "$PU_ITEM2"
-inventory.icon "ITEM2"
-Tag "$TAG_ITEM2"
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-+INVBAR
+inventory.pickupmessage "Support Item! Balloon!"
+inventory.icon "BLNAICON"
+Tag "$TAG_BLNA"
 states
 {
 SpawnLoop:
-WEA2 D -1
+BLNA A -1
 loop
 Use:
 WEA2 D 0 A_Jumpif(floorz<z, "Under")
-WEA2 D 0 A_SpawnItemEx("BalloonPlatform", 56, 0, 28, 1)
+WEA2 D 0 A_SpawnItemEx("BalloonPlatform", 56, 0, 56, 1)
 stop
 Under:
 WEA2 D 0 A_Stop
@@ -42,43 +35,44 @@ scale 2.5
 +SOLID
 +DONTREFLECT
 -PUSHABLE
-/*
-+THRUGHOST
-+CANPASS
-+NOBLOCKMONST
-+NOTAUTOAIMED
-*/
 +THRUSPECIES
 species "MovingPlatform"
 var int user_playerRiding[64];
 mass 99999999
-//ReactionTime 50
 var int user_countdown;
 maxstepheight 0
+reactiontime 7
 States
 {
 Spawn:
-ITEM C 1
-ITEM C 0 A_Stop
-ITEM C 0 A_ChangeFlag(RIPPER,1)
-ITEM C 0 A_Cleartarget
+BLNA B 1
+BLNA B 0 A_Stop
+BLNA B 0 A_ChangeFlag(RIPPER,1)
+BLNA B 0 A_Cleartarget
 Waiting:
-ITEM C 0 A_SpawnItemEx("Item2Detect", 0, 0, 32)
-ITEM C 3 A_SetUserVar("user_countdown", user_countdown + 1)
-ITEM C 0 A_JumpIf(user_countdown == 50, "Death")
-ITEM C 0 A_JumpIfInventory("Item2Flag", 1, "MoveStart")
+BLNA B 0 A_SpawnItemEx("Item2Detect", 0, 0, 32)
+BLNA B 3 A_SetUserVar("user_countdown", user_countdown + 1)
+BLNA C 3
+BLNA B 0 A_JumpIf(user_countdown == 50, "Death")
+BLNA B 0 A_JumpIfInventory("Item2Flag", 1, "MoveStart")
 Loop
 MoveStart:
-ITEM D 0 A_PlaySoundEx("weapon/superboost", "weapon")
-ITEM D 3 ThrustThingZ(0, 2, 0, 0)
-ITEM E 3 ThrustThingZ(0, 10, 0, 0)
-ITEM D 3 ThrustThingZ(0, 19, 0, 0)
+BLNA D 0 A_PlaySoundEx("weapon/superboost", "weapon")
+BLNA E 3 ThrustThingZ(0, 2, 0, 0)
+BLNA D 3 ThrustThingZ(0, 10, 0, 0)
+BLNA E 3 ThrustThingZ(0, 19, 0, 0)
 Spawn2:
-ITEM E 0 A_SetUserVar("user_countdown", user_countdown + 1)
-ITEM E 0 A_JumpIf(user_countdown == 50, "Death")
-ITEM ED 3 A_JumpIf(ceilingz-z < 128+height, "Death")
-ITEM D 0 ThrustThingZ(0, 24, 0, 0)
+BLNA D 0 A_SetUserVar("user_countdown", user_countdown + 1)
+BLNA D 0 A_JumpIf(user_countdown == 50, "Halt")
+BLNA DE 3 A_JumpIf(ceilingz-z < 128+height, "Halt")
+BLNA D 0 ThrustThingZ(0, 28, 0, 0)
 goto Spawn2
+Halt:
+BLNA D 0 A_Stop
+BLNA D 0 A_PlaySoundEx("item/item3wait", "voice")
+BLNA DE 5
+BLNA D 0 A_Countdown
+goto Halt+1
 Death:
 TNT1 A 0 A_SpawnItemEx("ExplosionEffect1")
 stop
