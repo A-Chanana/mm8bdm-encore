@@ -4,7 +4,7 @@
 
 // Functions by Trillster, script by A-Chan
 
-#DEFINE MAX_WEP_REPLACE 42
+#DEFINE MAX_WEP_REPLACE 43
 str Wep_Replace[MAX_WEP_REPLACE][3] = 
 {
 //Encore Guts Man
@@ -91,6 +91,8 @@ str Wep_Replace[MAX_WEP_REPLACE][3] =
 //Proto Man
 {"MMEPRO",		"AstroCrushWep",		"JusticeMeteorWep"},
 {"MMEPRO",		"LightningBoltWep",		"OnslaughtGatlingWep"},
+// Bond Man
+{"MMEBON",		"WaterBalloonWep",		"BondingPasteWep"},
 };
 
 script "MME_WeaponReplace" (void)
