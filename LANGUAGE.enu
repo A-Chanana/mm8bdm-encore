@@ -93,6 +93,9 @@ OB_ROYALSPIN = "%o bent %p knee to %k's Royal Spin.";
 PU_ROYALSPIN = "Power up! Royal Spin!";
 TAG_ROYALSPIN = "Royal Spin";
 
+//Items
+TAG_BLNA = "Balloon";
+
 STARTUP1 = "\cdThis is an open community project!";
 STARTUP2 = "\cdFeel free to contribute at our discord server, \cvdiscord.gg/mBa5KECHTu\n";
 STARTUP3 = "\cd-\cgA-Chan\n";

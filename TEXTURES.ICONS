@@ -22,16 +22,10 @@ graphic JOEBUP, 30, 30
 }
 
 //Items
-
-graphic SAROICON, 30, 30
-{
-   XScale 2.0
-   YScale 2.0
-   Patch SAROA0, 0, 0
-}
+graphic BLNAICON,30,30{XScale 2.0 YScale 2.0 Patch BLNAA0,0,0}
+graphic SAROICON,30,30{XScale 2.0 YScale 2.0 Patch SAROA0,0,0}
 
 //MMB2 Weps
-
 graphic TBOMICON, 30, 30
 {
    XScale 2.0
