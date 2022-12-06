@@ -105,7 +105,7 @@ Goto Fire3
 }
 }
 
-actor MaestroUpgrade : BaseMM8BDMUseItem 10162
+actor MaestroUpgrade : BaseMM8BDMUseItem
 {
 //$Category MM8BDM-Weapons/Buster
 //$Title Maestro Upgrade
