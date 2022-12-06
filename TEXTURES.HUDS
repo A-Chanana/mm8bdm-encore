@@ -86,11 +86,12 @@ Sprite JMETK0, 115, 96 {Offset -190, -82 Patch HSPRC0, 0, 0{Translation "192:192
 Sprite JMETL0, 115, 96 {Offset -190, -82 Patch HSPRC0, 0, 0{Translation "192:192=4:4", "198:198=4:4", "0:0=192:192" }}
 Sprite JMETM0, 427, 128 {Offset 53, -57 Patch HSPRR0, 0, 0{Translation "192:192=4:4", "198:198=4:4", "0:0=192:192"}}
 
+
 //Royal Spin
-sprite RYLSA0,148, 80{Offset -202, -103 Patch HSPRE0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
-sprite RYLSB0,115, 96{Offset -202, -103 Patch HSPRB0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
-sprite RYLSC0,300,300{Offset -82,  56  Patch RYLHA0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
-sprite RYLSD0,300,300{Offset -78,  56 Patch RYLHB0,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+sprite RYLSA0,148, 80{Offset -202, -103 Patch HSPRE0,0,0{Translation "192:192=160:160","198:198=229:229"}}
+sprite RYLSB0,115, 96{Offset -202, -103 Patch HSPRB0,0,0{Translation "192:192=160:160","198:198=229:229"}} 
+sprite RYLSC0,300,300{Offset -82,  56  Patch RYLHA0,0,0{Translation"192:192=160:160","198:198=229:229"}}
+sprite RYLSD0,300,300{Offset -78,  56 Patch RYLHB0,0,0{Translation"192:192=160:160","198:198=229:229"}}
 
 //Berserker Rush
 sprite BZRRA0,116,96{Offset -184,-94 Patch BUSTB0,0,0 {Translation"192:192=84:84","198:198=110:110"}}
