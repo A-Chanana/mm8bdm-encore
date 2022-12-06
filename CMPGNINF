@@ -648,6 +648,29 @@ botteam[3] = "Dr. Wily Team"
 }
 
 {
+mapname = MME7JUN
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Junkman
+bot[1] = Timeman
+bot[2] = Flameman
+bot[3] = Sheepman
+bot[4] = Dynamoman
+bot[5] = Darkman3
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
 mapname = MME7TUR
 gamemode = teamplay
 playerteam = "Dr. Light Team"
@@ -768,6 +791,51 @@ botteam[3] = "Dr. Wily Team"
 }
 
 {
+mapname = MME10STR
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Strikeman
+bot[1] = Woodman
+bot[2] = Chargeman
+bot[3] = Hornetman
+bot[4] = Tomahawkman
+bot[5] = Springman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMEVVEN
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Venus
+bot[1] = Snakeman
+bot[2] = Coldman
+bot[3] = Burstman
+bot[4] = Cloudman
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
+botteam[4] = "Dr. Wily Team"
+botteam[5] = "Dr. Wily Team"
+}
+
+{
 mapname = MMB2KOM
 gamemode = teamplay
 playerteam = "Dr. Light Team"
@@ -811,6 +879,25 @@ botteam[2] = "Dr. Wily Team"
 botteam[3] = "Dr. Wily Team"
 botteam[4] = "Dr. Wily Team"
 botteam[5] = "Dr. Wily Team"
+}
+
+{
+mapname = MMEBON
+gamemode = teamplay
+playerteam = "Dr. Light Team"
+fraglimit = 10
+dmflags = 6967428
+dmflags2 = 2097170
+compatflags = 0
+buckshot = 1
+bot[0] = Bondman
+bot[1] = Concreteman
+bot[2] = Hardman
+bot[3] = Grenademan
+botteam[0] = "Dr. Wily Team"
+botteam[1] = "Dr. Wily Team"
+botteam[2] = "Dr. Wily Team"
+botteam[3] = "Dr. Wily Team"
 }
 
 {
