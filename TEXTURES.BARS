@@ -8,7 +8,7 @@ Texture BPSTVAR, 56, 8{Patch BPSTBAR,0,0{Rotate 90}}
 texture JMETBAR,8,56{patch BARENERG,0,0{Translation "192:192=4:4","198:198=192:192"}}
 texture JMETVAR,56,8{patch JMETBAR,0,0{rotate 90}}
 
-texture RSPNBAR,8,56{patch BARENERG,0,0{Translation "192:192=215:215", "198:198=220:220"}}
+texture RSPNBAR,8,56{patch BARENERG,0,0{Translation "192:192=160:160","198:198=229:229"}}
 texture RSPNVAR,56,8{patch RSPNBAR,0,0{rotate 90}}
 
 texture BZRRBAR,8,56{patch BARENERG,0,0{Translation"192:192=83:83","198:198=110:110"}}
