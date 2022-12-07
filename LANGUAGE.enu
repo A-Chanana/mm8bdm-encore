@@ -64,6 +64,10 @@ OB_TRAILSPARKNEEDLE = "%o was revealed by %k's Trailspark Needle.";
 PU_TRAILSPARKNEEDLE = "Power up! Trailspark Needle!";
 TAG_TRAILSPARKNEEDLE = "Trailspark Needle";
 
+OB_CARDINALRING = "%o was rung around by %k's Cardinal Ring.";
+PU_CARDINALRING = "Power up! Cardinal Ring!";
+TAG_CARDINALRING = "Cardinal Ring";
+
 //Misc
 OB_BONDINGPASTE = "%o was plastered by %k's Bonding Paste.";
 PU_BONDINGPASTE = "Power up! Bonding Paste!";
