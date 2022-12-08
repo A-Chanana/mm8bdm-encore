@@ -65,44 +65,6 @@ stop
 }
 }
 
-actor RandomKillDrop
-{
-+NOINTERACTION
-+NOGRAVITY
--SOLID
-States
-{
-Spawn:
-TNT1 A 0
-TNT1 A 1 A_Jump(64, "BigWeaponEnergy")
-TNT1 A 1 A_Jump(64, "SmallHealth")
-TNT1 A 1 A_Jump(64, "BigHealth")
-TNT1 A 1 A_Jump(64, "WTank")
-TNT1 A 1 A_Jump(64, "ETank")
-TNT1 A 1 A_Jump(64, "MTank")
-loop
-
-BigWeaponEnergy:
-TNT1 A 1 A_SpawnItemEx("BigWeaponEnergy")
-stop
-SmallHealth:
-TNT1 A 1 A_SpawnItemEx("SmallHealth")
-stop
-BigHealth:
-TNT1 A 1 A_SpawnItemEx("BigHealth")
-stop
-ETank:
-TNT1 A 1 A_SpawnItemEx("ETank")
-stop
-WTank:
-TNT1 A 1 A_SpawnItemEx("WTank")
-stop
-MTank:
-TNT1 A 1 A_SpawnItemEx("MTank")
-stop
-}
-}
-
 actor ExtraLife : BaseMM8BDMItem
 {
 //Inventory.RespawnTics 550
