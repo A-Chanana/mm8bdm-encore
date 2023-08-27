@@ -1,0 +1,387 @@
+
+//Floors/Walls
+Texture BULMETL1, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT1, 0, 0
+}
+
+Texture BULMETL2, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT2, 0, 0
+}
+
+Texture BULMETL3, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT3, 0, 0
+}
+
+Texture BULMETL4, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT4, 0, 0
+}
+
+Texture BULMETL5, 32, 96
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT5, 0, 0
+}
+
+Texture BULFLR1, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT8, 0, 0
+}
+
+Texture BULFLR2, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT6, 0, 0
+}
+
+Texture BULFLR3, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT7, 0, 0
+}
+
+Texture BULFLR4, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT9, 0, 0
+}
+
+Texture BULFLR5, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT10, 0, 0
+}
+
+Texture BULMETL6, 32, 96
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT11, 0, 0
+}
+
+Texture BULMETL7, 32, 96
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT12, 0, 0
+}
+
+Texture BULMETL8, 32, 96
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT13, 0, 0
+}
+
+Texture BULWAL1, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT14, 0, 0
+}
+
+Texture BULWAL2, 32, 256
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT14, 0, 0
+	Patch BULLT14, 0, 32
+	Patch BULLT14, 0, 64
+	Patch BULLT14, 0, 96
+	Patch BULLT14, 0, 128
+	Patch BULLT14, 0, 160
+	Patch BULLT14, 0, 192
+	Patch BULLT1, 0, 224
+}
+
+//Thrusters/Cannons
+
+Texture BULTUB1, 320, 320
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT29, 0, 0
+}
+
+Texture BULTUB2, 320, 320
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT30, 0, 0
+}
+
+Texture BULTUB3, 320, 320
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT31, 0, 0
+}
+
+Texture BULTUB4, 320, 320
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT32, 0, 0
+}
+
+Texture BULTUBX1, 320, 320
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT29, 0, 0
+}
+
+Texture BULTUB5, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT33, 0, 0
+}
+
+Texture BULTUB6, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT34, 0, 0
+}
+
+Texture BULTUB7, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT35, 0, 0
+}
+
+Texture BULTUB8, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT36, 0, 0
+}
+
+Texture BULTUBX2, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT33, 0, 0
+}
+
+Texture BULTUB9, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT37, 0, 0
+}
+
+Texture BULTUB10, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT38, 0, 0
+}
+
+//Conveyors
+
+Texture BULCON1, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT20, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+}
+
+Texture BULCON2, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT21, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+}
+
+Texture BULCON3, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT22, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+}
+
+Texture BULCON4, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT23, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+}
+
+Texture BULCON5, 16, 128
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT24, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+	Patch BULLT2, 0, 48
+	Patch BULLT2, 0, 64
+	Patch BULLT2, 0, 80
+	Patch BULLT2, 0, 96
+	Patch BULLT2, 0, 112
+}
+
+Texture BULCON6, 16, 128
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT25, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+	Patch BULLT2, 0, 48
+	Patch BULLT2, 0, 64
+	Patch BULLT2, 0, 80
+	Patch BULLT2, 0, 96
+	Patch BULLT2, 0, 112
+}
+
+Texture BULCON7, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT24, 0, 0
+}
+
+Texture BULCON8, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT25, 0, 0
+}
+
+Texture BULCONX1, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT20, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+}
+
+Texture BULCONX2, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT22, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+}
+
+Texture BULCONX3, 16, 128
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT24, 0, 0
+	Patch BULLT2, 0, 16
+	Patch BULLT2, 0, 32
+	Patch BULLT2, 0, 48
+	Patch BULLT2, 0, 64
+	Patch BULLT2, 0, 80
+	Patch BULLT2, 0, 96
+	Patch BULLT2, 0, 112
+}
+
+Texture BULCONX4, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT24, 0, 0
+}
+
+//Explosion Pads
+
+Texture BULEXP1, 64, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT26, 0, 0
+}
+
+Texture BULEXP2, 64, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT27, 0, 0
+}
+
+Texture BULEXP3, 64, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT28, 0, 0
+}
+
+Texture BULEXPX, 64, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT26, 0, 0
+}
+
+//Glass
+
+Texture BULLLS1, 32, 224
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT15, 0, 0
+}
+
+Texture BULLLS2, 32, 224
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT16, 0, 0
+}
+
+Texture BULLLS3, 32, 224
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT17, 0, 0
+}
+
+Texture BULLLS4, 32, 224
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT18, 0, 0
+}
+
+
+//Sky
+Texture BULSKY, 64, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch BULLT19, 0, 0
+}

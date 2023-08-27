@@ -1,0 +1,685 @@
+///// MME6KNI /////
+texture EKNGFLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT50, 0, 0
+   WorldPanning 
+}
+
+texture EKNGFLR2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT51, 0, 0
+   WorldPanning 
+}
+
+texture EKNGFLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT52, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGFLR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT53, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGFLR5, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT54, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGFLR6, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT55, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGFLR7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT56, 0, 0
+   WorldPanning 
+}
+
+texture EKNGFLR8, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT57, 0, 0
+   WorldPanning 
+}
+
+texture EKNGFLR9, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT60, 0, 0
+   WorldPanning 
+}
+
+texture EKNGFLR0, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT61, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGFLRX, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT62, 0, 0
+   WorldPanning 
+}
+
+
+
+texture EKNGCOL1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT58, 0, 0
+   WorldPanning 
+}
+
+texture EKNGCOL2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT59, 0, 0
+   WorldPanning 
+}
+
+texture EKNGCOX1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHX58, 0, 0
+   WorldPanning 
+}
+
+texture EKNGCOX2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHX59, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGCOL3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT60, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGSKY, 256, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT45, 0, 0
+   WorldPanning 
+}
+
+texture EKNGTREE, 256, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT46, 0, 0
+   WorldPanning 
+}
+
+texture EKNGSKYX, 256, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHX45, 0, 0
+   WorldPanning 
+}
+
+texture EKNGTREX, 256, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHX46, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGLDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT8, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGWALL, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT48, 0, 0
+   WorldPanning 
+}
+
+texture EKNGCHN, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT9, 0, 0
+   Patch EKNGHT9, 0, 32
+   Patch EKNGHT9, 0, 64
+   Patch EKNGHT9, 0, 96
+   Patch EKNGHT9, 0, 128
+   Patch EKNGHT9, 0, 160
+   Patch EKNGHT9, 0, 192
+   Patch EKNGHT9, 0, 224
+   Patch EKNGHT9, 0, 256
+   Patch EKNGHT9, 0, 288
+   Patch EKNGHT9, 0, 320
+   Patch EKNGHT9, 0, 352
+   Patch EKNGHT9, 0, 384
+   Patch EKNGHT9, 0, 416
+   Patch EKNGHT9, 0, 448
+   Patch EKNGHT49, 0, 480
+   WorldPanning 
+}
+
+texture EKNGGRN1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT1, 0, 0
+   Patch EKNGHT2, 0, 32
+   Patch EKNGHT1, 0, 64
+   Patch EKNGHT2, 0, 96
+   Patch EKNGHT1, 0, 128
+   Patch EKNGHT2, 0, 160
+   Patch EKNGHT1, 0, 192
+   Patch EKNGHT2, 0, 224
+   Patch EKNGHT1, 0, 256
+   Patch EKNGHT2, 0, 288
+   Patch EKNGHT1, 0, 320
+   Patch EKNGHT2, 0, 352
+   Patch EKNGHT1, 0, 384
+   Patch EKNGHT2, 0, 416
+   Patch EKNGHT1, 0, 448
+   Patch EKNGHT2, 0, 480
+   WorldPanning 
+}
+
+texture EKNGGRN2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT1, 0, 0
+   Patch EKNGHT41, 0, 32
+   Patch EKNGHT2, 0, 64
+   Patch EKNGHT1, 0, 96
+   Patch EKNGHT41, 0, 128
+   Patch EKNGHT2, 0, 160
+   Patch EKNGHT1, 0, 192
+   Patch EKNGHT41, 0, 224
+   Patch EKNGHT2, 0, 256
+   Patch EKNGHT1, 0, 288
+   Patch EKNGHT41, 0, 320
+   Patch EKNGHT2, 0, 352
+   Patch EKNGHT1, 0, 384
+   Patch EKNGHT41, 0, 416
+   Patch EKNGHT2, 0, 448
+   Patch EKNGHT1, 0, 480
+   WorldPanning 
+}
+
+texture EKNGGRN3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT3, 0, 0
+   Patch EKNGHT4, 0, 32
+   Patch EKNGHT4, 0, 64
+   Patch EKNGHT4, 0, 96
+   Patch EKNGHT4, 0, 128
+   Patch EKNGHT4, 0, 160
+   Patch EKNGHT4, 0, 192
+   Patch EKNGHT4, 0, 224
+   Patch EKNGHT4, 0, 256
+   Patch EKNGHT4, 0, 288
+   Patch EKNGHT4, 0, 320
+   Patch EKNGHT4, 0, 352
+   Patch EKNGHT4, 0, 384
+   Patch EKNGHT4, 0, 416
+   Patch EKNGHT4, 0, 448
+   Patch EKNGHT4, 0, 480
+   WorldPanning 
+}
+
+
+texture EKNGGRN4, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT5, 0, 0
+   Patch EKNGHT6, 0, 32
+   Patch EKNGHT6, 0, 64
+   Patch EKNGHT6, 0, 96
+   Patch EKNGHT6, 0, 128
+   Patch EKNGHT6, 0, 160
+   Patch EKNGHT6, 0, 192
+   Patch EKNGHT6, 0, 224
+   Patch EKNGHT6, 0, 256
+   Patch EKNGHT6, 0, 288
+   Patch EKNGHT6, 0, 320
+   Patch EKNGHT6, 0, 352
+   Patch EKNGHT6, 0, 384
+   Patch EKNGHT6, 0, 416
+   Patch EKNGHT6, 0, 448
+   Patch EKNGHT6, 0, 480
+   WorldPanning 
+}
+
+texture EKNGGRN5, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT7, 0, 0
+   Patch EKNGHT6, 0, 32
+   Patch EKNGHT6, 0, 64
+   Patch EKNGHT6, 0, 96
+   Patch EKNGHT6, 0, 128
+   Patch EKNGHT6, 0, 160
+   Patch EKNGHT6, 0, 192
+   Patch EKNGHT6, 0, 224
+   Patch EKNGHT6, 0, 256
+   Patch EKNGHT6, 0, 288
+   Patch EKNGHT6, 0, 320
+   Patch EKNGHT6, 0, 352
+   Patch EKNGHT6, 0, 384
+   Patch EKNGHT6, 0, 416
+   Patch EKNGHT6, 0, 448
+   Patch EKNGHT6, 0, 480
+   WorldPanning 
+}
+
+texture EKNGGRN6, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT17, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGPIP1, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT10, 0, 0
+   Patch EKNGHT11, 0, 32
+   Patch EKNGHT11, 0, 64
+   Patch EKNGHT11, 0, 96
+   Patch EKNGHT11, 0, 128
+   Patch EKNGHT11, 0, 160
+   Patch EKNGHT11, 0, 192
+   Patch EKNGHT11, 0, 224
+   Patch EKNGHT11, 0, 256
+   Patch EKNGHT11, 0, 288
+   Patch EKNGHT11, 0, 320
+   Patch EKNGHT11, 0, 352
+   Patch EKNGHT11, 0, 384
+   Patch EKNGHT11, 0, 416
+   Patch EKNGHT11, 0, 448
+   Patch EKNGHT11, 0, 480
+   WorldPanning 
+}
+
+texture EKNGPIP2, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT12, 0, 0
+   Patch EKNGHT13, 0, 32
+   Patch EKNGHT13, 0, 64
+   Patch EKNGHT13, 0, 96
+   Patch EKNGHT13, 0, 128
+   Patch EKNGHT13, 0, 160
+   Patch EKNGHT13, 0, 192
+   Patch EKNGHT13, 0, 224
+   Patch EKNGHT13, 0, 256
+   Patch EKNGHT13, 0, 288
+   Patch EKNGHT13, 0, 320
+   Patch EKNGHT13, 0, 352
+   Patch EKNGHT13, 0, 384
+   Patch EKNGHT13, 0, 416
+   Patch EKNGHT13, 0, 448
+   Patch EKNGHT13, 0, 480
+   WorldPanning 
+}
+
+texture EKNGPIP3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT14, 0, 0
+   WorldPanning 
+}
+
+texture EKNGPIP4, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT34, 0, 0
+   Patch EKNGHT35, 0, 32
+   Patch EKNGHT35, 0, 64
+   Patch EKNGHT35, 0, 96
+   Patch EKNGHT35, 0, 128
+   Patch EKNGHT35, 0, 160
+   Patch EKNGHT35, 0, 192
+   Patch EKNGHT35, 0, 224
+   Patch EKNGHT35, 0, 256
+   Patch EKNGHT35, 0, 288
+   Patch EKNGHT35, 0, 320
+   Patch EKNGHT35, 0, 352
+   Patch EKNGHT35, 0, 384
+   Patch EKNGHT35, 0, 416
+   Patch EKNGHT35, 0, 448
+   Patch EKNGHT35, 0, 480
+   WorldPanning 
+}
+
+texture EKNGSTP1, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT15, 0, 0
+   WorldPanning 
+}
+
+texture EKNGSTP2, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT16, 0, 0
+   WorldPanning 
+}
+
+texture EKNGSTP3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT39, 0, 0
+   WorldPanning 
+}
+
+texture EKNGSTP4, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT40, 0, 0
+   WorldPanning 
+}
+
+texture EKNGRAI1, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT42, 0, 0
+   WorldPanning 
+}
+
+texture EKNGRAI2, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT43, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGPRP1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT19, 0, 0
+   Patch EKNGHT20, 0, 32
+   Patch EKNGHT20, 0, 64
+   Patch EKNGHT20, 0, 96
+   Patch EKNGHT20, 0, 128
+   Patch EKNGHT20, 0, 160
+   Patch EKNGHT20, 0, 192
+   Patch EKNGHT20, 0, 224
+   Patch EKNGHT20, 0, 256
+   Patch EKNGHT20, 0, 288
+   Patch EKNGHT20, 0, 320
+   Patch EKNGHT20, 0, 352
+   Patch EKNGHT20, 0, 384
+   Patch EKNGHT20, 0, 416
+   Patch EKNGHT20, 0, 448
+   Patch EKNGHT23, 0, 480
+   WorldPanning 
+}
+
+texture EKNGPRP2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT19, 0, 0
+   Patch EKNGHT20, 0, 32
+   Patch EKNGHT24, 0, 64
+   Patch EKNGHT20, 0, 96
+   Patch EKNGHT20, 0, 128
+   Patch EKNGHT20, 0, 160
+   Patch EKNGHT20, 0, 192
+   Patch EKNGHT20, 0, 224
+   Patch EKNGHT20, 0, 256
+   Patch EKNGHT20, 0, 288
+   Patch EKNGHT20, 0, 320
+   Patch EKNGHT20, 0, 352
+   Patch EKNGHT20, 0, 384
+   Patch EKNGHT20, 0, 416
+   Patch EKNGHT20, 0, 448
+   Patch EKNGHT23, 0, 480
+   WorldPanning 
+}
+
+texture EKNGPRP3, 64, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT25, 0, 0
+   WorldPanning 
+}
+
+texture EKNGPRP4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT26, 0, 0
+   WorldPanning 
+}
+
+texture EKNGPRP5, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT20, 0, 0
+   WorldPanning 
+}
+
+texture EKNGBLU1, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT27, 0, 0
+   WorldPanning 
+}
+
+texture EKNGBLU2, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT28, 0, 0
+   WorldPanning 
+}
+
+
+texture EKNGPNK1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT32, 0, 0
+   Patch EKNGHT30, 0, 32
+   Patch EKNGHT30, 0, 64
+   Patch EKNGHT30, 0, 96
+   Patch EKNGHT30, 0, 128
+   Patch EKNGHT30, 0, 160
+   Patch EKNGHT30, 0, 192
+   Patch EKNGHT30, 0, 224
+   Patch EKNGHT30, 0, 256
+   Patch EKNGHT30, 0, 288
+   Patch EKNGHT30, 0, 320
+   Patch EKNGHT30, 0, 352
+   Patch EKNGHT30, 0, 384
+   Patch EKNGHT30, 0, 416
+   Patch EKNGHT30, 0, 448
+   Patch EKNGHT31, 0, 480
+   WorldPanning 
+}
+
+texture EKNGPNK2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT32, 0, 0
+   Patch EKNGHT30, 0, 32
+   Patch EKNGHT44, 0, 64
+   Patch EKNGHT30, 0, 96
+   Patch EKNGHT30, 0, 128
+   Patch EKNGHT30, 0, 160
+   Patch EKNGHT30, 0, 192
+   Patch EKNGHT30, 0, 224
+   Patch EKNGHT30, 0, 256
+   Patch EKNGHT30, 0, 288
+   Patch EKNGHT30, 0, 320
+   Patch EKNGHT30, 0, 352
+   Patch EKNGHT30, 0, 384
+   Patch EKNGHT30, 0, 416
+   Patch EKNGHT30, 0, 448
+   Patch EKNGHT31, 0, 480
+   WorldPanning 
+}
+
+
+texture EKNGPNK4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT29, 0, 0
+   WorldPanning 
+}
+
+texture EKNGPNK3, 64, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT33, 0, 0
+   WorldPanning 
+}
+
+texture EKNGPNK5, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT32, 0, 0
+   Patch EKNGHT30, 0, 32
+   Patch EKNGHT30, 0, 64
+   Patch EKNGHT30, 0, 96
+   Patch EKNGHT30, 0, 128
+   Patch EKNGHT30, 0, 160
+   Patch EKNGHT30, 0, 192
+   Patch EKNGHT30, 0, 224
+   Patch EKNGHT30, 0, 256
+   Patch EKNGHT30, 0, 288
+   Patch EKNGHT30, 0, 320
+   Patch EKNGHT30, 0, 352
+   Patch EKNGHT30, 0, 384
+   Patch EKNGHT30, 0, 416
+   Patch EKNGHT30, 0, 448
+   Patch EKNGHT31, 0, 480
+   Patch EKNGHT37, 0, 64
+   WorldPanning 
+}
+
+texture EKNGPNK6, 64, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT32, 0, 0
+   Patch EKNGHT30, 0, 32
+   Patch EKNGHT30, 0, 64
+   Patch EKNGHT30, 0, 96
+   Patch EKNGHT30, 0, 128
+   Patch EKNGHT30, 0, 160
+   Patch EKNGHT30, 0, 192
+   Patch EKNGHT30, 0, 224
+   Patch EKNGHT30, 0, 256
+   Patch EKNGHT30, 0, 288
+   Patch EKNGHT30, 0, 320
+   Patch EKNGHT30, 0, 352
+   Patch EKNGHT30, 0, 384
+   Patch EKNGHT30, 0, 416
+   Patch EKNGHT30, 0, 448
+   Patch EKNGHT31, 0, 480
+   Patch EKNGHT32, 32, 0
+   Patch EKNGHT30, 32, 32
+   Patch EKNGHT30, 32, 64
+   Patch EKNGHT30, 32, 96
+   Patch EKNGHT30, 32, 128
+   Patch EKNGHT30, 32, 160
+   Patch EKNGHT30, 32, 192
+   Patch EKNGHT30, 32, 224
+   Patch EKNGHT30, 32, 256
+   Patch EKNGHT30, 32, 288
+   Patch EKNGHT30, 32, 320
+   Patch EKNGHT30, 32, 352
+   Patch EKNGHT30, 32, 384
+   Patch EKNGHT30, 32, 416
+   Patch EKNGHT30, 32, 448
+   Patch EKNGHT31, 32, 480
+   Patch EKNGHT38, 0, 64
+   WorldPanning 
+}
+
+texture EKNGPNK7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EKNGHT30, 0, 0
+   WorldPanning 
+}
+
+////////////////////

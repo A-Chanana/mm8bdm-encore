@@ -1,0 +1,458 @@
+///// MME3NEE /////
+texture ENEDOR1, 64, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED1, 0, 0
+   Patch ENED2, 0, 16
+   Patch ENED2, 0, 48
+   Patch ENED2, 0, 80
+   Patch ENED2, 0, 112
+   Patch ENED2, 0, 144
+   Patch ENED2, 0, 176
+   Patch ENED2, 0, 208
+   Patch ENED2, 0, 240
+   Patch ENED2, 0, 272
+   Patch ENED2, 0, 304
+   Patch ENED2, 0, 336
+   Patch ENED2, 0, 368
+   Patch ENED2, 0, 400
+   Patch ENED2, 0, 432
+   Patch ENED2, 0, 464
+   Patch ENED2, 0, 496
+   WorldPanning 
+}
+
+texture ENEDOR2, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED2, 0, 0
+   WorldPanning 
+}
+
+texture ENEDPOL, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED3, 0, 0
+   WorldPanning 
+}
+
+texture ENEDOR3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED4, 0, 0
+   WorldPanning 
+}
+
+texture ENEDGR1, 64, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED5, 0, 0
+   Patch ENED6, 0, 64
+   Patch ENED6, 0, 128
+   Patch ENED6, 0, 192
+   Patch ENED6, 0, 256
+   Patch ENED6, 0, 320
+   Patch ENED6, 0, 384
+   Patch ENED6, 0, 448
+   WorldPanning 
+}
+
+texture ENEDGR2, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED6, 0, 0
+   WorldPanning 
+}
+
+texture ENEDGR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED11, 0, 0
+   WorldPanning 
+}
+
+texture ENEDGR4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED7, 0, 0
+   Patch ENED11, 0, 32
+   Patch ENED11, 0, 64
+   Patch ENED11, 0, 96
+   Patch ENED11, 0, 128
+   Patch ENED11, 0, 160
+   Patch ENED11, 0, 192
+   Patch ENED11, 0, 224
+   Patch ENED11, 0, 256
+   Patch ENED11, 0, 288
+   Patch ENED11, 0, 320
+   Patch ENED11, 0, 352
+   Patch ENED11, 0, 384
+   Patch ENED11, 0, 416
+   Patch ENED11, 0, 448
+   Patch ENED11, 0, 480
+   WorldPanning 
+}
+
+texture ENEDGR5, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED8, 0, 0
+   Patch ENED12, 0, 32
+   Patch ENED12, 0, 64
+   Patch ENED12, 0, 96
+   Patch ENED12, 0, 128
+   Patch ENED12, 0, 160
+   Patch ENED12, 0, 192
+   Patch ENED12, 0, 224
+   Patch ENED12, 0, 256
+   Patch ENED12, 0, 288
+   Patch ENED12, 0, 320
+   Patch ENED12, 0, 352
+   Patch ENED12, 0, 384
+   Patch ENED12, 0, 416
+   Patch ENED12, 0, 448
+   Patch ENED12, 0, 480
+   WorldPanning 
+}
+
+texture ENEDGR6, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED9, 0, 0
+   Patch ENED10, 0, 32
+   Patch ENED10, 0, 64
+   Patch ENED10, 0, 96
+   Patch ENED10, 0, 128
+   Patch ENED10, 0, 160
+   Patch ENED10, 0, 192
+   Patch ENED10, 0, 224
+   Patch ENED10, 0, 256
+   Patch ENED10, 0, 288
+   Patch ENED10, 0, 320
+   Patch ENED10, 0, 352
+   Patch ENED10, 0, 384
+   Patch ENED10, 0, 416
+   Patch ENED10, 0, 448
+   Patch ENED10, 0, 480
+   WorldPanning 
+}
+
+texture ENEDOR4, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED13, 0, 0
+   Patch ENED15, 0, 32
+   WorldPanning 
+}
+
+
+texture ENEDOR5, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED16, 0, 0
+   Patch ENED18, 0, 32
+   WorldPanning 
+}
+
+texture ENEDOR6, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED19, 0, 0
+   Patch ENED21, 0, 32
+   WorldPanning 
+}
+
+texture ENEDOR7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED14, 0, 0
+   WorldPanning 
+}
+
+texture ENEDOR8, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED17, 0, 0
+   WorldPanning 
+}
+texture ENEDOR9, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED20, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED26, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBR2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED25, 0, 0
+   Patch ENED26, 0, 32
+   Patch ENED26, 0, 64
+   Patch ENED26, 0, 96
+   Patch ENED26, 0, 128
+   Patch ENED26, 0, 160
+   Patch ENED26, 0, 192
+   Patch ENED26, 0, 224
+   Patch ENED26, 0, 256
+   Patch ENED26, 0, 288
+   Patch ENED26, 0, 320
+   Patch ENED26, 0, 352
+   Patch ENED26, 0, 384
+   Patch ENED26, 0, 416
+   Patch ENED26, 0, 448
+   Patch ENED26, 0, 480
+   WorldPanning 
+}
+
+texture ENEDBR3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED27, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBR4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED28, 0, 0
+   Patch ENED29, 0, 32
+   Patch ENED29, 0, 64
+   Patch ENED29, 0, 96
+   Patch ENED29, 0, 128
+   Patch ENED29, 0, 160
+   Patch ENED29, 0, 192
+   Patch ENED29, 0, 224
+   Patch ENED29, 0, 256
+   Patch ENED29, 0, 288
+   Patch ENED29, 0, 320
+   Patch ENED29, 0, 352
+   Patch ENED29, 0, 384
+   Patch ENED29, 0, 416
+   Patch ENED29, 0, 448
+   Patch ENED29, 0, 480
+   WorldPanning 
+}
+
+texture ENEDBU1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED30, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBU2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED31, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBU3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED32, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBU4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED33, 0, 0
+   WorldPanning 
+}
+
+
+texture ENEDBU5, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED34, 0, 0
+   WorldPanning 
+}
+
+
+texture ENEDBU6, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED35, 0, 0
+   WorldPanning 
+}
+
+texture ENEDBU7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED36, 0, 0
+   WorldPanning 
+}
+
+texture ENEDWIR, 32, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED37, 0, 0
+   Patch ENED37, 0, 32
+   Patch ENED37, 0, 64
+   Patch ENED37, 0, 96
+   Patch ENED37, 0, 128
+   Patch ENED37, 0, 192
+   Patch ENED37, 0, 224
+   Patch ENED37, 0, 256
+   WorldPanning 
+}
+
+
+texture ENEDST1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED38, 0, 0
+   WorldPanning 
+}
+
+texture ENEDST2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED39, 0, 0
+   WorldPanning 
+}
+
+texture ENEDST3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED40, 0, 0
+   WorldPanning 
+}
+
+texture ENEDLDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED40, 0, 0
+   WorldPanning 
+}
+
+texture ENEDST4, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED41, 0, 0
+   WorldPanning 
+}
+
+texture ENEDSKY, 512, 256
+{
+   Patch ENED43, 0, 0
+   WorldPanning 
+}
+
+texture ENEDPURP, 16, 16
+{
+   Patch ENED51, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED45, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED44, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED48, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED50, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL6, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED46, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED49, 0, 0
+   WorldPanning 
+}
+
+texture ENEDFL8, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ENED47, 0, 0
+   WorldPanning 
+}
+
+//Day Textures
+texture ENEDDAY, 512, 256
+{
+   Patch ENEDDAY, 0, 0
+   WorldPanning 
+}
+
+texture ENEDGRE, 16, 16
+{
+   Patch ENEDGRE, 0, 0
+   WorldPanning 
+}
+
+////////////////////

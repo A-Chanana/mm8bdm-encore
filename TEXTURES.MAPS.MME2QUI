@@ -1,0 +1,279 @@
+///// MME2QUI /////
+texture EQUICK1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK1, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK2, 128, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK2, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK3, 64, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK3, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK5, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK5, 512, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK6, 0, 0
+   Patch EQUICK7, 256, 0
+   WorldPanning 
+}
+
+texture EQUICK6, 256, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK7, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK8, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK8, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK9, 0, 0
+   WorldPanning 
+}
+
+texture EQUICK9, 16, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK2, -16, 0
+   WorldPanning 
+}
+
+Texture EQUICK10, 64, 128
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUICK2, -33, 0
+	Patch BLACKP, 0, 16
+	Patch BLACKP, 16, 16
+	Patch BLACKP, 32, 16
+	Patch BLACKP, 48, 16
+	Patch BLACKP, 0, 32
+	Patch BLACKP, 16, 32
+	Patch BLACKP, 32, 32
+	Patch BLACKP, 48, 32
+	Patch BLACKP, 48, 48
+	Patch BLACKP, 32, 48
+	Patch BLACKP, 16, 48
+	Patch BLACKP, 0, 48
+	Patch BLACKP, 0, 64
+	Patch BLACKP, 16, 64
+	Patch BLACKP, 32, 64
+	Patch BLACKP, 48, 64
+	Patch BLACKP, 48, 80
+	Patch BLACKP, 32, 80
+	Patch BLACKP, 16, 80
+	Patch BLACKP, 0, 80
+	Patch BLACKP, 0, 96
+	Patch BLACKP, 16, 96
+	Patch BLACKP, 32, 96
+	Patch BLACKP, 48, 96
+	Patch BLACKP, 48, 112
+	Patch BLACKP, 32, 112
+	Patch BLACKP, 16, 112
+	Patch BLACKP, 0, 112
+}
+
+Texture EQUISMKT, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK1, 0, 0
+}
+
+Texture EQUISMK1, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK1, 0, 0
+}
+
+Texture EQUISMK2, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK2, 0, 0
+}
+
+Texture EQUISMK3, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK3, 0, 0
+}
+
+Texture EQUISMK4, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK4, 0, 0
+}
+
+Texture EQUISMKB, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK9, 0, 0
+}
+
+Texture EQUISMK9, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK9, 0, 0
+}
+
+Texture EQUSMK10, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK10, 0, 0
+}
+
+Texture EQUSMK11, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK11, 0, 0
+}
+
+Texture EQUSMK12, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK12, 0, 0
+}
+
+Texture EQUISMKS, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK5, 0, 0
+}
+
+Texture EQUISMK5, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK5, 0, 0
+}
+
+Texture EQUISMK6, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK6, 0, 0
+}
+
+Texture EQUISMK7, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK7, 0, 0
+}
+
+Texture EQUISMK8, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUISMK8, 0, 0
+}
+
+Texture EQUSMK13, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK13, 0, 0
+}
+
+Texture EQUSMK14, 32, 48
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK14, 0, 0
+}
+
+Texture EQUSMK15, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK15, 0, 0
+}
+
+Texture EQUSMK16, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch EQUSMK16, 0, 0
+}
+
+texture EQUICK17, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EQUICK17, 0, 0
+   WorldPanning 
+}
+
+texture QUICK17, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch QUICK4, 0, 0
+   WorldPanning 
+}
+
+////////////////////

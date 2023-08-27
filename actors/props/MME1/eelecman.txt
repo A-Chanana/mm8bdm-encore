@@ -15,7 +15,7 @@ loop
 Pain.ThunderClaw:
 Pain.ThunderClawPegHelp:
 ETH1 A 0 A_ChangeFlag(SHOOTABLE, false)
-ETH1 A 2 ACS_ExecuteAlways(248, 0, 70)
+ETH1 A 2 ACS_NamedExecuteAlways("core_thunderclawpeg", 0, 70)
 ETH1 A 0 A_ClearTarget
 ETH1 A 0 A_ChangeFlag(SHOOTABLE, true)
 Goto Spawn2

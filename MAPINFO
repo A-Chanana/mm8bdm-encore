@@ -1,33 +1,11 @@
 clearepisodes
 clearskills
 
-episode MAP01
-{
-name = "Story"
-}
-
-episode MAP03
-{
-name = "Encore!"
-}
-
-episode TRAINING
-{
-name = "Training"
-noskillmenu
-}
-
-episode BOTRUSH
-{
-name = "Bot Rush"
-noskillmenu
-}
-
-episode VCREDITS
-{
-name = "Credits"
-noskillmenu
-}
+episode MAP01 {name = "Story"}
+episode MAP03 {name = "Encore!"}
+episode TRAINING {name = "Training" noskillmenu}
+episode BOTRUSH {name = "Bot Rush" noskillmenu}
+episode VCREDITS {name = "Credits" noskillmenu}
 
 skill easy
 {
@@ -50,3 +28,623 @@ skill normal
    DefaultSkill
    DoubleAmmoFactor = 1.0 // DO NOT CHANGE, SEE CMM FOR DETAILS
 }
+
+////////////////////
+///// MME1GUT /////
+map MME1GUT "GUTS MAN: Encore!"
+{
+	next = "MME1BOM"
+	sky1 = "EGUSKY", 0
+	music = "GUTSBOSS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME1BOM /////
+map MME1BOM "BOMB MAN: Encore!"
+{
+	next = "MME1ELE"
+	sky1 = "EBMSKY", 0
+	music = "EBOMMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME1ELE /////
+map MME1ELE "ELEC MAN: Encore!"
+{
+	next = "MME1ICE"
+	sky1 = "EELESKY2", 0
+	music = "EELEMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME1ICE /////
+map MME1ICE "ICE MAN: Encore!"
+{
+	next = "MME1FIR"
+	sky1 = "ECESKY", 0
+	music = "ICEMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME1FIR /////
+map MME1FIR "FIRE MAN: Encore!"
+{
+	next = "MME1TIM"
+	sky1 = "BLACK", 0
+	music = "EFIRMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME1TIM /////
+map MME1TIM "TIME MAN: Encore!"
+{
+	next = "MME1OIL"
+	sky1 = "W1SKY", 0
+	music = "ETIMMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME1OIL /////
+map MME1OIL "OIL MAN ENCORE"
+{
+	next = "MME1DW1"
+	sky1 = "BLACK", 0
+	music = "EOILMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME1DW1 /////
+map MME1DW1 "WILY'S HIDEOUT 1: Encore!"
+{
+	next = "MME2BUB"
+	sky1 = "EW1SKY", 0
+	music = "E1DW1MUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME2BUB /////
+map MME2BUB "BUBBLE MAN: Encore!"
+{
+	next = "MME2AIR"
+	sky1 = "BLACK", 0
+	music = "EBUBMUS"
+	aircontrol = 0.5
+	UsePlayerStartZ
+}
+
+
+////////////////////
+///// MME2AIR /////
+map MME2AIR "AIR MAN: Encore!"
+{
+	next = "MME2HEA"
+	sky1 = "BLACK", 0
+	music = "EAIRMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME2HEA /////
+map MME2HEA "HEAT MAN: Encore!"
+{
+	next = "MME2FLA"
+	sky1 = "BLACK", 0
+	music = "EHEAMUS"
+	aircontrol = 0.5
+}
+
+////////////////////
+///// MME2FLA /////
+map MME2FLA "FLASH MAN: Encore!"
+{
+	next = "MME2QUI"
+	sky1 = "BLACK", 0
+	music = "EFLAMUS"
+	aircontrol = 0.5
+}
+
+////////////////////
+///// MME2QUI /////
+map MME2QUI "QUICK MAN: Encore!"
+{
+	next = "MME2CRA"
+	sky1 = "BLACK", 0
+	music = "EQUIMUS"
+	aircontrol = 0.5
+}
+
+////////////////////
+///// MME2CRA /////
+map MME2CRA "CRASH MAN: Encore!"
+{
+	levelnum = 17
+	next = "MME2MET"
+	sky1 = "CRASSKY", 0
+	music = "ECRAMUS"
+	aircontrol = 0.5
+	clipmidtextures
+	evenlighting
+}
+
+
+////////////////////
+///// MME2MET /////
+map MME2MET "METAL MAN: Encore!"
+{
+	next = "MME2DW1"
+	sky1 = "BLACK", 0
+	music = "EMETMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME2DW1 /////
+map MME2DW1 "SKULL CASTLE ENTRANCE: Encore!"
+{
+	next = "MME2DW3"
+	sky1 = "BLACK", 0
+	music = "E2DW1MUS"
+	aircontrol = 0.5
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME2DW3 /////
+map MME2DW3 "SKULL CASTLE DEPTHS: Encore!"
+{
+	next = "MME3TOP"
+	sky1 = "EDW1", 0
+	music = "E2DW4MUS"
+	aircontrol = 0.5
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME3TOP /////
+map MME3TOP "TOP MAN: Encore!"
+{
+	next = "MME3NEE"
+	sky1 = "ETOSKY", 0
+	music = "ETOPMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+}
+
+////////////////////
+///// MME3NEE /////
+map MME3NEE "NEEDLE MAN: Encore!"
+{
+	next = "MME3HAR"
+	sky1 = "BLACK", 0
+	music = "ENEEMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+}
+
+
+////////////////////
+///// MME3HAR /////
+map MME3HAR "HARD MAN: Encore!"
+{
+	next = "MME3GEM"
+	sky1 = "EHRDSKY2", 0
+	music = "EHARMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+}
+
+
+////////////////////
+///// MME3GEM /////
+map MME3GEM "GEMINI MAN: Encore!"
+{
+	next = "MME3MAG"
+	sky1 = "BLACK", 0
+	music = "EGEMMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME3MAG /////
+map MME3MAG "MAGNET MAN: Encore!"
+{
+   next = "MME3SPA"
+   sky1 = "BLACK", 0
+   music = "EMAGMUS"
+   aircontrol = 0.5
+   forcenoskystretch
+}
+
+
+////////////////////
+///// MME3SPA /////
+map MME3SPA "SPARK MAN: ENCORE!"
+{
+	next = "MME3DW2"
+	sky1 = "BLACK", 0
+	music = "ESPAMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	useplayerstartz
+}
+
+////////////////////
+///// MME3DW2 /////
+map MME3DW2 "SKULL CASTLE INTERIOR: Encore!"
+{
+	next = "MME4SKU"
+	sky1 = "BLACK", 0
+	music = "E3DW2MUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME4SKU /////
+map MME4SKU "SKULL MAN: ENCORE!"
+{
+	next = "MME4TOA"
+	sky1 = "BLACK", 0
+	music = "ESKUMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+////////////////////
+///// MME4TOA /////
+map MME4TOA "TOAD MAN: Encore!"
+{
+	next = "MME5CHA"
+	sky1 = "BLACK", 0 
+	music = "ETOAMUS" 
+	aircontrol = 0.5 
+	clipmidtextures
+	evenlighting
+}
+
+////////////////////
+///// MME5CHA /////
+map MME5CHA "CHARGE MAN: Encore!"
+{
+	next = "MME5STO"
+	sky1 = "BLACK", 0
+	music = "ECHAMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME5STO /////
+map MME5STO "STONE MAN: Encore!"
+{
+	next = "MME5NAP"
+	sky1 = "NAPSKY", 0
+	music = "ESTOMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+////////////////////
+///// MME5NAP /////
+map MME5NAP "NAPALM MAN: Encore!"
+{
+	next = "MME5WAV"
+	sky1 = "NAPSKY", 0
+	music = "ENAPMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+////////////////////
+///// MME5WAV /////
+map MME5WAV "WAVE MAN: Encore!"
+{
+	next = "MME5GRA"
+	sky1 = "EWVESKY", 0
+	music = "EWAVMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME5GRA /////
+map MME5GRA "GRAVITY MAN: Encore!"
+{
+	next = "MME5CRY"
+	sky1 = "BLACK", 0
+	music = "EGRAMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME5CRY /////
+map MME5CRY "CRYSTAL MAN: Encore!"
+{
+	next = "MME6TOM"
+	sky1 = "BLACK", 0
+	music = "ECRYMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME6TOM /////
+map MME6TOM "TOMAHAWK MAN: Encore!"
+{
+	next = "MME6KNI"
+	sky1 = "BLACK", 0
+	music = "ETOMMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME6KNI /////
+map MME6KNI "KNIGHT MAN: Encore!"
+{
+	next = "MME6PLA"
+	sky1 = "BLACK", 0
+	music = "EKNIMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME6PLA /////
+map MMe6PLA "PLANT MAN: Encore!"
+{
+	next = "MME6MRX"
+	sky1 = "BLACK", 0
+	music = "EPLAMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME6MRX /////
+map MME6MRX "MR. X FORTRESS: Encore!"
+{
+	next = "MME7FRE"
+	sky1 = "BLACK", 0
+	music = "EMRXMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME7FRE /////
+map MME7FRE "FREEZE MAN: Encore!"
+{
+	next = "MME7JUN"
+	sky1 = "EFRESKY", 0
+	music = "EFREMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME7JUN /////
+map MME7JUN "JUNK MAN ENCORE"
+{
+	next = "MME7SHA"
+	sky1 = "BLACK", 0
+	music = "EJUNMUS"
+	aircontrol = 0.5
+}
+
+///// MME7SHA /////
+map MME7SHA "SHADE MAN ENCORE"
+{
+	next = "MME7TUR"
+	sky1 = "BLACK", 0
+	music = "ESDEMUS"
+	aircontrol = 0.5
+	UsePlayerStartZ
+}
+
+////////////////////
+///// MME7TUR /////
+map MME7TUR "TURBO MAN: Encore!"
+{
+   next = "MME8SWO"
+   sky1 = "BLACK", 0
+   music = "ETURMUS"
+   aircontrol = 0.5
+   UsePlayerStartZ
+}
+
+
+////////////////////
+///// MME8SWO /////
+map MME8SWO "SWORD MAN: Encore!"
+{
+	next = "MME9SPL"
+	sky1 = "BLACK", 0
+	music = "ESWOMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+	clipmidtextures
+}
+
+
+////////////////////
+///// MME9SPL /////
+map MME9SPL "SPLASH WOMAN: Encore!"
+{
+	next = "MME9MAG"
+	music = "ESPLMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME9MAG /////
+map MME9MAG "MAGMA MAN: Encore!"
+{
+	next = "MME9GAL"
+	sky1 = "BLACK", 0
+	music = "EMGMMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+}
+
+////////////////////
+///// MME9GAL /////
+map MME9GAL "GALAXY MAN ENCORE!"
+{
+	next = "MME10STR"
+	sky1 = "GALSKYX", 0
+	music = "EGALMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MME10STR /////
+map MME10STR "STRIKE MAN ENCORE!"
+{
+	next = "MME10SOL"
+	sky1 = "WHITE", 0
+	music = "ESTRMUS"
+	aircontrol = 0.5
+}
+
+////////////////////
+///// MME10SOL /////
+map MME10SOL "SOLAR MAN: Encore!"
+{
+	next = "MMEVURA"
+	sky1 = "AIRSKY", 0
+	music = "ESOLMUS"
+	aircontrol = 0.5
+}
+
+////////////////////
+///// MMEVVEN /////
+map MMEVURA "URANUS ENCORE!"
+{
+	next = "MMEVVEN"
+	sky1 = "EURAN91"
+	music = "EURAMUS"
+	aircontrol = 0.5
+	forcenoskystretch
+}
+
+
+////////////////////
+///// MMEVVEN /////
+map MMEVVEN "VENUS: Encore!"
+{
+	next = "MMB2KOM"
+	music = "EVENMUS"
+	aircontrol = 0.5
+}
+
+
+////////////////////
+///// MMB2KOM /////
+map MMB2KOM "Komuso Man"
+{
+	next = "MMB2CLO"
+	sky1 = "BLACK", 0
+	music = "KOMMUS"
+	aircontrol = 0.5
+	useplayerstartz
+}
+
+
+////////////////////
+///// MMB2CLO /////
+map MMB2CLO "Clock Men"
+{
+	next = "MMB2BUL"
+	sky1 = "BLACK", 0
+	music = "CLKMUS"
+	aircontrol = 0.5
+	useplayerstartz
+}
+
+
+////////////////////
+///// MMB2BUL /////
+map MMB2BUL "BULLET MAN"
+{
+	next = "MMEPRO"
+	sky1 = "BLACK", 0 
+	music = "BULMUS" 
+	aircontrol = 0.5 
+	clipmidtextures
+	evenlighting
+	UsePlayerStartZ
+}
+
+////////////////////
+///// MMEPRO /////
+map MMEPRO "PROTO MAN"
+{
+	next = "MMEBON"
+	sky1 = "BLACK", 0
+	music = "EPROINT"
+	aircontrol = 0.5
+	forcenoskystretch
+}
+
+
+////////////////////
+///// MMEBON /////
+map MMEBON "Bond Man"
+{
+	next = "MME1GUT"
+	sky1 = "BLACK", 0
+	music = "BONMUS"
+	aircontrol = 0.5
+	useplayerstartz
+}
+
+
+////////////////////

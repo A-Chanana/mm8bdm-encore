@@ -1,0 +1,724 @@
+///// MME9MAG /////
+Texture E9MLIGHT, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM01, 0, 0
+}
+
+Texture E9MLIGH2, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM61, 0, 0
+}
+
+Texture E9MLADR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM02, 0, 0
+}
+
+Texture E9MGRA1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM05, -8, 0
+   Patch EMGM03, 8, 0
+}
+
+Texture E9MGRA2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM04, 0, 0
+}
+
+Texture E9MLAVX, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM56, 0, 0
+}
+
+Texture E9MLAV1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM56, 0, 0
+}
+
+Texture E9MLAV2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM57, 0, 0
+}
+
+Texture E9MLAV3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM58, 0, 0
+}
+
+Texture E9MRCK1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM10, 0, 0
+   Patch EMGM11, 0, 16
+   Patch EMGM11, 0, 32
+   Patch EMGM11, 0, 48
+   Patch EMGM11, 0, 64
+   Patch EMGM11, 0, 80
+   Patch EMGM11, 0, 96
+   Patch EMGM11, 0, 112
+   Patch EMGM11, 0, 128
+   Patch EMGM11, 0, 144
+   Patch EMGM11, 0, 160
+   Patch EMGM11, 0, 176
+   Patch EMGM11, 0, 192
+   Patch EMGM11, 0, 208
+   Patch EMGM11, 0, 224
+   Patch EMGM11, 0, 240
+   Patch EMGM11, 0, 256
+   Patch EMGM11, 0, 272
+   Patch EMGM11, 0, 288
+   Patch EMGM11, 0, 304
+   Patch EMGM11, 0, 320
+   Patch EMGM11, 0, 336
+   Patch EMGM11, 0, 352
+   Patch EMGM11, 0, 368
+   Patch EMGM11, 0, 384
+   Patch EMGM11, 0, 400
+   Patch EMGM11, 0, 416
+   Patch EMGM11, 0, 432
+   Patch EMGM11, 0, 448
+   Patch EMGM11, 0, 464
+   Patch EMGM11, 0, 480
+   Patch EMGM12, 0, 496
+   
+   Patch EMGM16, 16, 0
+   Patch EMGM17, 16, 16
+   Patch EMGM17, 16, 32
+   Patch EMGM17, 16, 48
+   Patch EMGM17, 16, 64
+   Patch EMGM17, 16, 80
+   Patch EMGM17, 16, 96
+   Patch EMGM17, 16, 112
+   Patch EMGM17, 16, 128
+   Patch EMGM17, 16, 144
+   Patch EMGM17, 16, 160
+   Patch EMGM17, 16, 176
+   Patch EMGM17, 16, 192
+   Patch EMGM17, 16, 208
+   Patch EMGM17, 16, 224
+   Patch EMGM17, 16, 240
+   Patch EMGM17, 16, 256
+   Patch EMGM17, 16, 272
+   Patch EMGM17, 16, 288
+   Patch EMGM17, 16, 304
+   Patch EMGM17, 16, 320
+   Patch EMGM17, 16, 336
+   Patch EMGM17, 16, 352
+   Patch EMGM17, 16, 368
+   Patch EMGM17, 16, 384
+   Patch EMGM17, 16, 400
+   Patch EMGM17, 16, 416
+   Patch EMGM17, 16, 432
+   Patch EMGM17, 16, 448
+   Patch EMGM17, 16, 464
+   Patch EMGM17, 16, 480
+   Patch EMGM18, 16, 496
+}
+
+Texture E9MRCK2, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM13, 0, 0
+   Patch EMGM14, 0, 16
+   Patch EMGM14, 0, 32
+   Patch EMGM14, 0, 48
+   Patch EMGM14, 0, 64
+   Patch EMGM14, 0, 80
+   Patch EMGM14, 0, 96
+   Patch EMGM14, 0, 112
+   Patch EMGM14, 0, 128
+   Patch EMGM14, 0, 144
+   Patch EMGM14, 0, 160
+   Patch EMGM14, 0, 176
+   Patch EMGM14, 0, 192
+   Patch EMGM14, 0, 208
+   Patch EMGM14, 0, 224
+   Patch EMGM14, 0, 240
+   Patch EMGM14, 0, 256
+   Patch EMGM14, 0, 272
+   Patch EMGM14, 0, 288
+   Patch EMGM14, 0, 304
+   Patch EMGM14, 0, 320
+   Patch EMGM14, 0, 336
+   Patch EMGM14, 0, 352
+   Patch EMGM14, 0, 368
+   Patch EMGM14, 0, 384
+   Patch EMGM14, 0, 400
+   Patch EMGM14, 0, 416
+   Patch EMGM14, 0, 432
+   Patch EMGM14, 0, 448
+   Patch EMGM14, 0, 464
+   Patch EMGM14, 0, 480
+   Patch EMGM15, 0, 496
+}
+
+Texture E9MRCK3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM14, 0, 0
+}
+
+Texture E9MINT1, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM28, 0, 0
+   Patch EMGM29, 0, 16
+   Patch EMGM29, 0, 32
+   Patch EMGM29, 0, 48
+   Patch EMGM29, 0, 64
+   Patch EMGM29, 0, 80
+   Patch EMGM29, 0, 96
+   Patch EMGM29, 0, 112
+   Patch EMGM29, 0, 128
+   Patch EMGM29, 0, 144
+   Patch EMGM29, 0, 160
+   Patch EMGM29, 0, 176
+   Patch EMGM29, 0, 192
+   Patch EMGM29, 0, 208
+   Patch EMGM29, 0, 224
+   Patch EMGM30, 0, 240
+}
+
+Texture E9MINT2, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM34, 0, 0
+   Patch EMGM33, 0, 16
+   Patch EMGM33, 0, 32
+   Patch EMGM33, 0, 48
+   Patch EMGM33, 0, 64
+   Patch EMGM33, 0, 80
+   Patch EMGM33, 0, 96
+   Patch EMGM33, 0, 112
+   Patch EMGM33, 0, 128
+   Patch EMGM33, 0, 144
+   Patch EMGM33, 0, 160
+   Patch EMGM33, 0, 176
+   Patch EMGM33, 0, 192
+   Patch EMGM33, 0, 208
+   Patch EMGM33, 0, 224
+   Patch EMGM35, 0, 240
+}
+
+Texture E9MINT3, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM51, 0, 0
+   Patch EMGM52, 0, 16
+   Patch EMGM52, 0, 32
+   Patch EMGM52, 0, 48
+   Patch EMGM52, 0, 64
+   Patch EMGM52, 0, 80
+   Patch EMGM52, 0, 96
+   Patch EMGM52, 0, 112
+   Patch EMGM52, 0, 128
+   Patch EMGM52, 0, 144
+   Patch EMGM52, 0, 160
+   Patch EMGM52, 0, 176
+   Patch EMGM52, 0, 192
+   Patch EMGM52, 0, 208
+   Patch EMGM52, 0, 224
+   Patch EMGM53, 0, 240
+}
+
+Texture E9MGRT1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM36, 0, 0
+   Patch EMGM37, 0, 16
+   Patch EMGM37, 0, 32
+   Patch EMGM37, 0, 48
+   Patch EMGM37, 0, 64
+   Patch EMGM37, 0, 80
+   Patch EMGM37, 0, 96
+   Patch EMGM37, 0, 112
+   Patch EMGM37, 0, 128
+   Patch EMGM37, 0, 144
+   Patch EMGM37, 0, 160
+   Patch EMGM37, 0, 176
+   Patch EMGM37, 0, 192
+   Patch EMGM37, 0, 208
+   Patch EMGM37, 0, 224
+   Patch EMGM37, 0, 240
+   Patch EMGM37, 0, 256
+   Patch EMGM37, 0, 272
+   Patch EMGM37, 0, 288
+   Patch EMGM37, 0, 304
+   Patch EMGM37, 0, 320
+   Patch EMGM37, 0, 336
+   Patch EMGM37, 0, 352
+   Patch EMGM37, 0, 368
+   Patch EMGM37, 0, 384
+   Patch EMGM37, 0, 400
+   Patch EMGM37, 0, 416
+   Patch EMGM37, 0, 432
+   Patch EMGM37, 0, 448
+   Patch EMGM37, 0, 464
+   Patch EMGM37, 0, 480
+   Patch EMGM38, 0, 496
+   
+   Patch EMGM42, 16, 0
+   Patch EMGM43, 16, 16
+   Patch EMGM43, 16, 32
+   Patch EMGM43, 16, 48
+   Patch EMGM43, 16, 64
+   Patch EMGM43, 16, 80
+   Patch EMGM43, 16, 96
+   Patch EMGM43, 16, 112
+   Patch EMGM43, 16, 128
+   Patch EMGM43, 16, 144
+   Patch EMGM43, 16, 160
+   Patch EMGM43, 16, 176
+   Patch EMGM43, 16, 192
+   Patch EMGM43, 16, 208
+   Patch EMGM43, 16, 224
+   Patch EMGM43, 16, 240
+   Patch EMGM43, 16, 256
+   Patch EMGM43, 16, 272
+   Patch EMGM43, 16, 288
+   Patch EMGM43, 16, 304
+   Patch EMGM43, 16, 320
+   Patch EMGM43, 16, 336
+   Patch EMGM43, 16, 352
+   Patch EMGM43, 16, 368
+   Patch EMGM43, 16, 384
+   Patch EMGM43, 16, 400
+   Patch EMGM43, 16, 416
+   Patch EMGM43, 16, 432
+   Patch EMGM43, 16, 448
+   Patch EMGM43, 16, 464
+   Patch EMGM43, 16, 480
+   Patch EMGM44, 16, 496
+}
+
+Texture E9MGRT3, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM39, 0, 0
+   Patch EMGM40, 0, 16
+   Patch EMGM40, 0, 32
+   Patch EMGM40, 0, 48
+   Patch EMGM40, 0, 64
+   Patch EMGM40, 0, 80
+   Patch EMGM40, 0, 96
+   Patch EMGM40, 0, 112
+   Patch EMGM40, 0, 128
+   Patch EMGM40, 0, 144
+   Patch EMGM40, 0, 160
+   Patch EMGM40, 0, 176
+   Patch EMGM40, 0, 192
+   Patch EMGM40, 0, 208
+   Patch EMGM40, 0, 224
+   Patch EMGM40, 0, 240
+   Patch EMGM40, 0, 256
+   Patch EMGM40, 0, 272
+   Patch EMGM40, 0, 288
+   Patch EMGM40, 0, 304
+   Patch EMGM40, 0, 320
+   Patch EMGM40, 0, 336
+   Patch EMGM40, 0, 352
+   Patch EMGM40, 0, 368
+   Patch EMGM40, 0, 384
+   Patch EMGM40, 0, 400
+   Patch EMGM40, 0, 416
+   Patch EMGM40, 0, 432
+   Patch EMGM40, 0, 448
+   Patch EMGM40, 0, 464
+   Patch EMGM40, 0, 480
+   Patch EMGM41, 0, 496
+}
+
+Texture E9MPLAT1, 32, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM09, 0, 0
+   Patch EMGM24, 0, 16
+   Patch EMGM25, 0, 32
+   Patch EMGM24, 0, 48
+   Patch EMGM25, 0, 64
+   Patch EMGM24, 0, 80
+   Patch EMGM25, 0, 96
+   Patch EMGM24, 0, 112
+   Patch EMGM25, 0, 128
+   Patch EMGM24, 0, 144
+   Patch EMGM25, 0, 160
+   Patch EMGM24, 0, 176
+   Patch EMGM25, 0, 192
+   Patch EMGM24, 0, 208
+   Patch EMGM25, 0, 224
+   Patch EMGM09, 0, 240
+   
+   Patch EMGM09, 16, 0
+   Patch EMGM26, 16, 16
+   Patch EMGM27, 16, 32
+   Patch EMGM26, 16, 48
+   Patch EMGM27, 16, 64
+   Patch EMGM26, 16, 80
+   Patch EMGM27, 16, 96
+   Patch EMGM26, 16, 112
+   Patch EMGM27, 16, 128
+   Patch EMGM26, 16, 144
+   Patch EMGM27, 16, 160
+   Patch EMGM26, 16, 176
+   Patch EMGM27, 16, 192
+   Patch EMGM26, 16, 208
+   Patch EMGM27, 16, 224
+   Patch EMGM09, 16, 240   
+}
+
+Texture E9MPLAT2, 32, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM09, 0, 0
+   Patch EMGM19, 0, 16
+   Patch EMGM20, 0, 48
+   Patch EMGM20, 0, 80
+   Patch EMGM20, 0, 112
+   Patch EMGM20, 0, 144
+   Patch EMGM20, 0, 176
+   Patch EMGM21, 0, 208
+   Patch EMGM09, 0, 240
+   
+   Patch EMGM09, 16, 0
+   Patch EMGM09, 16, 240   
+}
+
+Texture E9MPLAT3, 64, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM09, 0, 0
+   Patch EMGM19, 0, 16
+   Patch EMGM22, 0, 48
+   Patch EMGM20, 0, 80
+   Patch EMGM22, 0, 112
+   Patch EMGM20, 0, 144
+   Patch EMGM22, 0, 176
+   Patch EMGM21, 0, 208
+   Patch EMGM09, 0, 240
+   
+   Patch EMGM09, 16, 0
+   Patch EMGM09, 16, 240   
+      
+   Patch EMGM09, 32, 0
+   Patch EMGM09, 32, 240   
+   
+   Patch EMGM09, 32, 0
+   Patch EMGM19, 32, 16
+   Patch EMGM23, 32, 48
+   Patch EMGM20, 32, 80
+   Patch EMGM23, 32, 112
+   Patch EMGM20, 32, 144
+   Patch EMGM23, 32, 176
+   Patch EMGM21, 32, 208
+   Patch EMGM09, 32, 240
+   
+   Patch EMGM09, 48, 0
+   Patch EMGM09, 48, 240   
+}
+
+Texture E9MPILR, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM06, 0, 0
+   Patch EMGM07, 0, 16
+   Patch EMGM07, 0, 32
+   Patch EMGM07, 0, 48
+   Patch EMGM07, 0, 64
+   Patch EMGM07, 0, 80
+   Patch EMGM07, 0, 96
+   Patch EMGM07, 0, 112
+   Patch EMGM07, 0, 128
+   Patch EMGM07, 0, 144
+   Patch EMGM07, 0, 160
+   Patch EMGM07, 0, 176
+   Patch EMGM07, 0, 192
+   Patch EMGM07, 0, 208
+   Patch EMGM07, 0, 224
+   Patch EMGM08, 0, 240  
+}
+
+Texture E9MFEN1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM36, 0, 0
+   Patch EMGM37, 0, 16
+   Patch EMGM37, 0, 32
+   Patch EMGM37, 0, 48
+   Patch EMGM37, 0, 64
+   Patch EMGM37, 0, 80
+   Patch EMGM37, 0, 96
+   Patch EMGM37, 0, 112
+   Patch EMGM37, 0, 128
+   Patch EMGM37, 0, 144
+   Patch EMGM37, 0, 160
+   Patch EMGM37, 0, 176
+   Patch EMGM37, 0, 192
+   Patch EMGM37, 0, 208
+   Patch EMGM37, 0, 224
+   Patch EMGM37, 0, 240
+   Patch EMGM37, 0, 256
+   Patch EMGM37, 0, 272
+   Patch EMGM37, 0, 288
+   Patch EMGM37, 0, 304
+   Patch EMGM37, 0, 320
+   Patch EMGM37, 0, 336
+   Patch EMGM37, 0, 352
+   Patch EMGM37, 0, 368
+   Patch EMGM37, 0, 384
+   Patch EMGM37, 0, 400
+   Patch EMGM37, 0, 416
+   Patch EMGM37, 0, 432
+   Patch EMGM37, 0, 448
+   Patch EMGM37, 0, 464
+   Patch EMGM37, 0, 480
+   Patch EMGM38, 0, 496
+   
+   Patch EMGM42, 16, 0
+   Patch EMGM43, 16, 16
+   Patch EMGM43, 16, 32
+   Patch EMGM43, 16, 48
+   Patch EMGM43, 16, 64
+   Patch EMGM43, 16, 80
+   Patch EMGM43, 16, 96
+   Patch EMGM43, 16, 112
+   Patch EMGM43, 16, 128
+   Patch EMGM43, 16, 144
+   Patch EMGM43, 16, 160
+   Patch EMGM43, 16, 176
+   Patch EMGM43, 16, 192
+   Patch EMGM43, 16, 208
+   Patch EMGM43, 16, 224
+   Patch EMGM43, 16, 240
+   Patch EMGM43, 16, 256
+   Patch EMGM43, 16, 272
+   Patch EMGM43, 16, 288
+   Patch EMGM43, 16, 304
+   Patch EMGM43, 16, 320
+   Patch EMGM43, 16, 336
+   Patch EMGM43, 16, 352
+   Patch EMGM43, 16, 368
+   Patch EMGM43, 16, 384
+   Patch EMGM43, 16, 400
+   Patch EMGM43, 16, 416
+   Patch EMGM43, 16, 432
+   Patch EMGM43, 16, 448
+   Patch EMGM43, 16, 464
+   Patch EMGM43, 16, 480
+   Patch EMGM44, 16, 496
+}
+
+Texture E9MFEN2, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM39, 0, 0
+   Patch EMGM40, 0, 16
+   Patch EMGM40, 0, 32
+   Patch EMGM40, 0, 48
+   Patch EMGM40, 0, 64
+   Patch EMGM40, 0, 80
+   Patch EMGM40, 0, 96
+   Patch EMGM40, 0, 112
+   Patch EMGM40, 0, 128
+   Patch EMGM40, 0, 144
+   Patch EMGM40, 0, 160
+   Patch EMGM40, 0, 176
+   Patch EMGM40, 0, 192
+   Patch EMGM40, 0, 208
+   Patch EMGM40, 0, 224
+   Patch EMGM40, 0, 240
+   Patch EMGM40, 0, 256
+   Patch EMGM40, 0, 272
+   Patch EMGM40, 0, 288
+   Patch EMGM40, 0, 304
+   Patch EMGM40, 0, 320
+   Patch EMGM40, 0, 336
+   Patch EMGM40, 0, 352
+   Patch EMGM40, 0, 368
+   Patch EMGM40, 0, 384
+   Patch EMGM40, 0, 400
+   Patch EMGM40, 0, 416
+   Patch EMGM40, 0, 432
+   Patch EMGM40, 0, 448
+   Patch EMGM40, 0, 464
+   Patch EMGM40, 0, 480
+   Patch EMGM41, 0, 496
+}
+
+Texture E9MFLOR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM66, 0, 0
+}
+
+Texture E9MFLOR2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM59, 0, 0
+}
+
+Texture E9MFLOR3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM60, 0, 0
+}
+
+Texture E9MFLOR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM67, 0, 0
+}
+
+Texture E9MTUB1, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM62, 0, 0
+}
+
+Texture E9MTUB2, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM63, 0, 0
+}
+
+Texture E9MTUBX, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM63, 0, 0
+}
+
+Texture E9MTUB3, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM64, 0, 0
+}
+
+Texture E9MTUB4, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM65, 0, 0
+}
+
+Texture E9MTUB2X, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM64, 0, 0
+}
+
+Texture E9MTUB5, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   
+   Patch EMGM68, 0, 0
+}
+
+////////////////////

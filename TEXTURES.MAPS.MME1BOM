@@ -1,0 +1,333 @@
+///// MME1BOM /////
+Texture EBMMET, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB9, 0, 0
+   WorldPanning 
+}
+
+texture EBMLAD, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB8, 0, 0
+   WorldPanning 
+}
+
+texture BOMLAD, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch BOMB8, 0, 0
+   WorldPanning 
+}
+
+Texture EBMBMETL, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB11, 0, 0
+   Patch EBMB10, 0, 32
+   Patch EBMB10, 0, 64
+   Patch EBMB10, 0, 96
+   Patch EBMB10, 0, 128
+   Patch EBMB10, 0, 160
+   Patch EBMB10, 0, 192
+   Patch EBMB10, 0, 224
+   Patch EBMB10, 0, 256
+   Patch EBMB10, 0, 288
+   Patch EBMB10, 0, 320
+   Patch EBMB10, 0, 352
+   Patch EBMB10, 0, 384
+   Patch EBMB10, 0, 416
+   Patch EBMB10, 0, 448
+   Patch EBMB10, 0, 480
+   WorldPanning 
+}
+
+Texture EBMBMETR, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB3, 0, 0
+   Patch EBMB2, 0, 32
+   Patch EBMB2, 0, 64
+   Patch EBMB2, 0, 96
+   Patch EBMB2, 0, 128
+   Patch EBMB2, 0, 160
+   Patch EBMB2, 0, 192
+   Patch EBMB2, 0, 224
+   Patch EBMB2, 0, 256
+   Patch EBMB2, 0, 288
+   Patch EBMB2, 0, 320
+   Patch EBMB2, 0, 352
+   Patch EBMB2, 0, 384
+   Patch EBMB2, 0, 416
+   Patch EBMB2, 0, 448
+   Patch EBMB2, 0, 480
+   WorldPanning 
+}
+
+Texture EBMBMETM, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB14, 0, 0
+   Patch EBMB9, 0, 32
+   Patch EBMB9, 0, 64
+   Patch EBMB9, 0, 96
+   Patch EBMB9, 0, 128
+   Patch EBMB9, 0, 160
+   Patch EBMB9, 0, 192
+   Patch EBMB9, 0, 224
+   Patch EBMB9, 0, 256
+   Patch EBMB9, 0, 288
+   Patch EBMB9, 0, 320
+   Patch EBMB9, 0, 352
+   Patch EBMB9, 0, 384
+   Patch EBMB9, 0, 416
+   Patch EBMB9, 0, 448
+   Patch EBMB9, 0, 480
+   WorldPanning 
+}
+
+Texture EBMBMETS, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB13, 0, 0
+   Patch EBMB12, 0, 32
+   Patch EBMB12, 0, 64
+   Patch EBMB12, 0, 96
+   Patch EBMB12, 0, 128
+   Patch EBMB12, 0, 160
+   Patch EBMB12, 0, 192
+   Patch EBMB12, 0, 224
+   Patch EBMB12, 0, 256
+   Patch EBMB12, 0, 288
+   Patch EBMB12, 0, 320
+   Patch EBMB12, 0, 352
+   Patch EBMB12, 0, 384
+   Patch EBMB12, 0, 416
+   Patch EBMB12, 0, 448
+   Patch EBMB12, 0, 480
+   WorldPanning 
+}
+
+Texture EBMBFUZ, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB15, 0, 0
+   WorldPanning 
+}
+
+Texture EBMBINT, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB7, 0, 0
+   WorldPanning 
+}
+
+Texture EBMBINT2, 32, 160
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB6, 0, 0
+   Patch EBMB7, 0, 32
+   Patch EBMB7, 0, 64
+   Patch EBMB7, 0, 96
+   Patch EBMB7, 0, 128
+   WorldPanning 
+}
+
+Texture EBMFLOOR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB5, 0, 0
+   WorldPanning 
+}
+
+Texture EBMSKY, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB16, 0, 0
+   Patch EBMB16, 16, 0
+   Patch EBMB16, 16, 16
+   Patch EBMB16, 0, 16
+   WorldPanning 
+}
+
+Texture EBMGATE, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB30, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB17, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO4, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB18, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB19, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO6, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB20, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO7, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB21, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO8, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB22, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLOO9, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB23, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLO10, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB24, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLO11, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB25, 0, 0
+   WorldPanning 
+}
+
+
+Texture EBMFLO12, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB26, 0, 0
+   WorldPanning 
+}
+
+
+Texture EBMFLO13, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB27, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLO14, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB28, 0, 0
+   WorldPanning 
+}
+
+Texture EBMFLO15, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB29, 0, 0
+   WorldPanning 
+}
+
+Texture EBMDOOR, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB4, 0, 0
+   WorldPanning 
+}
+
+Texture EBMBINNR, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB6, 0, 0
+   Patch EBMB7, 0, 32
+   Patch EBMB7, 0, 64
+   Patch EBMB7, 0, 96
+   Patch EBMB7, 0, 128
+   Patch EBMB7, 0, 160
+   Patch EBMB7, 0, 192
+   Patch EBMB7, 0, 224
+   Patch EBMB7, 0, 256
+   Patch EBMB7, 0, 288
+   Patch EBMB7, 0, 320
+   Patch EBMB7, 0, 352
+   Patch EBMB7, 0, 384
+   Patch EBMB7, 0, 416
+   Patch EBMB7, 0, 448
+   Patch EBMB7, 0, 480
+   WorldPanning 
+}
+
+Texture EBMBTOWR, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EBMB13, 0, 0
+   Patch EBMB12, 0, 32
+   Patch EBMB12, 0, 64
+   Patch EBMB12, 0, 96
+   Patch EBMB12, 0, 128
+   Patch EBMB12, 0, 160
+   Patch EBMB12, 0, 192
+   Patch EBMB12, 0, 224
+   Patch EBMB12, 0, 256
+   Patch EBMB12, 0, 288
+   Patch EBMB12, 0, 320
+   Patch EBMB12, 0, 352
+   Patch EBMB12, 0, 384
+   Patch EBMB12, 0, 416
+   Patch EBMB12, 0, 448
+   Patch EBMB12, 0, 480
+   WorldPanning 
+}
+
+////////////////////

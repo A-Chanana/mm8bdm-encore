@@ -1,3 +1,33 @@
+#include "actors/inventory/assists/utility/SuperArrow.txt"
+#include "actors/inventory/assists/utility/Balloon.txt"
+
+#include "actors/inventory/misc/DawnBreakerWeak.txt"
+#include "actors/inventory/misc/BondingPaste.txt"
+#include "actors/inventory/misc/BerserkerRush.txt"
+#include "actors/inventory/misc/ShieldSpiral.txt"
+#include "actors/inventory/misc/RestrictionRing.txt"
+#include "actors/inventory/misc/OnslaughtGatling.txt"
+#include "actors/inventory/misc/JusticeMeteor.txt"
+#include "actors/inventory/misc/RoyalSpin.txt"
+#include "actors/inventory/misc/Hadouken.txt"
+
+#include "actors/inventory/buster/MaestroBuster.txt"
+#include "actors/inventory/buster/RevolverBuster.txt"
+#include "actors/inventory/buster/JoeBuster.txt"
+
+#include "actors/inventory/mmb2/TimeBomb.txt"
+#include "actors/inventory/mmb2/TimeSwitch.txt"
+#include "actors/inventory/mmb2/BulletVulcan.txt"
+#include "actors/inventory/mmb2/BrassBullet.txt"
+#include "actors/inventory/mmb2/FlameShower.txt"
+#include "actors/inventory/mmb2/FlameMixer.txt"
+#include "actors/inventory/mmb2/BarrierWind.txt"
+#include "actors/inventory/mmb2/TrailsparkNeedle.txt"
+#include "actors/inventory/mmb2/CardinalRing.txt"
+
+#include "actors/inventory/EncoreMisc.txt"
+
+// Maps
 #include "actors/Props/MME1/eelecman.txt"
 #include "actors/Props/MME1/egutsman.txt"
 #include "actors/Props/MME1/ebombman.txt"
@@ -36,32 +66,3 @@
 #include "actors/Props/MME/protoman.txt"
 #include "actors/Props/MME/bondman.txt"
 #include "actors/Props/MMB2/clockmen.txt"
-
-#include "actors/inventory/assists/utility/SuperArrow.txt"
-#include "actors/inventory/assists/utility/Balloon.txt"
-
-#include "actors/inventory/misc/DawnBreakerWeak.txt"
-#include "actors/inventory/misc/BondingPaste.txt"
-#include "actors/inventory/misc/BerserkerRush.txt"
-#include "actors/inventory/misc/ShieldSpiral.txt"
-#include "actors/inventory/misc/RestrictionRing.txt"
-#include "actors/inventory/misc/OnslaughtGatling.txt"
-#include "actors/inventory/misc/JusticeMeteor.txt"
-#include "actors/inventory/misc/RoyalSpin.txt"
-#include "actors/inventory/misc/Hadouken.txt"
-
-#include "actors/inventory/buster/MaestroBuster.txt"
-#include "actors/inventory/buster/RevolverBuster.txt"
-#include "actors/inventory/buster/JoeBuster.txt"
-
-#include "actors/inventory/mmb2/TimeBomb.txt"
-#include "actors/inventory/mmb2/TimeSwitch.txt"
-#include "actors/inventory/mmb2/BulletVulcan.txt"
-#include "actors/inventory/mmb2/BrassBullet.txt"
-#include "actors/inventory/mmb2/FlameShower.txt"
-#include "actors/inventory/mmb2/FlameMixer.txt"
-#include "actors/inventory/mmb2/BarrierWind.txt"
-#include "actors/inventory/mmb2/TrailsparkNeedle.txt"
-#include "actors/inventory/mmb2/CardinalRing.txt"
-
-#include "actors/inventory/EncoreMisc.txt"

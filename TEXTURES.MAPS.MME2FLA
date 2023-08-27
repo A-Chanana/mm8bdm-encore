@@ -1,0 +1,311 @@
+///// MME2FLA /////
+texture EFLSHW1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH1, 0, 0
+   WorldPanning 
+}
+
+texture EFLSHW2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH2, 0, 0
+   WorldPanning 
+}
+
+texture EFLSHW3, 32, 288
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH3, 0, 0
+   Patch EFLSH1, 0, 32
+   Patch EFLSH1, 0, 64
+   Patch EFLSH1, 0, 96
+   Patch EFLSH1, 0, 128
+   Patch EFLSH1, 0, 160
+   Patch EFLSH1, 0, 192
+   Patch EFLSH1, 0, 224
+   Patch EFLSH1, 0, 256
+   WorldPanning 
+}
+
+texture EFLSHW4, 16, 288
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH5, 0, 0
+   Patch EFLSH4, 0, 32
+   Patch EFLSH4, 0, 64
+   Patch EFLSH4, 0, 96
+   Patch EFLSH4, 0, 128
+   Patch EFLSH4, 0, 160
+   Patch EFLSH4, 0, 192
+   Patch EFLSH4, 0, 224
+   Patch EFLSH4, 0, 256
+   WorldPanning 
+}
+
+texture EFLSHW5, 32, 288
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH7, 0, 0
+   Patch EFLSH6, 0, 32
+   Patch EFLSH6, 0, 64
+   Patch EFLSH6, 0, 96
+   Patch EFLSH6, 0, 128
+   Patch EFLSH6, 0, 160
+   Patch EFLSH6, 0, 192
+   Patch EFLSH6, 0, 224
+   Patch EFLSH6, 0, 256
+   WorldPanning 
+}
+
+texture EFLSHBZ, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH8, 0, 0
+   WorldPanning 
+}
+
+
+texture EFLSHB1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH8, 0, 0
+   WorldPanning 
+}
+
+texture EFLSHB1X, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH9, 0, 0
+   WorldPanning 
+}
+
+texture EFLSHB2Z, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH12, 0, 0
+   Patch EFLSH12, 16, 16
+   Patch EFLSH9, 0, 16
+   Patch EFLSH9, 32, 0
+   WorldPanning 
+}
+
+texture EFLSHB2, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH12, 0, 0
+   Patch EFLSH12, 16, 16
+   Patch EFLSH9, 0, 16
+   Patch EFLSH9, 32, 0
+   WorldPanning 
+}
+
+texture EFLSHB2X, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH13, 0, 0
+   Patch EFLSH13, 16, 16
+   Patch EFLSH8, 0, 16
+   Patch EFLSH8, 32, 0
+   WorldPanning 
+}
+
+texture EFLSHB3Z, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH10, 0, 0
+   Patch EFLSH9, 16, 0
+   Patch EFLSH10, 16, 16
+   Patch EFLSH9, 0, 32
+   WorldPanning 
+}
+
+texture EFLSHB3, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH10, 0, 0
+   Patch EFLSH9, 16, 0
+   Patch EFLSH10, 16, 16
+   Patch EFLSH9, 0, 32
+   WorldPanning 
+}
+
+texture EFLSHB3X, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH11, 0, 0
+   Patch EFLSH8, 16, 0
+   Patch EFLSH11, 16, 16
+   Patch EFLSH8, 0, 32
+   WorldPanning 
+}
+
+texture EFLSHB4Z, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH16, 0, 0
+   Patch EFLSH16, 16, 16
+   Patch EFLSH9, 0, 16
+   Patch EFLSH9, 48, 0
+   WorldPanning 
+}
+
+texture EFLSHB4, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH16, 0, 0
+   Patch EFLSH16, 16, 16
+   Patch EFLSH9, 0, 16
+   Patch EFLSH9, 48, 0
+   WorldPanning 
+}
+
+texture EFLSHB4X, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH17, 0, 0
+   Patch EFLSH17, 16, 16
+   Patch EFLSH8, 0, 16
+   Patch EFLSH8, 48, 0
+   WorldPanning 
+}
+
+texture EFLSHB5Z, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH14, 0, 0
+   Patch EFLSH9, 16, 0
+   Patch EFLSH14, 16, 16
+   Patch EFLSH9, 0, 48
+   WorldPanning 
+}
+
+texture EFLSHB5, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH14, 0, 0
+   Patch EFLSH9, 16, 0
+   Patch EFLSH14, 16, 16
+   Patch EFLSH9, 0, 48
+   WorldPanning 
+}
+
+texture EFLSHB5X, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH15, 0, 0
+   Patch EFLSH8, 16, 0
+   Patch EFLSH15, 16, 16
+   Patch EFLSH8, 0, 48
+   WorldPanning 
+}
+
+texture EFLSHB6Z, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH12, 0, 0
+   Patch EFLSH13, 0, 16
+   WorldPanning 
+}
+
+texture EFLSHB6, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH12, 0, 0
+   Patch EFLSH13, 0, 16
+   WorldPanning 
+}
+
+texture EFLSHB6X, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH13, 0, 0
+   Patch EFLSH12, 0, 16
+   WorldPanning 
+}
+
+
+texture EFLSHLZ, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH18, 0, 0
+   WorldPanning 
+}
+
+
+texture EFLSHL1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH18, 0, 0
+   WorldPanning 
+}
+
+texture EFLSHL2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH19, 0, 0
+   WorldPanning 
+}
+
+texture EFLSHFLZ, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH20, 0, 0
+   Patch EFLSH21, 16, 0
+   Patch EFLSH21, 0, 16
+   Patch EFLSH20, 16, 16
+   WorldPanning 
+}
+
+texture EFLSHFL1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH20, 0, 0
+   Patch EFLSH21, 16, 0
+   Patch EFLSH21, 0, 16
+   Patch EFLSH20, 16, 16
+   WorldPanning 
+}
+
+texture EFLSHFL2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFLSH21, 0, 0
+   Patch EFLSH20, 16, 0
+   Patch EFLSH20, 0, 16
+   Patch EFLSH21, 16, 16
+   WorldPanning 
+}
+
+
+
+////////////////////

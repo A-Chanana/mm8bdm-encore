@@ -1,0 +1,574 @@
+texture ESWRWAL1, 96, 480
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD2, 0, 0
+   Patch ESWRD4, 0, 16
+   Patch ESWRD6, 0, 48
+   Patch ESWRD4, 0, 80
+   Patch ESWRD4, 0, 112
+   Patch ESWRD5, 0, 144
+   Patch ESWRD4, 0, 176
+   Patch ESWRD4, 0, 208
+   Patch ESWRD4, 0, 240
+   Patch ESWRD4, 0, 272
+   Patch ESWRD4, 0, 304
+   Patch ESWRD4, 0, 336
+   Patch ESWRD5, 0, 368
+   Patch ESWRD4, 0, 400
+   Patch ESWRD6, 0, 432
+   Patch ESWRD2, 0, 464
+   Patch ESWRD3, 32, 0
+   Patch ESWRD5, 32, 16
+   Patch ESWRD4, 32, 48
+   Patch ESWRD4, 32, 80
+   Patch ESWRD5, 32, 112
+   Patch ESWRD4, 32, 144
+   Patch ESWRD6, 32, 176
+   Patch ESWRD4, 32, 208
+   Patch ESWRD4, 32, 240
+   Patch ESWRD5, 32, 272
+   Patch ESWRD4, 32, 304
+   Patch ESWRD4, 32, 336
+   Patch ESWRD4, 32, 368
+   Patch ESWRD4, 32, 400
+   Patch ESWRD4, 32, 432
+   Patch ESWRD2, 32, 464
+   Patch ESWRD2, 64, 0
+   Patch ESWRD4, 64, 16
+   Patch ESWRD4, 64, 48
+   Patch ESWRD4, 64, 80
+   Patch ESWRD4, 64, 112
+   Patch ESWRD4, 64, 144
+   Patch ESWRD5, 64, 176
+   Patch ESWRD4, 64, 208
+   Patch ESWRD4, 64, 240
+   Patch ESWRD4, 64, 272
+   Patch ESWRD4, 64, 304
+   Patch ESWRD6, 64, 336
+   Patch ESWRD4, 64, 368
+   Patch ESWRD4, 64, 400
+   Patch ESWRD4, 64, 432
+   Patch ESWRD2, 64, 464
+   WorldPanning
+}
+
+texture ESWRWAL2, 32, 480
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD9, 0, 0
+   Patch ESWRD11, 0, 16
+   Patch ESWRD11, 0, 32
+   Patch ESWRD11, 0, 48
+   Patch ESWRD11, 0, 64
+   Patch ESWRD11, 0, 80
+   Patch ESWRD11, 0, 96
+   Patch ESWRD11, 0, 112
+   Patch ESWRD11, 0, 128
+   Patch ESWRD11, 0, 144
+   Patch ESWRD11, 0, 160
+   Patch ESWRD11, 0, 176
+   Patch ESWRD11, 0, 192
+   Patch ESWRD11, 0, 208
+   Patch ESWRD11, 0, 224
+   Patch ESWRD11, 0, 240
+   Patch ESWRD11, 0, 256
+   Patch ESWRD11, 0, 272
+   Patch ESWRD11, 0, 288
+   Patch ESWRD11, 0, 304
+   Patch ESWRD11, 0, 320
+   Patch ESWRD11, 0, 336
+   Patch ESWRD11, 0, 352
+   Patch ESWRD11, 0, 368
+   Patch ESWRD11, 0, 384
+   Patch ESWRD11, 0, 400
+   Patch ESWRD11, 0, 416
+   Patch ESWRD11, 0, 432
+   Patch ESWRD11, 0, 448
+   Patch ESWRD11, 0, 464
+   Patch ESWRD21, 16, 0
+   Patch ESWRD22, 16, 16
+   Patch ESWRD22, 16, 32
+   Patch ESWRD22, 16, 48
+   Patch ESWRD22, 16, 64
+   Patch ESWRD22, 16, 80
+   Patch ESWRD22, 16, 96
+   Patch ESWRD22, 16, 112
+   Patch ESWRD22, 16, 128
+   Patch ESWRD22, 16, 144
+   Patch ESWRD22, 16, 160
+   Patch ESWRD22, 16, 176
+   Patch ESWRD22, 16, 192
+   Patch ESWRD22, 16, 208
+   Patch ESWRD22, 16, 224
+   Patch ESWRD22, 16, 240
+   Patch ESWRD22, 16, 256
+   Patch ESWRD22, 16, 272
+   Patch ESWRD22, 16, 288
+   Patch ESWRD22, 16, 304
+   Patch ESWRD22, 16, 320
+   Patch ESWRD22, 16, 336
+   Patch ESWRD22, 16, 352
+   Patch ESWRD22, 16, 368
+   Patch ESWRD22, 16, 384
+   Patch ESWRD22, 16, 400
+   Patch ESWRD22, 16, 416
+   Patch ESWRD22, 16, 432
+   Patch ESWRD22, 16, 448
+   Patch ESWRD22, 16, 464
+   WorldPanning
+}
+
+texture ESWRWAL3, 16, 480
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD23, 0, 0
+   Patch ESWRD24, 0, 16
+   Patch ESWRD24, 0, 32
+   Patch ESWRD24, 0, 48
+   Patch ESWRD24, 0, 64
+   Patch ESWRD24, 0, 80
+   Patch ESWRD24, 0, 96
+   Patch ESWRD24, 0, 112
+   Patch ESWRD24, 0, 128
+   Patch ESWRD24, 0, 144
+   Patch ESWRD24, 0, 160
+   Patch ESWRD24, 0, 176
+   Patch ESWRD24, 0, 192
+   Patch ESWRD24, 0, 208
+   Patch ESWRD24, 0, 224
+   Patch ESWRD24, 0, 240
+   Patch ESWRD24, 0, 256
+   Patch ESWRD24, 0, 272
+   Patch ESWRD24, 0, 288
+   Patch ESWRD24, 0, 304
+   Patch ESWRD24, 0, 320
+   Patch ESWRD24, 0, 336
+   Patch ESWRD24, 0, 352
+   Patch ESWRD24, 0, 368
+   Patch ESWRD24, 0, 384
+   Patch ESWRD24, 0, 400
+   Patch ESWRD24, 0, 416
+   Patch ESWRD24, 0, 432
+   Patch ESWRD24, 0, 448
+   Patch ESWRD24, 0, 464
+   WorldPanning
+}
+
+texture ESWRWAL4, 64, 80
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD24, 0, 0
+   Patch ESWRD24, 16, 0
+   Patch ESWRD24, 0, 16
+   Patch ESWRD24, 0, 32
+   Patch ESWRD24, 0, 48
+   Patch ESWRD24, 0, 64
+   Patch ESWRD24, 48, 0
+   Patch ESWRD24, 16, 0
+   Patch ESWRD24, 32, 0
+   Patch ESWRD24, 48, 16
+   Patch ESWRD24, 48, 32
+   Patch ESWRD24, 48, 48
+   Patch ESWRD24, 48, 64    
+   Patch ESWRD8, 16, 16
+   WorldPanning
+}
+
+texture ESWRWAL5, 64, 400
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD25, 16, 0
+   Patch ESWRD34, 0, 0
+   Patch ESWRD41, 32, 0
+   Patch ESWRD34, 48, 0
+   Patch ESWRD40, 0, 16
+   Patch ESWRD40, 0, 112
+   Patch ESWRD40, 0, 208
+   Patch ESWRD40, 0, 304
+   WorldPanning
+}
+
+texture ESWRWAL6, 32, 480
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD50, 0, 0
+   Patch ESWRD4, 0, 16
+   Patch ESWRD4, 0, 48
+   Patch ESWRD4, 0, 80
+   Patch ESWRD4, 0, 112
+   Patch ESWRD4, 0, 144
+   Patch ESWRD4, 0, 176
+   Patch ESWRD4, 0, 208
+   Patch ESWRD4, 0, 240
+   Patch ESWRD4, 0, 272
+   Patch ESWRD4, 0, 304
+   Patch ESWRD4, 0, 336
+   Patch ESWRD4, 0, 368
+   Patch ESWRD4, 0, 400
+   Patch ESWRD4, 0, 432
+   Patch ESWRD50, 0, 464
+}
+
+texture ESWRWAL7, 32, 480
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD2, 0, 0
+   Patch ESWRD4, 0, 16
+   Patch ESWRD4, 0, 48
+   Patch ESWRD4, 0, 80
+   Patch ESWRD4, 0, 112
+   Patch ESWRD4, 0, 144
+   Patch ESWRD4, 0, 176
+   Patch ESWRD4, 0, 208
+   Patch ESWRD4, 0, 240
+   Patch ESWRD4, 0, 272
+   Patch ESWRD4, 0, 304
+   Patch ESWRD4, 0, 336
+   Patch ESWRD4, 0, 368
+   Patch ESWRD4, 0, 400
+   Patch ESWRD4, 0, 432
+   Patch ESWRD2, 0, 464
+   WorldPanning
+}
+
+
+texture ESWRDBLU, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD24, 0, 0
+   WorldPanning
+}
+
+
+texture ESWRCOL1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD15, 0, 0
+   Patch ESWRD16, 0, 32
+   Patch ESWRD16, 0, 48
+   Patch ESWRD16, 0, 64
+   Patch ESWRD16, 0, 80
+   Patch ESWRD16, 0, 96
+   Patch ESWRD16, 0, 112
+   Patch ESWRD16, 0, 128
+   Patch ESWRD16, 0, 144
+   Patch ESWRD16, 0, 160
+   Patch ESWRD16, 0, 176
+   Patch ESWRD16, 0, 192
+   Patch ESWRD16, 0, 208
+   Patch ESWRD16, 0, 224
+   Patch ESWRD16, 0, 240
+   Patch ESWRD16, 0, 256
+   Patch ESWRD16, 0, 272
+   Patch ESWRD16, 0, 288
+   Patch ESWRD16, 0, 304
+   Patch ESWRD16, 0, 320
+   Patch ESWRD16, 0, 336
+   Patch ESWRD16, 0, 352
+   Patch ESWRD16, 0, 368
+   Patch ESWRD16, 0, 384
+   Patch ESWRD16, 0, 400
+   Patch ESWRD16, 0, 416
+   Patch ESWRD16, 0, 432
+   Patch ESWRD16, 0, 448
+   Patch ESWRD16, 0, 464
+   Patch ESWRD16, 0, 480
+   Patch ESWRD16, 0, 496
+   
+   WorldPanning
+}
+
+texture ESWRCOL2, 16, 528
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD17, 0, 0
+   Patch ESWRD18, 0, 16
+   Patch ESWRD19, 0, 32
+   Patch ESWRD18, 0, 48
+   Patch ESWRD18, 0, 64
+   Patch ESWRD19, 0, 80
+   Patch ESWRD18, 0, 96
+   Patch ESWRD18, 0, 112
+   Patch ESWRD18, 0, 128
+   Patch ESWRD18, 0, 144
+   Patch ESWRD18, 0, 160
+   Patch ESWRD19, 0, 176
+   Patch ESWRD18, 0, 192
+   Patch ESWRD18, 0, 208
+   Patch ESWRD18, 0, 224
+   Patch ESWRD18, 0, 240
+   Patch ESWRD19, 0, 256
+   Patch ESWRD18, 0, 272
+   Patch ESWRD18, 0, 288
+   Patch ESWRD18, 0, 304
+   Patch ESWRD18, 0, 320
+   Patch ESWRD18, 0, 336
+   Patch ESWRD18, 0, 352
+   Patch ESWRD19, 0, 368
+   Patch ESWRD18, 0, 384
+   Patch ESWRD18, 0, 400
+   Patch ESWRD18, 0, 416
+   Patch ESWRD19, 0, 432
+   Patch ESWRD18, 0, 448
+   Patch ESWRD18, 0, 464
+   Patch ESWRD18, 0, 480
+   Patch ESWRD18, 0, 496
+   WorldPanning
+}
+
+texture ESWRSTEP, 32, 80
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD2, 0, 0
+   Patch ESWRD4, 0, 16
+   Patch ESWRD4, 0, 48
+   WorldPanning
+}
+
+texture ESWRPIL1, 32, 576
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD12, 0, 0
+   Patch ESWRD13, 0, 16
+   Patch ESWRD14, 0, 48
+   Patch ESWRD13, 0, 80
+   Patch ESWRD13, 0, 112
+   Patch ESWRD13, 0, 144
+   Patch ESWRD14, 0, 176
+   Patch ESWRD13, 0, 208
+   Patch ESWRD13, 0, 240
+   Patch ESWRD13, 0, 272
+   Patch ESWRD14, 0, 304
+   Patch ESWRD13, 0, 336
+   Patch ESWRD13, 0, 368
+   Patch ESWRD13, 0, 400
+   Patch ESWRD14, 0, 432
+   Patch ESWRD13, 0, 464
+   Patch ESWRD13, 0, 496
+   Patch ESWRD12, 0, 528
+   Patch ESWRD42, 0, 544
+   WorldPanning
+}
+
+texture ESWRLAV1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD37, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAV2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD38, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAV3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD39, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAVX, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD37, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAV4, 64, 287
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD45, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAV5, 62, 287
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD46, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAV6, 62, 287
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD47, 0, 0
+   WorldPanning
+}
+
+texture ESWRLAVY, 64, 287
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD45, 0, 0
+   WorldPanning
+}
+
+texture ESWRPIL2, 14, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD10, 0, 0
+   WorldPanning
+}
+
+texture ESWRPIL3, 16, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD36, 0, 0
+   WorldPanning
+}
+
+texture ESWRPIL4, 32, 640
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD44, 0, 0
+   Patch ESWRD44, 0, 64
+   Patch ESWRD44, 0, 128
+   Patch ESWRD44, 0, 192
+   Patch ESWRD44, 0, 256
+   Patch ESWRD44, 0, 320
+   Patch ESWRD44, 0, 384
+   Patch ESWRD44, 0, 448
+   Patch ESWRD44, 0, 512
+   Patch ESWRD44, 0, 576
+   WorldPanning
+}
+
+texture ESWRPIL6, 48, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD51, 0, 0
+   WorldPanning
+}
+
+texture ESWRPIL5, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD48, 0, 0
+   WorldPanning
+}
+
+texture ESWRGIR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD30, 0, 0
+   Patch ESWRD29, 16, 0
+   WorldPanning
+}
+
+texture ESWRGIR2, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD27, 0, 0
+   Patch ESWRD28, 16, 0
+   WorldPanning
+}
+
+texture ESWRGIR3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD26, 0, 0
+   Patch ESWRD31, 16, 0
+   WorldPanning
+}
+
+texture ESWRDSKY, 384, 177
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD1, 0, 0
+   WorldPanning
+}
+
+texture ESWRDRED, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD35, 0, 0
+   WorldPanning
+}
+
+texture ESWRDDW, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD20, 0, 0
+   WorldPanning
+}
+
+texture ESWRDLDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD7, 0, 0
+   WorldPanning
+}
+
+texture ESWRSYMB, 72, 24
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD43, 0, 0
+}
+	
+texture ESWRFLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD33, 0, 0
+   WorldPanning
+}
+
+texture ESWRFLR2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD32, 0, 0
+   WorldPanning
+}
+
+texture ESWRFLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD4, 0, 0
+}
+
+texture ESWRFLR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESWRD49, 0, 0
+   WorldPanning
+}
+

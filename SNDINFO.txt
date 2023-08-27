@@ -4,3 +4,25 @@ HRGLFLIP HRGLFLIP
 JOJOKE JOJOKE
 ROACHSQK ROACHSQK
 ROCHBUMP ROCHBUMP
+
+//MM1
+$musicvolume EELEMUS 0.9
+$musicvolume EFIRMUS 0.9
+//MM2
+$musicvolume EHEAMUS 1.1
+$musicvolume EFLAMUS 0.8
+//MM3
+$musicvolume ESPAMUS 0.9
+//MM4
+$musicvolume ESKUMUS 0.9
+$musicvolume MME4BOSS 1.1
+//MM6
+$musicvolume EMRXMUS 1.7
+//MM9
+$musicvolume EGALMUS 0.8
+//MME
+$musicvolume EPROMUS 2.0
+$musicvolume EPROINT 2.0
+$musicvolume ESUNBOS 2.0
+//MMB2
+$musicvolume AICMUS 1.1

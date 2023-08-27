@@ -1,0 +1,163 @@
+actor FreddyMercyorown 20622
+{
+//$Category MM8BDM-Interactive Props
++SOLID
++SHOOTABLE
++NOTAUTOAIMED
++NOGRAVITY
+//+ISMONSTER
+//+RIPPER
+//+MISSILE
+Height 40
+scale 2.5
+radius 32
+Health 9999
+painchance 256
+obituary "%o was Kyorowned by a Kyorown."
+mass 999999999
++NOBLOOD
++NODAMAGE
+damagefactor "KyorownBullet", 0.0
+speed 0
++DONTBLAST
++QUICKTORETALIATE
+States
+{
+Spawn:
+KYOR A 0 A_JumpIfInventory("CutterFlag",1,"Taunt")
+KYOR A 35 A_Wander
+loop
+Pain:
+KYOR A 5 A_ChangeFlag("SHOOTABLE",0)
+KYOR AAAAAAAAAAAAAAA 1 A_FaceTarget
+KYOR A 0 A_PlaySoundEx("KYORSONG","Voice")
+KYOR B 4
+KYOR C 66 //2 Seconds
+KYOR BAB 2
+KYOR C 7 //YOU
+KYOR BAB 1
+KYOR C 12 //GON
+KYOR B 1
+KYOR C 5 //TA
+KYOR BAB 1
+KYOR C 6 //TAKE
+KYOR BAB 3
+KYOR C 13 //ME
+KYOR B 11 //HOME
+KYOR C 3 //T
+KYOR B 2 //O
+KYOR C 19 //NIIGHT
+KYOR B 2
+KYOR A 29
+KYOR B 2
+KYOR C 70 //OHHHHHHH
+KYOR BAB 1
+KYOR C 13 //DOWN
+KYOR B 5 //BE
+KYOR C 20 //SIDE
+KYOR BAB 1
+KYOR C 10 //THAT
+KYOR BAB 1
+KYOR C 9 //RED
+KYOR BABB 1
+KYOR C 9 //FIRE
+KYOR BAB 1 
+KYOR C 18 //LIIIGHT
+KYOR B 4
+KYOR A 23
+KYOR B 2
+KYOR C 68 //OHHHHHHH
+KYOR BB 1
+KYOR C 9 //YOU
+KYOR B 2
+KYOR C 13 //GON
+KYOR B 5 //NA
+KYOR AB 1
+KYOR C 7 //LET
+KYOR B 1
+KYOR C 11 //IT
+KYOR BAB 1
+KYOR C 16//ALL
+KYOR BAB 1
+KYOR C 9 //HANG
+KYOR BAB 1
+KYOR C 8 //OUT
+KYOR BAB 2
+KYOR C 9 //FAT
+KYOR BAB 1
+KYOR C 8 //BOT
+KYOR B 9 //TOM
+KYOR C 17 //GIRLS
+KYOR B 12 //YOU
+KYOR C 8
+KYOR B 4 //MAKE
+KYOR BAB 1
+KYOR C 12 //THE 
+KYOR AB 1
+KYOR C 8 //ROCK
+KYOR B 7 //'IN
+KYOR AB 1 
+KYOR C 16 //WORLD
+KYOR AB 1
+KYOR C 8 //GO
+KYOR BA 1
+KYOR C 48 //ROOOOOUND
+KYOR BA 3
+KYOR A 20
+KYOR A 0 A_ChangeFlag("SHOOTABLE",1)
+Goto Spawn
+Taunt:
+KYOR A 0 A_TakeInventory("CutterFlag", 99999)
+KYOR DEDEDEDE 5 A_FaceTarget
+KYOR A 0 A_TakeInventory("KilledMeStock",99)
+KYOR A 0 A_ChangeFlag("SHOOTABLE",1)
+KYOR A 0 A_ClearTarget
+Goto Spawn
+}
+}
+
+actor GHOSE
+{
++MISSILE
++NOGRAVITY
++DONTBLAST
++SHOOTABLE
++NOTAUTOAIMED
++DONTREFLECT
+Health 1
+Damage (255)
++RIPPER
++FLOATBOB
+speed 18
+scale 2.5
+height 30
+radius 25
++FOILINVUL
+States
+{
+Spawn:
+GHOS CDE 5
+loop
+Death:
+GHOS C 0 ACS_Execute(4,0)
+DOMP IJKLMN 4
+stop
+}
+}
+
+actor GHOSESpawner 23601
+{
+//$Category MM8BDM-Interactive Props
++NOGRAVITY
++NOINTERACTION
+-SOLID
+States
+{
+Spawn:
+TNT1 A 1
+loop
+Missile:
+TNT1 A 1 A_CustomMissile("GHOSE",0,0,0,2,0)
+Goto Spawn
+}
+}

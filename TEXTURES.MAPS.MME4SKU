@@ -1,0 +1,230 @@
+///// MME4SKU /////
+texture ESKURCK1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM1, 0, 0
+   Patch ESKULM2, 0, 32
+   Patch ESKULM2, 0, 64
+   Patch ESKULM2, 0, 96
+   Patch ESKULM2, 0, 128
+   Patch ESKULM2, 0, 160
+   Patch ESKULM2, 0, 192
+   Patch ESKULM2, 0, 224
+   Patch ESKULM2, 0, 256
+   Patch ESKULM2, 0, 288
+   Patch ESKULM2, 0, 320
+   Patch ESKULM2, 0, 352
+   Patch ESKULM2, 0, 384
+   Patch ESKULM2, 0, 416
+   Patch ESKULM2, 0, 448
+   Patch ESKULM2, 0, 480
+   WorldPanning 
+}
+
+
+texture ESKURCK2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM3, 0, 0
+   WorldPanning 
+}
+
+texture ESKURCK3, 16, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM11, 0, 0
+   WorldPanning 
+}
+
+texture ESKURCK4, 128, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM12, 0, 0
+   WorldPanning 
+}
+
+texture ESKURCK5, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM13, 0, 0
+   WorldPanning 
+}
+
+texture ESKURCK6, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM2, 0, 0
+   Patch ESKULM20, 0, 0
+   Patch ESKULM2, 0, 32
+   Patch ESKULM2, 0, 64
+   Patch ESKULM2, 0, 96
+   Patch ESKULM2, 0, 128
+   Patch ESKULM2, 0, 160
+   Patch ESKULM2, 0, 192
+   Patch ESKULM2, 0, 224
+   Patch ESKULM2, 0, 256
+   Patch ESKULM2, 0, 288
+   Patch ESKULM2, 0, 320
+   Patch ESKULM2, 0, 352
+   Patch ESKULM2, 0, 384
+   Patch ESKULM2, 0, 416
+   Patch ESKULM2, 0, 448
+   Patch ESKULM2, 0, 480
+   WorldPanning 
+}
+
+texture ESKURCK7, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM3, 0, 0
+   Patch ESKULM20, 0, 0
+   Patch ESKULM3, 0, 32
+   Patch ESKULM3, 0, 64
+   Patch ESKULM3, 0, 96
+   Patch ESKULM3, 0, 128
+   Patch ESKULM3, 0, 160
+   Patch ESKULM3, 0, 192
+   Patch ESKULM3, 0, 224
+   Patch ESKULM3, 0, 256
+   Patch ESKULM3, 0, 288
+   Patch ESKULM3, 0, 320
+   Patch ESKULM3, 0, 352
+   Patch ESKULM3, 0, 384
+   Patch ESKULM3, 0, 416
+   Patch ESKULM3, 0, 448
+   Patch ESKULM3, 0, 480
+   WorldPanning 
+}
+
+texture ESKUBN1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM4, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM5, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM6, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN4, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM7, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM8, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN6, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM9, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN7, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM10, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN8, 48, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM14, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN9, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM16, 0, 0
+   WorldPanning 
+}
+
+texture ESKUBN9F, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM16, 0, 0
+   {
+   FlipX
+   }
+   WorldPanning 
+}
+
+texture ESKULDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM15, 0, 0
+   WorldPanning 
+}
+
+texture ESKUSKY, 512, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM17, 0, 0
+   WorldPanning 
+}
+
+texture ESKURED, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM21, 0, 0
+   WorldPanning 
+}
+
+
+texture ESKUFLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM18, 0, 0
+   WorldPanning 
+}
+
+texture ESKUFLR2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESKULM19, 0, 0
+   WorldPanning 
+}
+
+////////////////////

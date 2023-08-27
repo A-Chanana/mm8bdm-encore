@@ -1,0 +1,101 @@
+actor EKhamen 16826
+{
+//$Category MM8BDM-Props
++SOLID
++CLIENTSIDEONLY
+height 57
+radius 83
+scale 2.5
+States
+{
+Spawn:
+ETKH A -1
+loop
+}
+}
+
+actor EUranusTorch 16825
+{
+//$Category MM8BDM-Props
++FORCEYBILLBOARD
++CLIENTSIDEONLY
++NOGRAVITY
++BRIGHT
+Height 16
+radius 16
+scale 2.5
+states
+{
+Spawn:
+UTOE ABCD 4
+loop
+}
+}
+
+actor EBirdyChuncoSpawner 17778
+{
+//$Category MM8BDM-Props
+	+SOLID
+	Height 32
+	Radius 32
+	Scale 2.5
+	var int user_flingTime;
+	States
+	{
+	Spawn:
+		EBRD A 64
+		EBRD B 4
+		EBRD A 32 A_Jump(64, "Fling")
+		EBRD A 32
+	    loop
+	Fling:
+		EBRD B 8
+		EBRD C 8 A_SpawnItemEx("EChunco", 0, 0, 20, 2, 0, 0, 0)
+		goto Spawn
+	}
+}
+
+actor EChunco
+{
+PROJECTILE
++NOGRAVITY
++THRUACTORS
+Radius 6
+Height 7
+scale 2.5
+damage (0)
+speed 1
+States
+{
+Spawn:
+ECHC ACB 3 ThrustThingZ(0, 2, 0, 1)
+loop
+Death:
+TNT1 A -1
+stop
+}
+}
+
+actor CoeDrip 1984
+{
+//$Category MM8BDM-Props
++SOLID
+MONSTER
+health 15
+painchance 200
+height 48
+radius 48
+scale 3
+States
+{
+Spawn:
+COEW A 10
+loop
+Pain:
+COEW B 5
+goto spawn
+Death:
+COEW C -1
+stop
+}
+}

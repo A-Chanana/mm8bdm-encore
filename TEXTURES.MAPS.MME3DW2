@@ -1,0 +1,391 @@
+///// MME3DW2 /////
+texture EWL3SEW1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL42, 0, 0
+   Patch EWL41, 0, 32
+   Patch EWL41, 0, 64
+   Patch EWL41, 0, 96
+   Patch EWL41, 0, 128
+   Patch EWL41, 0, 160
+   Patch EWL41, 0, 192
+   Patch EWL41, 0, 224
+   Patch EWL41, 0, 256
+   Patch EWL41, 0, 288
+   Patch EWL41, 0, 320
+   Patch EWL41, 0, 352
+   Patch EWL41, 0, 384
+   Patch EWL41, 0, 416
+   Patch EWL41, 0, 448
+   Patch EWL41, 0, 480
+   WorldPanning 
+}
+
+texture EWL3SEW2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL42, 0, 0
+   Patch EWL43, 0, 32
+   Patch EWL41, 0, 64
+   Patch EWL41, 0, 96
+   Patch EWL43, 0, 128
+   Patch EWL41, 0, 160
+   Patch EWL41, 0, 192
+   Patch EWL41, 0, 224
+   Patch EWL43, 0, 256
+   Patch EWL41, 0, 288
+   Patch EWL41, 0, 320
+   Patch EWL43, 0, 352
+   Patch EWL41, 0, 384
+   Patch EWL41, 0, 416
+   Patch EWL43, 0, 448
+   Patch EWL41, 0, 480
+   WorldPanning 
+}
+
+texture EWL3SEW3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL42, 0, 0
+   Patch EWL44, 0, 32
+   Patch EWL41, 0, 64
+   Patch EWL41, 0, 96
+   Patch EWL44, 0, 128
+   Patch EWL41, 0, 160
+   Patch EWL41, 0, 192
+   Patch EWL41, 0, 224
+   Patch EWL44, 0, 256
+   Patch EWL41, 0, 288
+   Patch EWL41, 0, 320
+   Patch EWL44, 0, 352
+   Patch EWL41, 0, 384
+   Patch EWL41, 0, 416
+   Patch EWL44, 0, 448
+   Patch EWL41, 0, 480
+   WorldPanning 
+}
+
+texture EWL3SEW4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL46, 0, 0
+   Patch EWL417, 0, 32
+   Patch EWL417, 0, 64
+   Patch EWL417, 0, 96
+   Patch EWL417, 0, 128
+   Patch EWL417, 0, 160
+   Patch EWL417, 0, 192
+   Patch EWL417, 0, 224
+   Patch EWL417, 0, 256
+   Patch EWL417, 0, 288
+   Patch EWL417, 0, 320
+   Patch EWL417, 0, 352
+   Patch EWL417, 0, 384
+   Patch EWL417, 0, 416
+   Patch EWL417, 0, 448
+   Patch EWL417, 0, 480
+   WorldPanning 
+}
+
+texture EWL3STON, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL45, 0, 0
+}
+
+texture EWL3PUMP, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL47, 0, 0
+}
+
+texture EWL3MET1, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL48, 0, 0
+}
+
+texture EWL3MET2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL418, 0, 0
+}
+
+texture EWL3MET3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL420, 0, 0
+   Patch EWL419, 0, 32
+   Patch EWL419, 0, 64
+   Patch EWL419, 0, 96
+   Patch EWL419, 0, 128
+   Patch EWL419, 0, 160
+   Patch EWL419, 0, 192
+   Patch EWL419, 0, 224
+   Patch EWL419, 0, 256
+   Patch EWL419, 0, 288
+   Patch EWL419, 0, 320
+   Patch EWL419, 0, 352
+   Patch EWL419, 0, 384
+   Patch EWL419, 0, 416
+   Patch EWL419, 0, 448
+   Patch EWL419, 0, 480
+   WorldPanning 
+}
+
+texture EWL3BCK1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL49, 0, 0
+}
+
+texture EWL3BCK2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL410, 0, 0
+}
+
+texture EWL3BCK3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL411, 0, 0
+}
+
+texture EWL3BCK4, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL413, 0, 0
+}
+
+texture EWL3LDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL412, 0, 0
+}
+
+texture EWL3PIP1, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL414, 0, 0
+   Patch EWL415, 0, 32
+   Patch EWL415, 0, 64
+   Patch EWL415, 0, 96
+   Patch EWL415, 0, 128
+   Patch EWL415, 0, 160
+   Patch EWL415, 0, 192
+   Patch EWL415, 0, 224
+   Patch EWL415, 0, 256
+   Patch EWL415, 0, 288
+   Patch EWL415, 0, 320
+   Patch EWL415, 0, 352
+   Patch EWL415, 0, 384
+   Patch EWL415, 0, 416
+   Patch EWL415, 0, 448
+   Patch EWL415, 0, 480
+   WorldPanning 
+}
+
+texture EWL3LOGO, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL416, 0, 0
+}
+
+texture EWL3MET4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL422, 0, 0
+   Patch EWL421, 0, 32
+   Patch EWL421, 0, 64
+   Patch EWL421, 0, 96
+   Patch EWL421, 0, 128
+   Patch EWL421, 0, 160
+   Patch EWL421, 0, 192
+   Patch EWL421, 0, 224
+   Patch EWL421, 0, 256
+   Patch EWL421, 0, 288
+   Patch EWL421, 0, 320
+   Patch EWL421, 0, 352
+   Patch EWL421, 0, 384
+   Patch EWL421, 0, 416
+   Patch EWL421, 0, 448
+   Patch EWL421, 0, 480
+   WorldPanning 
+}
+
+texture EWL3MET5, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL423, 0, 0
+   Patch EWL433, 0, 32
+   Patch EWL433, 0, 64
+   Patch EWL433, 0, 96
+   Patch EWL433, 0, 128
+   Patch EWL433, 0, 160
+   Patch EWL433, 0, 192
+   Patch EWL433, 0, 224
+   Patch EWL433, 0, 256
+   Patch EWL433, 0, 288
+   Patch EWL433, 0, 320
+   Patch EWL433, 0, 352
+   Patch EWL433, 0, 384
+   Patch EWL433, 0, 416
+   Patch EWL433, 0, 448
+   Patch EWL433, 0, 480
+   WorldPanning 
+}
+
+texture EWL3MET6, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL424, 0, 0
+   Patch EWL434, 0, 32
+   Patch EWL434, 0, 64
+   Patch EWL434, 0, 96
+   Patch EWL434, 0, 128
+   Patch EWL434, 0, 160
+   Patch EWL434, 0, 192
+   Patch EWL434, 0, 224
+   Patch EWL434, 0, 256
+   Patch EWL434, 0, 288
+   Patch EWL434, 0, 320
+   Patch EWL434, 0, 352
+   Patch EWL434, 0, 384
+   Patch EWL434, 0, 416
+   Patch EWL434, 0, 448
+   Patch EWL434, 0, 480
+   WorldPanning 
+}
+
+texture EWL3MET7, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL426, 0, 0
+   Patch EWL421, 0, 32
+   Patch EWL421, 0, 64
+   Patch EWL421, 0, 96
+   Patch EWL421, 0, 128
+   Patch EWL421, 0, 160
+   Patch EWL421, 0, 192
+   Patch EWL421, 0, 224
+   Patch EWL421, 0, 256
+   Patch EWL421, 0, 288
+   Patch EWL421, 0, 320
+   Patch EWL421, 0, 352
+   Patch EWL421, 0, 384
+   Patch EWL421, 0, 416
+   Patch EWL421, 0, 448
+   Patch EWL421, 0, 480
+   WorldPanning 
+}
+
+texture EWL3MET8, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL427, 0, 0
+   Patch EWL421, 0, 32
+   Patch EWL421, 0, 64
+   Patch EWL421, 0, 96
+   Patch EWL421, 0, 128
+   Patch EWL421, 0, 160
+   Patch EWL421, 0, 192
+   Patch EWL421, 0, 224
+   Patch EWL421, 0, 256
+   Patch EWL421, 0, 288
+   Patch EWL421, 0, 320
+   Patch EWL421, 0, 352
+   Patch EWL421, 0, 384
+   Patch EWL421, 0, 416
+   Patch EWL421, 0, 448
+   Patch EWL421, 0, 480
+   WorldPanning 
+}
+
+texture EWL3MET9, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWL428, 0, 0
+   Patch EWL421, 0, 32
+   Patch EWL421, 0, 64
+   Patch EWL421, 0, 96
+   Patch EWL421, 0, 128
+   Patch EWL421, 0, 160
+   Patch EWL421, 0, 192
+   Patch EWL421, 0, 224
+   Patch EWL421, 0, 256
+   Patch EWL421, 0, 288
+   Patch EWL421, 0, 320
+   Patch EWL421, 0, 352
+   Patch EWL421, 0, 384
+   Patch EWL421, 0, 416
+   Patch EWL421, 0, 448
+   Patch EWL421, 0, 480
+   WorldPanning 
+}
+
+
+texture EWL3METB, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL429, 0, 0
+}
+
+texture EWL3FLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL430, 0, 0
+}
+
+texture EWL3FLR2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL431, 0, 0
+}
+
+texture EWL3FLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EWL432, 0, 0
+}
+
+////////////////////

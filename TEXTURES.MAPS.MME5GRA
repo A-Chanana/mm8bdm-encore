@@ -1,0 +1,526 @@
+///// MME5GRA /////
+texture EGRAMET1, 64, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV1, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMET2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV2, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMET3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV3, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMET4, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV4, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMET5, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV5, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMET6, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV6, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMET7, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV41, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMST1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV42, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMST2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV43, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMST3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV40, 0, 0
+   WorldPanning 
+}
+
+texture EGRACRA1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV44, 0, 0
+   WorldPanning 
+}
+
+texture EGRACRA2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV45, 0, 0
+   WorldPanning 
+}
+
+texture EGRAPULL, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV46, 0, 0
+   WorldPanning 
+}
+
+
+texture EGRALDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV7, 0, 0
+   WorldPanning 
+}
+
+texture EGRADRK, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV8, 0, 0
+   WorldPanning 
+}
+
+texture EGRAHALL, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV9, 0, 0
+   Patch EGRAV9, 48, 0
+   WorldPanning 
+}
+
+texture EGRABLU1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV10, 0, 0
+   Patch EGRAV11, 0, 32
+   Patch EGRAV12, 0, 64
+   Patch EGRAV11, 0, 96
+   Patch EGRAV12, 0, 128
+   Patch EGRAV11, 0, 160
+   Patch EGRAV12, 0, 192
+   Patch EGRAV11, 0, 224
+   Patch EGRAV12, 0, 256
+   Patch EGRAV11, 0, 288
+   Patch EGRAV12, 0, 320
+   Patch EGRAV11, 0, 352
+   Patch EGRAV12, 0, 384
+   Patch EGRAV11, 0, 416
+   Patch EGRAV12, 0, 448
+   Patch EGRAV11, 0, 480
+   WorldPanning 
+}
+
+
+texture EGRABLU2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV13, 0, 0
+   Patch EGRAV14, 0, 32
+   Patch EGRAV14, 0, 64
+   Patch EGRAV14, 0, 96
+   Patch EGRAV14, 0, 128
+   Patch EGRAV14, 0, 160
+   Patch EGRAV14, 0, 192
+   Patch EGRAV14, 0, 224
+   Patch EGRAV14, 0, 256
+   Patch EGRAV14, 0, 288
+   Patch EGRAV14, 0, 320
+   Patch EGRAV14, 0, 352
+   Patch EGRAV14, 0, 384
+   Patch EGRAV14, 0, 416
+   Patch EGRAV14, 0, 448
+   Patch EGRAV14, 0, 480
+   WorldPanning 
+}
+
+
+texture EGRABLU3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV16, 0, 0
+   Patch EGRAV15, 0, 32
+   Patch EGRAV15, 0, 64
+   Patch EGRAV15, 0, 96
+   Patch EGRAV15, 0, 128
+   Patch EGRAV15, 0, 160
+   Patch EGRAV15, 0, 192
+   Patch EGRAV15, 0, 224
+   Patch EGRAV15, 0, 256
+   Patch EGRAV15, 0, 288
+   Patch EGRAV15, 0, 320
+   Patch EGRAV15, 0, 352
+   Patch EGRAV15, 0, 384
+   Patch EGRAV15, 0, 416
+   Patch EGRAV15, 0, 448
+   Patch EGRAV15, 0, 480
+   WorldPanning 
+}
+
+texture EGRAGRN1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV17, 0, 0
+   Patch EGRAV18, 0, 32
+   Patch EGRAV18, 0, 64
+   Patch EGRAV18, 0, 96
+   Patch EGRAV18, 0, 128
+   Patch EGRAV18, 0, 160
+   Patch EGRAV18, 0, 192
+   Patch EGRAV18, 0, 224
+   Patch EGRAV18, 0, 256
+   Patch EGRAV18, 0, 288
+   Patch EGRAV18, 0, 320
+   Patch EGRAV18, 0, 352
+   Patch EGRAV18, 0, 384
+   Patch EGRAV18, 0, 416
+   Patch EGRAV18, 0, 448
+   Patch EGRAV18, 0, 480
+   WorldPanning 
+}
+
+texture EGRAGRN2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV19, 0, 0
+   Patch EGRAV20, 0, 32
+   Patch EGRAV20, 0, 64
+   Patch EGRAV20, 0, 96
+   Patch EGRAV20, 0, 128
+   Patch EGRAV20, 0, 160
+   Patch EGRAV20, 0, 192
+   Patch EGRAV20, 0, 224
+   Patch EGRAV20, 0, 256
+   Patch EGRAV20, 0, 288
+   Patch EGRAV20, 0, 320
+   Patch EGRAV20, 0, 352
+   Patch EGRAV20, 0, 384
+   Patch EGRAV20, 0, 416
+   Patch EGRAV20, 0, 448
+   Patch EGRAV20, 0, 480
+   WorldPanning 
+}
+
+texture EGRAGRN3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV21, 0, 0
+   Patch EGRAV22, 0, 32
+   Patch EGRAV22, 0, 64
+   Patch EGRAV22, 0, 96
+   Patch EGRAV22, 0, 128
+   Patch EGRAV22, 0, 160
+   Patch EGRAV22, 0, 192
+   Patch EGRAV22, 0, 224
+   Patch EGRAV22, 0, 256
+   Patch EGRAV22, 0, 288
+   Patch EGRAV22, 0, 320
+   Patch EGRAV22, 0, 352
+   Patch EGRAV22, 0, 384
+   Patch EGRAV22, 0, 416
+   Patch EGRAV22, 0, 448
+   Patch EGRAV22, 0, 480
+   WorldPanning 
+}
+
+texture EGRAGEN, 96, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV23, 0, 0
+   WorldPanning 
+}
+
+texture EGRAGEN1, 96, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV23, 0, 0
+   WorldPanning 
+}
+
+texture EGRAGEN2, 96, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV24, 0, 0
+   WorldPanning 
+}
+
+texture EGRAGEN3, 96, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV25, 0, 0
+   WorldPanning 
+}
+
+texture EGRAGEN4, 96, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV26, 0, 0
+   WorldPanning 
+}
+
+texture EGRAGEN5, 96, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV27, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV28, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG1, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV28, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG2, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV29, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG3, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV30, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG4, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV31, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG5, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV47, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG6, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV48, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG7, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV49, 0, 0
+   WorldPanning 
+}
+
+texture EGRAMAG8, 64, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV50, 0, 0
+   WorldPanning 
+}
+
+texture EARROU, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARU1, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARU2, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV33, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARU3, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV34, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARU4, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV35, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARU5, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV36, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EARROD, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARD1, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV32, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARD2, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV33, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARD3, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV34, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARD4, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV35, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAARD5, 16, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV36, 0, 32
+   Patch EGRAV32, 0, 0 {FlipY}
+   WorldPanning 
+}
+
+texture EGRAFLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV37, 0, 0
+   WorldPanning 
+}
+
+texture EGRAFLR2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV38, 0, 0
+   WorldPanning 
+}
+
+
+texture EGRAFLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EGRAV39, 0, 0
+   WorldPanning 
+}
+
+
+////////////////////

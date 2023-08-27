@@ -13,7 +13,7 @@ loop
 
 actor SpeedyFloorPowerup : PowerSpeed
 {
-+POWERSPEED.NOTRAIL
+//+POWERSPEED.NOTRAIL
 Speed 1.3
 Inventory.amount 1
 Inventory.maxamount 1

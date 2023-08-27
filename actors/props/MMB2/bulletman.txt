@@ -1,0 +1,107 @@
+
+actor BulletPlatform : ProjSpawnFuncActor
+{
+height 8
+radius 36
+scale 3.75
++FORCEYBILLBOARD
++NOGRAVITY
++SHOOTABLE
++NOTAUTOAIMED
++THRUSPECIES
++THRUGHOST
++CANPASS
++NOBLOCKMONST
++DONTBLAST
++SOLID
++DONTREFLECT
++MISSILE
++NODAMAGE
++INVULNERABLE
++NOTAUTOAIMED
++NOTARGETSWITCH
+species "MovingPlatform"
++THRUSPECIES
+var int user_playerRiding[64];
+mass 99999999
+//ReactionTime 50
+var int user_countdown;
+maxstepheight 0
+damagefactor "Normal", 1.0
+States
+{
+Spawn:
+DGBP A 45 A_Stop
+DGBP B 0 ACS_NamedExecuteAlways("core_stickyLifts",0,STICKYMODE_GUTSLIFT)
+DGBP B 0 A_PlaySoundEx("weapons/mm4/drillbombfire", "weapon")
+DGBP B 3 A_ChangeVelocity(2, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+DGBP C 3 A_ChangeVelocity(6, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+DGBP B 3 A_ChangeVelocity(8, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+Spawn2:
+DGBP CB 3
+DGBP B 0 A_ChangeVelocity(16, 0, 0, CVF_REPLACE|CVF_RELATIVE)
+goto Spawn2
+Death:
+DGBP A 0 A_PlaySoundEx("weapons/mm10/commandobombexplosion", "Weapon")
+DRIL A 0 A_Explode(30, 96, 0, 0, 16+7)
+DRIL A 0 A_ChangeFlag("NOINTERACTION",1)
+TNT1 A 35 A_SpawnItemEx("ExplosionEffect2",0,0,0,0,0,0,0,SXF_WEPFXCOLOR)
+stop
+}
+}
+
+actor BulletExplosiveCore 20011
+//This is suppose to be an explosive ordinance that detonates on contact or when taking damage.
+{
++SOLID
++SHOOTABLE
++NOTAUTOAIMED
++NODAMAGETHRUST
++FORCEYBILLBOARD
++NOBLOOD
++DONTBLAST
++QUICKTORETALIATE
++LOOKALLAROUND
++DONTDRAIN
++ACTIVATEPCROSS
+Obituary "$OB_OILBARRELTAG"
+scale 2.5
+height 16
+Radius 6
+Health 1
+painchance 256
+damagetype "DanganExplosiveCore"
+damagefactor "DanganExplosiveCore", 1.0
+States
+{
+Spawn:
+DGBM A 0
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 3 A_LookEx(LOF_NOSOUNDCHECK,0, 35,0,360,"Death")
+DGBM A 0 A_GiveInventory("Cutterflag",1)
+DGBM A 0 A_JumpIfInventory("Cutterflag",14,"Goodbye")
+loop
+GoodBye:
+DGBM A 0
+stop
+
+Death:
+DGBM B 0 A_PlaySound("weapons/mm2/crashbombland")
+DGBM B 0 A_ChangeFlag("SHOOTABLE", 0)
+DGBM B 0 A_ChangeFlag("SOLID", 0)
+DGBM BCBC 2
+DGBM D 0 A_PlaySound("weapons/mm7/dangerwrapexplode")
+DGBM D 0 A_SpawnItemEx("ExplosionEffect2", 0, 0, 0, 0, 0, 0, 0, SXF_WEPFXCOLOR)
+DGBM D 4 A_Explode(40,96, XF_HURTSOURCE)
+DGBM E 4
+stop
+}
+}

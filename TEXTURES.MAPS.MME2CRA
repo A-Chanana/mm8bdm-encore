@@ -1,0 +1,325 @@
+
+Texture ECRASWL1, 64, 48
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH1, 0, 0
+}
+
+Texture ECRASWL2, 64, 48
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH2, 0, 0
+}
+
+Texture ECRASWL3, 80, 1280
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH17, 0, 0
+	Patch ECRSH17, 0, 80
+	Patch ECRSH16, 0, 160
+	Patch ECRSH15, 0, 240
+	Patch ECRSH3, 0, 320
+	Patch ECRSH3, 0, 400
+	Patch ECRSH3, 0, 480
+	Patch ECRSH3, 0, 560
+	Patch ECRSH3, 0, 640
+	Patch ECRSH3, 0, 720
+	Patch ECRSH3, 0, 800
+	Patch ECRSH3, 0, 880
+	Patch ECRSH3, 0, 960
+	Patch ECRSH3, 0, 1040
+	Patch ECRSH3, 0, 1120
+	Patch ECRSH3, 0, 1200
+}
+
+Texture ECRASLDR, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH4, 0, 0
+}
+
+Texture ECRASSPH, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH5, 0, 0
+}
+
+Texture ECRASSP2, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH22, 0, 0
+}
+
+Texture ECRASSP3, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH23, 0, 0
+}
+
+Texture ECRAPIP1, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH6, 0, 0
+}
+
+Texture ECRAPIP2, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH7, 0, 0
+}
+
+Texture ECRAPIP3, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH8, 0, 0
+}
+
+Texture ECRAPIP4, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH9, 0, 0
+}
+
+Texture ECRASTP1, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH10, 0, 0
+}
+
+Texture ECRASTP2, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH11, 0, 0
+}
+
+Texture ECRASTP3, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH12, 0, 0
+}
+
+Texture ECRASTP4, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH19, 0, 0
+}
+
+Texture ECRASTP5, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH20, 0, 0
+}
+
+Texture ECRASTP6, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH21, 0, 0
+}
+
+Texture ECRASFLR, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH13, 0, 0
+}
+
+Texture ECRASFL2, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH3, 0, 0
+}
+
+Texture ECRASFL3, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH15, 0, 0
+}
+
+Texture ECRASFL4, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH17, 0, 0
+}
+
+Texture ECRASKY, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH18, 0, 0
+}
+
+Texture ECRASKY2, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH14, 0, 0
+}
+
+Texture ECRASKY3, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH34, 0, 0
+}
+
+Texture ECRASWL4, 128, 128
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH24, 0, 0
+}
+
+Texture ECRASFL5, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH25, 0, 0
+}
+
+Texture ECRASFL6, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH36, 0, 0
+}
+
+Texture ECRAMET1, 32, 512
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH26, 0, 0
+	Patch ECRSH27, 0, 32
+	Patch ECRSH27, 0, 64
+	Patch ECRSH27, 0, 96
+	Patch ECRSH27, 0, 128
+	Patch ECRSH27, 0, 160
+	Patch ECRSH27, 0, 192
+	Patch ECRSH27, 0, 224
+	Patch ECRSH27, 0, 256
+	Patch ECRSH27, 0, 288
+	Patch ECRSH27, 0, 320
+	Patch ECRSH27, 0, 352
+	Patch ECRSH27, 0, 384
+	Patch ECRSH27, 0, 416
+	Patch ECRSH27, 0, 448
+	Patch ECRSH32, 0, 480
+}
+
+Texture ECRAMET2, 16, 512
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH28, 0, 0
+	Patch ECRSH29, 0, 32
+	Patch ECRSH29, 0, 64
+	Patch ECRSH29, 0, 96
+	Patch ECRSH29, 0, 128
+	Patch ECRSH29, 0, 160
+	Patch ECRSH29, 0, 192
+	Patch ECRSH29, 0, 224
+	Patch ECRSH29, 0, 256
+	Patch ECRSH29, 0, 288
+	Patch ECRSH29, 0, 320
+	Patch ECRSH29, 0, 352
+	Patch ECRSH29, 0, 384
+	Patch ECRSH29, 0, 416
+	Patch ECRSH29, 0, 448
+	Patch ECRSH29, 0, 480
+}
+
+Texture ECRAPIP5, 16, 512
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH30, 0, 0
+	Patch ECRSH31, 0, 16
+	Patch ECRSH31, 0, 48
+	Patch ECRSH31, 0, 80
+	Patch ECRSH31, 0, 112
+	Patch ECRSH31, 0, 144
+	Patch ECRSH31, 0, 176
+	Patch ECRSH31, 0, 208
+	Patch ECRSH31, 0, 240
+	Patch ECRSH31, 0, 272
+	Patch ECRSH31, 0, 304
+	Patch ECRSH31, 0, 336
+	Patch ECRSH31, 0, 368
+	Patch ECRSH31, 0, 400
+	Patch ECRSH31, 0, 432
+	Patch ECRSH31, 0, 464
+	Patch ECRSH31, 0, 496
+}
+
+Texture ECRASCLO, 256, 128
+{
+	XScale 0.250
+	YScale 0.250
+	Patch ECRSH33, 0, 0
+}
+
+Texture ECRASSP4, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	Patch ECRSH35, 0, 0
+}
+
+Texture ECRAWTR1, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch ECRSWAT1, 0, 0
+}
+
+Texture ECRAWTR2, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch ECRSWAT2, 0, 0
+}
+
+Texture ECRAWTR3, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch ECRSWAT3, 0, 0
+}
+
+Texture ECRAWTR4, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch ECRSWAT4, 0, 0
+}
+
+Texture ECRAWTRX, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch ECRSWAT1, 0, 0
+}

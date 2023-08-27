@@ -1,0 +1,331 @@
+///// MME1DW1 /////
+texture EWFLR1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL26, 0, 0
+   WorldPanning 
+}
+
+texture EWFLR2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL28, 0, 0
+   WorldPanning 
+}
+
+texture EWFLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL27, 0, 0
+   WorldPanning 
+}
+
+texture EWFLR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL25, 0, 0
+   WorldPanning 
+}
+
+texture EWFLR5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL30, 0, 0
+   WorldPanning 
+}
+
+texture EWMET1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL29, 0, 0
+   WorldPanning 
+}
+
+texture EWMET2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL2X, 0, 0
+   WorldPanning 
+}
+
+texture EW1SKY, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL3X, 0, 0
+   Patch EWIL3X, 16, 0
+   Patch EWIL3X, 16, 16
+   Patch EWIL3X, 0, 16
+   WorldPanning 
+}
+
+texture EWGRASS, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL4X, 0, 0
+   WorldPanning 
+}
+
+texture EWGRAS2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL31, 0, 0
+   WorldPanning 
+}
+
+texture EWGRATE1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL5X, 0, 0
+   Patch EWIL6X, 0, 32
+   Patch EWIL6X, 0, 64
+   Patch EWIL6X, 0, 96
+   Patch EWIL6X, 0, 128
+   Patch EWIL6X, 0, 160
+   Patch EWIL6X, 0, 192
+   Patch EWIL6X, 0, 224
+   Patch EWIL6X, 0, 256
+   Patch EWIL6X, 0, 288
+   Patch EWIL6X, 0, 320
+   Patch EWIL6X, 0, 352
+   Patch EWIL6X, 0, 384
+   Patch EWIL6X, 0, 416
+   Patch EWIL6X, 0, 448
+   Patch EWIL6X, 0, 480
+   WorldPanning 
+}
+
+texture EWGRATE2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL12, 0, 0
+   Patch EWIL11, 0, 32
+   Patch EWIL11, 0, 64
+   Patch EWIL11, 0, 96
+   Patch EWIL11, 0, 128
+   Patch EWIL11, 0, 160
+   Patch EWIL11, 0, 192
+   Patch EWIL11, 0, 224
+   Patch EWIL11, 0, 256
+   Patch EWIL11, 0, 288
+   Patch EWIL11, 0, 320
+   Patch EWIL11, 0, 352
+   Patch EWIL11, 0, 384
+   Patch EWIL11, 0, 416
+   Patch EWIL11, 0, 448
+   Patch EWIL11, 0, 480
+   WorldPanning 
+}
+
+
+texture EWBLOCK, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL8X, 0, 0
+   WorldPanning 
+}
+
+texture EWMET4, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL10, 0, 0
+   WorldPanning 
+}
+
+texture EWMET5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL14, 0, 0
+   WorldPanning 
+}
+
+texture EWMET6, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL16, 0, 0
+   WorldPanning 
+}
+
+texture EWMET7, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL17, 0, 0
+   WorldPanning 
+}
+
+texture EWMET8, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL18, 0, 0
+   WorldPanning 
+}
+
+texture EWMET9, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL19, 0, 0
+   WorldPanning 
+}
+
+texture EWMET10, 48, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL23, 0, 0
+   WorldPanning 
+}
+
+texture EWMET12, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL7X, 0, 0
+   WorldPanning 
+}
+
+texture EWMET13, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL32, 0, 0
+   WorldPanning 
+}
+
+texture EWWIND1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL20, 0, 0
+   WorldPanning 
+}
+
+texture EWLADD1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL9X, 0, 0
+   WorldPanning 
+}
+
+texture EWEDGE1, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL14, 0, 0
+   Patch EWIL14, 0, 16
+   Patch EWIL14, 0, 32
+   Patch EWIL14, 0, 48
+   Patch EWIL14, 0, 64
+   Patch EWIL14, 0, 80
+   Patch EWIL14, 0, 96
+   Patch EWIL14, 0, 112
+   Patch EWIL14, 0, 128
+   Patch EWIL14, 0, 144
+   Patch EWIL14, 0, 160
+   Patch EWIL14, 0, 176
+   Patch EWIL14, 0, 192
+   Patch EWIL14, 0, 208
+   Patch EWIL14, 0, 224
+   Patch EWIL14, 0, 240
+   Patch EWIL14, 0, 256
+   Patch EWIL14, 0, 272
+   Patch EWIL14, 0, 288
+   Patch EWIL14, 0, 304
+   Patch EWIL14, 0, 320
+   Patch EWIL14, 0, 336
+   Patch EWIL14, 0, 352
+   Patch EWIL14, 0, 368
+   Patch EWIL14, 0, 384
+   Patch EWIL14, 0, 400
+   Patch EWIL14, 0, 416
+   Patch EWIL14, 0, 432
+   Patch EWIL14, 0, 448
+   Patch EWIL14, 0, 464
+   Patch EWIL21, 0, 480
+   WorldPanning 
+}
+
+texture EWEDGE2, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL14, 0, 0
+   Patch EWIL14, 0, 16
+   Patch EWIL14, 0, 32
+   Patch EWIL14, 0, 48
+   Patch EWIL14, 0, 64
+   Patch EWIL14, 0, 80
+   Patch EWIL14, 0, 96
+   Patch EWIL14, 0, 112
+   Patch EWIL14, 0, 128
+   Patch EWIL14, 0, 144
+   Patch EWIL14, 0, 160
+   Patch EWIL14, 0, 176
+   Patch EWIL14, 0, 192
+   Patch EWIL14, 0, 208
+   Patch EWIL14, 0, 224
+   Patch EWIL14, 0, 240
+   Patch EWIL14, 0, 256
+   Patch EWIL14, 0, 272
+   Patch EWIL14, 0, 288
+   Patch EWIL14, 0, 304
+   Patch EWIL14, 0, 320
+   Patch EWIL14, 0, 336
+   Patch EWIL14, 0, 352
+   Patch EWIL14, 0, 368
+   Patch EWIL14, 0, 384
+   Patch EWIL14, 0, 400
+   Patch EWIL14, 0, 416
+   Patch EWIL14, 0, 432
+   Patch EWIL14, 0, 448
+   Patch EWIL14, 0, 464
+   Patch EWIL22, 0, 480
+   WorldPanning 
+}
+
+texture EWMET11, 160, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EWIL24, 0, 0
+   WorldPanning 
+}
+
+texture EWMROO1, 16, 16
+{
+   XScale 0.5
+   YScale 0.25
+   Patch EWIL14, 0, 0
+   {
+   rotate 90
+   }
+   WorldPanning 
+}
+
+texture EWMROO2, 16, 16
+{
+   XScale 0.25
+   YScale 0.5
+   Patch EWIL14, 0, 0
+   WorldPanning 
+}
+
+////////////////////

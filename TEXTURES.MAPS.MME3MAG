@@ -1,0 +1,330 @@
+///// MME3MAG /////
+texture EMAWIR1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE1, 0, 0
+   Patch EMAGNE2, 0, 32
+   Patch EMAGNE2, 0, 64
+   Patch EMAGNE2, 0, 96
+   Patch EMAGNE2, 0, 128
+   Patch EMAGNE2, 0, 160
+   Patch EMAGNE2, 0, 192
+   Patch EMAGNE2, 0, 224
+   Patch EMAGNE2, 0, 256
+   Patch EMAGNE2, 0, 288
+   Patch EMAGNE2, 0, 320
+   Patch EMAGNE2, 0, 352
+   Patch EMAGNE2, 0, 384
+   Patch EMAGNE2, 0, 416
+   Patch EMAGNE2, 0, 448
+   Patch EMAGNE2, 0, 480
+   WorldPanning 
+}
+
+texture EMAWIR2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE3, 0, 0
+   Patch EMAGNE2, 0, 32
+   Patch EMAGNE2, 0, 64
+   Patch EMAGNE2, 0, 96
+   Patch EMAGNE2, 0, 128
+   Patch EMAGNE2, 0, 160
+   Patch EMAGNE2, 0, 192
+   Patch EMAGNE2, 0, 224
+   Patch EMAGNE2, 0, 256
+   Patch EMAGNE2, 0, 288
+   Patch EMAGNE2, 0, 320
+   Patch EMAGNE2, 0, 352
+   Patch EMAGNE2, 0, 384
+   Patch EMAGNE2, 0, 416
+   Patch EMAGNE2, 0, 448
+   Patch EMAGNE2, 0, 480
+   WorldPanning 
+}
+
+texture EMAWIR3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE4, 0, 0
+   Patch EMAGNE2, 0, 32
+   Patch EMAGNE2, 0, 64
+   Patch EMAGNE2, 0, 96
+   Patch EMAGNE2, 0, 128
+   Patch EMAGNE2, 0, 160
+   Patch EMAGNE2, 0, 192
+   Patch EMAGNE2, 0, 224
+   Patch EMAGNE2, 0, 256
+   Patch EMAGNE2, 0, 288
+   Patch EMAGNE2, 0, 320
+   Patch EMAGNE2, 0, 352
+   Patch EMAGNE2, 0, 384
+   Patch EMAGNE2, 0, 416
+   Patch EMAGNE2, 0, 448
+   Patch EMAGNE2, 0, 480
+   WorldPanning 
+}
+
+texture EMAWIR4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE5, 0, 0
+   Patch EMAGNE6, 0, 32
+   Patch EMAGNE6, 0, 64
+   Patch EMAGNE6, 0, 96
+   Patch EMAGNE6, 0, 128
+   Patch EMAGNE6, 0, 160
+   Patch EMAGNE6, 0, 192
+   Patch EMAGNE6, 0, 224
+   Patch EMAGNE6, 0, 256
+   Patch EMAGNE6, 0, 288
+   Patch EMAGNE6, 0, 320
+   Patch EMAGNE6, 0, 352
+   Patch EMAGNE6, 0, 384
+   Patch EMAGNE6, 0, 416
+   Patch EMAGNE6, 0, 448
+   Patch EMAGNE7, 0, 480
+   WorldPanning 
+}
+
+texture EMAWIR5, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE20, 0, 0
+   Patch EMAGNE6, 0, 32
+   Patch EMAGNE6, 0, 64
+   Patch EMAGNE6, 0, 96
+   Patch EMAGNE6, 0, 128
+   Patch EMAGNE6, 0, 160
+   Patch EMAGNE6, 0, 192
+   Patch EMAGNE6, 0, 224
+   Patch EMAGNE6, 0, 256
+   Patch EMAGNE6, 0, 288
+   Patch EMAGNE6, 0, 320
+   Patch EMAGNE6, 0, 352
+   Patch EMAGNE6, 0, 384
+   Patch EMAGNE6, 0, 416
+   Patch EMAGNE6, 0, 448
+   Patch EMAGNE7, 0, 480
+   WorldPanning 
+}
+
+texture EMAINT1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE8, 0, 0
+   Patch EMAGNE9, 0, 32
+   Patch EMAGNE9, 0, 64
+   Patch EMAGNE9, 0, 96
+   Patch EMAGNE9, 0, 128
+   Patch EMAGNE9, 0, 160
+   Patch EMAGNE9, 0, 192
+   Patch EMAGNE9, 0, 224
+   Patch EMAGNE9, 0, 256
+   Patch EMAGNE9, 0, 288
+   Patch EMAGNE9, 0, 320
+   Patch EMAGNE9, 0, 352
+   Patch EMAGNE9, 0, 384
+   Patch EMAGNE9, 0, 416
+   Patch EMAGNE9, 0, 448
+   Patch EMAGNE9, 0, 480
+   WorldPanning 
+}
+
+texture EMAINT2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE8, 0, 0
+   Patch EMAGNE10, 0, 32
+   Patch EMAGNE9, 0, 64
+   Patch EMAGNE10, 0, 96
+   Patch EMAGNE9, 0, 128
+   Patch EMAGNE10, 0, 160
+   Patch EMAGNE9, 0, 192
+   Patch EMAGNE10, 0, 224
+   Patch EMAGNE9, 0, 256
+   Patch EMAGNE10, 0, 288
+   Patch EMAGNE9, 0, 320
+   Patch EMAGNE10, 0, 352
+   Patch EMAGNE9, 0, 384
+   Patch EMAGNE10, 0, 416
+   Patch EMAGNE9, 0, 448
+   Patch EMAGNE10, 0, 480
+   WorldPanning 
+}
+
+texture EMAINT3, 64, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EMAGNE11, 0, 0
+   Patch EMAGNE13, 0, 64
+   Patch EMAGNE13, 0, 128
+   Patch EMAGNE13, 0, 192
+   Patch EMAGNE13, 0, 256
+   Patch EMAGNE13, 0, 320
+   Patch EMAGNE13, 0, 384
+   Patch EMAGNE13, 0, 448
+   WorldPanning 
+}
+
+texture EMAMACH, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE12, 0, 0
+}
+
+texture EMASTE1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE14, 0, 0
+}
+
+texture EMASTE2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE15, 0, 0
+}
+
+texture EMASTE3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE16, 0, 0
+}
+
+texture EMALADR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE17, 0, 0
+}
+
+texture EMASKY, 512, 256
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE18, 0, 0
+}
+
+texture EMASKYB, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE19, 0, 0
+}
+
+texture EMAFLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE21, 0, 0
+}
+
+texture EMAFLR2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE22, 0, 0
+}
+
+texture EMAFLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE23, 0, 0
+}
+
+texture EMAFLR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE24, 0, 0
+}
+
+texture EMAFLR5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE25, 0, 0
+}
+
+texture EMAFLR6, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE26, 0, 0
+}
+
+texture EMAFLR7, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE27, 0, 0
+}
+
+texture EMAFLR8, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE28, 0, 0
+}
+
+texture EMAFLR9, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE29, 0, 0
+}
+
+texture EMAFLR10, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE1, 0, 0
+}
+
+texture EMAFLR11, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE30, 0, 0
+}
+
+texture EMASMILE, 8, 8
+{
+   XScale 0.5
+   YScale 0.5
+   WorldPanning 
+   patch EMAGNE31, 0, 0
+}
+
+////////////////////

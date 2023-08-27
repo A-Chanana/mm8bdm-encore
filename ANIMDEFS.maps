@@ -1,0 +1,1878 @@
+///// MME1ELE /////
+texture EELEZ1
+    allowdecals
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN1 tics 1
+	pic EELEAN2 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+    pic EELEAN3 tics 1
+	pic EELEAN4 tics 1
+
+////////////////////
+///// MME1ICE /////
+flat IWATERE
+pic IWATERE1 tics 12
+pic IWATERE2 tics 12
+pic IWATERE3 tics 12
+pic IWATERE4 tics 12
+
+
+////////////////////
+///// MME1FIR /////
+flat EFIRLAV
+    pic EFIR19 tics 6
+	pic EFIR20 tics 6
+
+////////////////////
+///// MME1TIM /////
+texture ETIBELL
+	pic ETIBEL1 tics 8
+	pic ETIBEL2 tics 8
+	pic ETIBEL3 tics 8
+	pic ETIBEL2 tics 8
+
+texture ETICONV
+	pic ETICNV1 tics 8
+	pic ETICNV2 tics 8
+	pic ETICNV4 tics 8
+	pic ETICNV2 tics 8
+	
+texture ETIGEAR
+	pic ETIGEAR1 tics 10
+	pic ETIGEAR2 tics 10
+	pic ETIGEAR3 tics 10
+	pic ETIGEAR4 tics 10
+
+texture ETIWAL2
+	pic ETIWAL2 tics 8
+	pic ETIWAL2A tics 8
+	pic ETIWAL2B tics 8
+	pic ETIWAL2A tics 8
+
+texture ETIWAL3
+	pic ETIWAL3 tics 8
+	pic ETIWAL3A tics 8
+	pic ETIWAL3B tics 8
+	pic ETIWAL3A tics 8
+
+texture ETIDIRT
+	pic ETIDIRT tics 8
+	pic ETIDIRTA tics 8
+	pic ETIDIRTB tics 8
+	pic ETIDIRTA tics 8
+	
+texture ETIDIRT2
+	pic ETIDIRT2 tics 8
+	pic ETIDIR2A tics 8
+	pic ETIDIR2B tics 8
+	pic ETIDIR2A tics 8
+	
+texture ETIPEN1
+	pic ETIPEN1 tics 8
+	pic ETIPEN2 tics 10
+	pic ETIPEN3 tics 15
+	pic ETIPEN2 tics 10
+	pic ETIPEN1 tics 8
+	pic ETIPEN4 tics 10
+	pic ETIPEN5 tics 15
+	pic ETIPEN4 tics 10
+
+////////////////////
+///// MME1OIL /////
+texture ENOLSKYX
+    allowdecals
+    pic ENOLSKY1 tics 3
+	pic ENOLSKY2 tics 3
+	pic ENOLSKY3 tics 3
+	pic ENOLSKY4 tics 3
+	pic ENOLSKY5 tics 3
+	pic ENOLSKY6 tics 3
+	
+texture ENOLSKYZ
+	allowdecals
+	pic ENOLSKY7 tics 6
+	pic ENOLSKY8 tics 6
+	pic ENOLSKY9 tics 6
+	
+texture RNOLSKYX
+    allowdecals
+    pic ENOLSKY1 tics 3
+	pic ENOLSKY2 tics 3
+	pic ENOLSKY3 tics 3
+	pic ENOLSKY4 tics 3
+	pic ENOLSKY5 tics 3
+	pic ENOLSKY6 tics 3
+	
+texture RNOLSKYZ
+	allowdecals
+	pic ENOLSKY7 tics 6
+	pic ENOLSKY8 tics 6
+	pic ENOLSKY9 tics 6
+texture OILSKYX
+    allowdecals
+    pic OILSKY1 tics 6
+	pic OILSKY2 tics 6
+	pic OILSKY3 tics 6
+	
+	
+
+////////////////////
+///// MME2BUB /////
+texture EBUBFALX
+    allowdecals
+    pic EBUBFAL1 tics 3
+	pic EBUBFAL2 tics 3
+	pic EBUBFAL3 tics 3
+	
+texture EBUBFA2X
+    allowdecals
+    pic EBUBFA21 tics 3
+	pic EBUBFA22 tics 3
+	pic EBUBFA23 tics 3
+	
+
+texture EBBWTRX
+    allowdecals
+    pic EBBWTR1 tics 6
+	pic EBBWTR2 tics 6
+	pic EBBWTR3 tics 6
+	pic EBBWTR4 tics 6
+
+
+////////////////////
+///// MME2AIR /////
+texture EAIFAN1
+    allowdecals
+    pic EAIFAN1 tics 4
+	pic EAIFAN2 tics 4
+	pic EAIFAN3 tics 4
+
+////////////////////
+///// MME2HEA /////
+texture EHFALL
+    allowdecals
+    pic EHEA11A tics 3
+	pic EHEA12A tics 3
+	pic EHEA13A tics 3
+
+texture EHTUBE
+    allowdecals
+    pic EHEA8A tics 3
+	pic EHEA9A tics 3
+	pic EHEA10A tics 3
+
+texture EHTUBE2
+    allowdecals
+    pic EHEA8B tics 3
+	pic EHEA9B tics 3
+	pic EHEA10B tics 3
+
+////////////////////
+///// MME2FLA /////
+texture EFLSHBZ
+    allowdecals
+    pic EFLSHB1X tics 14
+	pic EFLSHB1 tics 14
+
+texture EFLSHB2Z
+    allowdecals
+    pic EFLSHB2X tics 14
+	pic EFLSHB2 tics 14
+
+texture EFLSHB3Z
+    allowdecals
+    pic EFLSHB3X tics 14
+	pic EFLSHB3 tics 14
+
+texture EFLSHB4Z
+    allowdecals
+    pic EFLSHB4X tics 14
+	pic EFLSHB4 tics 14
+
+texture EFLSHB5Z
+    allowdecals
+    pic EFLSHB5X tics 14
+	pic EFLSHB5 tics 14
+	
+texture EFLSHB6Z
+    allowdecals
+    pic EFLSHB6X tics 14
+	pic EFLSHB6 tics 14
+	
+texture EFLSHFLZ
+    allowdecals
+    pic EFLSHFL1 tics 14
+	pic EFLSHFL2 tics 14
+	
+texture EFLSHLZ
+    allowdecals
+    pic EFLSHL1 tics 14
+	pic EFLSHL2 tics 14
+
+////////////////////
+///// MME2QUI /////
+texture EQUISMKT
+    allowdecals
+    pic EQUISMK1 tics 9
+	pic EQUISMK4 tics 9
+	pic EQUISMK3 tics 9
+	pic EQUISMK2 tics 9
+	
+texture EQUISMKS
+    allowdecals
+    pic EQUISMK5 tics 9
+	pic EQUISMK6 tics 9
+	pic EQUISMK7 tics 9
+	pic EQUISMK8 tics 9
+
+texture EQUISMKB
+    allowdecals
+    pic EQUISMK9 tics 9
+	pic EQUSMK12 tics 9
+	pic EQUSMK11 tics 9
+	pic EQUSMK10 tics 9
+	
+texture EQUICK17
+    allowdecals
+    pic EQUICK17 tics 6
+	pic EQUICK4 tics 6
+	
+texture QUICK17
+    allowdecals
+    pic QUICK4 tics 6
+	pic BLACK tics 6
+
+////////////////////
+///// MME2CRA /////
+
+texture ECRAWTRX
+    allowdecals
+    pic ECRAWTR1 tics 3
+	pic ECRAWTR2 tics 3
+	pic ECRAWTR3 tics 3
+	pic ECRAWTR3 tics 3
+
+////////////////////
+///// MME2MET /////
+texture EMETABG1
+    allowdecals
+    pic EMETLBG1 tics 4
+    pic EMETLBG2 tics 4
+
+texture EMETABG2
+    allowdecals
+    pic EMETLBG2 tics 4
+    pic EMETLBG1 tics 4
+	
+texture EMETABG3
+    allowdecals
+    pic EMETLBG3 tics 4
+    pic EMETLBG4 tics 4
+
+texture EMETABG5
+    allowdecals
+    pic EMETLBG5 tics 4
+    pic EMETLBG6 tics 4
+
+texture EMETABG7
+    allowdecals
+    pic EMETLBG7 tics 4
+    pic EMETLBG8 tics 4
+	
+texture EMETABG9
+    allowdecals
+    pic EMETLBG9 tics 4
+    pic EMETLBG0 tics 4
+	
+texture EMETAC1
+    allowdecals
+    pic EMETLC1 tics 4
+    pic EMETLC2 tics 4
+
+texture EMETAC2
+    allowdecals
+    pic EMETLC1 tics 4
+    pic EMETLC3 tics 4
+
+texture EMETAC3
+    allowdecals
+    pic EMETLC4 tics 4
+    pic EMETLC5 tics 4
+
+texture EMETAC4
+    allowdecals
+    pic EMETLC7 tics 4
+    pic EMETLC8 tics 4
+	
+texture EMETAC5
+    allowdecals
+    pic EMETLC9 tics 4
+    pic EMETLC10 tics 4
+
+////////////////////
+///// MME3TOP /////
+texture ETOLIT
+    allowdecals
+    pic ETOLIT tics 35
+	pic ETOLIT2 tics 35
+	pic ETOLIT3 tics 35
+	pic ETOLIT4 tics 35
+	
+// Encore animdefs
+texture ETOGRA2
+    allowdecals
+	pic ETOGRA2 tics 35
+	pic ETOGRA17 tics 35
+	pic ETOGRA32 tics 35
+	pic ETOGRA47 tics 35
+
+texture ETOGRA3
+    allowdecals
+	pic ETOGRA3 tics 35
+	pic ETOGRA18 tics 35
+	pic ETOGRA33 tics 35
+	pic ETOGRA48 tics 35
+	
+texture ETOGRA4
+    allowdecals
+	pic ETOGRA4 tics 35
+	pic ETOGRA19 tics 35
+	pic ETOGRA34 tics 35
+	pic ETOGRA49 tics 35
+	
+texture ETOGRA5
+    allowdecals
+	pic ETOGRA5 tics 35
+	pic ETOGRA20 tics 35
+	pic ETOGRA35 tics 35
+	pic ETOGRA50 tics 35
+	
+texture ETOGRA6
+    allowdecals
+	pic ETOGRA6 tics 35
+	pic ETOGRA21 tics 35
+	pic ETOGRA36 tics 35
+	pic ETOGRA51 tics 35
+	
+texture ETOGRA7
+    allowdecals
+	pic ETOGRA7 tics 35
+	pic ETOGRA22 tics 35
+	pic ETOGRA37 tics 35
+	pic ETOGRA52 tics 35
+	
+texture ETOGRA8
+    allowdecals
+	pic ETOGRA8 tics 35
+	pic ETOGRA23 tics 35
+	pic ETOGRA38 tics 35
+	pic ETOGRA53 tics 35
+	
+texture ETOGRA9
+    allowdecals
+	pic ETOGRA9 tics 35
+	pic ETOGRA24 tics 35
+	pic ETOGRA39 tics 35
+	pic ETOGRA54 tics 35
+	
+texture ETOGRA10
+    allowdecals
+	pic ETOGRA10 tics 35
+	pic ETOGRA25 tics 35
+	pic ETOGRA40 tics 35
+	pic ETOGRA55 tics 35
+	
+texture ETOGRA11
+    allowdecals
+	pic ETOGRA11 tics 35
+	pic ETOGRA26 tics 35
+	pic ETOGRA41 tics 35
+	pic ETOGRA56 tics 35
+	
+texture ETOGRA12
+    allowdecals
+	pic ETOGRA12 tics 35
+	pic ETOGRA27 tics 35
+	pic ETOGRA42 tics 35
+	pic ETOGRA57 tics 35
+	
+texture ETOGRA13
+    allowdecals
+	pic ETOGRA13 tics 35
+	pic ETOGRA28 tics 35
+	pic ETOGRA43 tics 35
+	pic ETOGRA58 tics 35
+	
+texture ETOGRA14
+    allowdecals
+	pic ETOGRA14 tics 35
+	pic ETOGRA29 tics 35
+	pic ETOGRA44 tics 35
+	pic ETOGRA59 tics 35
+	
+texture ETOGRA15
+    allowdecals
+	pic ETOGRA15 tics 35
+	pic ETOGRA30 tics 35
+	pic ETOGRA45 tics 35
+	pic ETOGRA60 tics 35
+	
+texture ETOGRA16
+    allowdecals
+	pic ETOGRA16 tics 35
+	pic ETOGRA31 tics 35
+	pic ETOGRA46 tics 35
+	pic ETOGRA61 tics 35
+	
+texture ETOSKY1
+    allowdecals
+	pic ETOSKY1 tics 35
+	pic ETOSKY4 tics 35
+	pic ETOSKY5 tics 35
+	
+texture ETOSKY2
+    allowdecals
+	pic ETOSKY2 tics 35
+	pic ETOSKY6 tics 35
+	pic ETOSKY7 tics 35
+	
+texture ETOCRK1
+    allowdecals
+	pic ETOCRK1 tics 35
+	pic ETOCRK5 tics 35
+	pic ETOCRK9 tics 35
+	pic ETOCRK13 tics 35
+	
+texture ETOCRK2
+    allowdecals
+	pic ETOCRK2 tics 35
+	pic ETOCRK6 tics 35
+	pic ETOCRK10 tics 35
+	pic ETOCRK14 tics 35
+	
+texture ETOCRK3
+    allowdecals
+	pic ETOCRK3 tics 35
+	pic ETOCRK7 tics 35
+	pic ETOCRK11 tics 35
+	pic ETOCRK15 tics 35
+	
+texture ETOCRK4
+    allowdecals
+	pic ETOCRK4 tics 35
+	pic ETOCRK8 tics 35
+	pic ETOCRK12 tics 35
+	pic ETOCRK16 tics 35
+	
+texture ETOGRA65
+    allowdecals
+	pic ETOGRA65 tics 35
+	pic ETOGRA66 tics 35
+	pic ETOGRA67 tics 35
+	pic ETOGRA68 tics 35
+
+////////////////////
+///// MME3GEM /////
+texture EGECEL1X
+    allowdecals
+    pic EGECEL1 tics 12
+	pic EGECEL2 tics 12
+	pic EGECEL3 tics 12
+
+texture EGECEL4X
+    allowdecals
+    pic EGECEL4 tics 12
+	pic EGECEL5 tics 12
+	pic EGECEL6 tics 12
+
+////////////////////
+///// MME3SPA /////
+texture ESPMET1X
+    allowdecals
+    pic ESPMET1 tics 4
+	pic ESPMET2 tics 4
+	
+texture ESPMET3X
+    allowdecals
+    pic ESPMET3 tics 4
+	pic ESPMET4 tics 4
+	
+texture ESPMET5X
+    allowdecals
+    pic ESPMET5 tics 4
+	pic ESPMET6 tics 4
+	
+	
+texture ESPSIGX1
+    allowdecals
+    pic ESPSIGN1 tics 4
+	pic ESPSIGN2 tics 4
+	
+texture ESPSIGX3
+    allowdecals
+    pic ESPSIGN3 tics 4
+	pic ESPSIGN4 tics 4
+	
+texture ESPSIGX5
+    allowdecals
+    pic ESPSIGN5 tics 4
+	pic ESPSIGN6 tics 4
+
+texture ESPMAC1X
+    allowdecals
+    pic ESPMAC1 tics 4
+	pic ESPMAC2 tics 4
+	
+texture ESPFL1X
+    allowdecals
+    pic ESPFL1 tics 4
+	pic ESPFL2 tics 4
+
+texture ESPFL3X
+    allowdecals
+    pic ESPFL3 tics 4
+	pic ESPFL4 tics 4
+
+texture ESPFL5X
+    allowdecals
+    pic ESPFL5 tics 4
+	pic ESPFL6 tics 4
+
+texture ESPFL7X
+    allowdecals
+    pic ESPFL7 tics 4
+	pic ESPFL8 tics 4
+
+texture ESPFL9X
+    allowdecals
+    pic ESPFL9 tics 4
+	pic ESPFL10 tics 4
+	
+texture ESPFL11X
+    allowdecals
+    pic ESPFL11 tics 4
+	pic ESPFL12 tics 4
+
+texture ESPFL18X
+    allowdecals
+    pic ESPFL18 tics 4
+	pic ESPFL19 tics 4
+	
+texture ESPFL16X
+    allowdecals
+    pic ESPFL16 tics 4
+	pic ESPFL17 tics 4
+
+////////////////////
+///// MME4TOA /////
+
+texture ETOADRAX
+    allowdecals
+    pic ETOADRA1 tics 3
+	pic ETOADRA2 tics 3
+	pic ETOADRA3 tics 3
+	
+texture ETOADFLX
+    allowdecals
+    pic ETOADFL1 tics 3
+	pic ETOADFL2 tics 3
+	pic ETOADFL3 tics 3
+	
+texture ETODFL2X
+    allowdecals
+    pic ETODFL21 tics 3
+	pic ETODFL22 tics 3
+	pic ETODFL23 tics 3
+	
+texture ETOADFXX
+    allowdecals
+    pic ETODFLW1 tics 3
+	pic ETODFLW2 tics 3
+	pic ETODFLW3 tics 3
+
+////////////////////
+///// MME5NAP /////
+texture ENPFAL
+    allowdecals
+    pic ENPFAL3 tics 4
+	pic ENPFAL2 tics 4
+	pic ENPFAL1 tics 4
+
+texture ENPLIT
+    allowdecals
+    pic ENPLIT1 tics 4
+	pic ENPLIT2 tics 4
+	pic ENPLIT3 tics 4
+	
+texture ENPTREE2
+    allowdecals
+    pic ENPTRE2A tics 12
+	pic ENPTRE2B tics 12
+	
+texture ENPGRAS
+    allowdecals
+    pic ENPGRAS1 tics 12
+	pic ENPGRAS2 tics 12
+
+////////////////////
+///// MME5WAV /////
+texture EWVWAT
+    allowdecals
+    pic EWVWAT1 tics 4
+	pic EWVWAT2 tics 4
+	pic EWVWAT3 tics 4
+
+texture EW2FALL
+    allowdecals
+    pic EW2FAL1 tics 4
+	pic EW2FAL2 tics 4
+	pic EW2FAL3 tics 4
+	
+texture EW2TFAL
+    allowdecals
+    pic EW2TFAL1 tics 4
+	pic EW2TFAL2 tics 4
+	pic EW2TFAL3 tics 4
+	
+texture EW2MET1
+    allowdecals
+    pic EW2MET1X tics 4
+	pic EW2MET1Y tics 4
+	
+texture EW2MET2
+    allowdecals
+    pic EW2MET2X tics 4
+	pic EW2MET2Y tics 4
+
+////////////////////
+///// MME5GRA /////
+texture EARROU
+    allowdecals
+    pic EGRAARU1 tics 3
+	pic EGRAARU2 tics 3
+	pic EGRAARU3 tics 3
+	pic EGRAARU4 tics 3
+	pic EGRAARU5 tics 3
+	pic EGRAARU4 tics 3
+	pic EGRAARU3 tics 3
+	pic EGRAARU2 tics 3
+	
+texture EARROD
+    allowdecals
+    pic EGRAARD1 tics 3
+	pic EGRAARD2 tics 3
+	pic EGRAARD3 tics 3
+	pic EGRAARD4 tics 3
+	pic EGRAARD5 tics 3
+	pic EGRAARD4 tics 3
+	pic EGRAARD3 tics 3
+	pic EGRAARD2 tics 3
+	
+texture EGRAGEN
+    allowdecals
+    pic EGRAGEN1 tics 3
+	pic EGRAGEN2 tics 3
+	pic EGRAGEN3 tics 3
+	pic EGRAGEN4 tics 3
+	pic EGRAGEN5 tics 3
+	pic EGRAGEN4 tics 3
+	pic EGRAGEN3 tics 3
+	pic EGRAGEN2 tics 3
+	
+texture EGRAMAG
+    allowdecals
+    pic EGRAMAG1 tics 3
+	pic EGRAMAG2 tics 3
+	pic EGRAMAG3 tics 3
+	pic EGRAMAG4 tics 3
+	pic EGRAMAG3 tics 3
+	pic EGRAMAG2 tics 3
+	
+texture EGRAMAG5
+    allowdecals
+    pic EGRAMAG5 tics 3
+	pic EGRAMAG6 tics 3
+	pic EGRAMAG7 tics 3
+	pic EGRAMAG8 tics 3
+	pic EGRAMAG7 tics 3
+	pic EGRAMAG6 tics 3
+
+////////////////////
+///// MME5CRY /////
+texture ECRYQSTV
+    allowdecals
+    pic ECRYSTV5 tics 5
+	pic ECRYSTV6 tics 5
+	pic ECRYSTV7 tics 5
+
+texture ECRYQSTP
+    allowdecals
+    pic ECRYSTP5 tics 5
+	pic ECRYSTP6 tics 5
+	pic ECRYSTP7 tics 5
+	
+texture ECRYTUB
+    allowdecals
+    pic ECRYTUB1 tics 5
+	pic ECRYTUB2 tics 5
+	pic ECRYTUB3 tics 5
+
+texture ECRYBLK
+    allowdecals
+    pic ECRYBLK1 tics 5
+	pic ECRYBLK2 tics 5
+	pic ECRYBLK3 tics 5
+	pic ECRYBLK4 tics 5
+
+texture ECRYLON
+    allowdecals
+    pic ECRYLON1 tics 5
+	pic ECRYLON2 tics 5
+	pic ECRYLON3 tics 5
+	pic ECRYLON4 tics 5
+
+texture ECRYBI1
+    allowdecals
+    pic ECRYBI1 tics 5
+	pic ECRYBI2 tics 5
+	pic ECRYBI3 tics 5
+	pic ECRYBI4 tics 5
+	
+texture ECRYBI5
+    allowdecals
+    pic ECRYBI5 tics 5
+	pic ECRYBI6 tics 5
+	pic ECRYBI7 tics 5
+	pic ECRYBI8 tics 5
+
+texture ECRYOBI2
+    allowdecals
+    pic ECRYBI5 tics 5
+	pic ECRYBI6 tics 5
+	pic ECRYBI7 tics 5
+	pic ECRYBI8 tics 5
+
+texture ECRYCRY
+    allowdecals
+    pic ECRYCRY1 tics 5
+	pic ECRYCRY2 tics 5
+
+texture ECRYSTV
+    allowdecals
+    pic ECRYSTV5 tics 5
+	pic ECRYSTV6 tics 5
+	pic ECRYSTV7 tics 5
+
+texture ECRYSTP
+    allowdecals
+    pic ECRYSTP5 tics 5
+	pic ECRYSTP6 tics 5
+	pic ECRYSTP7 tics 5
+
+texture ECRYRLON
+    allowdecals
+    pic ECRYRLN1 tics 5
+	pic ECRYRLN2 tics 5
+	pic ECRYRLN3 tics 5
+	pic ECRYRLN4 tics 5
+
+texture ECRYOBI1
+    allowdecals
+    pic ECRYOBI1 tics 5
+	pic ECRYOBI2 tics 5
+	pic ECRYOBI3 tics 5
+	pic ECRYOBI4 tics 5
+
+texture ECRYOBI5
+    allowdecals
+    pic ECRYOBI5 tics 5
+	pic ECRYOBI6 tics 5
+	pic ECRYOBI7 tics 5
+	pic ECRYOBI8 tics 5
+
+texture ECRQCRY
+    allowdecals
+    pic ECRQCRY1 tics 5
+	pic ECRQCRY2 tics 5
+	
+texture ECRYRBLK
+    allowdecals
+    pic ECRYRBL1 tics 5
+	pic ECRYRBL2 tics 5
+	pic ECRYRBL3 tics 5
+	pic ECRYRBL4 tics 5
+	
+texture ECRLDR
+    allowdecals
+    pic ECRLDR1 tics 5
+	pic ECRLDR2 tics 5
+	pic ECRLDR3 tics 5
+	pic ECRLDR4 tics 5
+	
+texture ECRRLDR
+    allowdecals
+    pic ECRRLDR1 tics 5
+	pic ECRRLDR2 tics 5
+	pic ECRRLDR3 tics 5
+	pic ECRRLDR4 tics 5
+
+////////////////////
+///// MME6TOM /////
+texture TOMAGRN
+    allowdecals
+    pic TOMAGRN1 tics 4
+	pic TOMAGRN2 tics 4
+	pic TOMAGRN3 tics 4
+	pic TOMAGRN4 tics 4
+	pic TOMAGRN3 tics 4
+	pic TOMAGRN2 tics 4
+	
+texture TOMASUN
+    allowdecals
+    pic TOMASUN1 tics 3
+	pic TOMASUN2 tics 3
+	
+texture TOMASUX
+    allowdecals
+    pic TOMASUX1 tics 3
+	pic TOMASUX2 tics 3
+
+////////////////////
+///// MME6PLA /////
+flat PWATER
+pic PWATER1 tics 12
+pic PWATER2 tics 12
+pic PWATER3 tics 12
+pic PWATER4 tics 12
+
+////////////////////
+///// MME6MRX /////
+texture EMRXBLU
+	allowdecals
+	pic EMRXBLU2 tics 4
+	pic EMRXBLU3 tics 4
+	pic EMRXBLU4 tics 4
+	pic EMRXBLU5 tics 4
+	pic EMRXBLU4 tics 4
+	pic EMRXBLU3 tics 4
+	
+texture EMRXFAX
+	pic EMRXFAN1 tics 4
+	pic EMRXFAN2 tics 4
+	pic EMRXFAN3 tics 4
+	
+texture EMRXSKYL
+	pic	EMRXSKYL tics 10
+	pic EMRXSKY1 tics 10
+	pic EMRXSKY2 tics 10
+	pic EMRXSKY3 tics 10
+
+////////////////////
+///// MME7JUN /////
+texture EJNLAV
+    allowdecals
+    pic EJNLAV1 tics 12
+	pic EJNLAV2 tics 12
+	pic EJNLAV3 tics 12
+	
+texture EJLAVA
+    allowdecals
+    pic EJLAVA1 tics 12
+	pic EJLAVA2 tics 12
+	pic EJLAVA3 tics 12
+	pic EJLAVA4 tics 12
+	
+texture SP1LAV
+    allowdecals
+    pic SP1LAV1 tics 16
+	pic SP1LAV2 tics 16
+	pic SP1LAV3 tics 16
+	
+texture SP1JLAVA
+    allowdecals
+    pic SP1LAVA1 tics 16
+	pic SP1LAVA2 tics 16
+	pic SP1LAVA3 tics 16
+	pic SP1LAVA4 tics 16
+	
+texture SP2LAV
+    allowdecals
+    pic SP2LAV1 tics 20
+	pic SP2LAV2 tics 20
+	pic SP2LAV3 tics 20
+	
+texture SP2JLAVA
+    allowdecals
+    pic SP2LAVA1 tics 20
+	pic SP2LAVA2 tics 20
+	pic SP2LAVA3 tics 20
+	pic SP2LAVA4 tics 20
+
+////////////////////
+///// MME7SHA /////
+texture ESHWATRX
+    allowdecals
+    pic ESHWATR1 tics 12
+	pic ESHWATR2 tics 12
+	pic ESHWATR3 tics 12
+	pic ESHWATR4 tics 12
+
+////////////////////
+///// MME7TUR /////
+texture ETURSIT
+    allowdecals
+    pic ETURSIT1 tics 42
+	pic ETURSIT2 tics 4
+	pic ETURSIT3 tics 4
+	pic ETURSIT2 tics 4
+	pic ETURSIT1 tics 8
+	pic ETURSIT2 tics 4
+	pic ETURSIT3 tics 4
+	pic ETURSIT2 tics 4
+	
+texture ETURSIE
+    allowdecals
+    pic ETURSIE1 tics 42
+	pic ETURSIE2 tics 4
+	pic ETURSIE3 tics 4
+	pic ETURSIE2 tics 4
+	
+texture ETURLIT
+    allowdecals
+    pic ETURLIT1 tics 12
+	pic ETURLIT3 tics 12
+
+////////////////////
+///// MME8SWO /////
+texture ESWRLAVX
+    allowdecals
+    pic ESWRLAV1 tics 3
+	pic ESWRLAV2 tics 3
+	pic ESWRLAV3 tics 3
+	
+texture ESWRLAVY
+    allowdecals
+    pic ESWRLAV4 tics 3
+	pic ESWRLAV5 tics 3
+	pic ESWRLAV6 tics 3
+
+////////////////////
+///// MME9SPL /////
+texture ESLGLS4
+    allowdecals
+    pic ESLGLS4A tics 25
+	pic ESLGLS4B tics 5
+	pic ESLGLS4C tics 25
+	pic ESLGLS4B tics 5
+
+texture ESLGLSX
+    allowdecals
+    pic ESLGLS1 tics 25
+	pic ESLGLS2 tics 5
+	pic ESLGLS3 tics 25
+	pic ESLGLS2 tics 5
+	
+texture ESLTOPX
+    allowdecals
+    pic ESLTOP1 tics 25
+	pic ESLTOP2 tics 5
+	pic ESLTOP3 tics 25
+	pic ESLTOP2 tics 5
+	
+texture ESLLWT
+    allowdecals
+    pic ESLLWT1 tics 6
+	pic ESLLWT2 tics 6
+	pic ESLLWT3 tics 6
+	pic ESLLWT4 tics 6
+
+
+////////////////////
+///// MME9MAG /////
+texture E9MLAVX
+    allowdecals
+    pic E9MLAV1 tics 6
+	pic E9MLAV2 tics 6
+	pic E9MLAV3 tics 6
+	
+texture E9MTUBX
+    allowdecals
+    pic E9MTUB1 tics 4
+	pic E9MTUB2 tics 4
+	
+texture E9MTUB2X
+    allowdecals
+    pic E9MTUB3 tics 4
+	pic E9MTUB4 tics 4
+
+////////////////////
+///// MME9GAL /////
+//Encore animdefs
+Texture EGAPLAT1
+    allowdecals
+    pic EGAPLAT1 tics 70
+	pic EGAPLAA1 tics 15
+	pic EGAPLAB1 tics 70
+	pic EGAPLAC1 tics 15
+	pic EGAPLAD1 tics 70
+	pic EGAPLAE1 tics 15
+	pic EGAPLAF1 tics 70
+	pic EGAPLAG1 tics 15
+	pic EGAPLAH1 tics 70
+	pic EGAPLAI1 tics 15
+	pic EGAPLAJ1 tics 70
+	pic EGAPLAK1 tics 15
+	
+Texture EGAWAL1
+    allowdecals
+    pic EGAWAL1 tics 70
+	pic EGAWAA1 tics 15
+	pic EGAWAB1 tics 70
+	pic EGAWAC1 tics 15
+	pic EGAWAD1 tics 70
+	pic EGAWAE1 tics 15
+	pic EGAWAF1 tics 70
+	pic EGAWAG1 tics 15
+	pic EGAWAH1 tics 70
+	pic EGAWAI1 tics 15
+	pic EGAWAJ1 tics 70
+	pic EGAWAK1 tics 15
+	
+Texture EGAPIL1
+    allowdecals
+    pic EGAPIL1 tics 70
+	pic EGAPIA1 tics 15
+	pic EGAPIB1 tics 70
+	pic EGAPIC1 tics 15
+	pic EGAPID1 tics 70
+	pic EGAPIE1 tics 15
+	pic EGAPIF1 tics 70
+	pic EGAPIG1 tics 15
+	pic EGAPIH1 tics 70
+	pic EGAPII1 tics 15
+	pic EGAPIJ1 tics 70
+	pic EGAPIK1 tics 15
+
+Texture EGAPIL2
+    allowdecals
+    pic EGAPIL2 tics 70
+	pic EGAPIA2 tics 15
+	pic EGAPIB2 tics 70
+	pic EGAPIC2 tics 15
+	pic EGAPID2 tics 70
+	pic EGAPIE2 tics 15
+	pic EGAPIF2 tics 70
+	pic EGAPIG2 tics 15
+	pic EGAPIH2 tics 70
+	pic EGAPII2 tics 15
+	pic EGAPIJ2 tics 70
+	pic EGAPIK2 tics 15
+	
+Texture EGAPIL3
+    allowdecals
+    pic EGAPIL3 tics 70
+	pic EGAPIA3 tics 15
+	pic EGAPIB3 tics 70
+	pic EGAPIC3 tics 15
+	pic EGAPID3 tics 70
+	pic EGAPIE3 tics 15
+	pic EGAPIF3 tics 70
+	pic EGAPIG3 tics 15
+	pic EGAPIH3 tics 70
+	pic EGAPII3 tics 15
+	pic EGAPIJ3 tics 70
+	pic EGAPIK3 tics 15
+	
+Texture EGAPIL4
+    allowdecals
+    pic EGAPIL4 tics 70
+	pic EGAPIA4 tics 15
+	pic EGAPIB4 tics 70
+	pic EGAPIC4 tics 15
+	pic EGAPID4 tics 70
+	pic EGAPIE4 tics 15
+	pic EGAPIF4 tics 70
+	pic EGAPIG4 tics 15
+	pic EGAPIH4 tics 70
+	pic EGAPII4 tics 15
+	pic EGAPIJ4 tics 70
+	pic EGAPIK4 tics 15
+	
+Texture EGASTP1
+    allowdecals
+    pic EGASTP1 tics 70
+	pic EGASTA1 tics 15
+	pic EGASTB1 tics 70
+	pic EGASTC1 tics 15
+	pic EGASTD1 tics 70
+	pic EGASTE1 tics 15
+	pic EGASTF1 tics 70
+	pic EGASTG1 tics 15
+	pic EGASTH1 tics 70
+	pic EGASTI1 tics 15
+	pic EGASTJ1 tics 70
+	pic EGASTK1 tics 15
+	
+Texture EGASTP2
+    allowdecals
+    pic EGASTP2 tics 70
+	pic EGASTA2 tics 15
+	pic EGASTB2 tics 70
+	pic EGASTC2 tics 15
+	pic EGASTD2 tics 70
+	pic EGASTE2 tics 15
+	pic EGASTF2 tics 70
+	pic EGASTG2 tics 15
+	pic EGASTH2 tics 70
+	pic EGASTI2 tics 15
+	pic EGASTJ2 tics 70
+	pic EGASTK2 tics 15
+	
+Texture EGALIGHT
+    allowdecals
+    pic EGALIGHT tics 70
+	pic EGALIGHA tics 15
+	pic EGALIGHB tics 70
+	pic EGALIGHC tics 15
+	pic EGALIGHD tics 70
+	pic EGALIGHE tics 15
+	pic EGALIGHF tics 70
+	pic EGALIGHG tics 15
+	pic EGALIGHH tics 70
+	pic EGALIGHI tics 15
+	pic EGALIGHJ tics 70
+	pic EGALIGHK tics 15
+	
+Texture EGAGLAS
+    allowdecals
+    pic EGAGLAS tics 70
+	pic EGAGLAA tics 15
+	pic EGAGLAB tics 70
+	pic EGAGLAC tics 15
+	pic EGAGLAD tics 70
+	pic EGAGLAE tics 15
+	pic EGAGLAF tics 70
+	pic EGAGLAG tics 15
+	pic EGAGLAH tics 70
+	pic EGAGLAI tics 15
+	pic EGAGLAJ tics 70
+	pic EGAGLAK tics 15
+	
+Texture EGAFLR1
+    allowdecals
+    pic EGAFLR1 tics 70
+	pic EGAFLA1 tics 15
+	pic EGAFLB1 tics 70
+	pic EGAFLC1 tics 15
+	pic EGAFLD1 tics 70
+	pic EGAFLE1 tics 15
+	pic EGAFLF1 tics 70
+	pic EGAFLG1 tics 15
+	pic EGAFLH1 tics 70
+	pic EGAFLI1 tics 15
+	pic EGAFLJ1 tics 70
+	pic EGAFLK1 tics 15
+	
+Texture EGAFLR2
+    allowdecals
+    pic EGAFLR2 tics 70
+	pic EGAFLA2 tics 15
+	pic EGAFLB2 tics 70
+	pic EGAFLC2 tics 15
+	pic EGAFLD2 tics 70
+	pic EGAFLE2 tics 15
+	pic EGAFLF2 tics 70
+	pic EGAFLG2 tics 15
+	pic EGAFLH2 tics 70
+	pic EGAFLI2 tics 15
+	pic EGAFLJ2 tics 70
+	pic EGAFLK2 tics 15
+	
+Texture EGAFLR3
+    allowdecals
+    pic EGAFLR3 tics 70
+	pic EGAFLA3 tics 15
+	pic EGAFLB3 tics 70
+	pic EGAFLC3 tics 15
+	pic EGAFLD3 tics 70
+	pic EGAFLE3 tics 15
+	pic EGAFLF3 tics 70
+	pic EGAFLG3 tics 15
+	pic EGAFLH3 tics 70
+	pic EGAFLI3 tics 15
+	pic EGAFLJ3 tics 70
+	pic EGAFLK3 tics 15
+	
+Texture EGAFLR7
+    allowdecals
+    pic EGAFLR7 tics 70
+	pic EGAFLA7 tics 15
+	pic EGAFLB7 tics 70
+	pic EGAFLC7 tics 15
+	pic EGAFLD7 tics 70
+	pic EGAFLE7 tics 15
+	pic EGAFLF7 tics 70
+	pic EGAFLG7 tics 15
+	pic EGAFLH7 tics 70
+	pic EGAFLI7 tics 15
+	pic EGAFLJ7 tics 70
+	pic EGAFLK7 tics 15
+	
+Texture EGAFLR8
+    allowdecals
+    pic EGAFLR8 tics 70
+	pic EGAFLA8 tics 15
+	pic EGAFLB8 tics 70
+	pic EGAFLC8 tics 15
+	pic EGAFLD8 tics 70
+	pic EGAFLE8 tics 15
+	pic EGAFLF8 tics 70
+	pic EGAFLG8 tics 15
+	pic EGAFLH8 tics 70
+	pic EGAFLI8 tics 15
+	pic EGAFLJ8 tics 70
+	pic EGAFLK8 tics 15
+
+Texture EGAFLR13
+    allowdecals
+    pic EGAFLR13 tics 70
+	pic EGAFLA13 tics 15
+	pic EGAFLB13 tics 70
+	pic EGAFLC13 tics 15
+	pic EGAFLD13 tics 70
+	pic EGAFLE13 tics 15
+	pic EGAFLF13 tics 70
+	pic EGAFLG13 tics 15
+	pic EGAFLH13 tics 70
+	pic EGAFLI13 tics 15
+	pic EGAFLJ13 tics 70
+	pic EGAFLK13 tics 15
+	
+Texture EGABH1
+	allowdecals
+	pic EGABH1 tics 3
+	pic EGABH2 tics 3
+	pic EGABH3 tics 3
+	pic EGABH4 tics 3
+	
+Texture EGASKY1
+	allowdecals
+	pic EGASKY1 tics 15
+	pic EGASKY2 tics 15
+	pic EGASKY3 tics 15
+	pic EGASKY4 tics 15
+	pic EGASKY3 tics 15
+	pic EGASKY2 tics 15
+
+////////////////////
+///// MME10SOL /////
+// Animdefs for ESLRrman
+
+texture ESLRMT1X
+    allowdecals
+    pic ESLRMT1A tics 5
+    pic ESLRMT1A tics 5
+	pic ESLRMT1B tics 5
+	pic ESLRMT1B tics 5
+	pic ESLRMT1C tics 5
+	pic ESLRMT1C tics 5
+	pic ESLRMT1B tics 5
+	pic ESLRMT1B tics 5
+
+texture ESLRMT2X
+    allowdecals
+    pic ESLRMT2A tics 5
+    pic ESLRMT2A tics 5
+	pic ESLRMT2B tics 5
+	pic ESLRMT2B tics 5
+	pic ESLRMT2C tics 5
+	pic ESLRMT2C tics 5
+	pic ESLRMT2B tics 5
+	pic ESLRMT2B tics 5
+	
+texture ESLRMT3X
+    allowdecals
+    pic ESLRMT3A tics 5
+    pic ESLRMT3A tics 5
+	pic ESLRMT3B tics 5
+	pic ESLRMT3B tics 5
+	pic ESLRMT3C tics 5
+	pic ESLRMT3C tics 5
+	pic ESLRMT3B tics 5
+	pic ESLRMT3B tics 5
+
+texture ESLRMT4X
+    allowdecals
+    pic ESLRMT4A tics 5
+    pic ESLRMT4A tics 5
+	pic ESLRMT4B tics 5
+	pic ESLRMT4B tics 5
+	pic ESLRMT4C tics 5
+	pic ESLRMT4C tics 5
+	pic ESLRMT4B tics 5
+	pic ESLRMT4B tics 5
+
+texture ESLRMT5X
+    allowdecals
+    pic ESLRMT5A tics 5
+    pic ESLRMT5A tics 5
+	pic ESLRMT5B tics 5
+	pic ESLRMT5B tics 5
+	pic ESLRMT5C tics 5
+	pic ESLRMT5C tics 5
+	pic ESLRMT5B tics 5
+	pic ESLRMT5B tics 5
+	
+texture ESLRMT6X
+    allowdecals
+    pic ESLRMT6A tics 5
+    pic ESLRMT6A tics 5
+	pic ESLRMT6B tics 5
+	pic ESLRMT6B tics 5
+	pic ESLRMT6C tics 5
+	pic ESLRMT6C tics 5
+	pic ESLRMT6B tics 5
+	pic ESLRMT6B tics 5
+	
+texture ESLRMT7X
+    allowdecals
+    pic ESLRMT7A tics 5
+    pic ESLRMT7A tics 5
+	pic ESLRMT7B tics 5
+	pic ESLRMT7B tics 5
+	pic ESLRMT7C tics 5
+	pic ESLRMT7C tics 5
+	pic ESLRMT7B tics 5
+	pic ESLRMT7B tics 5
+	
+texture ESLRST1X
+    allowdecals
+    pic ESLRST1A tics 5
+    pic ESLRST1A tics 5
+	pic ESLRST1B tics 5
+	pic ESLRST1B tics 5
+	pic ESLRST1C tics 5
+	pic ESLRST1C tics 5
+	pic ESLRST1B tics 5
+	pic ESLRST1B tics 5
+
+texture ESLRST2X
+    allowdecals
+    pic ESLRST2A tics 5
+    pic ESLRST2A tics 5
+	pic ESLRST2B tics 5
+	pic ESLRST2B tics 5
+	pic ESLRST2C tics 5
+	pic ESLRST2C tics 5
+	pic ESLRST2B tics 5
+	pic ESLRST2B tics 5
+
+texture ESLRST3X
+    allowdecals
+    pic ESLRST3A tics 5
+    pic ESLRST3A tics 5
+	pic ESLRST3B tics 5
+	pic ESLRST3B tics 5
+	pic ESLRST3C tics 5
+	pic ESLRST3C tics 5
+	pic ESLRST3B tics 5
+	pic ESLRST3B tics 5
+
+texture ESLRST4X
+    allowdecals
+    pic ESLRST4A tics 5
+    pic ESLRST4A tics 5
+	pic ESLRST4B tics 5
+	pic ESLRST4B tics 5
+	pic ESLRST4C tics 5
+	pic ESLRST4C tics 5
+	pic ESLRST4B tics 5
+	pic ESLRST4B tics 5
+
+texture ESLRST5X
+    allowdecals
+    pic ESLRST5A tics 5
+    pic ESLRST5A tics 5
+	pic ESLRST5B tics 5
+	pic ESLRST5B tics 5
+	pic ESLRST5C tics 5
+	pic ESLRST5C tics 5
+	pic ESLRST5B tics 5
+	pic ESLRST5B tics 5
+	
+texture ESLRST6X
+    allowdecals
+    pic ESLRST6A tics 5
+    pic ESLRST6A tics 5
+	pic ESLRST6B tics 5
+	pic ESLRST6B tics 5
+	pic ESLRST6C tics 5
+	pic ESLRST6C tics 5
+	pic ESLRST6B tics 5
+	pic ESLRST6B tics 5
+
+texture ESLRBG1X
+    allowdecals
+    pic ESLRBG1A tics 5
+    pic ESLRBG1A tics 5
+	pic ESLRBG1B tics 5
+	pic ESLRBG1B tics 5
+	pic ESLRBG1C tics 5
+	pic ESLRBG1C tics 5
+	pic ESLRBG1B tics 5
+	pic ESLRBG1B tics 5
+
+texture ESLRBG2X
+    allowdecals
+    pic ESLRBG2A tics 5
+    pic ESLRBG2A tics 5
+	pic ESLRBG2B tics 5
+	pic ESLRBG2B tics 5
+	pic ESLRBG2C tics 5
+	pic ESLRBG2C tics 5
+	pic ESLRBG2B tics 5
+	pic ESLRBG2B tics 5
+	
+texture ESLRBG3X
+    allowdecals
+    pic ESLRBG3A tics 5
+    pic ESLRBG3A tics 5
+	pic ESLRBG3B tics 5
+	pic ESLRBG3B tics 5
+	pic ESLRBG3C tics 5
+	pic ESLRBG3C tics 5
+	pic ESLRBG3B tics 5
+	pic ESLRBG3B tics 5
+	
+texture ESLRBG4X
+    allowdecals
+    pic ESLRBG4A tics 5
+    pic ESLRBG4A tics 5
+	pic ESLRBG4B tics 5
+	pic ESLRBG4B tics 5
+	pic ESLRBG4C tics 5
+	pic ESLRBG4C tics 5
+	pic ESLRBG4B tics 5
+	pic ESLRBG4B tics 5
+
+texture ESLRBG5X
+    allowdecals
+    pic ESLRBG5A tics 5
+	pic ESLRBG5A tics 5
+	pic ESLRBG5B tics 5
+	pic ESLRBG5B tics 5
+	pic ESLRBG5C tics 5
+	pic ESLRBG5C tics 5
+	pic ESLRBG5B tics 5
+	pic ESLRBG5B tics 5
+
+texture ESLRCOGX
+    allowdecals
+    pic ESLRCOGA tics 5
+	pic ESLRCOGD tics 5
+	pic ESLRCOGB tics 5
+	pic ESLRCOGE tics 5
+	pic ESLRCOGC tics 5
+	pic ESLRCOGF tics 5
+	pic ESLRCOGB tics 5
+	pic ESLRCOGE tics 5
+	
+texture ESLRLAVX
+    allowdecals
+    pic ESLRLAVA tics 8
+	pic ESLRLAVB tics 8
+	pic ESLRLAVC tics 8
+	
+texture ESLRBENX
+    allowdecals
+    pic ESLRBENA tics 4
+	pic ESLRBENB tics 4
+	pic ESLRBENC tics 4
+	pic ESLRBEND tics 4
+	pic ESLRBENE tics 4
+	pic ESLRBENF tics 4
+	
+	texture ESLRBERX
+    allowdecals
+    pic ESLRBERA tics 4
+	pic ESLRBERB tics 4
+	pic ESLRBERC tics 4
+	pic ESLRBERD tics 4
+	pic ESLRBERE tics 4
+	pic ESLRBERF tics 4
+
+texture ESLRBELX
+    allowdecals
+    pic ESLRBELA tics 4
+	pic ESLRBELB tics 4
+	pic ESLRBELC tics 4
+	
+	texture ESLRBESX
+    allowdecals
+    pic ESLRBESA tics 4
+	pic ESLRBESB tics 4
+	pic ESLRBESC tics 4
+
+
+texture ESLRBEFX
+    allowdecals
+    pic ESLRBEFA tics 4
+	pic ESLRBEFB tics 4
+	pic ESLRBEFC tics 4
+	
+texture ESLRBEVX
+    allowdecals
+    pic ESLRBEVA tics 4
+	pic ESLRBEVB tics 4
+	pic ESLRBEVC tics 4
+	
+	
+texture ESLRBEEX
+    allowdecals
+    pic ESLRBEEA tics 4
+	pic ESLRBEEB tics 4
+	pic ESLRBEEC tics 4
+
+texture ESLRSHTX
+    allowdecals
+    pic ESLRSHTA tics 5
+	pic ESLRSHTB tics 5
+	pic ESLRSHTC tics 5
+	
+texture ESLRSH2X
+	allowdecals
+	pic ESLRSH2A tics 5
+	pic ESLRSH2B tics 5
+	pic ESLRSH2C tics 5
+	
+texture ESLRFL1X
+    allowdecals
+    pic ESLRFL1A tics 5
+    pic ESLRFL1A tics 5
+	pic ESLRFL1B tics 5
+	pic ESLRFL1B tics 5
+	pic ESLRFL1C tics 5
+	pic ESLRFL1C tics 5
+	pic ESLRFL1B tics 5
+	pic ESLRFL1B tics 5
+
+texture ESLRFL2X
+    allowdecals
+    pic ESLRFL2A tics 5
+    pic ESLRFL2A tics 5
+	pic ESLRFL2B tics 5
+	pic ESLRFL2B tics 5
+	pic ESLRFL2C tics 5
+	pic ESLRFL2C tics 5
+	pic ESLRFL2B tics 5
+	pic ESLRFL2B tics 5
+
+texture ESLRFL3X
+    allowdecals
+    pic ESLRFL3A tics 5
+    pic ESLRFL3A tics 5
+	pic ESLRFL3B tics 5
+	pic ESLRFL3B tics 5
+	pic ESLRFL3C tics 5
+	pic ESLRFL3C tics 5
+	pic ESLRFL3B tics 5
+	pic ESLRFL3B tics 5
+
+texture ESLRLADX
+	allowdecals
+	pic ESLRLADA tics 5
+	pic ESLRLADA tics 5
+	pic ESLRLADB tics 5
+	pic ESLRLADB tics 5
+	pic ESLRLADC tics 5
+	pic ESLRLADC tics 5
+	pic ESLRLADB tics 5
+	pic ESLRLADB tics 5
+
+////////////////////
+///// MMEVURA /////
+
+texture UEASKYX
+    pic UEASKY1 tics 5
+	pic UEASKY2 tics 5
+	pic UEASKY3 tics 5
+texture UEAFLASX
+    pic UEAFLAS1 tics 5
+	pic UEAFLAS2 tics 5
+	pic UEAFLAS3 tics 5
+	pic UEAFLAS4 tics 5
+texture UEALANTX
+    pic UEALANT1 tics 5
+	pic UEALANT2 tics 5
+	pic UEALANT3 tics 5
+	pic UEALANT2 tics 5
+texture UEATWRX
+    pic UEATWR1 tics 5
+	pic UEATWR2 tics 5
+	pic UEATWR3 tics 5
+	pic UEATWR2 tics 5
+flat EURAN17X
+	pic EURAN17A tics 5
+	pic EURAN17B tics 5
+	pic EURAN17C tics 5
+	pic EURAN17D tics 5
+	pic EURAN17E tics 5
+flat EURAN18X
+	pic EURAN18A tics 5
+	pic EURAN18B tics 5
+	pic EURAN18C tics 5
+	pic EURAN18D tics 5
+	pic EURAN18E tics 5
+flat EURAN19X
+	pic EURAN19A tics 5
+	pic EURAN19B tics 5
+	pic EURAN19C tics 5
+	pic EURAN19D tics 5
+	pic EURAN19E tics 5
+	pic EURAN19F tics 5
+	pic EURAN19G tics 5
+	pic EURAN19H tics 5
+	pic EURAN19I tics 5
+flat EURAN22X
+	pic EURAN22A tics 5
+	pic EURAN22B tics 5
+	pic EURAN22C tics 5
+	pic EURAN22D tics 5
+	pic EURAN22E tics 5
+	pic EURAN22F tics 5
+	pic EURAN22G tics 5
+	pic EURAN22H tics 5
+flat EURAN23X
+	pic EURAN23A tics 5
+	pic EURAN23B tics 5
+	pic EURAN23C tics 5
+	pic EURAN23D tics 5
+	pic EURAN23E tics 5
+	pic EURAN23F tics 5
+	pic EURAN23G tics 5
+	pic EURAN23H tics 5
+	pic EURAN23I tics 5
+flat EURAN59X
+	pic EURAN59A tics 5
+	pic EURAN59B tics 5
+	pic EURAN59C tics 5
+flat EURAN68X
+	pic EURAN68A tics 5
+	pic EURAN68B tics 5
+	pic EURAN68C tics 5
+	pic EURAN68D tics 5
+flat EURAN70X
+	pic EURAN70A tics 5
+	pic EURAN70B tics 5
+	pic EURAN70C tics 5
+	pic EURAN70D tics 5
+texture UEAWTRX
+    pic UEAWTR1 tics 5
+	pic UEAWTR2 tics 5
+	pic UEAWTR3 tics 5
+	pic UEAWTR4 tics 5
+	pic UEAWTR3 tics 5
+	pic UEAWTR2 tics 5
+texture UEAFLLX
+    pic UEAFLL1 tics 5
+	pic UEAFLL2 tics 5
+	pic UEAFLL3 tics 5
+
+////////////////////
+///// MMEVVEN /////
+texture EVNWFL1X
+    allowdecals
+    pic EVNWFL1A tics 5
+	pic EVNWFL1B tics 5
+	pic EVNWFL1C tics 5
+
+texture EVNWFL2X
+    allowdecals
+    pic EVNWFL2A tics 5
+	pic EVNWFL2B tics 5
+	pic EVNWFL2C tics 5
+
+texture EVNWFL3X
+    allowdecals
+    pic EVNWFL3A tics 5
+	pic EVNWFL3B tics 5
+	pic EVNWFL3C tics 5
+
+		
+
+////////////////////
+///// MMB2CLO /////
+texture CLKGEA1
+	allowdecals
+	pic CLKGEA1 tics 15
+	pic CLKGEA2 tics 15
+
+texture CLKSTM
+	allowdecals
+	pic CLKSTM1 tics 5
+	pic CLKSTM2 tics 5
+	pic CLKSTM3 tics 5
+	pic CLKSTM4 tics 5
+	
+texture CLKSTMF
+	allowdecals
+	pic CLKSTM1 tics 3
+	pic CLKSTM2 tics 3
+	pic CLKSTM3 tics 3
+	pic CLKSTM4 tics 3
+	
+texture CLKSTM5
+	allowdecals
+	pic CLKSTM5 tics 15
+	pic CLKSTM5A tics 15
+	pic CLKSTM5B tics 15
+	pic CLKSTM5A tics 15
+
+texture CLKSTM6
+	allowdecals
+	pic CLKSTM6 tics 15
+	pic CLKSTM6A tics 15
+	pic CLKSTM6B tics 15
+	pic CLKSTM6A tics 15
+	
+texture CLKGEM1
+	allowdecals
+	pic CLKGEM1 tics 15
+	pic CLKGEM3 tics 15
+	pic CLKGEM4 tics 15
+	pic CLKGEM3 tics 15
+	
+texture CLKGEM2
+	allowdecals
+	pic CLKGEM2 tics 15
+	pic CLKGEM5 tics 15
+	pic CLKGEM6 tics 15
+	pic CLKGEM5 tics 15
+	
+texture CLKMET3
+	allowdecals
+	pic CLKMET3 tics 15
+	pic CLKMET3A tics 15
+	pic CLKMET3B tics 15
+	pic CLKMET3A tics 15
+
+////////////////////
+///// MMB2BUL /////
+
+//Thrusters/Cannons
+texture BULTUBX1
+    allowdecals
+    pic BULTUB1 tics 6
+	pic BULTUB2 tics 6
+	pic BULTUB3 tics 6
+	pic BULTUB4 tics 6
+	pic BULTUB3 tics 6
+	pic BULTUB2 tics 6
+texture BULTUBX2
+    allowdecals
+    pic BULTUB5 tics 6
+	pic BULTUB6 tics 6
+	pic BULTUB7 tics 6
+	pic BULTUB8 tics 6
+	pic BULTUB7 tics 6
+	pic BULTUB6 tics 6
+
+//Conveyors
+texture BULCONX1
+    allowdecals
+    pic BULCON1 tics 3
+	pic BULCON2 tics 3
+	pic BULCON3 tics 3
+	pic BULCON4 tics 3
+texture BULCONX2
+    allowdecals
+    pic BULCON3 tics 3
+	pic BULCON2 tics 3
+	pic BULCON1 tics 3
+	pic BULCON4 tics 3
+texture BULCONX3
+    allowdecals
+    pic BULCON5 tics 3
+	pic BULCON6 tics 3	
+texture BULCONX4
+    allowdecals
+    pic BULCON7 tics 3
+	pic BULCON8 tics 3
+
+//Explosion pads
+texture BULEXPX
+    allowdecals
+    pic BULEXP1 tics 3
+	pic BULEXP2 tics 3
+	pic BULEXP3 tics 3
+	pic BULEXP2 tics 3
+	
+
+
+////////////////////
+///// MMEPRO /////
+texture PROSKY1
+	pic PROSKY1 tics 8
+	pic PROSKY2 tics 8
+	pic PROSKY3 tics 8
+	pic PROSKY4 tics 8
+
+////////////////////

@@ -1,0 +1,304 @@
+///// MME2AIR /////
+texture EAIFEN, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR7, 0, 0
+   WorldPanning 
+}
+
+texture EAIFLR1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR4, 0, 0
+   WorldPanning 
+}
+
+texture EAIFLR2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR1, 0, 0
+   WorldPanning 
+}
+
+texture EAIFLR3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR8, 0, 0
+   WorldPanning 
+}
+
+texture EAIFLR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR16, 0, 0   
+   WorldPanning 
+}
+
+texture EAIFLR5, 48, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR16, 0, 0
+   Patch EAIR8, 32, 0
+   Patch EAIR8, 32, 16
+   Patch EAIR8, 0, 32
+   Patch EAIR8, 0, 48
+   Patch EAIR16, 16, 32
+   WorldPanning 
+}
+
+texture EAISID3, 32, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR2, 0, 0
+   Patch EAIR1, 0, 16
+   Patch EAIR1, 16, 16
+   Patch EAIR1, 0, 32
+   Patch EAIR1, 16, 32
+   Patch EAIR1, 0, 32
+   Patch EAIR1, 16, 32
+   Patch EAIR1, 0, 48
+   Patch EAIR1, 16, 48
+   Patch EAIR1, 0, 64
+   Patch EAIR1, 16, 64
+   Patch EAIR1, 0, 80
+   Patch EAIR1, 16, 80
+   Patch EAIR1, 0, 96
+   Patch EAIR1, 16, 96
+   Patch EAIR1, 0, 112
+   Patch EAIR1, 16, 112
+   WorldPanning 
+}
+
+texture EAISID1, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR1, 0, 0
+   Patch EAIR13, 0, 16
+   Patch EAIR13, 0, 32
+   Patch EAIR13, 0, 64
+   Patch EAIR13, 0, 96
+   Patch EAIR13, 0, 128
+   Patch EAIR13, 0, 160
+   Patch EAIR13, 0, 192
+   Patch EAIR13, 0, 224
+   Patch EAIR13, 0, 256
+   Patch EAIR13, 0, 272
+   Patch EAIR13, 0, 304
+   Patch EAIR13, 0, 336
+   Patch EAIR13, 0, 368
+   Patch EAIR13, 0, 400
+   Patch EAIR13, 0, 432
+   Patch EAIR13, 0, 464
+   Patch EAIR13, 0, 496
+   WorldPanning 
+}
+texture EAISID2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR2, 0, 0
+   Patch EAIR13, 0, 16
+   Patch EAIR13, 0, 32
+   Patch EAIR13, 0, 64
+   Patch EAIR13, 0, 96
+   Patch EAIR13, 0, 128
+   Patch EAIR13, 0, 160
+   Patch EAIR13, 0, 192
+   Patch EAIR13, 0, 224
+   Patch EAIR13, 0, 256
+   Patch EAIR13, 0, 272
+   Patch EAIR13, 0, 304
+   Patch EAIR13, 0, 336
+   Patch EAIR13, 0, 368
+   Patch EAIR13, 0, 400
+   Patch EAIR13, 0, 432
+   Patch EAIR13, 0, 464
+   Patch EAIR13, 0, 496
+   WorldPanning 
+}
+
+texture EAISID4, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR1, 0, 0
+   Patch EAIR1, 0, 16
+   Patch EAIR1, 0, 32
+   Patch EAIR13, 0, 48
+   Patch EAIR13, 0, 64
+   Patch EAIR13, 0, 96
+   Patch EAIR13, 0, 128
+   Patch EAIR13, 0, 160
+   Patch EAIR13, 0, 192
+   Patch EAIR13, 0, 224
+   Patch EAIR13, 0, 256
+   Patch EAIR13, 0, 272
+   Patch EAIR13, 0, 304
+   Patch EAIR13, 0, 336
+   Patch EAIR13, 0, 368
+   Patch EAIR13, 0, 400
+   Patch EAIR13, 0, 432
+   Patch EAIR13, 0, 464
+   Patch EAIR13, 0, 496
+   WorldPanning 
+}
+
+texture EAILOGO, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR3, 0, 0
+   WorldPanning 
+}
+
+texture EAIPIL1, 16, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR15, 0, 0
+   Patch EAIR14, 0, 16
+   Patch EAIR14, 0, 32
+   WorldPanning 
+}
+
+// Encore texture definitions
+
+texture EAIFAN1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR17, 0, 0
+   WorldPanning 
+}
+
+texture EAIFAN2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR18, 0, 0
+   WorldPanning 
+}
+
+texture EAIFAN3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR19, 0, 0
+   WorldPanning 
+}
+
+Texture EAISK3, 331, 39
+{
+	XScale 0.5
+	YScale 0.5
+	WorldPanning
+	Patch EAIR9, 0, 0
+}
+
+Texture EAISK2, 227, 227
+{
+	XScale 0.5
+	YScale 0.5
+	WorldPanning
+	Patch EAIR6, 0, 0
+}
+
+Texture EAISK1, 331, 91
+{
+	XScale 0.5
+	YScale 0.5
+	WorldPanning
+	Patch EAIR10, 0, 0
+}
+
+// Replacer texture definitions
+
+texture AIRFLR3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch AIR8, 0, 0
+   WorldPanning 
+}
+
+texture AIRFLR4, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch AIR8, 0, 0
+   WorldPanning 
+}
+
+texture AIRFLR5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch AIR8, 0, 0
+   WorldPanning 
+}
+
+texture AIRPIL1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch AIR1, 0, 0
+   WorldPanning 
+}
+
+texture AIRSID1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch AIR1, 0, 0
+   WorldPanning 
+}
+
+texture AIRSID2, 32, 128
+{
+   XScale 0.5
+   YScale 0.5
+   Patch AIR2, 0, 0
+   Patch AIR1, 0, 16
+   Patch AIR1, 16, 16
+   Patch AIR1, 0, 32
+   Patch AIR1, 16, 32
+   Patch AIR1, 0, 32
+   Patch AIR1, 16, 32
+   Patch AIR1, 0, 48
+   Patch AIR1, 16, 48
+   Patch AIR1, 0, 64
+   Patch AIR1, 16, 64
+   Patch AIR1, 0, 80
+   Patch AIR1, 16, 80
+   Patch AIR1, 0, 96
+   Patch AIR1, 16, 96
+   Patch AIR1, 0, 112
+   Patch AIR1, 16, 112
+   WorldPanning 
+}
+
+texture EAEMPT1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR11, 0, 0
+   WorldPanning 
+}
+
+texture EAEMPT2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EAIR11, 0, 0
+   WorldPanning 
+}
+
+////////////////////

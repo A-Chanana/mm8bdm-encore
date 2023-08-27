@@ -5,27 +5,8 @@ actor MM8BDMWepSpawnFunc : CustomInventory
 states
 {
 Pickup:
-TNT1 A 0 ACS_NamedExecuteAlways("MME_WeaponReplace",0)
-stop
-}
-}
-
-actor ChangeFlagDropped1 : CustomInventory
-{
-states
-{
-Pickup:
-TNT1 A 0 A_ChangeFlag("DROPPED",1)
-stop
-}
-}
-
-actor ChangeFlagDropped0 : CustomInventory
-{
-states
-{
-Pickup:
-TNT1 A 0 A_ChangeFlag("DROPPED",0)
+TNT1 A 0 ACS_NamedExecuteWithResult("MME_WeaponReplace",0)
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs", SFT_WEP)
 stop
 }
 }
@@ -35,7 +16,8 @@ actor MM8BDMItemSpawnFunc : CustomInventory
 states
 {
 Pickup:
-TNT1 A 0 ACS_NamedExecuteAlways("MME_WeaponReplace",0)
+TNT1 A 0 ACS_NamedExecuteWithResult("MME_WeaponReplace",0)
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs", SFT_ITEM)
 stop
 }
 }
@@ -45,7 +27,7 @@ actor PartyBallSpawnFunc : CustomInventory
 states
 {
 Pickup:
-TNT1 A 0 //A_SpawnItemEx("Cacodemon")
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs", SFT_PARTYBALL)
 stop
 }
 }
@@ -55,7 +37,37 @@ actor MM8BDMFlagSpawnFunc : CustomInventory
 states
 {
 Pickup:
-TNT1 A 0
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs", SFT_FLAG)
+stop
+}
+}
+
+actor MM8BDMProjSpawnFunc : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs", SFT_PROJ)
+stop
+}
+}
+
+actor MM8BDMProjSpawnFuncClient : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs_client", SFT_PROJCLIENT)
+stop
+}
+}
+
+actor MM8BDMPillarSpawnFunc : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 ACS_NamedExecuteWithResult("core_runspawnfuncs", SFT_PILLAR)
 stop
 }
 }

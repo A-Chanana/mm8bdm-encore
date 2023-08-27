@@ -1,0 +1,516 @@
+///// MME9SPL /////
+Texture ESLMET1, 16, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH1, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR1, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH31, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR2, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH32, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR3, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH33, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR4, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH37, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR6, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH40, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR5, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH39, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR7, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH41, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR8, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH42, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR9, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH47, 0, 0
+   WorldPanning
+}
+
+Texture ESLFLR10, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH56, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS4, 64, 256
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH29, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS4A, 64, 256
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH29, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS4B, 64, 256
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLS29A, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS4C, 64, 256
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLS29B, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS5, 64, 256
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH30, 0, 0
+   WorldPanning
+}
+
+Texture ESLMET2, 16, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH2, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLMET4, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH5, 0, 0
+   WorldPanning
+}
+
+Texture ESLMET3, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESLLSH6, 0, 0
+   Patch ESLLSH7, 0, 16
+   Patch ESLLSH7, 0, 32
+   Patch ESLLSH7, 0, 48
+   Patch ESLLSH7, 0, 64
+   Patch ESLLSH7, 0, 80
+   Patch ESLLSH7, 0, 96
+   Patch ESLLSH7, 0, 112
+   Patch ESLLSH7, 0, 128
+   Patch ESLLSH7, 0, 144
+   Patch ESLLSH7, 0, 160
+   Patch ESLLSH7, 0, 176
+   Patch ESLLSH7, 0, 192
+   Patch ESLLSH7, 0, 208
+   Patch ESLLSH7, 0, 224
+   Patch ESLLSH7, 0, 240
+   Patch ESLLSH7, 0, 256
+   WorldPanning 
+}
+
+Texture ESLEDG1, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESLLSH14, 0, 0
+   Patch ESLLSH15, 0, 16
+   Patch ESLLSH15, 0, 32
+   Patch ESLLSH15, 0, 48
+   Patch ESLLSH15, 0, 64
+   Patch ESLLSH15, 0, 80
+   Patch ESLLSH15, 0, 96
+   Patch ESLLSH15, 0, 112
+   Patch ESLLSH15, 0, 128
+   Patch ESLLSH15, 0, 144
+   Patch ESLLSH15, 0, 160
+   Patch ESLLSH15, 0, 176
+   Patch ESLLSH15, 0, 192
+   Patch ESLLSH15, 0, 208
+   Patch ESLLSH15, 0, 224
+   Patch ESLLSH15, 0, 240
+   Patch ESLLSH15, 0, 256
+   WorldPanning 
+}
+
+Texture ESLEDG2, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESLLSH18, 0, 0
+   Patch ESLLSH19, 0, 16
+   Patch ESLLSH19, 0, 32
+   Patch ESLLSH19, 0, 48
+   Patch ESLLSH19, 0, 64
+   Patch ESLLSH19, 0, 80
+   Patch ESLLSH19, 0, 96
+   Patch ESLLSH19, 0, 112
+   Patch ESLLSH19, 0, 128
+   Patch ESLLSH19, 0, 144
+   Patch ESLLSH19, 0, 160
+   Patch ESLLSH19, 0, 176
+   Patch ESLLSH19, 0, 192
+   Patch ESLLSH19, 0, 208
+   Patch ESLLSH19, 0, 224
+   Patch ESLLSH19, 0, 240
+   Patch ESLLSH19, 0, 256
+   WorldPanning 
+}
+
+Texture ESLEDG3, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESLLSH17, 0, 0
+   Patch ESLLSH7, 0, 16
+   Patch ESLLSH7, 0, 32
+   Patch ESLLSH7, 0, 48
+   Patch ESLLSH7, 0, 64
+   Patch ESLLSH7, 0, 80
+   Patch ESLLSH7, 0, 96
+   Patch ESLLSH7, 0, 112
+   Patch ESLLSH7, 0, 128
+   Patch ESLLSH7, 0, 144
+   Patch ESLLSH7, 0, 160
+   Patch ESLLSH7, 0, 176
+   Patch ESLLSH7, 0, 192
+   Patch ESLLSH7, 0, 208
+   Patch ESLLSH7, 0, 224
+   Patch ESLLSH7, 0, 240
+   Patch ESLLSH7, 0, 256
+   WorldPanning 
+}
+
+Texture ESLBG, 16, 256
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESLLSH21, 0, 0
+   Patch ESLLSH22, 0, 16
+   Patch ESLLSH22, 0, 32
+   Patch ESLLSH22, 0, 48
+   Patch ESLLSH22, 0, 64
+   Patch ESLLSH22, 0, 80
+   Patch ESLLSH22, 0, 96
+   Patch ESLLSH22, 0, 112
+   Patch ESLLSH22, 0, 128
+   Patch ESLLSH22, 0, 144
+   Patch ESLLSH22, 0, 160
+   Patch ESLLSH22, 0, 176
+   Patch ESLLSH22, 0, 192
+   Patch ESLLSH22, 0, 208
+   Patch ESLLSH22, 0, 224
+   Patch ESLLSH22, 0, 240
+   Patch ESLLSH22, 0, 256
+   WorldPanning 
+}
+
+
+Texture ESLBAR, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH9, 0, 0
+   WorldPanning
+}
+
+Texture ESLBAR2, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH10, 0, 0
+   WorldPanning
+}
+
+Texture ESLBAR3, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH11, 0, 0
+   WorldPanning
+}
+
+Texture ESLBAR4, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH17, 0, 0
+   WorldPanning
+}
+
+Texture ESLBAR5, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH7, 0, 0
+   WorldPanning
+}
+
+Texture ESLBAR6, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH38, 0, 0
+   WorldPanning
+}
+
+Texture ESLSHEL, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH13, 0, 0
+   WorldPanning
+}
+
+Texture ESLLIG, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH20, 0, 0
+   WorldPanning
+}
+
+Texture ESLLDR, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH12, 0, 0
+   WorldPanning
+}
+
+Texture ESLSKY, 160, 80
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH23, 0, 0
+   WorldPanning
+}
+
+Texture ESLSKY2, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH24, 0, 0
+   WorldPanning
+}
+
+Texture ESLCLD, 160, 80
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH43, 0, 0
+   WorldPanning
+}
+
+Texture ESLSKY3, 160, 80
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH35, 0, 0
+   WorldPanning
+}
+
+Texture ESLSKY4, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH36, 0, 0
+   WorldPanning
+}
+
+Texture ESLTNK1, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH48, 0, 0
+   WorldPanning
+}
+
+Texture ESLTNK2, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH49, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLTNK3, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH50, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLTNK4, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH51, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLTNK5, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH52, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLTNK6, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH53, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLTNK7, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH54, 0, 0
+   WorldPanning
+}
+
+
+Texture ESLTNK8, 16, 16
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH55, 0, 0
+   WorldPanning
+}
+
+// animation
+
+Texture ESLGLSX, 16, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH3, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS1, 16, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH3, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS2, 16, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH25, 0, 0
+   WorldPanning
+}
+
+Texture ESLGLS3, 16, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH26, 0, 0
+   WorldPanning
+}
+
+Texture ESLTOPX, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH44, 0, 0
+   WorldPanning
+}
+
+Texture ESLTOP1, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH44, 0, 0
+   WorldPanning
+}
+
+Texture ESLTOP2, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH45, 0, 0
+   WorldPanning
+}
+
+Texture ESLTOP3, 32, 32
+{ 
+   XScale 0.5 
+   YScale 0.5 
+   Patch ESLLSH46, 0, 0
+   WorldPanning
+}
+
+////////////////////

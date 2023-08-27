@@ -1,0 +1,126 @@
+///// MMB2KOM /////
+Texture KOMUBAM1, 64, 96
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMBAM1, 0, 0
+	Patch KOMBAM2, 0, 16
+	Patch KOMBAM2, 16, 16
+	Patch KOMBAM2, 32, 16
+	Patch KOMBAM2, 48, 16
+	Patch KOMBAM2, 0, 32
+	Patch KOMBAM2, 16, 32
+	Patch KOMBAM2, 32, 32
+	Patch KOMBAM2, 48, 32
+	Patch KOMBAM2, 0, 48
+	Patch KOMBAM2, 16, 48
+	Patch KOMBAM2, 32, 48
+	Patch KOMBAM2, 48, 48
+	Patch KOMBAM2, 0, 64
+	Patch KOMBAM2, 16, 64
+	Patch KOMBAM2, 32, 64
+	Patch KOMBAM2, 48, 64
+	Patch KOMBAM2, 0, 80
+	Patch KOMBAM2, 16, 80
+	Patch KOMBAM2, 32, 80
+	Patch KOMBAM2, 48, 80
+}
+
+Texture KOMUBAM2, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMBAM2, 0, 0
+}
+
+Texture KOMURCK1, 64, 64
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMRCK1, 0, 0
+}
+
+Texture KOMUWAL1, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWAL1, 0, 0
+}
+
+Texture KOMUWAL2, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWAL2, 0, 0
+}
+
+Texture KOMUWAL3, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWAL3, 0, 0
+}
+
+Texture KOMUWAL4, 128, 128
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWAL1, 0, 0
+	Patch KOMWAL2, 0, 32
+	Patch KOMWAL1, 0, 64
+	Patch KOMWAL3, 0, 96
+	Patch KOMWAL3, 32, 0
+	Patch KOMWAL2, 32, 32
+	Patch KOMWAL1, 32, 64
+	Patch KOMWAL3, 32, 96
+	Patch KOMWAL2, 64, 0
+	Patch KOMWAL2, 64, 32
+	Patch KOMWAL1, 64, 64
+	Patch KOMWAL3, 64, 96
+	Patch KOMWAL2, 96, 0
+	Patch KOMWAL1, 96, 32
+	Patch KOMWAL2, 96, 64
+	Patch KOMWAL3, 96, 96
+	
+}
+
+Texture KOMUWOO1, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWOO1, 0, 0
+}
+
+Texture KOMUWOO2, 32, 32
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWOO2, 0, 0
+}
+
+Texture KOMUWOO3, 32, 16
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWOO3, 0, 0
+}
+
+Texture KOMUFEN1, 16, 16
+{
+	XScale 0.500
+	YScale 0.500
+	WorldPanning
+	Patch KOMWOO4, 0, 0
+}
+
+////////////////////

@@ -41,7 +41,7 @@ actor MM8BDME_PadParticle 20565
 }
 
 
-actor BubblePadParticle : JumpPadParticle
+actor BubblePadParticle : WindPadParticle
 {
 Scale 2.0
     states

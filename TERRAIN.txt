@@ -30,11 +30,25 @@ terrain Encorelava
 	splash EnLava
 }
 
+floor ESHWATRX water
+floor ECRSWTRX water
+floor ECRSWTR1 water
+floor ECRSWTR2 water
+floor ECRSWTR3 water
+floor ECRSWTR4 water
+
+
 floor EJLAVA Encorelava
 floor EJNKLAV Encorelava
 floor E9MLAVX Encorelava
 
 floor ENOLSLIK EncOil
+floor ETOADFXX oil
+floor ETODFLW1 oil
+floor ETODFLW2 oil
+floor ETODFLW3 oil
+
+floor ETICONV steam
 
 floor CLKSTM steam
 floor CLKSTMF steam

@@ -1,0 +1,690 @@
+///// MME3SPA /////
+texture ESPMET1X, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR2, 0, 0
+   Patch ESPAR1, 0, 32
+   Patch ESPAR1, 0, 64
+   Patch ESPAR1, 0, 96
+   Patch ESPAR1, 0, 128
+   Patch ESPAR1, 0, 160
+   Patch ESPAR1, 0, 192
+   Patch ESPAR1, 0, 224
+   Patch ESPAR1, 0, 256
+   Patch ESPAR1, 0, 288
+   Patch ESPAR1, 0, 320
+   Patch ESPAR1, 0, 352
+   Patch ESPAR1, 0, 384
+   Patch ESPAR1, 0, 416
+   Patch ESPAR1, 0, 448
+   Patch ESPAR29, 0, 480
+   WorldPanning 
+}
+
+
+texture ESPMET1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR2, 0, 0
+   Patch ESPAR1, 0, 32
+   Patch ESPAR1, 0, 64
+   Patch ESPAR1, 0, 96
+   Patch ESPAR1, 0, 128
+   Patch ESPAR1, 0, 160
+   Patch ESPAR1, 0, 192
+   Patch ESPAR1, 0, 224
+   Patch ESPAR1, 0, 256
+   Patch ESPAR1, 0, 288
+   Patch ESPAR1, 0, 320
+   Patch ESPAR1, 0, 352
+   Patch ESPAR1, 0, 384
+   Patch ESPAR1, 0, 416
+   Patch ESPAR1, 0, 448
+   Patch ESPAR29, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR3, 0, 0
+   Patch ESPAR1, 0, 32
+   Patch ESPAR1, 0, 64
+   Patch ESPAR1, 0, 96
+   Patch ESPAR1, 0, 128
+   Patch ESPAR1, 0, 160
+   Patch ESPAR1, 0, 192
+   Patch ESPAR1, 0, 224
+   Patch ESPAR1, 0, 256
+   Patch ESPAR1, 0, 288
+   Patch ESPAR1, 0, 320
+   Patch ESPAR1, 0, 352
+   Patch ESPAR1, 0, 384
+   Patch ESPAR1, 0, 416
+   Patch ESPAR1, 0, 448
+   Patch ESPAR30, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET3X, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR4, 0, 0
+   Patch ESPAR31, 0, 32
+   Patch ESPAR31, 0, 64
+   Patch ESPAR31, 0, 96
+   Patch ESPAR31, 0, 128
+   Patch ESPAR31, 0, 160
+   Patch ESPAR31, 0, 192
+   Patch ESPAR31, 0, 224
+   Patch ESPAR31, 0, 256
+   Patch ESPAR31, 0, 288
+   Patch ESPAR31, 0, 320
+   Patch ESPAR31, 0, 352
+   Patch ESPAR31, 0, 384
+   Patch ESPAR31, 0, 416
+   Patch ESPAR31, 0, 448
+   Patch ESPAR10, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR4, 0, 0
+   Patch ESPAR31, 0, 32
+   Patch ESPAR31, 0, 64
+   Patch ESPAR31, 0, 96
+   Patch ESPAR31, 0, 128
+   Patch ESPAR31, 0, 160
+   Patch ESPAR31, 0, 192
+   Patch ESPAR31, 0, 224
+   Patch ESPAR31, 0, 256
+   Patch ESPAR31, 0, 288
+   Patch ESPAR31, 0, 320
+   Patch ESPAR31, 0, 352
+   Patch ESPAR31, 0, 384
+   Patch ESPAR31, 0, 416
+   Patch ESPAR31, 0, 448
+   Patch ESPAR10, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR5, 0, 0
+   Patch ESPAR32, 0, 32
+   Patch ESPAR32, 0, 64
+   Patch ESPAR32, 0, 96
+   Patch ESPAR32, 0, 128
+   Patch ESPAR32, 0, 160
+   Patch ESPAR32, 0, 192
+   Patch ESPAR32, 0, 224
+   Patch ESPAR32, 0, 256
+   Patch ESPAR32, 0, 288
+   Patch ESPAR32, 0, 320
+   Patch ESPAR32, 0, 352
+   Patch ESPAR32, 0, 384
+   Patch ESPAR32, 0, 416
+   Patch ESPAR32, 0, 448
+   Patch ESPAR11, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET5X, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR7, 0, 0
+   Patch ESPAR33, 0, 32
+   Patch ESPAR33, 0, 64
+   Patch ESPAR33, 0, 96
+   Patch ESPAR33, 0, 128
+   Patch ESPAR33, 0, 160
+   Patch ESPAR33, 0, 192
+   Patch ESPAR33, 0, 224
+   Patch ESPAR33, 0, 256
+   Patch ESPAR33, 0, 288
+   Patch ESPAR33, 0, 320
+   Patch ESPAR33, 0, 352
+   Patch ESPAR33, 0, 384
+   Patch ESPAR33, 0, 416
+   Patch ESPAR33, 0, 448
+   Patch ESPAR9, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET5, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR7, 0, 0
+   Patch ESPAR33, 0, 32
+   Patch ESPAR33, 0, 64
+   Patch ESPAR33, 0, 96
+   Patch ESPAR33, 0, 128
+   Patch ESPAR33, 0, 160
+   Patch ESPAR33, 0, 192
+   Patch ESPAR33, 0, 224
+   Patch ESPAR33, 0, 256
+   Patch ESPAR33, 0, 288
+   Patch ESPAR33, 0, 320
+   Patch ESPAR33, 0, 352
+   Patch ESPAR33, 0, 384
+   Patch ESPAR33, 0, 416
+   Patch ESPAR33, 0, 448
+   Patch ESPAR9, 0, 480
+   WorldPanning 
+}
+
+texture ESPMET6, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR6, 0, 0
+   Patch ESPAR34, 0, 32
+   Patch ESPAR34, 0, 64
+   Patch ESPAR34, 0, 96
+   Patch ESPAR34, 0, 128
+   Patch ESPAR34, 0, 160
+   Patch ESPAR34, 0, 192
+   Patch ESPAR34, 0, 224
+   Patch ESPAR34, 0, 256
+   Patch ESPAR34, 0, 288
+   Patch ESPAR34, 0, 320
+   Patch ESPAR34, 0, 352
+   Patch ESPAR34, 0, 384
+   Patch ESPAR34, 0, 416
+   Patch ESPAR34, 0, 448
+   Patch ESPAR8, 0, 480
+   WorldPanning 
+}
+
+texture ESPSIGX1, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR12, 0, 0
+   WorldPanning 
+}
+
+
+texture ESPSIGN1, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR12, 0, 0
+   WorldPanning 
+}
+
+texture ESPSIGN2, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR13, 0, 0
+   WorldPanning 
+}
+
+texture ESPSIGX3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR14, 0, 0
+   WorldPanning 
+}
+
+texture ESPSIGN3, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR14, 0, 0
+   WorldPanning 
+}
+
+texture ESPSIGN4, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR15, 0, 0
+   WorldPanning 
+}
+
+texture ESPSIGX5, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR16, 0, 0
+   WorldPanning 
+}
+
+
+texture ESPSIGN5, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR16, 0, 0
+   WorldPanning 
+}
+
+texture ESPSIGN6, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR17, 0, 0
+   WorldPanning 
+}
+
+texture ESPWIR1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR19, 0, 0
+   Patch ESPAR18, 0, 32
+   Patch ESPAR18, 0, 64
+   Patch ESPAR18, 0, 96
+   Patch ESPAR18, 0, 128
+   Patch ESPAR18, 0, 160
+   Patch ESPAR18, 0, 192
+   Patch ESPAR18, 0, 224
+   Patch ESPAR18, 0, 256
+   Patch ESPAR18, 0, 288
+   Patch ESPAR18, 0, 320
+   Patch ESPAR18, 0, 352
+   Patch ESPAR18, 0, 384
+   Patch ESPAR18, 0, 416
+   Patch ESPAR18, 0, 448
+   Patch ESPAR18, 0, 480
+   WorldPanning 
+}
+
+texture ESPWIR2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR20, 0, 0
+   Patch ESPAR35, 0, 32
+   Patch ESPAR35, 0, 64
+   Patch ESPAR35, 0, 96
+   Patch ESPAR35, 0, 128
+   Patch ESPAR35, 0, 160
+   Patch ESPAR35, 0, 192
+   Patch ESPAR35, 0, 224
+   Patch ESPAR35, 0, 256
+   Patch ESPAR35, 0, 288
+   Patch ESPAR35, 0, 320
+   Patch ESPAR35, 0, 352
+   Patch ESPAR35, 0, 384
+   Patch ESPAR35, 0, 416
+   Patch ESPAR35, 0, 448
+   Patch ESPAR35, 0, 480
+   WorldPanning 
+}
+
+texture ESPWIR3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR21, 0, 0
+   Patch ESPAR36, 0, 32
+   Patch ESPAR36, 0, 64
+   Patch ESPAR36, 0, 96
+   Patch ESPAR36, 0, 128
+   Patch ESPAR36, 0, 160
+   Patch ESPAR36, 0, 192
+   Patch ESPAR36, 0, 224
+   Patch ESPAR36, 0, 256
+   Patch ESPAR36, 0, 288
+   Patch ESPAR36, 0, 320
+   Patch ESPAR36, 0, 352
+   Patch ESPAR36, 0, 384
+   Patch ESPAR36, 0, 416
+   Patch ESPAR36, 0, 448
+   Patch ESPAR36, 0, 480
+   WorldPanning 
+}
+
+texture ESPJUNK, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR22, 0, 0
+   WorldPanning 
+}
+
+texture ESPTUBE, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR37, 0, 0
+   Patch ESPAR37, 0, 32
+   Patch ESPAR37, 0, 64
+   Patch ESPAR37, 0, 96
+   Patch ESPAR37, 0, 128
+   Patch ESPAR37, 0, 160
+   Patch ESPAR37, 0, 192
+   Patch ESPAR37, 0, 224
+   Patch ESPAR37, 0, 256
+   Patch ESPAR37, 0, 288
+   Patch ESPAR37, 0, 320
+   Patch ESPAR37, 0, 352
+   Patch ESPAR37, 0, 384
+   Patch ESPAR37, 0, 416
+   Patch ESPAR37, 0, 448
+   Patch ESPAR23, 0, 480
+   WorldPanning 
+}
+
+texture ESPMAC1X, 251, 112
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR24, 0, 0
+   WorldPanning 
+}
+
+
+texture ESPMAC1, 251, 112
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR24, 0, 0
+   WorldPanning 
+}
+
+texture ESPMAC2, 251, 112
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR25, 0, 0
+   WorldPanning 
+}
+
+texture ESPPOLE, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR26, 0, 0
+   Patch ESPAR27, 0, 32
+   Patch ESPAR27, 0, 64
+   Patch ESPAR27, 0, 96
+   Patch ESPAR27, 0, 128
+   Patch ESPAR27, 0, 160
+   Patch ESPAR27, 0, 192
+   Patch ESPAR27, 0, 224
+   Patch ESPAR27, 0, 256
+   Patch ESPAR27, 0, 288
+   Patch ESPAR27, 0, 320
+   Patch ESPAR27, 0, 352
+   Patch ESPAR27, 0, 384
+   Patch ESPAR27, 0, 416
+   Patch ESPAR27, 0, 448
+   Patch ESPAR27, 0, 480
+   WorldPanning 
+}
+
+texture ESPLDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR28, 0, 0
+   WorldPanning 
+}
+
+
+texture ESPFL1X, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR2, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL1, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR2, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL2, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR3, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL3X, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR31, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL3, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR31, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL4, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR32, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL5X, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR4, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL5, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR4, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL6, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR5, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL7X, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR10, 0, -16
+   WorldPanning 
+}
+
+
+texture ESPFL7, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR10, 0, -16
+   WorldPanning 
+}
+
+texture ESPFL8, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR11, 0, -16
+   WorldPanning 
+}
+
+texture ESPFL9X, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR6, -16, 0
+   WorldPanning 
+}
+
+texture ESPFL9, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR6, -16, 0
+   WorldPanning 
+}
+
+texture ESPFL10, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR7, -16, 0
+   WorldPanning 
+}
+
+texture ESPFL11X, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR8, -16, -16
+   WorldPanning 
+}
+
+texture ESPFL11, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR8, -16, -16
+   WorldPanning 
+}
+
+texture ESPFL12, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR9, -16, -16
+   WorldPanning 
+}
+
+texture ESPFL13, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR39, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL14, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR38, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL15, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR40, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL16X, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR33, -16, 0
+   WorldPanning 
+}
+
+texture ESPFL16, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR33, -16, 0
+   WorldPanning 
+}
+
+texture ESPFL17, 16, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR34, -16, 0
+   WorldPanning 
+}
+
+texture ESPFL18X, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR29, 0, -16
+   WorldPanning 
+}
+
+texture ESPFL18, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR29, 0, -16
+   WorldPanning 
+}
+
+texture ESPFL19, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR30, 0, -16
+   WorldPanning 
+}
+
+texture ESPFL20, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR41, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL21, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR42, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL22, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR43, 0, 0
+   WorldPanning 
+}
+
+texture ESPFL23, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ESPAR44, 0, 0
+   WorldPanning 
+}
+
+////////////////////

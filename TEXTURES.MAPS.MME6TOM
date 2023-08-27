@@ -1,0 +1,413 @@
+///// MME6TOM /////
+texture ETMABRK, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA5, 0, 0
+   WorldPanning 
+}
+
+texture ETMAFNC, 32, 48
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA4, 0, 0
+   WorldPanning 
+}
+
+texture ETMAMET1, 64, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA24, 0, 0
+   WorldPanning 
+}
+
+texture ETMAMET2, 64, 80
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA33, 0, 0
+   WorldPanning 
+}
+
+texture ETMAPIP1, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA14, 0, 0
+   WorldPanning 
+}
+
+texture ETMAPIP2, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA22, 0, 0
+   Patch ETOMA23, 0, 32
+   Patch ETOMA23, 0, 64
+   Patch ETOMA23, 0, 96
+   Patch ETOMA23, 0, 128
+   Patch ETOMA23, 0, 160
+   Patch ETOMA23, 0, 192
+   Patch ETOMA23, 0, 224
+   Patch ETOMA23, 0, 256
+   Patch ETOMA23, 0, 288
+   Patch ETOMA23, 0, 320
+   Patch ETOMA23, 0, 352
+   Patch ETOMA23, 0, 384
+   Patch ETOMA23, 0, 416
+   Patch ETOMA23, 0, 448
+   Patch ETOMA23, 0, 480
+   WorldPanning 
+}
+
+texture ETMAPIP3, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA14, 0, 0 {rotate 90}
+   WorldPanning 
+}
+
+texture ETMALDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA15, 0, 0
+   WorldPanning 
+}
+
+texture ETMASTP1, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA16, 0, 0
+   WorldPanning 
+}
+
+texture ETMASTP2, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA17, 0, 0
+   WorldPanning 
+}
+
+texture ETMARCK1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA8, 0, 0
+   Patch ETOMA9, 0, 32
+   Patch ETOMA9, 0, 64
+   Patch ETOMA9, 0, 96
+   Patch ETOMA9, 0, 128
+   Patch ETOMA9, 0, 160
+   Patch ETOMA9, 0, 192
+   Patch ETOMA9, 0, 224
+   Patch ETOMA9, 0, 256
+   Patch ETOMA9, 0, 288
+   Patch ETOMA9, 0, 320
+   Patch ETOMA9, 0, 352
+   Patch ETOMA9, 0, 384
+   Patch ETOMA9, 0, 416
+   Patch ETOMA9, 0, 448
+   Patch ETOMA10, 0, 480
+   WorldPanning 
+}
+
+texture ETMARCK2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA12, 0, 0
+   Patch ETOMA13, 0, 32
+   Patch ETOMA13, 0, 64
+   Patch ETOMA13, 0, 96
+   Patch ETOMA13, 0, 128
+   Patch ETOMA13, 0, 160
+   Patch ETOMA13, 0, 192
+   Patch ETOMA13, 0, 224
+   Patch ETOMA13, 0, 256
+   Patch ETOMA13, 0, 288
+   Patch ETOMA13, 0, 320
+   Patch ETOMA13, 0, 352
+   Patch ETOMA13, 0, 384
+   Patch ETOMA13, 0, 416
+   Patch ETOMA13, 0, 448
+   Patch ETOMA13, 0, 480
+   WorldPanning 
+}
+
+
+texture ETMABLU1, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA6, 0, 0
+   Patch ETOMA7, 0, 32
+   Patch ETOMA7, 0, 64
+   Patch ETOMA7, 0, 96
+   Patch ETOMA7, 0, 128
+   Patch ETOMA7, 0, 160
+   Patch ETOMA7, 0, 192
+   Patch ETOMA7, 0, 224
+   Patch ETOMA7, 0, 256
+   Patch ETOMA7, 0, 288
+   Patch ETOMA7, 0, 320
+   Patch ETOMA7, 0, 352
+   Patch ETOMA7, 0, 384
+   Patch ETOMA7, 0, 416
+   Patch ETOMA7, 0, 448
+   Patch ETOMA7, 0, 480
+   WorldPanning 
+}
+
+texture ETMABLU2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA19, 0, 0
+   WorldPanning 
+}
+
+texture ETMABLU3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA20, 0, 0
+   WorldPanning 
+}
+
+texture ETMABLU4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA21, 0, 0
+   WorldPanning 
+}
+
+texture ETMAGRN, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA25, 0, 0
+   Patch ETOMA29, 0, 32
+   Patch ETOMA29, 0, 64
+   Patch ETOMA29, 0, 96
+   Patch ETOMA29, 0, 128
+   Patch ETOMA29, 0, 160
+   Patch ETOMA29, 0, 192
+   Patch ETOMA29, 0, 224
+   Patch ETOMA29, 0, 256
+   Patch ETOMA29, 0, 288
+   Patch ETOMA29, 0, 320
+   Patch ETOMA29, 0, 352
+   Patch ETOMA29, 0, 384
+   Patch ETOMA29, 0, 416
+   Patch ETOMA29, 0, 448
+   Patch ETOMA29, 0, 480
+   WorldPanning 
+}
+
+texture ETMAGRN1, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA25, 0, 0
+   Patch ETOMA29, 0, 32
+   Patch ETOMA29, 0, 64
+   Patch ETOMA29, 0, 96
+   Patch ETOMA29, 0, 128
+   Patch ETOMA29, 0, 160
+   Patch ETOMA29, 0, 192
+   Patch ETOMA29, 0, 224
+   Patch ETOMA29, 0, 256
+   Patch ETOMA29, 0, 288
+   Patch ETOMA29, 0, 320
+   Patch ETOMA29, 0, 352
+   Patch ETOMA29, 0, 384
+   Patch ETOMA29, 0, 416
+   Patch ETOMA29, 0, 448
+   Patch ETOMA29, 0, 480
+   WorldPanning 
+}
+
+texture ETMAGRN2, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA26, 0, 0
+   Patch ETOMA30, 0, 32
+   Patch ETOMA30, 0, 64
+   Patch ETOMA30, 0, 96
+   Patch ETOMA30, 0, 128
+   Patch ETOMA30, 0, 160
+   Patch ETOMA30, 0, 192
+   Patch ETOMA30, 0, 224
+   Patch ETOMA30, 0, 256
+   Patch ETOMA30, 0, 288
+   Patch ETOMA30, 0, 320
+   Patch ETOMA30, 0, 352
+   Patch ETOMA30, 0, 384
+   Patch ETOMA30, 0, 416
+   Patch ETOMA30, 0, 448
+   Patch ETOMA30, 0, 480
+   WorldPanning 
+}
+
+texture ETMAGRN3, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA27, 0, 0
+   Patch ETOMA31, 0, 32
+   Patch ETOMA31, 0, 64
+   Patch ETOMA31, 0, 96
+   Patch ETOMA31, 0, 128
+   Patch ETOMA31, 0, 160
+   Patch ETOMA31, 0, 192
+   Patch ETOMA31, 0, 224
+   Patch ETOMA31, 0, 256
+   Patch ETOMA31, 0, 288
+   Patch ETOMA31, 0, 320
+   Patch ETOMA31, 0, 352
+   Patch ETOMA31, 0, 384
+   Patch ETOMA31, 0, 416
+   Patch ETOMA31, 0, 448
+   Patch ETOMA31, 0, 480
+   WorldPanning 
+}
+
+texture ETMAGRN4, 16, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA28, 0, 0
+   Patch ETOMA32, 0, 32
+   Patch ETOMA32, 0, 64
+   Patch ETOMA32, 0, 96
+   Patch ETOMA32, 0, 128
+   Patch ETOMA32, 0, 160
+   Patch ETOMA32, 0, 192
+   Patch ETOMA32, 0, 224
+   Patch ETOMA32, 0, 256
+   Patch ETOMA32, 0, 288
+   Patch ETOMA32, 0, 320
+   Patch ETOMA32, 0, 352
+   Patch ETOMA32, 0, 384
+   Patch ETOMA32, 0, 416
+   Patch ETOMA32, 0, 448
+   Patch ETOMA32, 0, 480
+   WorldPanning 
+}
+
+texture ETMASKY, 384, 192
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA1, 0, 0
+   WorldPanning 
+}
+
+texture ETMASUN, 80, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA2, 0, 0
+   WorldPanning 
+}
+
+texture ETMASUN1, 80, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA2, 0, 0
+   WorldPanning 
+}
+
+
+texture ETMASUN2, 80, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA3, 0, 0
+   WorldPanning 
+}
+
+texture ETMASKT, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA11, 0, 0
+   WorldPanning 
+}
+
+
+texture ETMASND1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA34, 0, 0
+   WorldPanning 
+}
+
+texture ETMASND2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA35, 0, 0
+   WorldPanning 
+}
+
+texture ETMARCK3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA36, 0, 0
+   WorldPanning 
+}
+
+texture ETMAFLR1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA37, 0, 0
+   WorldPanning 
+}
+
+texture ETMAFLR2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA38, 0, 0
+   WorldPanning 
+}
+
+texture ETMAFLR3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA39, 0, 0
+   WorldPanning 
+}
+
+texture ETMAFLR4, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA41, 0, 0
+   WorldPanning 
+}
+
+texture ETMAFLR5, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch ETOMA40, 0, 0
+   WorldPanning 
+}
+
+
+////////////////////

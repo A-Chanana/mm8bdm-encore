@@ -1,0 +1,321 @@
+///// MME1FIR /////
+texture EFIRM1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR3, 0, 0
+   WorldPanning 
+}
+
+texture EFIRM2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR5, 0, 0
+   Patch EFIR3, 0, 32
+   Patch EFIR3, 0, 64
+   Patch EFIR3, 0, 96
+   Patch EFIR3, 0, 128
+   Patch EFIR3, 0, 160
+   Patch EFIR3, 0, 192
+   Patch EFIR3, 0, 224
+   Patch EFIR3, 0, 256
+   Patch EFIR3, 0, 288
+   Patch EFIR3, 0, 320
+   Patch EFIR3, 0, 352
+   Patch EFIR3, 0, 384
+   Patch EFIR3, 0, 416
+   Patch EFIR3, 0, 448
+   Patch EFIR3, 0, 480
+   WorldPanning 
+}
+
+texture EFIRM3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR5, 0, 0
+   Patch EFIR3, 0, 32
+   Patch EFIR3, 0, 64
+   Patch EFIR4, 0, 96
+   Patch EFIR3, 0, 128
+   Patch EFIR3, 0, 160
+   Patch EFIR4, 0, 192
+   Patch EFIR3, 0, 224
+   Patch EFIR3, 0, 256
+   Patch EFIR4, 0, 288
+   Patch EFIR3, 0, 320
+   Patch EFIR3, 0, 352
+   Patch EFIR4, 0, 384
+   Patch EFIR3, 0, 416
+   Patch EFIR3, 0, 448
+   Patch EFIR4, 0, 480
+   WorldPanning 
+}
+
+texture EFIRIN1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR1, 0, 0
+   WorldPanning 
+}
+
+texture EFIRIN2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR2, 0, 0
+   Patch EFIR1, 0, 32
+   Patch EFIR1, 0, 64
+   Patch EFIR1, 0, 96
+   Patch EFIR1, 0, 128
+   Patch EFIR1, 0, 160
+   Patch EFIR1, 0, 192
+   Patch EFIR1, 0, 224
+   Patch EFIR1, 0, 256
+   Patch EFIR1, 0, 288
+   Patch EFIR1, 0, 320
+   Patch EFIR1, 0, 352
+   Patch EFIR1, 0, 384
+   Patch EFIR1, 0, 416
+   Patch EFIR1, 0, 448
+   Patch EFIR1, 0, 480
+   WorldPanning 
+}
+
+texture EFIRIN3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR6, 0, 0
+   WorldPanning 
+}
+
+texture EFIRIN4, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR7, 0, 0
+   Patch EFIR6, 0, 32
+   Patch EFIR6, 0, 64
+   Patch EFIR6, 0, 96
+   Patch EFIR6, 0, 128
+   Patch EFIR6, 0, 160
+   Patch EFIR6, 0, 192
+   Patch EFIR6, 0, 224
+   Patch EFIR6, 0, 256
+   Patch EFIR6, 0, 288
+   Patch EFIR6, 0, 320
+   Patch EFIR6, 0, 352
+   Patch EFIR6, 0, 384
+   Patch EFIR6, 0, 416
+   Patch EFIR6, 0, 448
+   Patch EFIR6, 0, 480
+   WorldPanning 
+}
+
+
+texture EFIRIN5, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR18, 0, 0
+   WorldPanning 
+}
+
+texture EFIRGT1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR8, 0, 0
+   WorldPanning 
+}
+
+texture EFIRGT2, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR13, 0, 0
+   Patch EFIR8, 0, 32
+   Patch EFIR8, 0, 64
+   Patch EFIR8, 0, 96
+   Patch EFIR8, 0, 128
+   Patch EFIR8, 0, 160
+   Patch EFIR8, 0, 192
+   Patch EFIR8, 0, 224
+   Patch EFIR8, 0, 256
+   Patch EFIR8, 0, 288
+   Patch EFIR8, 0, 320
+   Patch EFIR8, 0, 352
+   Patch EFIR8, 0, 384
+   Patch EFIR8, 0, 416
+   Patch EFIR8, 0, 448
+   Patch EFIR8, 0, 480
+   WorldPanning 
+}
+
+
+texture EFIRTB1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR5, 0, 0
+   WorldPanning 
+}
+
+texture EFIRTB2, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR6, 0, 0
+   WorldPanning 
+}
+
+texture EFIRTB3, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR7, 0, 0
+   WorldPanning 
+}
+
+texture EFIRRAI, 32, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR12, 0, 0
+   WorldPanning 
+}
+
+texture EFIRDOR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR14, 0, 0
+   WorldPanning 
+}
+
+texture EFIRFLR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR15, 0, 0
+   WorldPanning 
+}
+
+texture EFIRFL2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR17, 0, 0
+   WorldPanning 
+}
+
+texture EFIRLDR, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR16, 0, 0
+   WorldPanning 
+}
+
+texture EFIRTU1, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR10, 0, 0
+   WorldPanning 
+}
+
+texture EFIRTU2, 32, 288
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR9, 0, 0
+   Patch EFIR11, 0, 32
+   Patch EFIR11, 0, 64
+   Patch EFIR11, 0, 96
+   Patch EFIR11, 0, 128
+   Patch EFIR11, 0, 160
+   Patch EFIR11, 0, 192
+   Patch EFIR11, 0, 224
+   Patch EFIR11, 0, 256
+   WorldPanning 
+}
+
+
+texture EFIR19, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR19A, 0, 0
+   WorldPanning 
+}
+
+texture EFIR20, 32, 32
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR20B, 0, 0
+   WorldPanning 
+}
+
+texture EFIRPIPE, 32, 64
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR21, 0, 0
+   WorldPanning 
+}
+
+texture EFIRWIRE, 128, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR22, 0, 0
+   WorldPanning 
+}
+
+//From PU
+texture EFIRBAS3, 32, 512
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR5, 0, 0
+   Patch EFIR23, 16, 0
+   Patch EFIR3, 0, 32
+   Patch EFIR3, 0, 64
+   Patch EFIR3, 0, 96
+   Patch EFIR3, 0, 128
+   Patch EFIR3, 0, 160
+   Patch EFIR3, 0, 192
+   Patch EFIR3, 0, 224
+   Patch EFIR3, 0, 256
+   Patch EFIR3, 0, 288
+   Patch EFIR3, 0, 320
+   Patch EFIR3, 0, 352
+   Patch EFIR3, 0, 384
+   Patch EFIR3, 0, 416
+   Patch EFIR3, 0, 448
+   Patch EFIR3, 0, 480
+   WorldPanning 
+}
+
+texture EFIRBASE, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR23, 0, 0
+   WorldPanning 
+}
+
+texture EFIRBAS2, 16, 16
+{
+   XScale 0.5
+   YScale 0.5
+   Patch EFIR24, 0, 0
+   WorldPanning 
+}
+
+////////////////////

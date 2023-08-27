@@ -1,0 +1,459 @@
+Texture ETOADWL1, 128, 256
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT1, 0, 144
+	Patch ETOADT1, 0, 0
+}
+
+Texture ETOADST1, 64, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT3, 0, 0
+	Patch ETOADT2, 0, 32
+	Patch ETOADT2, 0, 64
+	Patch ETOADT2, 0, 96
+	Patch ETOADT2, 0, 128
+	Patch ETOADT2, 0, 160
+	Patch ETOADT2, 0, 192
+	Patch ETOADT2, 0, 224
+	Patch ETOADT2, 0, 256
+	Patch ETOADT2, 0, 288
+	Patch ETOADT2, 0, 320
+	Patch ETOADT2, 0, 352
+	Patch ETOADT2, 0, 384
+	Patch ETOADT2, 0, 416
+	Patch ETOADT2, 0, 448
+	Patch ETOADT2, 0, 480
+}
+
+Texture ETOADST2, 48, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT4, 0, 0
+	Patch ETOADT5, 0, 32
+	Patch ETOADT9, 0, 64
+	Patch ETOADT5, 0, 96
+	Patch ETOADT9, 0, 128
+	Patch ETOADT5, 0, 160
+	Patch ETOADT9, 0, 192
+	Patch ETOADT5, 0, 224
+	Patch ETOADT9, 0, 256
+	Patch ETOADT5, 0, 288
+	Patch ETOADT9, 0, 320
+	Patch ETOADT5, 0, 352
+	Patch ETOADT9, 0, 384
+	Patch ETOADT5, 0, 416
+	Patch ETOADT9, 0, 448
+	Patch ETOADT5, 0, 480
+}
+
+Texture ETOADMT1, 64, 256
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT6, 0, 0
+	Patch ETOADT8, 0, 32
+	Patch ETOADT8, 0, 64
+	Patch ETOADT8, 0, 96
+	Patch ETOADT8, 0, 128
+	Patch ETOADT8, 0, 160
+	Patch ETOADT8, 0, 192
+	Patch ETOADT7, 0, 224
+}
+
+Texture ETOADBK1, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT10, 0, 0
+}
+
+Texture ETOADBK2, 16, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT12, 0, 0
+}
+
+Texture ETOADBK3, 16, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT13, 0, 0
+}
+
+Texture ETOADPLT, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT14, 0, 0
+}
+
+Texture ETOADRAX, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT15, 0, 0
+	Patch ETOADT15, 0, 32
+	Patch ETOADT15, 0, 64
+	Patch ETOADT15, 0, 96
+	Patch ETOADT15, 0, 128
+	Patch ETOADT15, 0, 160
+	Patch ETOADT15, 0, 192
+	Patch ETOADT15, 0, 224
+	Patch ETOADT15, 0, 256
+	Patch ETOADT15, 0, 288
+	Patch ETOADT15, 0, 320
+	Patch ETOADT15, 0, 352
+	Patch ETOADT15, 0, 384
+	Patch ETOADT15, 0, 416
+	Patch ETOADT15, 0, 448
+	Patch ETOADT18, 0, 480
+}
+
+Texture ETOADRA1, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT15, 0, 0
+	Patch ETOADT15, 0, 32
+	Patch ETOADT15, 0, 64
+	Patch ETOADT15, 0, 96
+	Patch ETOADT15, 0, 128
+	Patch ETOADT15, 0, 160
+	Patch ETOADT15, 0, 192
+	Patch ETOADT15, 0, 224
+	Patch ETOADT15, 0, 256
+	Patch ETOADT15, 0, 288
+	Patch ETOADT15, 0, 320
+	Patch ETOADT15, 0, 352
+	Patch ETOADT15, 0, 384
+	Patch ETOADT15, 0, 416
+	Patch ETOADT15, 0, 448
+	Patch ETOADT18, 0, 480
+}
+
+Texture ETOADRA2, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT16, 0, 0
+	Patch ETOADT16, 0, 32
+	Patch ETOADT16, 0, 64
+	Patch ETOADT16, 0, 96
+	Patch ETOADT16, 0, 128
+	Patch ETOADT16, 0, 160
+	Patch ETOADT16, 0, 192
+	Patch ETOADT16, 0, 224
+	Patch ETOADT16, 0, 256
+	Patch ETOADT16, 0, 288
+	Patch ETOADT16, 0, 320
+	Patch ETOADT16, 0, 352
+	Patch ETOADT16, 0, 384
+	Patch ETOADT16, 0, 416
+	Patch ETOADT16, 0, 448
+	Patch ETOADT19, 0, 480
+}
+
+Texture ETOADRA3, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT17, 0, 0
+	Patch ETOADT17, 0, 32
+	Patch ETOADT17, 0, 64
+	Patch ETOADT17, 0, 96
+	Patch ETOADT17, 0, 128
+	Patch ETOADT17, 0, 160
+	Patch ETOADT17, 0, 192
+	Patch ETOADT17, 0, 224
+	Patch ETOADT17, 0, 256
+	Patch ETOADT17, 0, 288
+	Patch ETOADT17, 0, 320
+	Patch ETOADT17, 0, 352
+	Patch ETOADT17, 0, 384
+	Patch ETOADT17, 0, 416
+	Patch ETOADT17, 0, 448
+	Patch ETOADT20, 0, 480
+}
+
+Texture ETOADFLX, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT22, 0, 0
+	Patch ETOADT25, 0, 32
+	Patch ETOADT25, 0, 64
+	Patch ETOADT25, 0, 96
+	Patch ETOADT25, 0, 128
+	Patch ETOADT25, 0, 160
+	Patch ETOADT25, 0, 192
+	Patch ETOADT25, 0, 224
+	Patch ETOADT25, 0, 256
+	Patch ETOADT25, 0, 288
+	Patch ETOADT25, 0, 320
+	Patch ETOADT25, 0, 352
+	Patch ETOADT25, 0, 384
+	Patch ETOADT25, 0, 416
+	Patch ETOADT25, 0, 448
+	Patch ETOADT25, 0, 480
+}
+
+Texture ETOADFL1, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT22, 0, 0
+	Patch ETOADT25, 0, 32
+	Patch ETOADT25, 0, 64
+	Patch ETOADT25, 0, 96
+	Patch ETOADT25, 0, 128
+	Patch ETOADT25, 0, 160
+	Patch ETOADT25, 0, 192
+	Patch ETOADT25, 0, 224
+	Patch ETOADT25, 0, 256
+	Patch ETOADT25, 0, 288
+	Patch ETOADT25, 0, 320
+	Patch ETOADT25, 0, 352
+	Patch ETOADT25, 0, 384
+	Patch ETOADT25, 0, 416
+	Patch ETOADT25, 0, 448
+	Patch ETOADT25, 0, 480
+}
+
+Texture ETOADFL2, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT23, 0, 0
+	Patch ETOADT26, 0, 32
+	Patch ETOADT26, 0, 64
+	Patch ETOADT26, 0, 96
+	Patch ETOADT26, 0, 128
+	Patch ETOADT26, 0, 160
+	Patch ETOADT26, 0, 192
+	Patch ETOADT26, 0, 224
+	Patch ETOADT26, 0, 256
+	Patch ETOADT26, 0, 288
+	Patch ETOADT26, 0, 320
+	Patch ETOADT26, 0, 352
+	Patch ETOADT26, 0, 384
+	Patch ETOADT26, 0, 416
+	Patch ETOADT26, 0, 448
+	Patch ETOADT26, 0, 480
+}
+
+Texture ETOADFL3, 16, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT24, 0, 0
+	Patch ETOADT27, 0, 32
+	Patch ETOADT27, 0, 64
+	Patch ETOADT27, 0, 96
+	Patch ETOADT27, 0, 128
+	Patch ETOADT27, 0, 160
+	Patch ETOADT27, 0, 192
+	Patch ETOADT27, 0, 224
+	Patch ETOADT27, 0, 256
+	Patch ETOADT27, 0, 288
+	Patch ETOADT27, 0, 320
+	Patch ETOADT27, 0, 352
+	Patch ETOADT27, 0, 384
+	Patch ETOADT27, 0, 416
+	Patch ETOADT27, 0, 448
+	Patch ETOADT27, 0, 480
+}
+
+Texture ETODFL2X, 32, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT25, 0, 0
+	{
+		Rotate -90
+	}
+}
+
+Texture ETODFL21, 32, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT25, 0, 0
+	{
+		Rotate -90
+	}
+}
+
+Texture ETODFL22, 32, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT26, 0, 0
+	{
+		Rotate -90
+	}
+}
+
+Texture ETODFL23, 32, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT27, 0, 0
+	{
+		Rotate -90
+	}
+}
+
+Texture ETODPIPS, 256, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT28, 0, 0
+}
+
+Texture ETODPIP2, 256, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT41, 0, 0
+}
+
+Texture ETOADTUB, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT21, 0, 0
+}
+
+Texture ETOADENT, 64, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT29, 0, 0
+}
+
+Texture ETODGATE, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT30, 0, 0
+}
+
+Texture ETODFLR1, 32, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT31, 0, 0
+}
+
+Texture ETODFLR2, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT32, 0, 0
+}
+
+Texture ETODFLR3, 48, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT33, 0, 0
+}
+
+Texture ETODFLR4, 64, 64
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT34, 0, 0
+}
+
+Texture ETODBRI1, 16, 48
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT35, 0, 0
+	Patch ETOADT35, 0, 16
+	Patch ETOADT35, 0, 32
+}
+
+Texture ETODBRI2, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT36, 0, 0
+}
+
+Texture ETOADWL2, 32, 512
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT37, 0, 0
+	Patch ETOADT38, 0, 32
+	Patch ETOADT38, 0, 64
+	Patch ETOADT38, 0, 96
+	Patch ETOADT38, 0, 128
+	Patch ETOADT38, 0, 160
+	Patch ETOADT38, 0, 192
+	Patch ETOADT38, 0, 224
+	Patch ETOADT38, 0, 256
+	Patch ETOADT38, 0, 288
+	Patch ETOADT38, 0, 320
+	Patch ETOADT38, 0, 352
+	Patch ETOADT38, 0, 384
+	Patch ETOADT38, 0, 416
+	Patch ETOADT38, 0, 448
+	Patch ETOADT38, 0, 480
+}
+
+Texture ETODFLR5, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT39, 0, 0
+}
+
+Texture ETOADLDR, 16, 16
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT40, 0, 0
+}
+
+Texture ETOADFXX, 16, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT25, 0, 0
+}
+
+Texture ETODFLW1, 16, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT25, 0, 0
+}
+
+Texture ETODFLW2, 16, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT26, 0, 0
+}
+
+Texture ETODFLW3, 16, 32
+{
+	XScale 0.5
+	YScale 0.5
+	Patch ETOADT27, 0, 0
+}
+
+Texture ETOADSKY, 512, 320
+{
+	XScale 1
+	YScale 1
+	Patch ETOADT42, 0, 0
+}
